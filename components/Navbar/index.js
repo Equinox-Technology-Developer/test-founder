@@ -41,7 +41,7 @@ const Navbar = () => {
               }
             >
               {" "}
-              Home
+              Pricing
             </Link>
           </li>
           <li>
@@ -53,7 +53,7 @@ const Navbar = () => {
                   : styles.nonActive
               }
             >
-              Virtual Expo
+              Products
             </Link>
           </li>
           <li>
@@ -65,7 +65,7 @@ const Navbar = () => {
                   : styles.nonActive
               }
             >
-              Portofolio
+              Resources
             </Link>
           </li>
           <li>
