@@ -20,7 +20,7 @@ const Layout = (props) => {
         <Navbar />
         <Link
           href="https://wa.me/6287725800047"
-          class={styles.whatsapp_float}
+          className={styles.whatsapp_float}
           target="_blank"
           rel="noopener noreferrer"
         >
