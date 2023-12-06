@@ -7,6 +7,8 @@ import { RiWhatsappFill } from "react-icons/ri";
 
 import styles from "./Layout.module.scss";
 
+
+
 const Layout = (props) => {
   const { children, pageTitle } = props;
   return (
@@ -24,7 +26,9 @@ const Layout = (props) => {
         >
           <RiWhatsappFill />
         </Link>
+
         {children}
+
         <Footer />
       </div>
     </>
