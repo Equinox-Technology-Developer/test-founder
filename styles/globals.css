@@ -1,14 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
 :root {
-  --font-base: "DM Sans", sans-serif;
-  --secondary-text: "Helvetica";
+  --font-base: 'DM Sans', sans-serif;
+  --secondary-text: 'Helvetica';
 
   --primary-color: #edf2f8;
-  --secondary-color: #3280AC;
+  --secondary-color: #3280ac;
   --black-color: #030303;
   --lightGray-color: #e4e4e4;
   --gray-color: #6b7688;
@@ -18,13 +19,13 @@
   --suva-gray: rgba(136, 136, 136, 1);
   --eerie-black: rgba(29, 29, 31, 1);
 
-  --font-family-helvetica-bold: "Helvetica-Bold";
-  --font-family-helvetica-regular: "Helvetica-Regular";
-  --font-family-helvetica-semibold: "Helvetica-SemiBold";
-  --font-family-poppins: "Poppins";
-  --font-family-poppins-light: "Poppins-Light";
-  --font-family-poppins-medium: "Poppins-Medium";
-  --font-family-poppins-semibold: "Poppins-SemiBold";
+  --font-family-helvetica-bold: 'Helvetica-Bold';
+  --font-family-helvetica-regular: 'Helvetica-Regular';
+  --font-family-helvetica-semibold: 'Helvetica-SemiBold';
+  --font-family-poppins: 'Poppins';
+  --font-family-poppins-light: 'Poppins-Light';
+  --font-family-poppins-medium: 'Poppins-Medium';
+  --font-family-poppins-semibold: 'Poppins-SemiBold';
 
   --font-size-xs: 12px;
   --font-size-s: 14px;
@@ -40,9 +41,9 @@ body {
   height: 100vh;
   padding: 0;
   margin: 0;
-  font-family: "Poppins Nue", sans-serif;
+  font-family: 'Poppins Nue', sans-serif;
   /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, */
-    /* Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Poppins, sans-serif; */
+  /* Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Poppins, sans-serif; */
 }
 
 .app {
@@ -59,10 +60,9 @@ a {
   box-sizing: border-box;
 }
 
-
 .container {
   padding-top: 61px;
-  background:(--primary-color)
+  background: (--primary-color);
 }
 
 .main {
@@ -75,8 +75,6 @@ a {
   align-items: center;
 }
 
-
-
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -87,14 +85,13 @@ a {
   }
 }
 
-
 #_next {
   height: 100%;
 }
 
 .title-not-found {
   color: darkgrey;
-  text-align : center;
+  text-align: center;
 }
 
 .app__flex {
@@ -119,7 +116,7 @@ a {
 }
 
 .content1_shape .shape-fill {
-  fill: #FFFFFF;
+  fill: #ffffff;
 }
 .content2_shape {
   bottom: 0;
@@ -157,7 +154,7 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, .8);
+  background-color: rgba(0, 0, 0, 0.8);
   cursor: pointer;
 }
 
@@ -172,15 +169,14 @@ a {
   cursor: auto;
 }
 
-
 .modal__title {
-  color: #3280AC;
+  color: #3280ac;
   font-size: 30px;
 }
 
 .modal__content {
   margin-top: 30px;
-  color: #6B6B6B;
+  color: #6b6b6b;
   font-size: 16px;
 }
 
