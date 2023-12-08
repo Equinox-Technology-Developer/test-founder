@@ -1,4 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
+import { images } from "@/constants";
+import { MdChevronRight } from "react-icons/md";
+
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 
 import styles from "./Footer.module.scss";
@@ -6,90 +10,73 @@ import styles from "./Footer.module.scss";
 const Footer = () => {
   return (
     <div className={styles.footer_container}>
-      <footer className={styles.footer}>
-        <div className={styles.footer_content}>
-          <h1>Test Founder</h1>
-          {/* test */}
+      <footer className={styles.footer_wrapper}>
+        {/* Logo */}
+        <div className={styles.footer_content_logo}>
+          <Image width={150} height={60} src={images.logo_desktop} alt="Logo" />
           <p>
-            Description footer of Test Founder
+            © Test Founder 2023. All rights reserved.
           </p>
         </div>
-        {/* <div className={styles.footer_contents}> */}
-        <div className={styles.footer_content}>
-          <h1>EXPLORE</h1>
-          <ul>
-            <Link href="#">
-              <li>Course</li>
-            </Link>
-            <Link href="#">
-              <li>Virtual Expo</li>
-            </Link>
-            <Link href="#">
-              <li>Portofolio</li>
-            </Link>
-            {/* <Link href="/">
-              <li>News</li>
-            </Link> */}
-            {/* <Link href="/">
-              <li>FAQ</li>
-            </Link> */}
-          </ul>
+
+        {/* Content Tab 1 */}
+        <div className={styles.content_wrapper}>
+          <div className={styles.footer_content}>
+            <a href="">Help Center <MdChevronRight/></a>
+          </div>   
+          <div className={styles.footer_content}>
+            <a href="">Information for Candidates <MdChevronRight/></a>
+          </div>   
+          <div className={styles.footer_content}>
+            <a href="">Skills-based hiring <MdChevronRight/></a>
+
         </div>
-        {/* <div className={styles.footer_content}>
-          <h1>HELP CENTRE</h1>
-          <ul>
-            <li>Term Condition</li>
-            <li>Privacy Policy</li>
-            <li>Term of Use</li>
-          </ul>
-        </div> */}
-        <div className={styles.footer_content}>
-          <h1>CONTACT US</h1>
-          <p>
-            Address of Test Founder
-          </p>
-          <p>
-            Homepage :{" "}
-            <Link href="https://bluebox.wikaexo.com">
-             #
-            </Link>
-          </p>
+        </div>   
+
+        {/* Content Tab 2 */}
+        <div className={styles.content_wrapper}>
+          <div className={styles.footer_content}>
+            <a href="">Careers <span>Hiring!</span> <MdChevronRight/></a>
+          </div>   
+          <div className={styles.footer_content}>
+            <a href="">Blog<MdChevronRight/></a>
+          </div>   
+          <div className={styles.footer_content}>
+            <a href="">Contact <MdChevronRight/></a>
+
         </div>
-        <div className={styles.footer_content}>
-          <h1>Follow Us</h1>
-          <ul>
-            <li>
-              <Link target="_blank" href="#">
-                {" "}
-                <FaInstagram />
-                Instagram
-              </Link>
-            </li>
-            <li>
-              <Link target="_blank" href="#">
-                {" "}
-                <FaTwitter />
-                Twitter
-              </Link>
-            </li>
-            <li>
-              <Link target="_blank" href="#">
-                {" "}
-                <FaFacebook />
-                Facebook
-              </Link>
-            </li>
-            <li>
-              <Link target="_blank" href="#">
-                {" "}
-                <FaYoutube />
-                Youtube
-              </Link>
-            </li>
-          </ul>
+        </div>  
+
+        {/* Content Tab 3 */}  
+        <div className={styles.content_wrapper}>
+          <div className={styles.footer_content}>
+            <a href=""> Legal Stuff <MdChevronRight/></a>
+          </div>   
+          <div className={styles.footer_content}>
+            <a href="">Privacy policy <MdChevronRight/></a>
+          </div>   
+          <div className={styles.footer_content}>
+            <a href="">Sitemap<MdChevronRight/></a>
         </div>
+        </div>  
+
+        <div className={styles.footer_content_certificate}>
+         <Image className={styles.img_certificate1} src={images.certificate1} alt="Certificate 1"/>
+         <Image className={styles.img_certificate2} src={images.certificate2} alt="Certificate 1"/>
+        </div>
+
         {/* </div> */}
-        <div className={styles.footer_socialMedia}></div>
+        <div className={styles.footer_socialMedia}>
+          <Link target="_blank" href="#">
+            <FaInstagram />
+          </Link>
+          <Link target="_blank" href="#">
+            <FaTwitter />
+          </Link>
+          <Link target="_blank" href="#">
+            <FaYoutube />
+          </Link>
+        </div>
       </footer>
     </div>
   );
