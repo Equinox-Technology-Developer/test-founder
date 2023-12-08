@@ -26,6 +26,7 @@
   --font-family-poppins-light: 'Poppins-Light';
   --font-family-poppins-medium: 'Poppins-Medium';
   --font-family-poppins-semibold: 'Poppins-SemiBold';
+  --font-family-openSans: '__Open_Sans_ffefd2','__Open_Sans_Fallback_ffefd2'
 
   --font-size-xs: 12px;
   --font-size-s: 14px;
@@ -38,12 +39,10 @@
 
 html,
 body {
-  height: 100vh;
   padding: 0;
   margin: 0;
   font-family: 'Poppins Nue', sans-serif;
-  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, */
-  /* Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Poppins, sans-serif; */
+  overflow-x: hidden;
 }
 
 .app {
