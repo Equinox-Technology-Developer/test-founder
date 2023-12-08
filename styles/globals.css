@@ -43,6 +43,7 @@ body {
   margin: 0;
   font-family: 'Poppins Nue', sans-serif;
   overflow-x: hidden;
+  background-color: white;
 }
 
 .app {
@@ -199,5 +200,11 @@ a {
 @media screen and (min-width: 800px) {
   .modal__box {
     margin: 0 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .mobile-hidden {
+    display: none;
   }
 }
