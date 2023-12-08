@@ -3,8 +3,7 @@ import TopNavbar from "../TopNavbar";
 import Footer from "../Footer";
 import Head from "next/head";
 import Link from "next/link";
-
-import { RiWhatsappFill } from "react-icons/ri";
+import { FaIntercom } from "react-icons/fa";
 
 import styles from "./Layout.module.scss";
 
@@ -27,7 +26,7 @@ const Layout = (props) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <RiWhatsappFill />
+          <FaIntercom />
         </Link>
 
         {children}
