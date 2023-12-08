@@ -54,6 +54,7 @@ export default function Home({homepages}) {
       </Head>
 
       <Layout pageTitle="Homepage">
+        {/* Banner */}
         <section class="text-gray-700 body-font">
           <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
             <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
@@ -84,448 +85,197 @@ export default function Home({homepages}) {
             </div>
           </div>
         </section>
+        {/* Testimonials */}
+        <div class="container my-24 mx-auto md:px-6">
+          <section class="mb-32 text-center">
+            <h2 class="mb-12 pb-4 text-center text-3xl font-bold">Testimonials</h2>
 
-        <section class="text-gray-700 body-font overflow-hidden border-t border-gray-200">
-          <div class="container px-5 py-24 mx-auto flex flex-wrap">
-            <div class="lg:w-1/4 mt-48 hidden lg:block">
-              <div class="mt-px border-t border-gray-300 border-b border-l rounded-tl-lg rounded-bl-lg overflow-hidden">
-                <p class="bg-gray-100 text-gray-900 h-12 text-center px-4 flex items-center justify-start -mt-px">
-                  Fingerstache disrupt
-                </p>
-                <p class="text-gray-900 h-12 text-center px-4 flex items-center justify-start">
-                  Franzen hashtag
-                </p>
-                <p class="bg-gray-100 text-gray-900 h-12 text-center px-4 flex items-center justify-start">
-                  Tilde art party
-                </p>
-                <p class="text-gray-900 h-12 text-center px-4 flex items-center justify-start">
-                  Banh mi cornhole
-                </p>
-                <p class="bg-gray-100 text-gray-900 h-12 text-center px-4 flex items-center justify-start">
-                  Waistcoat squid hexagon
-                </p>
-                <p class="text-gray-900 h-12 text-center px-4 flex items-center justify-start">
-                  Pinterest occupy authentic
-                </p>
-                <p class="bg-gray-100 text-gray-900 h-12 text-center px-4 flex items-center justify-start">
-                  Brooklyn helvetica
-                </p>
-                <p class="text-gray-900 h-12 text-center px-4 flex items-center justify-start">
-                  Long Feature Two
-                </p>
-                <p class="bg-gray-100 text-gray-900 h-12 text-center px-4 flex items-center justify-start">
-                  Feature One
-                </p>
-              </div>
-            </div>
-            <div class="flex lg:w-3/4 w-full flex-wrap lg:border border-gray-300 rounded-lg">
-              <div class="lg:w-1/3 lg:mt-px w-full mb-10 lg:mb-0 border-2 border-gray-300 lg:border-none rounded-lg lg:rounded-none">
-                <div class="px-2 text-center h-48 flex flex-col items-center justify-center">
-                  <h3 class="tracking-widest">START</h3>
-                  <h2 class="text-5xl text-gray-900 font-medium leading-none mb-4 mt-2">
-                    Free
-                  </h2>
-                  <span class="text-sm text-gray-600">Next 3 months</span>
-                </div>
-                <p class="bg-gray-100 text-gray-600 h-12 text-center px-2 flex items-center -mt-px justify-center border-t border-gray-300">
-                  Schlitz single-origin
-                </p>
-                <p class="text-gray-600 text-center h-12 flex items-center justify-center">
-                  <span class="w-5 h-5 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="3"
-                      class="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                </p>
-                <p class="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                  <span class="w-5 h-5 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="3"
-                      class="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                </p>
-                <p class="h-12 text-gray-600 px-6 text-center leading-relaxed flex items-center justify-center">
-                  Feature
-                </p>
-                <p class="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                  <span class="w-5 h-5 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="3"
-                      class="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                </p>
-                <p class="text-gray-600 text-center h-12 flex items-center justify-center">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2.2"
-                    class="w-5 h-5 text-gray-500"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M18 6L6 18M6 6l12 12"></path>
-                  </svg>
-                </p>
-                <p class="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2.2"
-                    class="w-5 h-5 text-gray-500"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M18 6L6 18M6 6l12 12"></path>
-                  </svg>
-                </p>
-                <p class="text-gray-600 text-center h-12 flex items-center justify-center">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2.2"
-                    class="w-5 h-5 text-gray-500"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M18 6L6 18M6 6l12 12"></path>
-                  </svg>
-                </p>
-                <p class="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2.2"
-                    class="w-5 h-5 text-gray-500"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M18 6L6 18M6 6l12 12"></path>
-                  </svg>
-                </p>
-                <div class="border-t border-gray-300 p-6 text-center rounded-bl-lg">
-                  <button class="flex items-center mt-auto text-white bg-indigo-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-indigo-600 rounded">
-                    Button
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      class="w-4 h-4 ml-auto"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
-                  </button>
-                  <p class="text-xs text-gray-500 mt-3">
-                    Literally you probably haven't heard of them jean shorts.
-                  </p>
+            <div class="grid gap-6 md:grid-cols-3 xl:gap-x-12">
+              <div class="mb-6 lg:mb-0">
+                <div
+                  class="relative block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+                  <div class="flex">
+                    <div
+                      class="relative mx-4 -mt-4 w-full overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]"
+                      data-te-ripple-init data-te-ripple-color="light">
+                      <img src="https://mdbcdn.b-cdn.net/img/new/avatars/8.jpg" class="w-full" />
+                      <a href="#!">
+                        <div
+                          class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-[hsl(0,0%,98.4%,0.15)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100">
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="p-6">
+                    <h5 class="mb-2 text-lg font-bold">John Doe</h5>
+                    <h6 class="mb-4 font-medium text-primary dark:text-primary-400">
+                      Web Developer
+                    </h6>
+                    <ul class="mb-6 flex justify-center">
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960" class="w-5 text-warning">
+                          <path fill="currentColor"
+                            d="m233 976 65-281L80 506l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
+                        </svg>
+                      </li>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960" class="w-5 text-warning">
+                          <path fill="currentColor"
+                            d="m233 976 65-281L80 506l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
+                        </svg>
+                      </li>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960" class="w-5 text-warning">
+                          <path fill="currentColor"
+                            d="m233 976 65-281L80 506l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
+                        </svg>
+                      </li>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960" class="w-5 text-warning">
+                          <path fill="currentColor"
+                            d="m233 976 65-281L80 506l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
+                        </svg>
+                      </li>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960" class="w-5 text-warning">
+                          <path fill="currentColor"
+                            d="m480 757 157 95-42-178 138-120-182-16-71-168v387ZM233 976l65-281L80 506l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
+                        </svg>
+                      </li>
+                    </ul>
+                    <p>
+                      Ut pretium ultricies dignissim. Sed sit amet mi eget urna
+                      placerat vulputate. Ut vulputate est non quam dignissim
+                      elementum. Donec a ullamcorper diam.
+                    </p>
+                  </div>
                 </div>
               </div>
-              <div class="lg:w-1/3 lg:-mt-px w-full mb-10 lg:mb-0 border-2 rounded-lg border-indigo-500 relative">
-                <span class="bg-indigo-500 text-white px-3 py-1 tracking-widest text-xs absolute right-0 top-0 rounded-bl">
-                  POPULAR
-                </span>
-                <div class="px-2 text-center h-48 flex flex-col items-center justify-center">
-                  <h3 class="tracking-widest">PRO</h3>
-                  <h2 class="text-5xl text-gray-900 font-medium flex items-center justify-center leading-none mb-4 mt-2">
-                    $38
-                    <span class="text-gray-600 text-base ml-1">/mo</span>
-                  </h2>
-                  <span class="text-sm text-gray-600">
-                    Charging $456 per year
-                  </span>
-                </div>
-                <p class="bg-gray-100 text-gray-600 h-12 text-center px-2 flex items-center -mt-px justify-center border-t border-gray-300">
-                  Schlitz single-origin
-                </p>
-                <p class="text-gray-600 text-center h-12 flex items-center justify-center">
-                  <span class="w-5 h-5 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="3"
-                      class="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                </p>
-                <p class="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                  <span class="w-5 h-5 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="3"
-                      class="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                </p>
-                <p class="h-12 text-gray-600 text-center leading-relaxed flex items-center justify-center">
-                  Feature
-                </p>
-                <p class="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                  <span class="w-5 h-5 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="3"
-                      class="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                </p>
-                <p class="text-gray-600 text-center h-12 flex items-center justify-center">
-                  <span class="w-5 h-5 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="3"
-                      class="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                </p>
-                <p class="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2.2"
-                    class="w-5 h-5 text-gray-500"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M18 6L6 18M6 6l12 12"></path>
-                  </svg>
-                </p>
-                <p class="text-gray-600 text-center h-12 flex items-center justify-center">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2.2"
-                    class="w-5 h-5 text-gray-500"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M18 6L6 18M6 6l12 12"></path>
-                  </svg>
-                </p>
-                <p class="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2.2"
-                    class="w-5 h-5 text-gray-500"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M18 6L6 18M6 6l12 12"></path>
-                  </svg>
-                </p>
-                <div class="p-6 text-center border-t border-gray-300">
-                  <button class="flex items-center mt-auto text-white bg-indigo-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-indigo-600 rounded">
-                    Button
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      class="w-4 h-4 ml-auto"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
-                  </button>
-                  <p class="text-xs text-gray-500 mt-3">
-                    Literally you probably haven't heard of them jean shorts.
-                  </p>
+
+              <div class="mb-6 lg:mb-0">
+                <div
+                  class="relative block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+                  <div class="flex">
+                    <div
+                      class="relative mx-4 -mt-4 w-full overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]"
+                      data-te-ripple-init data-te-ripple-color="light">
+                      <img src="https://mdbcdn.b-cdn.net/img/new/avatars/6.jpg" class="w-full" />
+                      <a href="#!">
+                        <div
+                          class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-[hsl(0,0%,98.4%,0.15)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100">
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="p-6">
+                    <h5 class="mb-2 text-lg font-bold">Halley Frank</h5>
+                    <h6 class="mb-4 font-medium text-primary dark:text-primary-400">
+                      Marketing Specialist
+                    </h6>
+                    <ul class="mb-6 flex justify-center">
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960" class="w-5 text-warning">
+                          <path fill="currentColor"
+                            d="m233 976 65-281L80 506l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
+                        </svg>
+                      </li>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960" class="w-5 text-warning">
+                          <path fill="currentColor"
+                            d="m233 976 65-281L80 506l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
+                        </svg>
+                      </li>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960" class="w-5 text-warning">
+                          <path fill="currentColor"
+                            d="m233 976 65-281L80 506l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
+                        </svg>
+                      </li>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960" class="w-5 text-warning">
+                          <path fill="currentColor"
+                            d="m233 976 65-281L80 506l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
+                        </svg>
+                      </li>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960" class="w-5 text-warning">
+                          <path fill="currentColor"
+                            d="m323 851 157-94 157 95-42-178 138-120-182-16-71-168-71 167-182 16 138 120-42 178Zm-90 125 65-281L80 506l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Zm247-355Z" />
+                        </svg>
+                      </li>
+                    </ul>
+                    <p>
+                      At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                      blanditiis praesentium accusamus contestatur voluptatum
+                      deleniti atque corrupti.
+                    </p>
+                  </div>
                 </div>
               </div>
-              <div class="lg:w-1/3 w-full lg:mt-px border-2 border-gray-300 lg:border-none rounded-lg lg:rounded-none">
-                <div class="px-2 text-center h-48 flex flex-col items-center justify-center">
-                  <h3 class="tracking-widest">BUSINESS</h3>
-                  <h2 class="text-5xl text-gray-900 font-medium flex items-center justify-center leading-none mb-4 mt-2">
-                    $54
-                    <span class="text-gray-600 text-base ml-1">/mo</span>
-                  </h2>
-                  <span class="text-sm text-gray-600">
-                    Charging $648 per year
-                  </span>
-                </div>
-                <p class="bg-gray-100 text-gray-600 h-12 text-center px-2 flex items-center -mt-px justify-center border-t border-gray-300">
-                  Schlitz single-origin
-                </p>
-                <p class="text-gray-600 text-center h-12 flex items-center justify-center">
-                  <span class="w-5 h-5 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="3"
-                      class="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                </p>
-                <p class="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                  <span class="w-5 h-5 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="3"
-                      class="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                </p>
-                <p class="h-12 text-gray-600 text-center leading-relaxed flex items-center justify-center">
-                  Feature
-                </p>
-                <p class="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                  <span class="w-5 h-5 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="3"
-                      class="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                </p>
-                <p class="text-gray-600 text-center h-12 flex items-center justify-center">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2.2"
-                    class="w-5 h-5 text-gray-500"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M18 6L6 18M6 6l12 12"></path>
-                  </svg>
-                </p>
-                <p class="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2.2"
-                    class="w-5 h-5 text-gray-500"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M18 6L6 18M6 6l12 12"></path>
-                  </svg>
-                </p>
-                <p class="text-gray-600 text-center h-12 flex items-center justify-center">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2.2"
-                    class="w-5 h-5 text-gray-500"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M18 6L6 18M6 6l12 12"></path>
-                  </svg>
-                </p>
-                <p class="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2.2"
-                    class="w-5 h-5 text-gray-500"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M18 6L6 18M6 6l12 12"></path>
-                  </svg>
-                </p>
-                <div class="p-6 text-center border-t border-gray-300">
-                  <button class="flex items-center mt-auto text-white bg-indigo-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-indigo-600 rounded">
-                    Button
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      class="w-4 h-4 ml-auto"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M5 12h14M12 5l7 7-7 7"></path>
-                    </svg>
-                  </button>
-                  <p class="text-xs text-gray-500 mt-3">
-                    Literally you probably haven't heard of them jean shorts.
-                  </p>
+
+              <div class="mb-0">
+                <div
+                  class="relative block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+                  <div class="flex">
+                    <div
+                      class="relative mx-4 -mt-4 w-full overflow-hidden rounded-lg bg-cover bg-no-repeat shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)]"
+                      data-te-ripple-init data-te-ripple-color="light">
+                      <img src="https://mdbcdn.b-cdn.net/img/new/avatars/18.jpg" class="w-full" />
+                      <a href="#!">
+                        <div
+                          class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-[hsl(0,0%,98.4%,0.15)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100">
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="p-6">
+                    <h5 class="mb-2 text-lg font-bold">Lisa Trey</h5>
+                    <h6 class="mb-4 font-medium text-primary dark:text-primary-400">
+                      Public Relations
+                    </h6>
+                    <ul class="mb-6 flex justify-center">
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960" class="w-5 text-warning">
+                          <path fill="currentColor"
+                            d="m233 976 65-281L80 506l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
+                        </svg>
+                      </li>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960" class="w-5 text-warning">
+                          <path fill="currentColor"
+                            d="m233 976 65-281L80 506l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
+                        </svg>
+                      </li>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960" class="w-5 text-warning">
+                          <path fill="currentColor"
+                            d="m233 976 65-281L80 506l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
+                        </svg>
+                      </li>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960" class="w-5 text-warning">
+                          <path fill="currentColor"
+                            d="m233 976 65-281L80 506l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
+                        </svg>
+                      </li>
+                      <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960" class="w-5 text-warning">
+                          <path fill="currentColor"
+                            d="m233 976 65-281L80 506l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z" />
+                        </svg>
+                      </li>
+                    </ul>
+                    <p>
+                      Enim ad minima veniam, quis nostrum exercitationem ullam
+                      corporis suscipit laboriosam, nisi ut aliquid commodi quis
+                      nostrum minima.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </Layout>
     </>
   );
