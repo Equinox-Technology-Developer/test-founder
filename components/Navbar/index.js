@@ -85,7 +85,7 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-        <div class="flex justify-center">
+        <div class="flex justify-center mobile-hidden">
           <button class="inline-flex text-white bg-teal-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
             Book a Demo
           </button>
@@ -115,38 +115,38 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/products"
                   className={
-                    router.pathname == "#"
+                    router.pathname == "/products"
                       ? styles.active
                       : styles.nonActive
                   }
                 >
-                  Virtual Expo
+                  Products
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/pricing"
                   className={
-                    router.pathname == "#"
+                    router.pathname == "/pricing"
                       ? styles.active
                       : styles.nonActive
                   }
                 >
-                  Portofolio
+                  Pricing
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/resources"
                   className={
-                    router.pathname == "#"
+                    router.pathname == "/resources"
                       ? styles.active
                       : styles.nonActive
                   }
                 >
-                  Contact Us
+                  Resources
                 </Link>
               </li>
             </ul>
