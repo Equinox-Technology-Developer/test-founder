@@ -1,9 +1,9 @@
 import Navbar from "../Navbar";
+import TopNavbar from "../TopNavbar";
 import Footer from "../Footer";
 import Head from "next/head";
 import Link from "next/link";
-
-import { RiWhatsappFill } from "react-icons/ri";
+import { FaIntercom } from "react-icons/fa";
 
 import styles from "./Layout.module.scss";
 
@@ -14,9 +14,11 @@ const Layout = (props) => {
   return (
     <>
       <Head>
-        <title>Bluebox | {pageTitle}</title>
+        <title>TestFounder® | {pageTitle}</title>
+        <link rel="icon" href="favicon.ico" sizes="any" />
       </Head>
       <div>
+        <TopNavbar/>
         <Navbar />
         <Link
           href="https://wa.me/6287725800047"
@@ -24,7 +26,7 @@ const Layout = (props) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <RiWhatsappFill />
+          <FaIntercom />
         </Link>
 
         {children}

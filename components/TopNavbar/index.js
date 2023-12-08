@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 
 import Image from "next/image";
@@ -8,22 +8,18 @@ import { useRouter } from "next/router";
 import { images } from "../../constants";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
 
-import styles from "./Navbar.module.scss";
+import styles from "./TopNavbar.module.scss";
 
-const Navbar = () => {
+const TopNavbar = () => {
   const router = useRouter();
   const [toogle, setToogle] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
 
   const handleScroll = () => {
-    const navbar = document.getElementById('navbar');
-    if (navbar) {
-      const top = window.scrollY;
-      if (top > 0) {
-        navbar.classList.add(styles.scrolled);
-      } else {
-        navbar.classList.remove(styles.scrolled);
-      }
-    }
+    const currentScrollPos = window.pageYOffset;
+    setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+    setPrevScrollPos(currentScrollPos);
   };
 
   useEffect(() => {
@@ -31,16 +27,16 @@ const Navbar = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [prevScrollPos, visible]);
 
   return (
-    <nav id="navbar" className={`${styles.navbar} ${toogle ? styles.toogleActive : ''}`}>
+    <nav className={`${styles.navbar} ${visible ? styles.visible : styles.hidden}`}>
       <div className={styles.app__navbarLogo}>
         {/* for image on navbar */}
         <Link href="/">
           <Image
-            src={images.logo_desktop}
-            width={120}
+            src={images.blueboxlogo2}
+            width={250}
             height={50}
             alt="logo"
             priority
@@ -49,50 +45,42 @@ const Navbar = () => {
       </div>
       <div className={styles.nav_content}>
         <ul className={styles.app__navbarLinks}>
-          {/* Products */}
+          {/* For Candidates */}
           <li>
             <Link
-              href="/products"
+              href="/candidates-guide"
               className={
-                router.pathname == "/products" ? styles.active : styles.nonActive
+                router.pathname == "/candidates-guide" ? styles.active : styles.nonActive
               }
             >
               {" "}
-              Product
+              For Candidates
             </Link>
           </li>
-          {/* Pricing */}
+          {/* Help */}
           <li>
             <Link
-              href="/pricing"
+              href="/help"
               className={
-                router.pathname == "/pricing" ? styles.active : styles.nonActive
+                router.pathname == "/help" ? styles.active : styles.nonActive
               }
             >
-              Pricing
+              Help
             </Link>
           </li>
-          {/* Resources */}
+          {/* Log in */}
           <li>
             <Link
-              href="/resources"
+              href="/login"
               className={
-                router.pathname == "/resources" ? styles.active : styles.nonActive
+                router.pathname == "/login" ? styles.active : styles.nonActive
               }
             >
-              Resources
+              Log in
             </Link>
           </li>
         </ul>
       </div>
-        <div class="flex justify-center">
-          <button class="inline-flex text-white bg-teal-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-            Book a Demo
-          </button>
-          <button class="ml-4 inline-flex text-gray-700 bg-gray-200 border-0 py-2 px-6 focus:outline-none hover:bg-gray-300 rounded text-lg">
-            Try for free!
-          </button>
-        </div>
       <div className={styles.navbar_menu}>
         <HiMenuAlt4 onClick={() => setToogle(true)} />
         {toogle && (
@@ -157,4 +145,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default TopNavbar;
