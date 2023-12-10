@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
 
-import { useRouter } from "next/router";
-import { images } from "../../constants";
-import { HiMenuAlt4, HiX } from "react-icons/hi";
+import { useRouter } from 'next/router';
+import { images } from '../../constants';
+import { HiMenuAlt4, HiX } from 'react-icons/hi';
 
-import styles from "./Navbar.module.scss";
+import styles from './Navbar.module.scss';
 
 const Navbar = () => {
   const router = useRouter();
@@ -34,7 +34,10 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav id="navbar" className={`${styles.navbar} ${toogle ? styles.toogleActive : ''}`}>
+    <nav
+      id="navbar"
+      className={`${styles.navbar} ${toogle ? styles.toogleActive : ''}`}
+    >
       <div className={styles.app__navbarLogo}>
         {/* for image on navbar */}
         <Link href="/">
@@ -54,10 +57,12 @@ const Navbar = () => {
             <Link
               href="/products"
               className={
-                router.pathname == "/products" ? styles.active : styles.nonActive
+                router.pathname == '/products'
+                  ? styles.active
+                  : styles.nonActive
               }
             >
-              {" "}
+              {' '}
               Product
             </Link>
           </li>
@@ -66,7 +71,7 @@ const Navbar = () => {
             <Link
               href="/pricing"
               className={
-                router.pathname == "/pricing" ? styles.active : styles.nonActive
+                router.pathname == '/pricing' ? styles.active : styles.nonActive
               }
             >
               Pricing
@@ -77,7 +82,9 @@ const Navbar = () => {
             <Link
               href="/resources"
               className={
-                router.pathname == "/resources" ? styles.active : styles.nonActive
+                router.pathname == '/resources'
+                  ? styles.active
+                  : styles.nonActive
               }
             >
               Resources
@@ -85,20 +92,20 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-        <div class="flex justify-center mobile-hidden">
-          <button class="inline-flex text-white bg-teal-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-            Book a Demo
-          </button>
-          <button class="ml-4 inline-flex text-gray-700 bg-gray-200 border-0 py-2 px-6 focus:outline-none hover:bg-gray-300 rounded text-lg">
-            Try for free!
-          </button>
-        </div>
+      <div className="flex justify-center mobile-hidden">
+        <button className="inline-flex text-white bg-teal-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+          Book a Demo
+        </button>
+        <button className="ml-4 inline-flex text-gray-700 bg-gray-200 border-0 py-2 px-6 focus:outline-none hover:bg-gray-300 rounded text-lg">
+          Try for free!
+        </button>
+      </div>
       <div className={styles.navbar_menu}>
         <HiMenuAlt4 onClick={() => setToogle(true)} />
         {toogle && (
           <motion.div
             whileInView={{ x: [300, 0, 0] }}
-            transition={{ duration: 0.85, ease: "easeOut" }}
+            transition={{ duration: 0.85, ease: 'easeOut' }}
           >
             <HiX onClick={() => setToogle(false)} />
             <ul className={styles.app__navbarLinks}>
@@ -106,10 +113,10 @@ const Navbar = () => {
                 <Link
                   href="/"
                   className={
-                    router.pathname == "/" ? styles.active : styles.nonActive
+                    router.pathname == '/' ? styles.active : styles.nonActive
                   }
                 >
-                  {" "}
+                  {' '}
                   Home
                 </Link>
               </li>
@@ -117,7 +124,7 @@ const Navbar = () => {
                 <Link
                   href="/products"
                   className={
-                    router.pathname == "/products"
+                    router.pathname == '/products'
                       ? styles.active
                       : styles.nonActive
                   }
@@ -129,7 +136,7 @@ const Navbar = () => {
                 <Link
                   href="/pricing"
                   className={
-                    router.pathname == "/pricing"
+                    router.pathname == '/pricing'
                       ? styles.active
                       : styles.nonActive
                   }
@@ -141,7 +148,7 @@ const Navbar = () => {
                 <Link
                   href="/resources"
                   className={
-                    router.pathname == "/resources"
+                    router.pathname == '/resources'
                       ? styles.active
                       : styles.nonActive
                   }
