@@ -1,9 +1,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
-
 :root {
   --font-base: 'DM Sans', sans-serif;
   --secondary-text: 'Helvetica';
@@ -26,9 +23,8 @@
   --font-family-poppins-light: 'Poppins-Light';
   --font-family-poppins-medium: 'Poppins-Medium';
   --font-family-poppins-semibold: 'Poppins-SemiBold';
-  --font-family-openSans: '__Open_Sans_ffefd2','__Open_Sans_Fallback_ffefd2'
-
-  --font-size-xs: 12px;
+  --font-family-openSans: '__Open_Sans_ffefd2',
+    '__Open_Sans_Fallback_ffefd2' --font-size-xs: 12px;
   --font-size-s: 14px;
   --font-size-m: 16px;
   --font-size-l: 18px;
@@ -41,7 +37,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Poppins Nue', sans-serif;
+  font-family: var(--font-opensans);
   overflow-x: hidden;
   background-color: white;
 }
@@ -206,5 +202,65 @@ a {
 @media screen and (max-width: 768px) {
   .mobile-hidden {
     display: none;
+  }
+}
+
+@layer components {
+  .heading-1 {
+    @apply text-[40px] font-bold leading-[50px];
+  }
+  .heading-2 {
+    @apply text-[30px] font-bold leading-[50px];
+  }
+  .heading-3 {
+    @apply text-[20px] font-bold leading-[27.9px];
+  }
+  .body-1 {
+    @apply text-[16px] font-semibold leading-[27.9px];
+  }
+  .body-2 {
+    @apply text-[14px] font-semibold leading-[24px];
+  }
+  .body-3 {
+    @apply text-[12px] font-semibold leading-[27.9px];
+  }
+  .caption-bold-1 {
+    @apply text-[18px] font-bold leading-[27.9px];
+  }
+  .caption-bold-2 {
+    @apply text-[16px] font-bold leading-[28px];
+  }
+  .caption-bold-3 {
+    @apply text-[14px] font-bold leading-[28px];
+  }
+  .caption-semibold-1 {
+    @apply text-[18px] font-semibold leading-[27.9px];
+  }
+  .caption-semibold-2 {
+    @apply text-[16px] font-semibold leading-[28px];
+  }
+  .caption-semibold-3 {
+    @apply text-[14px] font-semibold leading-[28px];
+  }
+  .caption-regular-1 {
+    @apply text-[18px] font-normal leading-[27.9px];
+  }
+  .caption-regular-2 {
+    @apply text-[16px] font-normal leading-[28px];
+  }
+  .caption-regular-3 {
+    @apply text-[14px] font-normal leading-[28px];
+  }
+  .caption-regular-4 {
+    @apply text-[12px] font-normal leading-[20px];
+  }
+  .caption-light-1 {
+    @apply text-[18px] font-light leading-[27.9px];
+  }
+  .caption-light-2 {
+    @apply text-[16px] font-light leading-[28px];
+  }
+  .caption-light-3 {
+    @apply text-[14px] font-light leading-[28px];
   }
 }
