@@ -1,24 +1,22 @@
-import Navbar from "../Navbar";
-import TopNavbar from "../TopNavbar";
-import Footer from "../Footer";
-import Head from "next/head";
-import Link from "next/link";
-import { FaIntercom } from "react-icons/fa";
+import Navbar from '../Navbar';
+import TopNavbar from '../TopNavbar';
+import Footer from '../Footer';
+import Head from 'next/head';
+import Link from 'next/link';
+import { FaIntercom } from 'react-icons/fa';
 
-import styles from "./Layout.module.scss";
-
-
+import styles from './Layout.module.scss';
 
 const Layout = (props) => {
   const { children, pageTitle } = props;
   return (
     <>
       <Head>
-        <title>TestFounder® | {pageTitle}</title>
+        <title>{`TestFounder® | ${pageTitle}`}</title>
         <link rel="icon" href="favicon.ico" sizes="any" />
       </Head>
       <div>
-        <TopNavbar/>
+        <TopNavbar />
         <Navbar />
         <Link
           href="https://wa.me/6287725800047"
