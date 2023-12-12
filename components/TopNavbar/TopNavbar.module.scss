@@ -19,74 +19,65 @@
   }
 }
 
-.app__navbarLogo {
+.app__navbarLinks {
+  flex: 1;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
+  margin-left: 45px;
+  list-style: none;
+  max-width: 600px;
 
-  @media screen and (max-width: 450px) {
-    margin: 0;
-    width: 120px;
-    height: 30px;
+  li {
+    margin: 0 1rem;
+    cursor: pointer;
+    font-family: var(--font-family-openSans);
+    line-height: 140%;
+    font-size: 14px;
+    font-weight: 500;
+
+    div {
+      width: 5px;
+      height: 5px;
+      background: transparent;
+      border-radius: 50%;
+      margin-bottom: 5px;
+    }
+
+    a {
+      color: var(--black-color);
+      text-decoration: none;
+      flex-direction: column;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        color: white;
+      }
+    }
+
+    .active {
+      color: black;
+      text-underline-offset: 10px;
+      text-decoration: underline rgba(255 255 255);
+    }
+    @media screen and (max-width: 425px) {
+      margin-left: 0;
+      padding-left: 0;
+    }
+  }
+
+  @media screen and (max-width: 425px) {
+    margin-left: 0;
+    padding-left: 0;
   }
 }
 
-.nav_content {
+.nav_profile {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  margin: 10px;
 
-  .app__navbarLinks {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    margin-left: 45px;
-    list-style: none;
-    max-width: 600px;
-
-    li {
-      margin: 0 1rem;
-      cursor: pointer;
-      font-family: var(--font-family-openSans);
-      line-height: 140%;
-      font-size: 14px;
-      font-weight: 500;
-
-      div {
-        width: 5px;
-        height: 5px;
-        background: transparent;
-        border-radius: 50%;
-        margin-bottom: 5px;
-      }
-
-      a {
-        color: var(--black-color);
-        text-decoration: none;
-        flex-direction: column;
-        transition: all 0.3s ease-in-out;
-
-        &:hover {
-          color: white;
-        }
-      }
-
-      .active {
-        color: black;
-        // padding: 3px;
-        text-underline-offset: 10px;
-        text-decoration: underline rgba(255 255 255);
-      }
-    }
-  }
-  .nav_profile {
-    display: flex;
-    flex-direction: row;
+  svg {
     margin: 10px;
-
-    svg {
-      margin: 10px;
-    }
   }
 }
 
