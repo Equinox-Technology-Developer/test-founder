@@ -8,7 +8,10 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-radial': "url('../public/assets/bg_blur.png')",
+        blur: "url('../public/assets/bg_blur.png')",
+        'blur-2': "url('../public/assets/bg_blur_2.png')",
+        'blur-3': "url('../public/assets/bg_blur_3.png')",
+        'blur-4': "url('../public/assets/bg_blur_4.png')",
       },
       colors: {
         'primary-100': '#D0F3FC',
