@@ -64,7 +64,7 @@ export default function Home({ homepages }) {
 
       <Layout pageTitle="Homepage">
         {/* Banner */}
-        <section className="bg-blur bg-right bg-no-repeat">
+        <section className="bg-blur bg-right bg-no-repeat bg-[#F9F9F9]">
           <div className="container mx-auto">
             <div className="flex px-5 py-4 md:flex-row flex-col items-center">
               <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center mt-24">
@@ -143,7 +143,7 @@ export default function Home({ homepages }) {
                 spaceBetween={40}
                 slidesPerView={5}
                 autoplay={{
-                  delay: 2500,
+                  delay: 500,
                   disableOnInteraction: false,
                 }}
               >
@@ -165,7 +165,7 @@ export default function Home({ homepages }) {
           </div>
         </section>
         {/* Explanation */}
-        <section className="bg-blur-2 bg-left bg-no-repeat min-h-[700px] bg-contain flex items-center">
+        <section className="bg-blur-2 bg-left bg-no-repeat min-h-[700px] bg-contain flex items-center bg-[#F9F9F9]">
           <div className="container mx-auto ">
             <div className="flex px-5 py-4 md:flex-row flex-col items-center gap-[50px]">
               <div className="lg:flex-grow md:w-1/2 md:text-left mb-16 md:mb-0 ">
@@ -203,7 +203,7 @@ export default function Home({ homepages }) {
           </div>
         </section>
         {/* Explanation 2 */}
-        <section className="min-h-[700px] flex items-center">
+        <section className="min-h-[700px] flex items-center bg-[#F9F9F9]">
           <div className="container mx-auto">
             <div className="flex px-5 py-4 md:flex-row flex-col items-center gap-[41px]">
               <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
@@ -239,7 +239,7 @@ export default function Home({ homepages }) {
         </section>
 
         {/* Explanation 3*/}
-        <section className="min-h-[700px] bg-contain flex items-center">
+        <section className="min-h-[700px] bg-contain flex items-center bg-[#F9F9F9]">
           <div className="container mx-auto ">
             <div className="flex px-5 py-4 md:flex-row flex-col items-center gap-[21px]">
               <div className="w-1/2 md:w-1/2 md:text-left mb-16 md:mb-0 ">
@@ -272,7 +272,7 @@ export default function Home({ homepages }) {
         </section>
 
         {/* Explanation 4 */}
-        <section className="min-h-[700px] flex items-center bg-blur-3 bg-right bg-no-repeat">
+        <section className="min-h-[700px] flex items-center bg-blur-3 bg-right bg-no-repeat bg-[#F9F9F9]">
           <div className="container mx-auto">
             <div className="flex px-5 py-4 md:flex-row flex-col items-center gap-[41px]">
               <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
@@ -306,7 +306,7 @@ export default function Home({ homepages }) {
         </section>
 
         {/* Explanation 5 */}
-        <section className="min-h-[700px] flex items-center bg-blur-3 bg-left bg-no-repeat bg-contain">
+        <section className="min-h-[700px] flex items-center bg-blur-3 bg-left bg-no-repeat bg-contain bg-[#F9F9F9]">
           <div className="container mx-auto ">
             <div className="flex px-5 py-4 md:flex-row flex-col items-center gap-[21px]">
               <div className="w-1/2 md:w-1/2 md:text-left mb-16 md:mb-0 ">
@@ -338,7 +338,7 @@ export default function Home({ homepages }) {
         </section>
 
         {/* Testimonials */}
-        <div className="container my-24 mx-auto md:px-6">
+        {/* <div className="container my-24 mx-auto md:px-6">
           <section className="mb-32 text-center">
             <h2 className="mb-12 pb-4 text-center text-3xl font-bold">
               Testimonials
@@ -624,6 +624,511 @@ export default function Home({ homepages }) {
               </div>
             </div>
           </section>
+        </div> */}
+
+        <div className="w-full bg-[#F9F9F9] pb-[100px] ">
+          <div className="container mx-auto bg-white rounded-[20px] h-[367px] pb-[61px] px-[64px] flex items-center">
+            <Swiper
+              modules={[Autoplay]}
+              spaceBetween={40}
+              slidesPerView={2}
+              autoplay={{
+                delay: 500,
+                disableOnInteraction: false,
+              }}
+            >
+              <SwiperSlide>
+                <div className="flex flex-row max-w-[518px]">
+                  <Image
+                    src="/assets/ralph-edwards.png"
+                    alt="Hero Image"
+                    width={170}
+                    height={303}
+                    sizes="100vw"
+                    className="z-50"
+                  />
+                  <div className="pl-3">
+                    <Image
+                      src="/assets/quote.svg"
+                      alt="Hero Image"
+                      width={42}
+                      height={42}
+                      sizes="100vw"
+                      className="z-50"
+                    />
+                    <h3 className="heading-3 mt-0">Ralph Edwards</h3>
+                    <p className="caption-regular-3">Cresco Labs</p>
+                    <p className="caption-light-2">
+                      “TesFounder has a full feature set. It is very reasonable
+                      from a price standpoint and extremely accurate. And so, we
+                      decided to go with TesFounder.”
+                    </p>
+                    <div className="flex justify-between">
+                      <div className="text-primary-500 caption-bold-2 flex items-center">
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect
+                            x="2"
+                            y="2"
+                            width="20"
+                            height="20"
+                            rx="10"
+                            stroke="#1882D6"
+                          />
+                          <path
+                            d="M9 16.3595V7.64051C9 7.38616 9.29666 7.24721 9.49205 7.41005L14.7234 11.7695C14.8674 11.8895 14.8674 12.1105 14.7234 12.2305L9.49206 16.59C9.29666 16.7528 9 16.6138 9 16.3595Z"
+                            fill="#1882D6"
+                          />
+                        </svg>
+                        <span className="pl-3">Watch Video</span>
+                      </div>
+                      <div className="flex">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
+                            fill="#FCC773"
+                          />
+                        </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
+                            fill="#FCC773"
+                          />
+                        </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
+                            fill="#FCC773"
+                          />
+                        </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
+                            fill="#FCC773"
+                          />
+                        </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
+                            fill="#FCC773"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="flex flex-row max-w-[518px]">
+                  <Image
+                    src="/assets/theresa-webb.png"
+                    alt="Hero Image"
+                    width={170}
+                    height={303}
+                    sizes="100vw"
+                    className="z-50"
+                  />
+                  <div className="pl-3">
+                    <Image
+                      src="/assets/quote.svg"
+                      alt="Hero Image"
+                      width={42}
+                      height={42}
+                      sizes="100vw"
+                      className="z-50"
+                    />
+                    <h3 className="heading-3 mt-0">Theresa Webb</h3>
+                    <p className="caption-regular-3">User with Parkinson’s</p>
+                    <p className="caption-light-2">
+                      “I really like TesFounder. Using the keyboard shortcuts or
+                      the quick navigation bar makes it easy for me to read,
+                      access, use, or navigate a website.”
+                    </p>
+                    <div className="flex justify-between">
+                      <div className="text-primary-500 caption-bold-2 flex items-center">
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect
+                            x="2"
+                            y="2"
+                            width="20"
+                            height="20"
+                            rx="10"
+                            stroke="#1882D6"
+                          />
+                          <path
+                            d="M9 16.3595V7.64051C9 7.38616 9.29666 7.24721 9.49205 7.41005L14.7234 11.7695C14.8674 11.8895 14.8674 12.1105 14.7234 12.2305L9.49206 16.59C9.29666 16.7528 9 16.6138 9 16.3595Z"
+                            fill="#1882D6"
+                          />
+                        </svg>
+                        <span className="pl-3">Watch Video</span>
+                      </div>
+                      <div className="flex">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
+                            fill="#FCC773"
+                          />
+                        </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
+                            fill="#FCC773"
+                          />
+                        </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
+                            fill="#FCC773"
+                          />
+                        </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
+                            fill="#FCC773"
+                          />
+                        </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
+                            fill="#FCC773"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="flex flex-row max-w-[518px]">
+                  <Image
+                    src="/assets/ralph-edwards.png"
+                    alt="Hero Image"
+                    width={170}
+                    height={303}
+                    sizes="100vw"
+                    className="z-50"
+                  />
+                  <div className="pl-3">
+                    <Image
+                      src="/assets/quote.svg"
+                      alt="Hero Image"
+                      width={42}
+                      height={42}
+                      sizes="100vw"
+                      className="z-50"
+                    />
+                    <h3 className="heading-3 mt-0">Ralph Edwards</h3>
+                    <p className="caption-regular-3">Cresco Labs</p>
+                    <p className="caption-light-2">
+                      “TesFounder has a full feature set. It is very reasonable
+                      from a price standpoint and extremely accurate. And so, we
+                      decided to go with TesFounder.”
+                    </p>
+                    <div className="flex justify-between">
+                      <div className="text-primary-500 caption-bold-2 flex items-center">
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect
+                            x="2"
+                            y="2"
+                            width="20"
+                            height="20"
+                            rx="10"
+                            stroke="#1882D6"
+                          />
+                          <path
+                            d="M9 16.3595V7.64051C9 7.38616 9.29666 7.24721 9.49205 7.41005L14.7234 11.7695C14.8674 11.8895 14.8674 12.1105 14.7234 12.2305L9.49206 16.59C9.29666 16.7528 9 16.6138 9 16.3595Z"
+                            fill="#1882D6"
+                          />
+                        </svg>
+                        <span className="pl-3">Watch Video</span>
+                      </div>
+                      <div className="flex">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
+                            fill="#FCC773"
+                          />
+                        </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
+                            fill="#FCC773"
+                          />
+                        </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
+                            fill="#FCC773"
+                          />
+                        </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
+                            fill="#FCC773"
+                          />
+                        </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
+                            fill="#FCC773"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="flex flex-row max-w-[518px]">
+                  <Image
+                    src="/assets/theresa-webb.png"
+                    alt="Hero Image"
+                    width={170}
+                    height={303}
+                    sizes="100vw"
+                    className="z-50"
+                  />
+                  <div className="pl-3">
+                    <Image
+                      src="/assets/quote.svg"
+                      alt="Hero Image"
+                      width={42}
+                      height={42}
+                      sizes="100vw"
+                      className="z-50"
+                    />
+                    <h3 className="heading-3 mt-0">Theresa Webb</h3>
+                    <p className="caption-regular-3">User with Parkinson’s</p>
+                    <p className="caption-light-2">
+                      “I really like TesFounder. Using the keyboard shortcuts or
+                      the quick navigation bar makes it easy for me to read,
+                      access, use, or navigate a website.”
+                    </p>
+                    <div className="flex justify-between">
+                      <div className="text-primary-500 caption-bold-2 flex items-center">
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <rect
+                            x="2"
+                            y="2"
+                            width="20"
+                            height="20"
+                            rx="10"
+                            stroke="#1882D6"
+                          />
+                          <path
+                            d="M9 16.3595V7.64051C9 7.38616 9.29666 7.24721 9.49205 7.41005L14.7234 11.7695C14.8674 11.8895 14.8674 12.1105 14.7234 12.2305L9.49206 16.59C9.29666 16.7528 9 16.6138 9 16.3595Z"
+                            fill="#1882D6"
+                          />
+                        </svg>
+                        <span className="pl-3">Watch Video</span>
+                      </div>
+                      <div className="flex">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
+                            fill="#FCC773"
+                          />
+                        </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
+                            fill="#FCC773"
+                          />
+                        </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
+                            fill="#FCC773"
+                          />
+                        </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
+                            fill="#FCC773"
+                          />
+                        </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
+                            fill="#FCC773"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+              {/* <SwiperNavButton /> */}
+            </Swiper>
+          </div>
+        </div>
+
+        {/* Explanation 7 */}
+        <div className="w-full bg-[#D0F3FC26] min-h-[366px] space-y-6 pb-[60px]">
+          <div className="container mx-auto flex flex-col items-center justify-center text-cente">
+            <h1 className="heading-1">
+              Top talent is priceless. We make finding it affordable.
+            </h1>
+            <p className="caption-regular-1 text-center">
+              A time-consuming screening process costs you a lot. Painful
+              mis-hires cost you much, much more. With TestGorilla, you avoid
+              all of this and see a huge return on investment every single year.
+            </p>
+            <p className="caption-regular-1 text-center">
+              Start screening with us today on our free plan.
+            </p>
+            <div className="flex flex-row gap-4">
+              <button className="py-[6px] px-4 text-primary-500 bg-transparent rounded-[40px] border-primary-500 border-[1px] caption-semibold-3">
+                Talk to us
+              </button>
+              <button className="py-[6px] px-4 text-white bg-primary-500 rounded-[40px] border-0">
+                Sign Up Free
+              </button>
+            </div>
+          </div>
         </div>
       </Layout>
     </>
