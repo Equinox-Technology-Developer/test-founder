@@ -93,10 +93,10 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="flex justify-center mobile-hidden">
-        <button className="inline-flex text-white bg-teal-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+        <button className="text-primary-500 bg-white border-[1px] border-primary-500 py-2 px-5 hover:bg-grayscale-100 rounded-[40px] caption-regular-1">
           Book a Demo
         </button>
-        <button className="ml-4 inline-flex text-gray-700 bg-gray-200 border-0 py-2 px-6 focus:outline-none hover:bg-gray-300 rounded text-lg">
+        <button className="text-white bg-primary-500 rounded-[40px] border-0 py-2 px-5 hover:bg-primary-600 caption-regular-1 ml-4">
           Try for free!
         </button>
       </div>

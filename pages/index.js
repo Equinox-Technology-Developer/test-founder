@@ -3,10 +3,12 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 import { Layout } from '../components';
+import SwiperNavButton from '../components/SwiperNavButton';
 import { createClient } from 'contentful';
-import { images } from '../constants';
-
-import styles from '../styles/Home.module.scss';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css/navigation';
 
 export async function getStaticProps() {
   try {
@@ -32,13 +34,20 @@ export async function getStaticProps() {
   }
 }
 
-// import Image from 'next/image'
-// import { Inter } from 'next/font/google'
-
-// const inter = Inter({ subsets: ['latin'] })
+const slideData = [
+  { src: '/assets/abbot.svg', alt: 'Abbot', width: 180, height: 80 },
+  { src: '/assets/barila.svg', alt: 'Barila', width: 180, height: 80 },
+  { src: '/assets/berkshire.svg', alt: 'Barila', width: 180, height: 80 },
+  { src: '/assets/bmw.svg', alt: 'Barila', width: 180, height: 80 },
+  { src: '/assets/british-airways.svg', alt: 'Barila', width: 180, height: 80 },
+  { src: '/assets/dolce-gabana.svg', alt: 'Barila', width: 180, height: 80 },
+  { src: '/assets/everlast.svg', alt: 'Barila', width: 180, height: 80 },
+  { src: '/assets/ferrero.svg', alt: 'Barila', width: 180, height: 80 },
+  { src: '/assets/forbes.svg', alt: 'Barila', width: 180, height: 80 },
+  { src: '/assets/foxnews.svg', alt: 'Fox News', width: 180, height: 80 },
+];
 
 export default function Home({ homepages }) {
-  console.log(homepages);
   return (
     <>
       <Head>
@@ -55,33 +64,103 @@ export default function Home({ homepages }) {
 
       <Layout pageTitle="Homepage">
         {/* Banner */}
-        <section className="text-gray-700 body-font">
-          <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-            <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-              <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
-                Before they sold out
-              </h1>
-              <p className="mb-8 leading-relaxed">
-                Copper mug try-hard pitchfork pour-over freegan heirloom neutra
-                air plant cold-pressed tacos poke beard tote bag. Heirloom echo
-                park mlkshk tote bag selvage hot chicken authentic tumeric
-                truffaut hexagon try-hard chambray.
-              </p>
-              <div className="flex justify-center">
-                <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-                  Button
-                </button>
-                <button className="ml-4 inline-flex text-gray-700 bg-gray-200 border-0 py-2 px-6 focus:outline-none hover:bg-gray-300 rounded text-lg">
-                  Button
-                </button>
+        <section className="text-gray-700 body-font bg-gradient-radial bg-right bg-no-repeat">
+          <div className="container mx-auto">
+            <div className="flex px-5 py-4 md:flex-row flex-col items-center">
+              <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center mt-24">
+                <h1 className="heading-1 mb-6 mt-0">
+                  <span className="text-primary-500">TestGorilla</span> works.
+                  Resumes don't.
+                </h1>
+                <p className="caption-regular-1 mt-0 mb-6">
+                  Our talent assessments screen and identify the best candidates
+                  and make your hiring decisions faster, easier, and bias-free.
+                </p>
+                <div className="flex justify-center mb-6">
+                  <button className="text-white bg-primary-500 rounded-[40px] border-0 py-2 px-5 hover:bg-primary-600 caption-regular-1 flex">
+                    Try for free!
+                  </button>
+                  <button className="ml-4 text-primary-500 bg-white border-[1px] border-primary-500 py-2 px-5 hover:bg-grayscale-100 rounded-[40px] caption-regular-1">
+                    Talk to sales
+                  </button>
+                </div>
+                <div className="flex justify-center">
+                  <div className="flex space-x-4">
+                    <Image
+                      src="/assets/badge-top-100.svg"
+                      alt="Hero Image"
+                      width={80}
+                      height={90}
+                      sizes="100vw"
+                      className="w-fit h-auto"
+                    />
+                    <Image
+                      src="/assets/badge-leader.svg"
+                      alt="Hero Image"
+                      width={80}
+                      height={90}
+                      sizes="100vw"
+                      className="w-fit h-auto"
+                    />
+                  </div>
+                  <p className="caption-regular-1 ml-10 my-0">
+                    Rated #1 in talent assessments Top 100 fastest-growing
+                    software globally
+                  </p>
+                </div>
+                <div className="mt-[68px]">
+                  <p className="caption-regular-1 mb-0">
+                    Join the{' '}
+                    <span className="text-primary-500 caption-bold-1">
+                      10,000+
+                    </span>{' '}
+                    companies replacing resumes with TestFounder
+                  </p>
+                </div>
+              </div>
+              <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 relative">
+                <Image
+                  src="/assets/hero-image.png"
+                  alt="Hero Image"
+                  width={512}
+                  height={638}
+                  sizes="100vw"
+                  className="w-full h-auto z-50"
+                />
+                <Image
+                  src="/assets/card-customer.png"
+                  alt="Hero Image"
+                  width={325}
+                  height={151}
+                  sizes="100vw"
+                  className="w-full h-auto max-w-[325px] max-h-[151px] absolute -left-12 bottom-24"
+                />
               </div>
             </div>
-            <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-              <img
-                className="object-cover object-center rounded"
-                alt="hero"
-                src="https://dummyimage.com/720x600/edf2f7/a5afbd"
-              />
+            <div className="mt-[19px] pr-16 pl-3">
+              <Swiper
+                modules={[Autoplay]}
+                spaceBetween={40}
+                slidesPerView={5}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+              >
+                {slideData.map((slide, index) => (
+                  <SwiperSlide key={index}>
+                    <Image
+                      src={slide.src}
+                      alt={slide.alt}
+                      width={slide.width}
+                      height={slide.height}
+                      sizes="100vw"
+                      className="w-full max-w-[180px] max-h-[80px] 2xl:ml-14 2xl:pr-5 xl:pl-14 xl:pr-5"
+                    />
+                  </SwiperSlide>
+                ))}
+                <SwiperNavButton />
+              </Swiper>
             </div>
           </div>
         </section>

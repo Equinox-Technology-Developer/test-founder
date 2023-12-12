@@ -1,26 +1,26 @@
-@import "styles/color";
+@import 'styles/color';
 
 .navbar {
-    width: 100%;
-    background-color: white;
-    opacity: 90%;
-    display: flex;
-    padding: 10px 50px;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 15%;
-    align-items: center;
-    height: auto;
-    position: fixed;  
-    overflow: hidden;
-    z-index: 2;
-    @media screen and (max-width: 900px) {
-      padding: 10px;
-    }
+  width: 100%;
+  background-color: transparent;
+  opacity: 90%;
+  display: flex;
+  padding: 10px 50px;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 15%;
+  align-items: center;
+  height: auto;
+  position: fixed;
+  overflow: hidden;
+  z-index: 2;
+  @media screen and (max-width: 900px) {
+    padding: 10px;
+  }
 }
 
 .app__navbarLogo {
-    display: flex;
+  display: flex;
   justify-content: flex-start;
   align-items: center;
 
@@ -36,56 +36,54 @@
   flex-direction: row;
   align-items: center;
 
-  .app__navbarLinks{
-      flex: 1;
-      display: flex;
-      align-items: center;
-      list-style: none;
-      max-width: 600px;
-    
-      li {
-        margin: 0 1rem;
-        cursor: pointer;
-        font-family: var(--font-family-openSans);
-        font-weight: 400;
-        letter-spacing: 1px;
-        font-size: 18px;
-    
-        div {
-          width: 5px;
-          height: 5px;
-          background: transparent;
-          border-radius: 50%;
-    
-          margin-bottom: 5px;
-        }
-    
-        a {
-          color: var(--black-color);
-          text-decoration: none;
-    
-          flex-direction: column;
-    
-          transition: all 0.3s ease-in-out;
-    
-          &:hover {
-            color: white;
-          }
-        }
-  
-        .active {
-          color : lightgray;
-          text-underline-offset: 10px;
-          text-decoration: underline rgba(255 255 255 );
-        }
-    
+  .app__navbarLinks {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    max-width: 600px;
+
+    li {
+      margin: 0 1rem;
+      cursor: pointer;
+      font-family: var(--font-family-openSans);
+      font-weight: 400;
+      letter-spacing: 1px;
+      font-size: 18px;
+
+      div {
+        width: 5px;
+        height: 5px;
+        background: transparent;
+        border-radius: 50%;
+
+        margin-bottom: 5px;
       }
-    
-      @media screen and (max-width: 900px) {
-        display: none;
+
+      a {
+        color: var(--black-color);
+        text-decoration: none;
+
+        flex-direction: column;
+
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          color: white;
+        }
       }
-  
+
+      .active {
+        color: lightgray;
+        text-underline-offset: 10px;
+        text-decoration: underline rgba(255 255 255);
+      }
     }
+
+    @media screen and (max-width: 900px) {
+      display: none;
+    }
+  }
   .nav_profile {
     display: flex;
     flex-direction: row;
@@ -107,7 +105,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0,0,0, .1);
+  background-color: rgba(0, 0, 0, 0.1);
 
   svg {
     width: 70%;
@@ -160,7 +158,7 @@
       flex-direction: column;
 
       li {
-        font-family: "Poppins Nue", sans-serif;
+        font-family: 'Poppins Nue', sans-serif;
         font-size: 25px;
         font-weight: normal;
         margin: 1rem;

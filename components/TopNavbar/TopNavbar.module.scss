@@ -2,20 +2,29 @@
 
 .navbar {
   width: 100%;
-  background-color: $topNavbar-background;
+  background-color: #1882d6;
   opacity: 90%;
   display: flex;
   padding: 0 50px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 31px;
+  height: 36px;
   position: sticky;
   overflow: hidden;
   z-index: 2;
 
   @media screen and (max-width: 900px) {
     padding: 10px;
+  }
+}
+
+.app__navbarLogo {
+  display: flex;
+  span {
+    color: white;
+    text-align: center;
+    margin-left: 12px;
   }
 }
 
@@ -44,7 +53,7 @@
     }
 
     a {
-      color: var(--black-color);
+      color: var(--white-color);
       text-decoration: none;
       flex-direction: column;
       transition: all 0.3s ease-in-out;
@@ -55,8 +64,8 @@
     }
 
     .active {
-      color: black;
-      text-underline-offset: 10px;
+      color: white;
+      text-underline-offset: 7px;
       text-decoration: underline rgba(255 255 255);
     }
     @media screen and (max-width: 425px) {

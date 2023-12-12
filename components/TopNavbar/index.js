@@ -37,13 +37,14 @@ const TopNavbar = () => {
         {/* for image on navbar */}
         <Link href="/">
           <Image
-            src={images.blueboxlogo2}
-            width={250}
-            height={50}
+            src={'/assets/ant-design_global-outlined.svg'}
+            width={24}
+            height={24}
             alt="logo"
             priority
           />
         </Link>
+        <span>EN</span>
       </div>
       <div className={styles.nav_content}>
         <ul className={styles.app__navbarLinks}>
