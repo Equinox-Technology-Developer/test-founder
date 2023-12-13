@@ -283,4 +283,31 @@ a {
   .btn-naked-small {
     @apply text-primary-500 rounded-[40px] text-[12px] font-semibold leading-[24px] w-fit h-[36px] py-[6px] px-[16px] hover:text-primary-600 disabled:text-primary-400 border-0 flex cursor-pointer disabled:cursor-not-allowed;
   }
+  .legend-primary {
+    @apply px-5 py-1 rounded-[20px] text-white w-fit h-[24px] bg-primary-500 text-[12px] leading-4;
+  }
+  .legend-primary-light {
+    @apply px-5 py-1 rounded-[20px] text-primary-500 w-fit h-[24px] bg-primary-100 text-[12px] leading-4;
+  }
+  .legend-primary-line {
+    @apply px-5 py-1 rounded-[20px] text-primary-500 w-fit h-[24px] border-[1px] border-primary-500 text-[12px] leading-4;
+  }
+  .legend-secondary {
+    @apply px-5 py-1 rounded-[20px] text-white w-fit h-[24px] bg-secondary-500 text-[12px] leading-4;
+  }
+  .legend-secondary-light {
+    @apply px-5 py-1 rounded-[20px] text-secondary-500 w-fit h-[24px] bg-secondary-100 text-[12px] leading-4;
+  }
+  .legend-secondary-line {
+    @apply px-5 py-1 rounded-[20px] text-secondary-500 w-fit h-[24px] border-[1px] border-secondary-500 text-[12px] leading-4;
+  }
+  .legend-grayscale {
+    @apply px-5 py-1 rounded-[20px] text-black w-fit h-[24px] bg-grayscale-300 text-[12px] leading-4;
+  }
+  .legend-grayscale-light {
+    @apply px-5 py-1 rounded-[20px] text-black w-fit h-[24px] bg-grayscale-200 text-[12px] leading-4;
+  }
+  .legend-grayscale-line {
+    @apply px-5 py-1 rounded-[20px] text-black w-fit h-[24px] border-[1px] border-grayscale-300 text-[12px] leading-4;
+  }
 }
