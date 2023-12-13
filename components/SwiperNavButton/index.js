@@ -21,9 +21,9 @@ export default function SwiperNavButton() {
             <path
               d="M0.999756 1L6.99448 5.86795L0.959417 10.6858"
               stroke="black"
-              stroke-width="1.3125"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.3125"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </button>
@@ -43,9 +43,9 @@ export default function SwiperNavButton() {
             <path
               d="M7.00021 1L1.00549 5.86795L7.04055 10.6858"
               stroke="black"
-              stroke-width="1.3125"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.3125"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </button>
