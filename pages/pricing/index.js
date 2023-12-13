@@ -1,12 +1,32 @@
+import { useState, useEffect } from 'react';
 import { Layout } from '@/components';
 import React from 'react';
 
 import styles from './Pricing.module.scss';
 
 const Pricing = () => {
+  const [isAnnual, setIsAnnual] = useState(false);
+
+  const plans = [
+    {
+      title: 'Basic',
+      monthlyPrice: 9.99,
+      annualPrice: 99.99,
+    },
+    {
+      title: 'Standard',
+      monthlyPrice: 19.99,
+      annualPrice: 199.99,
+    },
+    {
+      title: 'Premium',
+      monthlyPrice: 29.99,
+      annualPrice: 299.99,
+    },
+  ];
   return (
     <Layout pageTitle="Pricing">
-      <section className="text-gray-700 body-font">
+      {/* <section className="text-gray-700 body-font">
         <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
           <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
             <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
@@ -35,7 +55,62 @@ const Pricing = () => {
             />
           </div>
         </div>
-      </section>
+      </section> */}
+
+      <div className="container flex flex-col mx-auto justify-center">
+        <h1 className="text-4xl mt-10 text-center">Hire without limits</h1>
+        <div className="flex justify-center">
+          <div
+            className={`card p-8 rounded-lg shadow-md w-full md:w-2/3 lg:w-1/2 ${styles.card}`}
+          >
+            <h2 className="text-3xl font-semibold mb-6">Choose Your Plan</h2>
+
+            {/* Toggle Switch for Monthly/Annual */}
+            <div className="flex justify-between mb-6">
+              <span className="text-gray-600">Monthly</span>
+              <label className="switch">
+                <input
+                  type="checkbox"
+                  onChange={() => setIsAnnual(!isAnnual)}
+                  className="hidden"
+                />
+                <span className="slider"></span>
+              </label>
+              <span className="text-gray-600">Annual</span>
+            </div>
+
+            {/* Pricing Cards */}
+            <div className="flex justify-between">
+              {plans.map((plan, index) => (
+                <div
+                  key={index}
+                  className={`w-1/3 ${isAnnual ? '' : 'hidden'}`}
+                >
+                  <div className="bg-blue-500 text-white p-6 rounded-lg mb-4">
+                    <h3 className="text-xl font-semibold mb-2">{plan.title}</h3>
+                    <p className="text-lg">${plan.annualPrice}/year</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Monthly Pricing Cards */}
+            <div className="flex justify-between">
+              {plans.map((plan, index) => (
+                <div
+                  key={index}
+                  className={`w-1/3 ${isAnnual ? 'hidden' : ''}`}
+                >
+                  <div className="bg-blue-500 text-white p-6 rounded-lg mb-4">
+                    <h3 className="text-xl font-semibold mb-2">{plan.title}</h3>
+                    <p className="text-lg">${plan.monthlyPrice}/month</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
 
       <section className="text-gray-700 body-font overflow-hidden border-t border-gray-200">
         <div className="container px-5 py-24 mx-auto flex flex-wrap">
