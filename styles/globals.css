@@ -257,31 +257,31 @@ a {
     @apply text-[14px] font-light leading-[28px];
   }
   .btn-normal {
-    @apply text-white rounded-[40px] bg-primary-500 caption-semibold-1 w-fit h-[44px] px-5 py-2 hover:bg-primary-600 disabled:bg-primary-400 border-0 flex cursor-pointer disabled:cursor-not-allowed;
+    @apply text-white rounded-[40px] bg-primary-500 caption-semibold-1 w-fit h-[44px] px-5 py-2 hover:bg-primary-600 disabled:bg-primary-400 border-0 flex items-center cursor-pointer disabled:cursor-not-allowed;
   }
   .btn-line-normal {
-    @apply text-primary-500 rounded-[40px] bg-transparent caption-semibold-1 w-fit h-[44px] px-5 py-2 hover:border-primary-600 hover:text-primary-600 disabled:border-primary-400 disabled:text-primary-400 border-[1px] border-primary-500 flex cursor-pointer disabled:cursor-not-allowed;
+    @apply text-primary-500 rounded-[40px] bg-transparent caption-semibold-1 w-fit h-[44px] px-5 py-2 hover:border-primary-600 hover:text-primary-600 disabled:border-primary-400 disabled:text-primary-400 border-[1px] border-primary-500 flex items-center cursor-pointer disabled:cursor-not-allowed;
   }
   .btn-naked-normal {
-    @apply text-primary-500 rounded-[40px] caption-semibold-1 w-fit h-[44px] px-5 py-2 hover:text-primary-600 disabled:text-primary-400 border-0 flex cursor-pointer disabled:cursor-not-allowed;
+    @apply text-primary-500 rounded-[40px] caption-semibold-1 w-fit h-[44px] px-5 py-2 hover:text-primary-600 disabled:text-primary-400 border-0 flex items-center cursor-pointer disabled:cursor-not-allowed;
   }
   .btn-medium {
-    @apply text-white rounded-[40px] bg-primary-500 caption-semibold-3 w-fit h-[36px] py-[6px] px-[16px] hover:bg-primary-600 disabled:bg-primary-400 border-0 flex cursor-pointer disabled:cursor-not-allowed items-center;
+    @apply text-white rounded-[40px] bg-primary-500 caption-semibold-3 w-fit h-[36px] py-[6px] px-[16px] hover:bg-primary-600 disabled:bg-primary-400 border-0 flex items-center cursor-pointer disabled:cursor-not-allowed;
   }
   .btn-line-medium {
-    @apply text-primary-500 rounded-[40px] caption-semibold-3 w-fit h-[36px] py-[6px] px-[16px] hover:border-primary-600 hover:text-primary-600  disabled:border-primary-400 disabled:text-primary-400 border-[1px] border-primary-500 flex cursor-pointer disabled:cursor-not-allowed;
+    @apply text-primary-500 rounded-[40px] caption-semibold-3 w-fit h-[36px] py-[6px] px-[16px] hover:border-primary-600 hover:text-primary-600  disabled:border-primary-400 disabled:text-primary-400 border-[1px] border-primary-500 flex  items-center cursor-pointer disabled:cursor-not-allowed;
   }
   .btn-naked-medium {
-    @apply text-primary-500 rounded-[40px] bg-transparent caption-semibold-3 w-fit h-[36px] py-[6px] px-[16px] hover:text-primary-600 disabled:text-primary-400 border-0 flex cursor-pointer disabled:cursor-not-allowed;
+    @apply text-primary-500 rounded-[40px] bg-transparent caption-semibold-3 w-fit h-[36px] py-[6px] px-[16px] hover:text-primary-600 disabled:text-primary-400 border-0 flex items-center cursor-pointer disabled:cursor-not-allowed;
   }
   .btn-small {
-    @apply text-white rounded-[40px] bg-primary-500 text-[12px] font-semibold leading-[24px] w-fit h-[36px] py-[6px] px-[16px] hover:bg-primary-600 disabled:bg-primary-400 border-0 flex cursor-pointer disabled:cursor-not-allowed;
+    @apply text-white rounded-[40px] bg-primary-500 text-[12px] font-semibold leading-[24px] w-fit h-[36px] py-[6px] px-[16px] hover:bg-primary-600 disabled:bg-primary-400 border-0 flex items-center cursor-pointer disabled:cursor-not-allowed;
   }
   .btn-line-small {
-    @apply text-primary-500 rounded-[40px]  text-[12px] font-semibold leading-[24px] w-fit h-[36px] py-[6px] px-[16px] hover:text-primary-600 hover:border-primary-600 disabled:text-primary-400 border-[1px] border-primary-500 flex cursor-pointer disabled:cursor-not-allowed;
+    @apply text-primary-500 rounded-[40px] text-[12px] font-semibold leading-[24px] w-fit h-[36px] py-[6px] px-[16px] hover:text-primary-600 hover:border-primary-600 disabled:text-primary-400 border-[1px] border-primary-500 flex items-center cursor-pointer disabled:cursor-not-allowed;
   }
   .btn-naked-small {
-    @apply text-primary-500 rounded-[40px] text-[12px] font-semibold leading-[24px] w-fit h-[36px] py-[6px] px-[16px] hover:text-primary-600 disabled:text-primary-400 border-0 flex cursor-pointer disabled:cursor-not-allowed;
+    @apply text-primary-500 rounded-[40px] text-[12px] font-semibold leading-[24px] w-fit h-[36px] py-[6px] px-[16px] hover:text-primary-600 disabled:text-primary-400 border-0 flex items-center cursor-pointer disabled:cursor-not-allowed;
   }
   .legend-primary {
     @apply px-5 py-1 rounded-[20px] text-white w-fit h-[24px] bg-primary-500 text-[12px] leading-4;
