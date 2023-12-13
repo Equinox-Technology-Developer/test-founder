@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { fetchContentfulEntries } from '@/helper/contenfulHelper';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -163,5 +164,32 @@ const Navbar = () => {
     </nav>
   );
 };
+
+export async function getStaticProps() {
+  const contentType = 'landingPage'; // Modify the content type here
+  const propsKey = 'products'; // Modify the props key here
+  const catchKey = 'error'; // Modify the catch key here
+  const indexToRead = 10; // Modify the index you want to read
+
+  try {
+    const dynamicData = await fetchContentfulEntries(
+      contentType,
+      propsKey,
+      catchKey,
+      indexToRead,
+    );
+
+    return {
+      props: dynamicData,
+    };
+  } catch (error) {
+    console.error('Error in getStaticProps:', error);
+    return {
+      props: {
+        [catchKey]: 'An unexpected error occurred.',
+      },
+    };
+  }
+}
 
 export default Navbar;

@@ -2,12 +2,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { images } from "@/constants";
 import { MdChevronRight } from "react-icons/md";
-
+import { fetchContentfulEntries } from "@/helper/contenfulHelper";
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 
 import styles from "./Footer.module.scss";
 
-const Footer = () => {
+const Footer = ({products}) => {
   return (
     <div className={styles.footer_container}>
       <footer className={styles.footer_wrapper}>
@@ -81,5 +81,33 @@ const Footer = () => {
     </div>
   );
 };
+
+
+export async function getStaticProps() {
+  const contentType = 'landingPage'; // Modify the content type here
+  const propsKey = 'products'; // Modify the props key here
+  const catchKey = 'error'; // Modify the catch key here
+  const indexToRead = 10; // Modify the index you want to read
+
+  try {
+    const dynamicData = await fetchContentfulEntries(
+      contentType,
+      propsKey,
+      catchKey,
+      indexToRead,
+    );
+
+    return {
+      props: dynamicData,
+    };
+  } catch (error) {
+    console.error('Error in getStaticProps:', error);
+    return {
+      props: {
+        [catchKey]: 'An unexpected error occurred.',
+      },
+    };
+  }
+}
 
 export default Footer;
