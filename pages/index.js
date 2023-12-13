@@ -4,35 +4,12 @@ import Link from 'next/link';
 
 import { Layout } from '../components';
 import SwiperNavButton from '../components/SwiperNavButton';
-import { createClient } from 'contentful';
+// import { createClient } from 'contentful';
+import { fetchContentfulEntries } from '@/helper/contenfulHelper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css/navigation';
-
-export async function getStaticProps() {
-  try {
-    const client = createClient({
-      space: process.env.CONTENTFUL_SPACE_ID,
-      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-    });
-
-    const res = await client.getEntries({ content_type: 'landingPage' });
-
-    return {
-      props: {
-        homepages: res.items[0].fields,
-      },
-    };
-  } catch (error) {
-    console.error('Error fetching Contentful entries:', error);
-    return {
-      props: {
-        homepages: [],
-      },
-    };
-  }
-}
 
 const slideData = [
   { src: '/assets/abbot.svg', alt: 'Abbot', width: 180, height: 80 },
@@ -48,7 +25,7 @@ const slideData = [
 ];
 
 export default function Home({ homepages }) {
-  console.log(homepages)
+  // console.log(homepages);
   return (
     <>
       <Head>
@@ -1134,4 +1111,31 @@ export default function Home({ homepages }) {
       </Layout>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const contentType = 'landingPage'; // Modify the content type here
+  const propsKey = 'homepages'; // Modify the props key here
+  const catchKey = 'error'; // Modify the catch key here
+  const indexToRead = 11; // Modify the index you want to read
+
+  try {
+    const dynamicData = await fetchContentfulEntries(
+      contentType,
+      propsKey,
+      catchKey,
+      indexToRead,
+    );
+
+    return {
+      props: dynamicData,
+    };
+  } catch (error) {
+    console.error('Error in getStaticProps:', error);
+    return {
+      props: {
+        [catchKey]: 'An unexpected error occurred.',
+      },
+    };
+  }
 }
