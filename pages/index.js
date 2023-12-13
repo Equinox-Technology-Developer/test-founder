@@ -169,7 +169,7 @@ export default function Home({ homepages }) {
                 spaceBetween={40}
                 slidesPerView={5}
                 autoplay={{
-                  delay: 500,
+                  delay: 2500,
                   disableOnInteraction: false,
                 }}
               >
@@ -392,10 +392,10 @@ export default function Home({ homepages }) {
               modules={[Autoplay]}
               spaceBetween={40}
               slidesPerView={2}
-              // autoplay={{
-              //   delay: 500,
-              //   disableOnInteraction: false,
-              // }}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
             >
               {testimonies.map((testimonial, index) => (
                 <SwiperSlide key={index}>
