@@ -17,11 +17,11 @@ export async function getStaticProps() {
       accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
     });
 
-    const res = await client.getEntries({ content_type: 'homepage' });
+    const res = await client.getEntries({ content_type: 'landingPage' });
 
     return {
       props: {
-        homepages: res.items,
+        homepages: res.items[0].fields,
       },
     };
   } catch (error) {
@@ -48,6 +48,7 @@ const slideData = [
 ];
 
 export default function Home({ homepages }) {
+  console.log(homepages)
   return (
     <>
       <Head>
