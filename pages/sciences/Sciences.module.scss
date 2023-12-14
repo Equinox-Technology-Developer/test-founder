@@ -8,3 +8,9 @@
   white-space: -o-pre-wrap;
   white-space: -ms-pre-wrap;
 }
+
+p {
+    .italic {
+        font-weight: lighter;
+    }
+}
