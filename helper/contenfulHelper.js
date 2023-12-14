@@ -1,11 +1,6 @@
 import { createClient } from 'contentful';
 
-export async function fetchContentfulEntries(
-  contentType,
-  propsKey,
-  catchKey,
-  index = 0,
-) {
+export async function fetchContentfulEntries(contentType) {
   try {
     const client = createClient({
       space: process.env.CONTENTFUL_SPACE_ID,
@@ -14,25 +9,13 @@ export async function fetchContentfulEntries(
 
     const res = await client.getEntries({ content_type: contentType });
 
-    const specificEntry = res.items[index];
-
-    if (!specificEntry) {
-      console.error(`No entry found at index ${index} for ${contentType}`);
-      return {
-        [catchKey]: `No entry found at index ${index} for ${contentType}`,
-      };
-    }
-
     return {
-      [propsKey]: specificEntry.fields,
+      items: res.items,
     };
   } catch (error) {
-    console.error(
-      `Error fetching Contentful entries for ${contentType}:`,
-      error,
-    );
+    console.error('Error fetching Contentful entries:', error);
     return {
-      [catchKey]: `Error fetching Contentful entries for ${contentType}`,
+      items: [],
     };
   }
 }
