@@ -7,8 +7,8 @@ import { createClient } from 'contentful';
 
 const Products = ({ contentfulEntries }) => {
   const bodyTextValue = contentfulEntries.topBanner.fields.bodyText.content[0].content[0].value || '';
-  const imageUrl = contentfulEntries.topBanner.fields.image.fields.file.url || '';
-  const fullImageUrl = imageUrl.startsWith('http') ? imageUrl : `https:${imageUrl}`;
+  const imageUrl = contentfulEntries.topBanner.fields.image.fields.file.url;
+  const fullImageUrl = `https://${imageUrl}`
 
   return (
     <Layout pageTitle="Products">
