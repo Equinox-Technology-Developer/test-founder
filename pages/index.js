@@ -14,13 +14,18 @@ import 'swiper/css/navigation';
 const slideData = [
   { src: '/assets/abbot.svg', alt: 'Abbot', width: 180, height: 80 },
   { src: '/assets/barila.svg', alt: 'Barila', width: 180, height: 80 },
-  { src: '/assets/berkshire.svg', alt: 'Barila', width: 180, height: 80 },
-  { src: '/assets/bmw.svg', alt: 'Barila', width: 180, height: 80 },
-  { src: '/assets/british-airways.svg', alt: 'Barila', width: 180, height: 80 },
-  { src: '/assets/dolce-gabana.svg', alt: 'Barila', width: 180, height: 80 },
-  { src: '/assets/everlast.svg', alt: 'Barila', width: 180, height: 80 },
-  { src: '/assets/ferrero.svg', alt: 'Barila', width: 180, height: 80 },
-  { src: '/assets/forbes.svg', alt: 'Barila', width: 180, height: 80 },
+  { src: '/assets/berkshire.svg', alt: 'Berkshire', width: 180, height: 80 },
+  { src: '/assets/bmw.svg', alt: 'Bmw', width: 180, height: 80 },
+  {
+    src: '/assets/british-airways.svg',
+    alt: 'British',
+    width: 180,
+    height: 80,
+  },
+  { src: '/assets/dolce-gabana.svg', alt: 'Dolce', width: 180, height: 80 },
+  { src: '/assets/everlast.svg', alt: 'Everlast', width: 180, height: 80 },
+  { src: '/assets/ferrero.svg', alt: 'Ferrero', width: 180, height: 80 },
+  { src: '/assets/forbes.svg', alt: 'Forbes', width: 180, height: 80 },
   { src: '/assets/foxnews.svg', alt: 'Fox News', width: 180, height: 80 },
 ];
 
@@ -92,26 +97,28 @@ export default function Home({ homepages }) {
 
       <Layout pageTitle="Homepage">
         {/* Banner */}
-        <section className="bg-blur bg-right bg-no-repeat bg-[#F9F9F9]">
+        <section className="bg-blur bg-right bg-no-repeat bg-[#F9F9F9] pt-0">
           <div className="container mx-auto">
-            <div className="flex px-5 py-4 md:flex-row flex-col items-center">
-              <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center mt-24">
-                <h1 className="heading-1 mb-6 mt-0">
+            <div className="flex md:flex-row flex-col items-center relative sm:static">
+              <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center sm:mt-24 mt-4 ">
+                <h1 className="sm:heading-1 heading-2 mb-6 mt-0">
                   <span className="text-primary-500">TestGorilla</span> works.
                   Resumes don't.
                 </h1>
-                <p className="caption-regular-1 mt-0 mb-6">
+                <p className="caption-regular-3 sm:caption-regular-1 mt-0 mb-6">
                   Our talent assessments screen and identify the best candidates
                   and make your hiring decisions faster, easier, and bias-free.
                 </p>
                 <div className="flex justify-center mb-6">
-                  <button className="btn-normal">Try for free!</button>
-                  <button className="ml-4 btn-line-normal">
+                  <button className="btn-medium sm:btn-normal">
+                    Try for free!
+                  </button>
+                  <button className="ml-4 btn-line-medium sm:btn-line-normal">
                     Talk to sales
                   </button>
                 </div>
-                <div className="flex justify-center">
-                  <div className="flex space-x-4">
+                <div className="flex justify-center sm:flex-row flex-col">
+                  <div className="flex space-x-4 justify-center">
                     <Image
                       src="/assets/badge-top-100.svg"
                       alt="Hero Image"
@@ -129,12 +136,12 @@ export default function Home({ homepages }) {
                       className="w-fit h-auto"
                     />
                   </div>
-                  <p className="caption-regular-1 ml-10 my-0">
+                  <p className="caption-regular-1 sm:ml-10 ml-0 my-0">
                     Rated #1 in talent assessments Top 100 fastest-growing
                     software globally
                   </p>
                 </div>
-                <div className="mt-[68px]">
+                <div className="mt-[68px] sm:block absolute sm:static -bottom-14 px-4 sm:px-0">
                   <p className="caption-regular-1 mb-0">
                     Join the{' '}
                     <span className="text-primary-500 caption-bold-1">
@@ -144,7 +151,7 @@ export default function Home({ homepages }) {
                   </p>
                 </div>
               </div>
-              <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 relative">
+              <div className="lg:max-w-lg lg:w-full md:w-1/2 w-full relative">
                 <Image
                   src="/assets/hero-image.png"
                   alt="Hero Image"
@@ -159,18 +166,31 @@ export default function Home({ homepages }) {
                   width={325}
                   height={151}
                   sizes="100vw"
-                  className="w-full h-auto max-w-[325px] max-h-[151px] absolute -left-12 bottom-24"
+                  className="w-[60%] sm:w-full h-auto max-w-[325px] max-h-[151px] absolute sm:-left-12 -left-2  bottom-10 sm:bottom-24"
                 />
               </div>
             </div>
-            <div className="mt-[19px] pr-16 pl-3 ">
+            <div className="pr-3 sm:pr-16 pl-3 mt-20 sm:mt-[19px]">
               <Swiper
                 modules={[Autoplay]}
                 spaceBetween={40}
-                slidesPerView={5}
-                autoplay={{
-                  delay: 2500,
-                  disableOnInteraction: false,
+                // autoplay={{
+                //   delay: 2500,
+                //   disableOnInteraction: false,
+                // }}
+                breakpoints={{
+                  640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                  },
+                  768: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                  },
+                  1024: {
+                    slidesPerView: 5,
+                    spaceBetween: 50,
+                  },
                 }}
               >
                 {slideData.map((slide, index) => (
@@ -181,7 +201,7 @@ export default function Home({ homepages }) {
                       width={slide.width}
                       height={slide.height}
                       sizes="100vw"
-                      className="w-full max-w-[180px] max-h-[80px] 2xl:ml-14 2xl:pr-5 xl:pl-14 xl:pr-5"
+                      className="w-full max-w-[180px] max-h-[80px] ml-0 pr-0 pl-0 2xl:ml-14 2xl:pr-5 xl:pl-14 xl:pr-5"
                     />
                   </SwiperSlide>
                 ))}
@@ -191,10 +211,10 @@ export default function Home({ homepages }) {
           </div>
         </section>
         {/* Explanation */}
-        <section className="min-h-[700px] bg-contain flex items-center bg-[#F9F9F9] z-50">
+        <section className="h-fit sm:min-h-[700px] flex items-center bg-[#F9F9F9] z-50 px-4 py-6 sm:py-0 sm:px-0">
           <div className="container mx-auto ">
-            <div className="flex px-5 py-4 md:flex-row flex-col items-center gap-[50px]">
-              <div className="lg:flex-grow md:w-1/2 md:text-left mb-16 md:mb-0 z-50">
+            <div className="flex md:flex-row flex-col items-center gap-[50px]">
+              <div className="lg:flex-grow md:w-1/2 md:text-left mb-1 sm:mb-16 md:mb-0  z-50">
                 <Image
                   src="/assets/explaination-banner.png"
                   alt="Hero Image"
@@ -203,24 +223,26 @@ export default function Home({ homepages }) {
                   sizes="100vw"
                 />
               </div>
-              <div className="lg:w-full md:w-1/2 w-5/6 relative flex flex-col md:items-start items-center space-y-6">
-                <h1 className="heading-1 mt-0 mb-0">
+              <div className="lg:w-full md:w-1/2 w-full relative flex flex-col md:items-start items-center space-y-6 z-50">
+                <h1 className="heading-2 sm:heading-1 mt-0 mb-0 text-center sm:text-start">
                   A barometer for job success.
                 </h1>
-                <p className="caption-regular-1">
+                <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
                   Use our library of 401 scientifically validated tests.
                 </p>
-                <p className="caption-regular-1">
+                <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
                   Test candidates for job-specific skills like coding or digital
                   marketing, as well as more general skills like critical
                   thinking.
                 </p>
-                <p className="caption-regular-1">
+                <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
                   Our unique personality and value tests allow you to get to
                   know your applicants as real people – not just pieces of
                   paper.
                 </p>
-                <button className="btn-line-normal">See Tests</button>
+                <button className="btn-line-medium sm:btn-line-normal">
+                  See Tests
+                </button>
               </div>
             </div>
           </div>
@@ -230,32 +252,32 @@ export default function Home({ homepages }) {
             width={730}
             height={565}
             sizes="100vw"
-            className="absolute left-[10%] blur-xl"
+            className="absolute sm:left-[10%] left-[12%] top-[149%] blur-xl"
           />
         </section>
         {/* Explanation 2 */}
-        <section className="min-h-[700px] flex items-center bg-[#F9F9F9]">
+        <section className="h-fit sm:min-h-[700px] flex items-center bg-[#F9F9F9] px-4 py-6 sm:py-0 sm:px-0">
           <div className="container mx-auto">
-            <div className="flex px-5 py-4 md:flex-row flex-col items-center gap-[41px]">
-              <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-                <h1 className="heading-1 mb-6 mt-0">
+            <div className="flex md:flex-row sm:flex-col flex-col-reverse items-center gap-[41px]">
+              <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-1 sm:mb-16  md:mb-0 items-center text-center">
+                <h1 className="heading-2 sm:heading-1 mb-6 mt-0">
                   Quality time for quality candidates.
                 </h1>
-                <p className="caption-regular-1 mt-0 mb-6">
+                <p className="caption-regular-3 sm:caption-regular-1 mt-0 mb-6">
                   Boom. No more time wasted on screening resumes and
                   pre-qualifying interviews.
                 </p>
-                <p className="caption-regular-1 mt-0 mb-6">
+                <p className="caption-regular-3 sm:caption-regular-1 mt-0 mb-6">
                   We automatically grade and rank your candidates. In the time
                   it takes to savor a cup of coffee, you can watch video
                   responses to custom questions.
                 </p>
-                <p className="caption-regular-1 mt-0 mb-6">
+                <p className="caption-regular-3 sm:caption-regular-1 mt-0 mb-6">
                   Our screening process automation lets you focus on the best
                   people for the job.
                 </p>
               </div>
-              <div className="lg:w-1/2 md:w-1/2 w-5/6 flex justify-start">
+              <div className="lg:w-1/2 md:w-1/2 w-full flex justify-start">
                 <Image
                   src="/assets/anim-conf.png"
                   alt="Hero Image"
@@ -270,10 +292,10 @@ export default function Home({ homepages }) {
         </section>
 
         {/* Explanation 3*/}
-        <section className="min-h-[700px] flex items-center bg-[#F9F9F9]">
+        <section className="h-fit sm:min-h-[700px] flex items-center bg-[#F9F9F9] px-4 py-6 sm:py-0 sm:px-0">
           <div className="container mx-auto ">
-            <div className="flex px-5 py-4 md:flex-row flex-col items-center gap-[21px]">
-              <div className="w-1/2 md:w-1/2 md:text-left mb-16 md:mb-0 ">
+            <div className="flex md:flex-row flex-col items-center gap-[21px]">
+              <div className="w-full sm:w-1/2 md:text-left mb-16 md:mb-0 ">
                 <Image
                   src="/assets/man-percent.png"
                   alt="Hero Image"
@@ -283,18 +305,18 @@ export default function Home({ homepages }) {
                   className="z-50"
                 />
               </div>
-              <div className="lg:w-1/2 md:w-1/2 w-5/6 relative flex flex-col md:items-start items-center space-y-6">
-                <h1 className="heading-1 mt-0 mb-0">
+              <div className="lg:w-1/2 md:w-1/2 w-full relative flex flex-col md:items-start items-center space-y-6">
+                <h1 className="heading-2 sm:heading-1 mt-0 mb-0 text-center sm:text-start">
                   Say goodbye to unconscious bias.
                 </h1>
-                <p className="caption-regular-1">
+                <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
                   Diverse teams perform better.
                 </p>
-                <p className="caption-regular-1">
+                <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
                   With TestFounder, you give all applicants an equal, unbiased
                   opportunity to showcase themselves.
                 </p>
-                <p className="caption-regular-1">
+                <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
                   This ensures you get the best talent from all walks of life.
                 </p>
               </div>
@@ -303,26 +325,26 @@ export default function Home({ homepages }) {
         </section>
 
         {/* Explanation 4 */}
-        <section className="min-h-[700px] flex items-center bg-[#F9F9F9] ">
+        <section className="h-fit sm:min-h-[700px] flex items-center bg-[#F9F9F9] px-4 py-6 sm:py-0 sm:px-0">
           <div className="container mx-auto">
-            <div className="flex px-5 py-4 md:flex-row flex-col items-center gap-[41px]">
-              <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-                <h1 className="heading-1 mb-6 mt-0">
+            <div className="flex md:flex-row sm:flex-col flex-col-reverse items-center gap-[41px]">
+              <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center z-50">
+                <h1 className="heading-2 sm:heading-1 mb-6 mt-0">
                   Offer a positive candidate experience.
                 </h1>
-                <p className="caption-regular-1 mt-0 mb-6">
+                <p className="caption-regular-3 sm:caption-regular-1 mt-0 mb-6">
                   Good candidates appreciate good screening tests.
                 </p>
-                <p className="caption-regular-1 mt-0 mb-6">
+                <p className="caption-regular-3 sm:caption-regular-1 mt-0 mb-6">
                   Our professional, well-designed tests serve as an extension of
                   your brand and personality.
                 </p>
-                <p className="caption-regular-1 mt-0 mb-6">
+                <p className="caption-regular-3 sm:caption-regular-1 mt-0 mb-6">
                   Your applicants get the motivation and engagement they need to
                   truly shine.
                 </p>
               </div>
-              <div className="lg:w-1/2 md:w-1/2 w-5/6 flex justify-center">
+              <div className="lg:w-1/2 md:w-1/2 w-full flex justify-center">
                 <Image
                   src="/assets/global-people.png"
                   alt="Hero Image"
@@ -345,10 +367,10 @@ export default function Home({ homepages }) {
         </section>
 
         {/* Explanation 5 */}
-        <section className="min-h-[700px] flex items-center bg-[#F9F9F9]">
+        <section className="h-fit sm:h-fit sm:min-h-[700px] flex items-center bg-[#F9F9F9] px-4 py-6 sm:py-0 sm:px-0">
           <div className="container mx-auto ">
-            <div className="flex px-5 py-4 md:flex-row flex-col items-center gap-[21px]">
-              <div className="w-1/2 md:w-1/2 md:text-left mb-16 md:mb-0 z-50">
+            <div className="flex md:flex-row flex-col items-center gap-0 sm:gap-[21px]">
+              <div className="w-full sm:w-1/2 md:text-left mb-1 sm:mb-16 md:mb-0 z-50">
                 <Image
                   src="/assets/people-conection.png"
                   alt="Hero Image"
@@ -358,16 +380,16 @@ export default function Home({ homepages }) {
                   className="z-50"
                 />
               </div>
-              <div className="lg:w-1/2 md:w-1/2 w-5/6 relative flex flex-col md:items-start items-center space-y-6">
-                <h1 className="heading-1 mt-0 mb-0">
+              <div className="lg:w-1/2 md:w-1/2 w-full relative flex flex-col md:items-start items-center space-y-6 z-50">
+                <h1 className="heading-2 sm:heading-1 mt-0 mb-0 text-center sm:text-start">
                   Champion a data-driven HR culture.
                 </h1>
-                <p className="caption-regular-1">
+                <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
                   We rank your applicants according to test scores certified by
                   our experts. This means your HR team can rely on good data to
                   make important decisions – and not just their gut feeling.
                 </p>
-                <p className="caption-regular-1">
+                <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
                   With TestGorilla, you’ll lead the shift to a more professional
                   and data-focused HR culture in your company.
                 </p>
@@ -391,10 +413,20 @@ export default function Home({ homepages }) {
             <Swiper
               modules={[Autoplay]}
               spaceBetween={40}
-              slidesPerView={2}
               autoplay={{
                 delay: 2500,
                 disableOnInteraction: false,
+              }}
+              breakpoints={{
+                640: {
+                  slidesPerView: 1,
+                },
+                768: {
+                  slidesPerView: 1,
+                },
+                1024: {
+                  slidesPerView: 2,
+                },
               }}
             >
               {testimonies.map((testimonial, index) => (
@@ -406,7 +438,7 @@ export default function Home({ homepages }) {
                       width={170}
                       height={303}
                       sizes="100vw"
-                      className="z-50"
+                      className="z-50 object-cover"
                     />
                     <div className="pl-3 flex flex-col justify-between">
                       <div className="flex flex-col">
@@ -502,16 +534,16 @@ export default function Home({ homepages }) {
 
         {/* Explanation 7 */}
         <div className="w-full bg-[#D0F3FC26] min-h-[366px] space-y-6 pb-[60px]">
-          <div className="container mx-auto flex flex-col items-center justify-center text-center space-y-6">
-            <h1 className="heading-1">
+          <div className="container mx-auto flex flex-col items-center justify-center text-center space-y-6 px-4 py-6 sm:py-0 sm:px-0">
+            <h1 className="heading-2 sm:heading-1">
               Top talent is priceless. We make finding it affordable.
             </h1>
-            <p className="caption-regular-1 text-center">
+            <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
               A time-consuming screening process costs you a lot. Painful
               mis-hires cost you much, much more. With TestGorilla, you avoid
               all of this and see a huge return on investment every single year.
             </p>
-            <p className="caption-regular-1 text-center">
+            <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
               Start screening with us today on our free plan.
             </p>
             <div className="flex flex-row gap-4">

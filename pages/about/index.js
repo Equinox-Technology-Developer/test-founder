@@ -2,8 +2,8 @@ import { Layout } from '@/components';
 import React from 'react';
 import { fetchContentfulEntries } from '@/helper/contenfulHelper';
 
-const Products = ({ resources }) => {
-  return <Layout pageTitle="Products"></Layout>;
+const About = ({ resources }) => {
+  return <Layout pageTitle="About"></Layout>;
 };
 
 export async function getStaticProps() {
@@ -33,4 +33,4 @@ export async function getStaticProps() {
   }
 }
 
-export default Products;
+export default About;
