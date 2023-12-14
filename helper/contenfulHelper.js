@@ -1,8 +1,5 @@
 import { createClient } from "contentful";
 
-
-
-
 export async function fetchContentfulEntries(contentType) {
   try {
     const client = createClient({
