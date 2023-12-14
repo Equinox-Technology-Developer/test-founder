@@ -6,9 +6,9 @@
   --font-base: 'Open Sans', sans-serif;
   --secondary-text: 'Helvetica';
 
-  --primary-color: #edf2f8;
+  --primary-color: #1882d6;
   --secondary-color: #3280ac;
-  --black-color: #030303;
+  --black-color: #000000;
   --lightGray-color: #e4e4e4;
   --gray-color: #6b7688;
   --brown-color: #46364a;
@@ -48,10 +48,6 @@ a {
 
 * {
   box-sizing: border-box;
-}
-
-.container {
-  padding-top: 61px;
 }
 
 .main {
@@ -195,6 +191,11 @@ a {
 @media screen and (max-width: 768px) {
   .mobile-hidden {
     display: none;
+  }
+  .swiper-slide.swiper-slide-active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
