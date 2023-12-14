@@ -5,11 +5,11 @@ import Link from 'next/link';
 import { Layout } from '../components';
 import SwiperNavButton from '../components/SwiperNavButton';
 // import { createClient } from 'contentful';
-import { fetchContentfulEntries } from '@/helper/contenfulHelper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css/navigation';
+import { fetchContentfulEntries } from '@/helper/contenfulHelper';
 
 const slideData = [
   { src: '/assets/abbot.svg', alt: 'Abbot', width: 180, height: 80 },
