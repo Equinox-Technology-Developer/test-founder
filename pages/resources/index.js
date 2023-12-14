@@ -4,7 +4,8 @@ import { fetchContentfulEntries } from '@/helper/contenfulHelper'
 
 import styles from './Resources.module.scss'
 
-const Resources = ({resources}) => {
+const Resources = ({contentfulEntries}) => {
+  console.log(contentfulEntries)
   return (
     <Layout pageTitle="Resources">
 
@@ -13,30 +14,23 @@ const Resources = ({resources}) => {
 }
 
 export async function getStaticProps() {
-  const contentType = 'landingPage'; // Modify the content type here
-  const propsKey = 'resources'; // Modify the props key here
-  const catchKey = 'error'; // Modify the catch key here
-  const indexToRead = 9; // Modify the index you want to read
+  const contentType = 'landingPage'; // Modify content type here
+  const { items } = await fetchContentfulEntries(contentType);
 
-  try {
-    const dynamicData = await fetchContentfulEntries(
-      contentType,
-      propsKey,
-      catchKey,
-      indexToRead,
-    );
+  const entries = items.find(entry => entry.fields.internalName === 'Homepage');
 
-    return {
-      props: dynamicData,
-    };
-  } catch (error) {
-    console.error('Error in getStaticProps:', error);
-    return {
-      props: {
-        [catchKey]: 'An unexpected error occurred.',
-      },
-    };
+  // Check if the entry is found
+  if (entries) {
+    console.log("Found the homepage entry:", entries);
+  } else {
+    console.log("Homepage entry not found.");
   }
+
+  return {
+    props: {
+      contentfulEntries: entries ? entries.fields : {}, // Modify key-value of props
+    },
+  };
 }
 
 export default Resources
