@@ -102,7 +102,7 @@ export default function Home({ homepages }) {
             <div className="relative flex flex-col items-center sm:static lg:flex-row">
               <div className="mb-16 mt-4 flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:px-[40px] md:py-[32px] md:text-left lg:mt-24 lg:flex-grow lg:items-start lg:pr-24">
                 <h1 className="sm:heading-1 heading-2 mb-6 mt-0 ">
-                  <span className="text-primary-500">TestGorilla</span> works.
+                  <span className="text-primary-500">TestFounder</span> works.
                   Resumes don't.
                 </h1>
                 <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center lg:text-start">
