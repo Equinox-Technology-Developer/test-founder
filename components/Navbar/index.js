@@ -94,9 +94,9 @@ const Navbar = () => {
                   onMouseLeave={handleMouseLeave}
                 >
                   {/* Add your dropdown content here */}
-                  <Link href="/product1">Products</Link>
-                  <Link href="/product2">Science</Link>
-                  <Link href="/product2">Test Library</Link>
+                  <Link href="/products">Products</Link>
+                  <Link href="/sciences">Science</Link>
+                  <Link href="/test-library">Test Library</Link>
                 </div>
               )}
             </li>
