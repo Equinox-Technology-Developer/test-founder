@@ -5,6 +5,7 @@ import certificate2 from '../public/assets/certificate2.svg';
 import badge_leader from '../public/assets/badge-leader.svg';
 import badge_top_100 from '../public/assets/badge-top-100.svg';
 import capterra from '../public/assets/capterra.svg';
+import HeroImageProduct from '../public/assets/HeroImageProduct.png'
 
 const images = {
   default_image,
@@ -14,6 +15,7 @@ const images = {
   badge_leader,
   badge_top_100,
   capterra,
+  HeroImageProduct
 };
 
 export default images;

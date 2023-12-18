@@ -159,7 +159,7 @@ export default function Home() {
                   width={512}
                   height={638}
                   sizes="100vw"
-                  className="z-10 flex h-auto w-[80%] md:w-[60%] lg:w-full"
+                  className=" mt-20 z-10 flex h-auto w-[80%] md:w-[60%] lg:w-full"
                 />
                 <Image
                   src="/assets/card-customer.png"
@@ -175,10 +175,10 @@ export default function Home() {
               <Swiper
                 modules={[Autoplay]}
                 spaceBetween={40}
-                // autoplay={{
-                //   delay: 2500,
-                //   disableOnInteraction: false,
-                // }}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
                 breakpoints={{
                   640: {
                     slidesPerView: 2,

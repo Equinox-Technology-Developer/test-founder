@@ -2,11 +2,14 @@
 
 .navbar {
   display: flex;
+  width: 100%;
   flex-direction: row;
   justify-content: center;
-  background-color: #f9f9f9;
   padding-top: 1rem;
-
+  position: fixed;
+  top: 40;
+  left: 0;
+  background-color: transparent;
   @media (min-width: 640px) {
     padding-top: 0;
   }
@@ -16,7 +19,6 @@
   max-width: 1536px;
   width: 100%;
   background-color: transparent;
-  opacity: 90%;
   display: flex;
   padding: 10px 50px;
   flex-direction: row;
@@ -26,6 +28,7 @@
   height: auto;
   overflow: hidden;
   z-index: 2;
+
   @media screen and (max-width: 900px) {
     padding: 16px;
   }
@@ -35,6 +38,8 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  width: 120px;
+  height: 30px;
 
   @media screen and (max-width: 450px) {
     margin: 0;
@@ -215,3 +220,48 @@
   background-color: $navbar-background; /* Add your desired background color */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add your desired box shadow */
 }
+
+/* Dropdown styles */
+.dropdownContent {
+  // display: block;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  z-index: 1;
+
+  a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    transition: background-color 0.3s;
+    border-bottom: 1px solid #eee;
+
+    &:hover {
+      background-color: #f8f8f8;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.dropdownActive {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+
+
+// /* Optional: Add some animation for a smoother appearance */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
