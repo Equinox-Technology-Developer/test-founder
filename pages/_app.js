@@ -9,13 +9,8 @@ const openSans = Open_Sans({
 
 export default function App({ Component, pageProps }) {
   return (
-    <>
-      <style jsx global>{`
-        * {
-          font-family: ${openSans.style.fontFamily};
-        }
-      `}</style>
+    <main className={openSans.className}>
       <Component {...pageProps} />
-    </>
+    </main>
   );
 }
