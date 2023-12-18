@@ -4,7 +4,7 @@ import { images } from '@/constants';
 import Link from 'next/link';
 
 import { Layout } from '@/components';
-import { IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowForward } from 'react-icons/io';
 
 import { fetchContentfulEntries } from '@/helper/contenfulHelper';
 
@@ -14,6 +14,7 @@ import { Autoplay } from 'swiper/modules';
 import SwiperNavButton from '@/components/SwiperNavButton';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import CardAssessmentDefault from '../../components/CardAssessment/CardAssessmentDefault';
 
 import styles from './Products.module.scss';
 
@@ -69,9 +70,9 @@ const testimonies = [
 ];
 
 // const Products = ({ contentfulEntries }) => {
-  // const bodyTextValue = contentfulEntries.topBanner.fields.bodyText.content[0].content[0].value || '';
-  // const imageUrl = contentfulEntries.topBanner.fields.image.fields.file.url;
-  // const fullImageUrl = `https://${imageUrl}`;
+// const bodyTextValue = contentfulEntries.topBanner.fields.bodyText.content[0].content[0].value || '';
+// const imageUrl = contentfulEntries.topBanner.fields.image.fields.file.url;
+// const fullImageUrl = `https://${imageUrl}`;
 
 const Products = () => {
   return (
@@ -304,185 +305,441 @@ const Products = () => {
 
       {/* Banner */}
       <section className="bg-[#F9F9F9] bg-blur bg-right bg-no-repeat pt-0">
-          <div className="container mx-auto">
-            <div className="relative flex flex-col items-center sm:static lg:flex-row">
-              <div className="mb-16 mt-4 flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:px-[40px] md:py-[32px] md:text-left lg:mt-24 lg:flex-grow lg:items-start lg:pr-24">
-                <h1 className="sm:heading-1 heading-2 mb-6 mt-0 ">
-                  <span className="text-primary-500">TestFounder</span> works.
-                  Resumes don't.
-                </h1>
-                <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center lg:text-start">
-                  Our talent assessments screen and identify the best candidates
-                  and make your hiring decisions faster, easier, and bias-free.
-                </p>
-                <div className="mb-6 flex justify-center">
-                  <button className="btn-medium sm:btn-normal">
-                    Get Started
-                  </button>
-                  <button className="btn-line-medium sm:btn-line-normal ml-4">
-                   Watch Demo
-                  </button>
-                </div>
-              </div>
-              <div className="relative flex w-full justify-center md:w-full lg:w-full lg:max-w-lg">
-                <Image
-                  src={images.HeroImageProduct}
-                  alt="Hero Image"
-                  width={512}
-                  height={638}
-                  sizes="100vw"
-                  className=" mt-20 z-10 flex h-auto w-[80%] md:w-[60%] lg:w-full"
-                />
+        <div className="container mx-auto">
+          <div className="relative flex flex-col items-center sm:static lg:flex-row">
+            <div className="mb-16 mt-4 flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:px-[0px] md:py-[32px] md:text-left lg:mt-24 lg:flex-grow lg:items-start lg:pr-24">
+              <h1 className="sm:heading-1 heading-2 mb-6 mt-0 ">
+                <span className="text-primary-500">TestFounder</span> works.
+                Resumes don't.
+              </h1>
+              <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center lg:text-start">
+                Our talent assessments screen and identify the best candidates
+                and make your hiring decisions faster, easier, and bias-free.
+              </p>
+              <div className="mb-6 flex justify-center">
+                <button className="btn-medium sm:btn-normal">
+                  Get Started
+                </button>
+                <button className="btn-line-medium sm:btn-line-normal ml-4">
+                  Watch Demo
+                </button>
               </div>
             </div>
+            <div className="relative flex w-full justify-center md:w-full lg:w-full lg:max-w-lg">
+              <Image
+                src={images.HeroImageProduct}
+                alt="Hero Image"
+                width={512}
+                height={638}
+                sizes="100vw"
+                className=" z-10 mt-20 flex h-auto w-[80%] md:w-[60%] lg:w-full"
+              />
+            </div>
           </div>
+        </div>
       </section>
 
       {/* Section Click 1 */}
-      <section>
-
-      </section>
-
-      {/* Testimonials */}
-      <div className="w-full bg-[#F9F9F9] pb-[44px] sm:pb-[100px]">
-          <div className="container mx-auto flex h-[367px] items-center rounded-[20px] bg-white px-[14px] py-[12px] md:px-[55px] md:py-[32px] lg:px-[82px] lg:py-[32px]">
-            <Swiper
-              modules={[Autoplay]}
-              spaceBetween={40}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              breakpoints={{
-                640: {
-                  slidesPerView: 1,
-                },
-                768: {
-                  slidesPerView: 1,
-                },
-                1024: {
-                  slidesPerView: 2,
-                },
-              }}
-            >
-              {testimonies.map((testimonial, index) => (
-                <SwiperSlide key={index}>
-                  <div className="flex max-w-[518px] flex-row">
-                    <Image
-                      src={testimonial.src}
-                      alt="Testimonial Image"
-                      width={170}
-                      height={303}
-                      sizes="100vw"
-                      className="z-50 object-cover"
-                    />
-                    <div className="flex flex-col justify-between pl-3">
-                      <div className="flex flex-col">
-                        <Image
-                          src="/assets/quote.svg"
-                          alt="Hero Image"
-                          width={42}
-                          height={42}
-                          sizes="100vw"
-                          className="z-50"
-                        />
-                        <h3 className="heading-3 mt-0">{testimonial.name}</h3>
-                        <p className="caption-regular-3">
-                          {testimonial.company}
-                        </p>
-                        <p className="caption-light-2">{testimonial.quote}</p>
-                      </div>
-                      <div className="flex justify-between">
-                        <div className="flex">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                          >
-                            <path
-                              d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
-                              fill="#FCC773"
-                            />
-                          </svg>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                          >
-                            <path
-                              d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
-                              fill="#FCC773"
-                            />
-                          </svg>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                          >
-                            <path
-                              d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
-                              fill="#FCC773"
-                            />
-                          </svg>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                          >
-                            <path
-                              d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
-                              fill="#FCC773"
-                            />
-                          </svg>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                          >
-                            <path
-                              d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
-                              fill="#FCC773"
-                            />
-                          </svg>
-                        </div>
-                        <p className="caption-regular-3 text-neutral-100">
-                          {testimonial.date}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-              {/* <SwiperNavButton /> */}
-            </Swiper>
-          </div>
-        </div>
-
-        {/* Explanation 7 */}
-        <div className="min-h-[366px] w-full space-y-6 bg-[#D0F3FC26] pb-[60px]">
-          <div className="container mx-auto flex flex-col items-center justify-center space-y-6 px-4 py-6 text-center sm:px-16 sm:py-[60px]">
-            <h1 className="heading-2 sm:heading-1">
-            Reinvent your hiring process now.
-            </h1>
-            <p className="caption-regular-3 sm:caption-regular-1 text-center">
-            Start using TestFounder today, or talk to us about your hiring challenges to discover how we can help.
-            </p>
-            <div className="flex flex-row gap-4">
-              <button className="btn-line-medium">Free Demo</button>
-              <button className="btn-medium ">Get Started <span className='pl-2'><IoIosArrowForward /></span></button>
+      <section className="bg-[#F9F9F9] lg:pb-[46px]">
+        <div className="container mx-auto">
+          <h1 className="heading-1 mb-6">
+            1. Create high-quality assessments, fast.
+          </h1>
+          <p className="caption-regular-1">
+            Building assessments is a breeze with TestGorilla. Get started with
+            these simple steps.
+          </p>
+          <div className="flex lg:flex-row">
+            <div className="lg:mt-12 lg:w-1/2">
+              <CardAssessmentDefault
+                title="Pick the perfect assessment name"
+                content={[
+                  'Organize and optimize your assessment by choosing a distinct name and job role',
+                  'Creating a unique and detailed name allows you to easily keep track of assessments. Selecting a job role lets us recommend the most relevant tests.',
+                ]}
+                icon_url={'/assets/assessment.svg'}
+              />
+              <CardAssessmentDefault
+                title="Pick the perfect assessment name"
+                content={[
+                  'Explore our test library and find the best tests for any job role.',
+                ]}
+                icon_url={'/assets/icon-plus-product.svg'}
+              />
+              <CardAssessmentDefault
+                title="Get personal with your own custom questions"
+                content={[
+                  'Video responses from your candidates give unique insight into their personality.',
+                ]}
+                icon_url={'/assets/icon-plus-product.svg'}
+              />
+            </div>
+            <div className="flex items-center justify-end lg:w-1/2">
+              <Image
+                src="/assets/pick-assesment.png"
+                alt="Pick Assesment"
+                width={566}
+                height={357}
+                sizes="100vw"
+                className="z-50 object-cover"
+              />
             </div>
           </div>
         </div>
+      </section>
+
+      <section className="bg-[#F9F9F9]">
+        <div className="container mx-auto">
+          <div className="flex lg:flex-row">
+            <div className="lg:mt-12 lg:w-1/2">
+              <Image
+                src="/assets/hero-mail.png"
+                alt="Hero Mail"
+                width={566}
+                height={357}
+                sizes="100vw"
+                className="z-50 object-cover"
+              />
+            </div>
+            <div className="flex flex-col justify-center lg:w-1/2">
+              <h1 className="heading-1 mb-6">2. Invite candidates your way.</h1>
+              <p className="caption-regular-1">
+                Connect with candidates by sending email invites directly from
+                TestGorilla or straight from your ATS. Have a long list of
+                candidates? Easily send multiple invites with a single click. Or
+                have candidates sign up by sharing a direct link.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#F9F9F9] lg:pb-[98px] lg:pt-[60px]">
+        <div className="container mx-auto">
+          <h1 className="heading-1 mb-6">
+            3. Analyze and decide on the best candidates.
+          </h1>
+          <p className="caption-regular-1">
+            Watch the results roll in and discover your strongest candidates
+            with TestGorilla’s easy-to-read output reports.
+          </p>
+          <div className="flex lg:flex-row">
+            <div className="lg:mt-12 lg:w-1/2">
+              <CardAssessmentDefault
+                title="Real-time assessment results"
+                content={[
+                  'Review every single assessment status at a glance ',
+                  'See stats for each assesment, including how many candidates have started or finished and when the latest activity took place.',
+                ]}
+                icon_url={'/assets/assessment.svg'}
+              />
+              <CardAssessmentDefault
+                title="Compare your candidates instantly"
+                content={[
+                  'See your candidates ranked right away when you click on an assessment ',
+                ]}
+                icon_url={'/assets/icon-plus-product.svg'}
+              />
+              <CardAssessmentDefault
+                title="Go in-depth with a candidate review"
+                content={[
+                  'Know your candidates from every angle by exploring detailed reports and watching their personalized video.',
+                ]}
+                icon_url={'/assets/icon-plus-product.svg'}
+              />
+            </div>
+            <div className="flex items-center justify-end lg:w-1/2">
+              <Image
+                src="/assets/assesment-table.png"
+                alt="Pick Assesment"
+                width={577}
+                height={281}
+                sizes="100vw"
+                className="z-50 object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#D0F3FC26] lg:py-[60px] ">
+        <div className="container mx-auto">
+          <h1 className="heading-1 mb-6 text-center">
+            More reasons businesses are choosing TestFounder.
+          </h1>
+          <div className="flex justify-center lg:w-full lg:flex-row lg:flex-wrap lg:gap-6">
+            <div className="max-w-[310px] lg:mt-[34px]">
+              <Image
+                src="/assets/icon-simple.svg"
+                alt="icon-simple"
+                width={64}
+                height={64}
+                sizes="100vw"
+                className="z-50 object-cover"
+              />
+              <p className="caption-semibold-1">Surprisingly simple</p>
+              <p className="caption-light-2">
+                We’ve designed it so anyone can easily create assessments, add
+                custom questions, rank candidates, export custom CSV files and
+                more.
+              </p>
+            </div>
+            <div className="max-w-[310px] lg:mt-[34px]">
+              <Image
+                src="/assets/icon-simple.svg"
+                alt="icon-simple"
+                width={64}
+                height={64}
+                sizes="100vw"
+                className="z-50 object-cover"
+              />
+              <p className="caption-semibold-1">Incredible value</p>
+              <p className="caption-light-2">
+                We make professional assessments affordable for everyone and
+                streamline the hiring process for any size business.
+              </p>
+            </div>
+            <div className="max-w-[310px] lg:mt-[34px]">
+              <Image
+                src="/assets/icon-simple.svg"
+                alt="icon-simple"
+                width={64}
+                height={64}
+                sizes="100vw"
+                className="z-50 object-cover"
+              />
+              <p className="caption-semibold-1">
+                Positive candidate experience
+              </p>
+              <p className="caption-light-2">
+                No accounts necessary for candidates taking your assessment.
+                Utilize your logo to leave a lasting brand impression.
+              </p>
+            </div>
+            <div className="max-w-[310px] lg:mt-[34px]">
+              <Image
+                src="/assets/icon-simple.svg"
+                alt="icon-simple"
+                width={64}
+                height={64}
+                sizes="100vw"
+                className="z-50 object-cover"
+              />
+              <p className="caption-semibold-1">Cheating prevention</p>
+              <p className="caption-light-2">
+                View automatic snapshots of candidates as they’re being tested.
+                Receive alerts if a candidate exits full-screen mode.
+              </p>
+            </div>
+            <div className="max-w-[310px] lg:mt-[34px]">
+              <Image
+                src="/assets/icon-simple.svg"
+                alt="icon-simple"
+                width={64}
+                height={64}
+                sizes="100vw"
+                className="z-50 object-cover"
+              />
+              <p className="caption-semibold-1">Flexible file uploads</p>
+              <p className="caption-light-2">
+                Allow candidates to upload key documents such as a resume or
+                portfolio.
+              </p>
+            </div>
+            <div className="max-w-[310px] lg:mt-[34px]">
+              <Image
+                src="/assets/icon-simple.svg"
+                alt="icon-simple"
+                width={64}
+                height={64}
+                sizes="100vw"
+                className="z-50 object-cover"
+              />
+              <p className="caption-semibold-1">Stellar support</p>
+              <p className="caption-light-2">
+                Get answers to your questions, fast. Our team is always here to
+                help.
+              </p>
+            </div>
+            <div className="max-w-[310px] lg:mt-[34px]">
+              <Image
+                src="/assets/icon-simple.svg"
+                alt="icon-simple"
+                width={64}
+                height={64}
+                sizes="100vw"
+                className="z-50 object-cover"
+              />
+              <p className="caption-semibold-1">Smarter integration</p>
+              <p className="caption-light-2">
+                Native integration with software like Workable, Greenhouse,
+                Lever, SmartRecruiters, Recruitee, BreezyHR, Bullhorn, JazzHR,
+                and Zapier.
+              </p>
+            </div>
+            <div className="max-w-[310px] lg:mt-[34px]">
+              <Image
+                src="/assets/icon-simple.svg"
+                alt="icon-simple"
+                width={64}
+                height={64}
+                sizes="100vw"
+                className="z-50 object-cover"
+              />
+              <p className="caption-semibold-1">Mobile-friendly features</p>
+              <p className="caption-light-2">
+                Optimized for all platforms. Build and review assessments on the
+                go. Let candidates showcase their talents on any device.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <div className="w-full bg-[#F9F9F9] pb-[44px] sm:pb-[100px] lg:pt-[100px]">
+        <div className="container mx-auto flex h-[367px] items-center rounded-[20px] bg-white px-[14px] py-[12px] md:px-[55px] md:py-[32px] lg:px-[82px] lg:py-[32px]">
+          <Swiper
+            modules={[Autoplay]}
+            spaceBetween={40}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            breakpoints={{
+              640: {
+                slidesPerView: 1,
+              },
+              768: {
+                slidesPerView: 1,
+              },
+              1024: {
+                slidesPerView: 2,
+              },
+            }}
+          >
+            {testimonies.map((testimonial, index) => (
+              <SwiperSlide key={index}>
+                <div className="flex max-w-[518px] flex-row">
+                  <Image
+                    src={testimonial.src}
+                    alt="Testimonial Image"
+                    width={170}
+                    height={303}
+                    sizes="100vw"
+                    className="z-50 object-cover"
+                  />
+                  <div className="flex flex-col justify-between pl-3">
+                    <div className="flex flex-col">
+                      <Image
+                        src="/assets/quote.svg"
+                        alt="Hero Image"
+                        width={42}
+                        height={42}
+                        sizes="100vw"
+                        className="z-50"
+                      />
+                      <h3 className="heading-3 mt-0">{testimonial.name}</h3>
+                      <p className="caption-regular-3">{testimonial.company}</p>
+                      <p className="caption-light-2">{testimonial.quote}</p>
+                    </div>
+                    <div className="flex justify-between">
+                      <div className="flex">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
+                            fill="#FCC773"
+                          />
+                        </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
+                            fill="#FCC773"
+                          />
+                        </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
+                            fill="#FCC773"
+                          />
+                        </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
+                            fill="#FCC773"
+                          />
+                        </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
+                            fill="#FCC773"
+                          />
+                        </svg>
+                      </div>
+                      <p className="caption-regular-3 text-neutral-100">
+                        {testimonial.date}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+            {/* <SwiperNavButton /> */}
+          </Swiper>
+        </div>
+      </div>
+
+      {/* Explanation 7 */}
+      <div className="min-h-[366px] w-full space-y-6 bg-[#D0F3FC26] pb-[60px]">
+        <div className="container mx-auto flex flex-col items-center justify-center space-y-6 px-4 py-6 text-center sm:px-16 sm:py-[60px]">
+          <h1 className="heading-2 sm:heading-1">
+            Reinvent your hiring process now.
+          </h1>
+          <p className="caption-regular-3 sm:caption-regular-1 text-center">
+            Start using TestFounder today, or talk to us about your hiring
+            challenges to discover how we can help.
+          </p>
+          <div className="flex flex-row gap-4">
+            <button className="btn-line-medium">Free Demo</button>
+            <button className="btn-medium ">
+              Get Started{' '}
+              <span className="pl-2">
+                <IoIosArrowForward />
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
     </Layout>
   );
 };

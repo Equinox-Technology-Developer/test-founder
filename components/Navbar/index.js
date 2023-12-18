@@ -72,10 +72,15 @@ const Navbar = () => {
         </div>
 
         <div className={styles.nav_content}>
-          <ul className={styles.app__navbarLinks} onMouseLeave={handleMouseLeave}>
+          <ul
+            className={styles.app__navbarLinks}
+            onMouseLeave={handleMouseLeave}
+          >
             {/* Products */}
-            <li onMouseEnter={handleProductsHover}
-        className={isProductsDropdownOpen ? styles.dropdownActive : ''}>
+            <li
+              onMouseEnter={handleProductsHover}
+              className={isProductsDropdownOpen ? styles.dropdownActive : ''}
+            >
               <Link
                 href="/products"
                 className={
@@ -114,8 +119,10 @@ const Navbar = () => {
               </Link>
             </li>
             {/* Resources */}
-            <li onMouseEnter={handleResourcesHover}
-                className={isResourcesDropdownOpen ? styles.dropdownActive : ''}>
+            <li
+              onMouseEnter={handleResourcesHover}
+              className={isResourcesDropdownOpen ? styles.dropdownActive : ''}
+            >
               <Link
                 href="/resources"
                 className={
@@ -151,9 +158,13 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <div className="flex justify-center mobile-hidden">
-          <button className="btn-line-normal">Book a Demo</button>
-          <button className="btn-normal ml-4">Try for free!</button>
+        <div className="mobile-hidden flex justify-center">
+          <button className="2xl:btn-line-normal lg:btn-line-medium btn-line-medium">
+            Book a Demo
+          </button>
+          <button className="2xl:btn-normal lg:btn-medium btn-medium ml-4">
+            Try for free!
+          </button>
         </div>
 
         {/* On screen */}
