@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-const CardAssessmentDefault = ({ title, content, icon_url }) => {
+const CardAssessmentDefault = ({ title, paragraph, paragraph_2, icon_url }) => {
   return (
     <>
       <div className="flex w-fit max-w-[580px] items-start p-3 active:border-0 active:border-l-2 active:border-solid active:border-primary-500 active:shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)]">
@@ -16,11 +16,8 @@ const CardAssessmentDefault = ({ title, content, icon_url }) => {
         </div>
         <div className="flex flex-col pl-3">
           <h1 className="body-1 m-0">{title}</h1>
-          {content.map((paragraph, index) => (
-            <p className="caption-light-2 mt-1" key={index}>
-              {paragraph}
-            </p>
-          ))}
+          <p className="caption-light-2 mt-1">{paragraph}</p>
+          <p className="caption-light-2 mt-1">{paragraph_2}</p>
         </div>
       </div>
     </>
