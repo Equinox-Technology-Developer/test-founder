@@ -14,6 +14,23 @@ import styles from './Navbar.module.scss';
 const Navbar = () => {
   const router = useRouter();
   const [toogle, setToogle] = useState(false);
+  const [isProductsDropdownOpen, setProductsDropdownOpen] = useState(false);
+  const [isResourcesDropdownOpen, setResourcesDropdownOpen] = useState(false);
+
+  const handleProductsHover = () => {
+    setProductsDropdownOpen(true);
+    setResourcesDropdownOpen(false);
+  };
+
+  const handleResourcesHover = () => {
+    setProductsDropdownOpen(false);
+    setResourcesDropdownOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    setProductsDropdownOpen(false);
+    setResourcesDropdownOpen(false);
+  };
 
   const handleScroll = () => {
     const navbar = document.getElementById('navbar');
@@ -63,20 +80,29 @@ const Navbar = () => {
               onMouseEnter={handleProductsHover}
               className={isProductsDropdownOpen ? styles.dropdownActive : ''}
             >
+            </li>
+          </ul>
           <ul className={styles.app__navbarLinks}>
             {/* Products */}
-            <li>
-              <Link
-                href="/products"
-                className={
-                  router.pathname == '/products'
-                    ? styles.active
-                    : styles.nonActive
-                }
-              >
-                {' '}
+            <li
+              onMouseEnter={handleProductsHover}
+              className={isProductsDropdownOpen ? styles.dropdownActive : ''}
+            >
+              <Link href="/products" className={styles.nonActive}>
                 Product
               </Link>
+              {/* Products Dropdown */}
+              {isProductsDropdownOpen && (
+                <div
+                  className={styles.dropdownContent}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  {/* Add your dropdown content here */}
+                  <Link href="/products">Product 1</Link>
+                  <Link href="/sciences">Product 2</Link>
+                  <Link href="/test-library">Product 2</Link>
+                </div>
+              )}
             </li>
             {/* Pricing */}
             <li>
@@ -96,17 +122,22 @@ const Navbar = () => {
               onMouseEnter={handleResourcesHover}
               className={isResourcesDropdownOpen ? styles.dropdownActive : ''}
             >
-            <li>
-              <Link
-                href="/resources"
-                className={
-                  router.pathname == '/resources'
-                    ? styles.active
-                    : styles.nonActive
-                }
-              >
+              <Link href="/resources" className={styles.nonActive}>
                 Resources
               </Link>
+              {/* Resources Dropdown */}
+              {isResourcesDropdownOpen && (
+                <div
+                  className={styles.dropdownContent}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  {/* Add your dropdown content here */}
+                  <Link href="/case-studies">Case Studies</Link>
+                  <Link href="/skills-based-hiring">Skills-based hiring</Link>
+                  <Link href="/calent-assessment">Talent Assessment</Link>
+                  <Link href="/blog">Blog</Link>
+                </div>
+              )}
             </li>
             <li>
               <Link
@@ -121,107 +152,106 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <div className="mobile-hidden flex justify-center">
-          <button className="2xl:btn-line-normal lg:btn-line-medium btn-line-medium">
-            Book a Demo
-          </button>
-          <button className="2xl:btn-normal lg:btn-medium btn-medium ml-4">
-            Try for free!
-          </button>
-        <div className="flex justify-center mobile-hidden">
-          <button className="btn-line-normal">Book a Demo</button>
-          <button className="btn-normal ml-4">Try for free!</button>
-        </div>
-        <div className={styles.navbar_menu}>
-          <HiMenuAlt4 onClick={() => setToogle(true)} />
-          {toogle && (
-            <motion.div
-              whileInView={{ x: [300, 0, 0] }}
-              transition={{ duration: 0.85, ease: 'easeOut' }}
-            >
-              <HiX onClick={() => setToogle(false)} />
-              <ul className={styles.app__navbarLinks}>
-                <li>
-                  <Link
-                    href="/"
-                    className={
-                      router.pathname == '/' ? styles.active : styles.nonActive
-                    }
-                  >
-                    {' '}
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/products"
-                    className={
-                      router.pathname == '/products'
-                        ? styles.active
-                        : styles.nonActive
-                    }
-                  >
-                    Products
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/pricing"
-                    className={
-                      router.pathname == '/pricing'
-                        ? styles.active
-                        : styles.nonActive
-                    }
-                  >
-                    Pricing
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/resources"
-                    className={
-                      router.pathname == '/resources'
-                        ? styles.active
-                        : styles.nonActive
-                    }
-                  >
-                    Resources
-                  </Link>
-                </li>
-              </ul>
-            </motion.div>
-          )}
+        <div className=" flex justify-center">
+          <div className="mobile-hidden flex justify-center">
+            <button className="2xl:btn-line-normal lg:btn-line-medium btn-line-medium">
+              Book a Demo
+            </button>
+            <button className="2xl:btn-normal lg:btn-medium btn-medium ml-4">
+              Try for free!
+            </button>
+          </div>
+          <div className={styles.navbar_menu}>
+            <HiMenuAlt4 onClick={() => setToogle(true)} />
+            {toogle && (
+              <motion.div
+                whileInView={{ x: [300, 0, 0] }}
+                transition={{ duration: 0.85, ease: 'easeOut' }}
+              >
+                <HiX onClick={() => setToogle(false)} />
+                <ul className={styles.app__navbarLinks}>
+                  <li>
+                    <Link
+                      href="/"
+                      className={
+                        router.pathname == '/' ? styles.active : styles.nonActive
+                      }
+                    >
+                      {' '}
+                      Home
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/products"
+                      className={
+                        router.pathname == '/products'
+                          ? styles.active
+                          : styles.nonActive
+                      }
+                    >
+                      Products
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/pricing"
+                      className={
+                        router.pathname == '/pricing'
+                          ? styles.active
+                          : styles.nonActive
+                      }
+                    >
+                      Pricing
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/resources"
+                      className={
+                        router.pathname == '/resources'
+                          ? styles.active
+                          : styles.nonActive
+                      }
+                    >
+                      Resources
+                    </Link>
+                  </li>
+                </ul>
+              </motion.div>
+            )}
+          </div>
         </div>
       </div>
     </nav>
   );
 };
 
-export async function getStaticProps() {
-  const contentType = 'landingPage'; // Modify the content type here
-  const propsKey = 'products'; // Modify the props key here
-  const catchKey = 'error'; // Modify the catch key here
-  const indexToRead = 10; // Modify the index you want to read
+// export async function getStaticProps() {
+//   const contentType = 'landingPage'; // Modify the content type here
+//   const propsKey = 'products'; // Modify the props key here
+//   const catchKey = 'error'; // Modify the catch key here
+//   const indexToRead = 10; // Modify the index you want to read
 
-  try {
-    const dynamicData = await fetchContentfulEntries(
-      contentType,
-      propsKey,
-      catchKey,
-      indexToRead,
-    );
+//   try {
+//     const dynamicData = await fetchContentfulEntries(
+//       contentType,
+//       propsKey,
+//       catchKey,
+//       indexToRead,
+//     );
 
-    return {
-      props: dynamicData,
-    };
-  } catch (error) {
-    console.error('Error in getStaticProps:', error);
-    return {
-      props: {
-        [catchKey]: 'An unexpected error occurred.',
-      },
-    };
-  }
-}
+//     return {
+//       props: dynamicData,
+//     };
+//   } catch (error) {
+//     console.error('Error in getStaticProps:', error);
+//     return {
+//       props: {
+//         [catchKey]: 'An unexpected error occurred.',
+//       },
+//     };
+//   }
+// }
 
 export default Navbar;

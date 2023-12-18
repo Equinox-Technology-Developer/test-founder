@@ -8,7 +8,7 @@
   padding-top: 1rem;
   background: transparent;
 
-  @media (min-width: 640px) {
+  @media (max-width: 640px) {
     padding-top: 0;
   }
 }
@@ -228,6 +228,18 @@
 }
 
 /* Dropdown styles */
+
+.nonActive {
+  color: #333;
+  text-decoration: none;
+  padding: 10px;
+  transition: color 0.3s;
+}
+
+.active {
+  color: #007bff; /* or your active color */
+}
+
 .dropdownContent {
   // display: block;
   position: absolute;
