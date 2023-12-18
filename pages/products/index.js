@@ -353,24 +353,18 @@ const Products = () => {
             <div className="lg:mt-12 lg:w-1/2">
               <CardAssessmentDefault
                 title="Pick the perfect assessment name"
-                content={[
-                  'Organize and optimize your assessment by choosing a distinct name and job role',
-                  'Creating a unique and detailed name allows you to easily keep track of assessments. Selecting a job role lets us recommend the most relevant tests.',
-                ]}
+                paragraph="Organize and optimize your assessment by choosing a distinct name and job role"
+                paragraph_2="Creating a unique and detailed name allows you to easily keep track of assessments. Selecting a job role lets us recommend the most relevant tests"
                 icon_url={'/assets/assessment.svg'}
               />
               <CardAssessmentDefault
                 title="Pick the perfect assessment name"
-                content={[
-                  'Explore our test library and find the best tests for any job role.',
-                ]}
+                paragraph="Explore our test library and find the best tests for any job role"
                 icon_url={'/assets/icon-plus-product.svg'}
               />
               <CardAssessmentDefault
                 title="Get personal with your own custom questions"
-                content={[
-                  'Video responses from your candidates give unique insight into their personality.',
-                ]}
+                paragraph="Video responses from your candidates give unique insight into their personality"
                 icon_url={'/assets/icon-plus-product.svg'}
               />
             </div>
@@ -427,24 +421,18 @@ const Products = () => {
             <div className="lg:mt-12 lg:w-1/2">
               <CardAssessmentDefault
                 title="Real-time assessment results"
-                content={[
-                  'Review every single assessment status at a glance ',
-                  'See stats for each assesment, including how many candidates have started or finished and when the latest activity took place.',
-                ]}
+                paragraph="Review every single assessment status at a glance"
+                paragraph_2="See stats for each assesment, including how many candidates have started or finished and when the latest activity took place"
                 icon_url={'/assets/assessment.svg'}
               />
               <CardAssessmentDefault
                 title="Compare your candidates instantly"
-                content={[
-                  'See your candidates ranked right away when you click on an assessment ',
-                ]}
+                paragraph="See your candidates ranked right away when you click on an assessment"
                 icon_url={'/assets/icon-plus-product.svg'}
               />
               <CardAssessmentDefault
                 title="Go in-depth with a candidate review"
-                content={[
-                  'Know your candidates from every angle by exploring detailed reports and watching their personalized video.',
-                ]}
+                paragraph="Know your candidates from every angle by exploring detailed reports and watching their personalized video"
                 icon_url={'/assets/icon-plus-product.svg'}
               />
             </div>
