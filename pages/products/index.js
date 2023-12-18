@@ -15,11 +15,11 @@ import 'swiper/css/navigation';
 import styles from './Products.module.scss';
 
 // const Products = ({ contentfulEntries }) => {
-const Products = () => {
   // const bodyTextValue = contentfulEntries.topBanner.fields.bodyText.content[0].content[0].value || '';
   // const imageUrl = contentfulEntries.topBanner.fields.image.fields.file.url;
   // const fullImageUrl = `https://${imageUrl}`;
 
+const Products = () => {
   return (
     <Layout pageTitle="Products">
       {/* Top Banner */}

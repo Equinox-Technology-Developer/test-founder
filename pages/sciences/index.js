@@ -7,13 +7,15 @@ import { fetchContentfulEntries } from '@/helper/contenfulHelper';
 
 import styles from './Sciences.module.scss';
 
-const ProductScience = ({ contentfulEntries }) => {
-  const bodyTextValue =
-    contentfulEntries.topBanner.fields.bodyText.content[0].content[0].value ||
-    '';
-  const imageUrl = contentfulEntries.topBanner.fields.image.fields.file.url;
-  const fullImageUrl = `https://${imageUrl}`;
-  console.log(contentfulEntries);
+// const ProductScience = ({ contentfulEntries }) => {
+  // const bodyTextValue =
+  //   contentfulEntries.topBanner.fields.bodyText.content[0].content[0].value ||
+  //   '';
+  // const imageUrl = contentfulEntries.topBanner.fields.image.fields.file.url;
+  // const fullImageUrl = `https://${imageUrl}`;
+  // console.log(contentfulEntries);
+  
+const ProductScience = () => {
   return (
     <>
       <Layout pageTitle="Product Science">

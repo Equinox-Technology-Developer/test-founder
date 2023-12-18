@@ -9,7 +9,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css/navigation';
-import { fetchContentfulEntries } from '@/helper/contenfulHelper';
+// import { fetchContentfulEntries } from '@/helper/contenfulHelper';
 
 const slideData = [
   { src: '/assets/abbot.svg', alt: 'Abbot', width: 180, height: 80 },
@@ -80,7 +80,8 @@ const testimonies = [
   },
 ];
 
-export default function Home({ homepages }) {
+// export default function Home({ homepages }) {
+export default function Home() {
   return (
     <>
       <Head>
@@ -557,29 +558,29 @@ export default function Home({ homepages }) {
   );
 }
 
-export async function getStaticProps() {
-  const contentType = 'landingPage'; // Modify the content type here
-  const propsKey = 'homepages'; // Modify the props key here
-  const catchKey = 'error'; // Modify the catch key here
-  const indexToRead = 11; // Modify the index you want to read
+// export async function getStaticProps() {
+//   const contentType = 'landingPage'; // Modify the content type here
+//   const propsKey = 'homepages'; // Modify the props key here
+//   const catchKey = 'error'; // Modify the catch key here
+//   const indexToRead = 11; // Modify the index you want to read
 
-  try {
-    const dynamicData = await fetchContentfulEntries(
-      contentType,
-      propsKey,
-      catchKey,
-      indexToRead,
-    );
+//   try {
+//     const dynamicData = await fetchContentfulEntries(
+//       contentType,
+//       propsKey,
+//       catchKey,
+//       indexToRead,
+//     );
 
-    return {
-      props: dynamicData,
-    };
-  } catch (error) {
-    console.error('Error in getStaticProps:', error);
-    return {
-      props: {
-        [catchKey]: 'An unexpected error occurred.',
-      },
-    };
-  }
-}
+//     return {
+//       props: dynamicData,
+//     };
+//   } catch (error) {
+//     console.error('Error in getStaticProps:', error);
+//     return {
+//       props: {
+//         [catchKey]: 'An unexpected error occurred.',
+//       },
+//     };
+//   }
+// }
