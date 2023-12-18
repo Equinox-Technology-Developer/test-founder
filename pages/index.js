@@ -101,7 +101,7 @@ export default function Home() {
         <section className="bg-[#F9F9F9] bg-blur bg-right bg-no-repeat pt-0">
           <div className="container mx-auto">
             <div className="relative flex flex-col items-center sm:static lg:flex-row">
-              <div className="mb-16 mt-4 flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:px-[40px] md:py-[32px] md:text-left lg:mt-24 lg:flex-grow lg:items-start lg:pr-24">
+              <div className="mb-16 mt-4 flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:py-[32px] md:pr-[40px] md:text-left lg:mt-24 lg:flex-grow lg:items-start lg:pr-24">
                 <h1 className="sm:heading-1 heading-2 mb-6 mt-0 ">
                   <span className="text-primary-500">TestFounder</span> works.
                   Resumes don't.
@@ -159,7 +159,7 @@ export default function Home() {
                   width={512}
                   height={638}
                   sizes="100vw"
-                  className=" mt-20 z-10 flex h-auto w-[80%] md:w-[60%] lg:w-full"
+                  className=" z-10 mt-20 flex h-auto w-[80%] md:w-[60%] lg:w-full"
                 />
                 <Image
                   src="/assets/card-customer.png"
@@ -535,7 +535,7 @@ export default function Home() {
 
         {/* Explanation 7 */}
         <div className="min-h-[366px] w-full space-y-6 bg-[#D0F3FC26] pb-[60px]">
-          <div className="container mx-auto flex flex-col items-center justify-center space-y-6 px-4 py-6 text-center sm:px-16 sm:py-[60px]">
+          <div className="container mx-auto flex flex-col items-center justify-center space-y-6 px-4 py-6 text-center sm:px-0 sm:py-[60px]">
             <h1 className="heading-2 sm:heading-1">
               Top talent is priceless. We make finding it affordable.
             </h1>
