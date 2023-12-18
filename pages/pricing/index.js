@@ -5,7 +5,8 @@ import React from 'react';
 
 import styles from './Pricing.module.scss';
 
-const Pricing = ({pricing}) => {
+// const Pricing = ({pricing}) => {
+const Pricing = () => {
   const [isAnnual, setIsAnnual] = useState(false);
 
   const plans = [
@@ -558,31 +559,31 @@ const Pricing = ({pricing}) => {
   );
 };
 
-export async function getStaticProps() {
-  const contentType = 'landingPage'; // Modify the content type here
-  const propsKey = 'pricing'; // Modify the props key here
-  const catchKey = 'error'; // Modify the catch key here
-  const indexToRead = 12; // Modify the index you want to read
+// export async function getStaticProps() {
+//   const contentType = 'landingPage'; // Modify the content type here
+//   const propsKey = 'pricing'; // Modify the props key here
+//   const catchKey = 'error'; // Modify the catch key here
+//   const indexToRead = 12; // Modify the index you want to read
 
-  try {
-    const dynamicData = await fetchContentfulEntries(
-      contentType,
-      propsKey,
-      catchKey,
-      indexToRead,
-    );
+//   try {
+//     const dynamicData = await fetchContentfulEntries(
+//       contentType,
+//       propsKey,
+//       catchKey,
+//       indexToRead,
+//     );
 
-    return {
-      props: dynamicData,
-    };
-  } catch (error) {
-    console.error('Error in getStaticProps:', error);
-    return {
-      props: {
-        [catchKey]: 'An unexpected error occurred.',
-      },
-    };
-  }
-}
+//     return {
+//       props: dynamicData,
+//     };
+//   } catch (error) {
+//     console.error('Error in getStaticProps:', error);
+//     return {
+//       props: {
+//         [catchKey]: 'An unexpected error occurred.',
+//       },
+//     };
+//   }
+// }
 
 export default Pricing;

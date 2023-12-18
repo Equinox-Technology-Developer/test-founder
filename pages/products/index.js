@@ -24,7 +24,7 @@ const Products = ({ contentfulEntries }) => {
   return (
     <Layout pageTitle="Products">
       {/* Top Banner */}
-      <section className="bg-blur bg-right bg-no-repeat bg-[#F9F9F9]">
+      {/* <section className="bg-blur bg-right bg-no-repeat bg-[#F9F9F9]">
         <div className="container mx-auto">
           <div className="flex px-5 py-4 md:flex-row flex-col items-center">
             <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center mt-24">
@@ -66,10 +66,10 @@ const Products = ({ contentfulEntries }) => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Explanation 3*/}
-      <section className="min-h-[700px] flex items-center bg-[#F9F9F9]">
+      {/* <section className="min-h-[700px] flex items-center bg-[#F9F9F9]">
         <div className="container mx-auto ">
           {contentfulEntries.topSection.map((content) => (
             <div key={content.fields.internalName} className="flex px-5 py-4 md:flex-row flex-col items-center gap-[21px]">
@@ -97,10 +97,10 @@ const Products = ({ contentfulEntries }) => {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* Testimonials */}
-      <div className="w-full bg-[#F9F9F9] pb-[100px] ">
+      {/* <div className="w-full bg-[#F9F9F9] pb-[100px] ">
         <div className="container mx-auto bg-white rounded-[20px] h-[367px] pb-[61px] px-[64px] flex items-center">
           <Swiper
             modules={[Autoplay]}
@@ -217,13 +217,13 @@ const Products = ({ contentfulEntries }) => {
                 </div>
               </SwiperSlide>
             ))}
-            {/* <SwiperNavButton /> */}
+            <SwiperNavButton />
           </Swiper>
         </div>
-      </div>
+      </div> */}
 
       {/*Banner Bottom */}
-      <div className="w-full bg-[#D0F3FC26] min-h-[366px] space-y-6 pb-[60px]">
+      {/* <div className="w-full bg-[#D0F3FC26] min-h-[366px] space-y-6 pb-[60px]">
         <div className="container mx-auto flex flex-col items-center justify-center text-center space-y-6">
           <h1 className="heading-1">
             {contentfulEntries.extraSection[0].fields.headline}
@@ -247,31 +247,31 @@ const Products = ({ contentfulEntries }) => {
             </button>
           </div>
         </div>
-      </div>
+      </div> */}
     </Layout>
   );
 };
 
-export async function getStaticProps() {
-  const contentType = 'landingPage'; // Modify content type here
-  const { items } = await fetchContentfulEntries(contentType);
+// export async function getStaticProps() {
+//   const contentType = 'landingPage'; // Modify content type here
+//   const { items } = await fetchContentfulEntries(contentType);
 
-  const entries = items.find(
-    (entry) => entry.fields.internalName === 'Products',
-  );
+//   const entries = items.find(
+//     (entry) => entry.fields.internalName === 'Products',
+//   );
 
-  // Check if the entry is found
-  if (entries) {
-    console.log('Found the homepage entry:', entries);
-  } else {
-    console.log('Homepage entry not found.');
-  }
+//   // Check if the entry is found
+//   if (entries) {
+//     console.log('Found the homepage entry:', entries);
+//   } else {
+//     console.log('Homepage entry not found.');
+//   }
 
-  return {
-    props: {
-      contentfulEntries: entries ? entries.fields : {}, // Modify key-value of props
-    },
-  };
-}
+//   return {
+//     props: {
+//       contentfulEntries: entries ? entries.fields : {}, // Modify key-value of props
+//     },
+//   };
+// }
 
 export default Products;
