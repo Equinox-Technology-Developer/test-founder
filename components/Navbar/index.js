@@ -14,23 +14,6 @@ import styles from './Navbar.module.scss';
 const Navbar = () => {
   const router = useRouter();
   const [toogle, setToogle] = useState(false);
-  const [isProductsDropdownOpen, setProductsDropdownOpen] = useState(false);
-  const [isResourcesDropdownOpen, setResourcesDropdownOpen] = useState(false);
-
-  const handleProductsHover = () => {
-    setProductsDropdownOpen(true);
-    setResourcesDropdownOpen(false);
-  };
-
-  const handleResourcesHover = () => {
-    setProductsDropdownOpen(false);
-    setResourcesDropdownOpen(true);
-  };
-
-  const handleMouseLeave = () => {
-    setProductsDropdownOpen(false);
-    setResourcesDropdownOpen(false);
-  };
 
   const handleScroll = () => {
     const navbar = document.getElementById('navbar');
@@ -52,7 +35,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav id="navbar" className={`blur-3 ${styles.navbar}`}>
+    <nav id="navbar" className={styles.navbar}>
       <div
         className={`${styles.navbar_container} ${
           toogle ? styles.toogleActive : ''
@@ -70,12 +53,10 @@ const Navbar = () => {
             />
           </Link>
         </div>
-
         <div className={styles.nav_content}>
-          <ul className={styles.app__navbarLinks} onMouseLeave={handleMouseLeave}>
+          <ul className={styles.app__navbarLinks}>
             {/* Products */}
-            <li onMouseEnter={handleProductsHover}
-        className={isProductsDropdownOpen ? styles.dropdownActive : ''}>
+            <li>
               <Link
                 href="/products"
                 className={
@@ -87,18 +68,6 @@ const Navbar = () => {
                 {' '}
                 Product
               </Link>
-              {/* Products Dropdown */}
-              {isProductsDropdownOpen && (
-                <div
-                  className={styles.dropdownContent}
-                  onMouseLeave={handleMouseLeave}
-                >
-                  {/* Add your dropdown content here */}
-                  <Link href="/product1">Products</Link>
-                  <Link href="/product2">Science</Link>
-                  <Link href="/product2">Test Library</Link>
-                </div>
-              )}
             </li>
             {/* Pricing */}
             <li>
@@ -114,8 +83,7 @@ const Navbar = () => {
               </Link>
             </li>
             {/* Resources */}
-            <li onMouseEnter={handleResourcesHover}
-                className={isResourcesDropdownOpen ? styles.dropdownActive : ''}>
+            <li>
               <Link
                 href="/resources"
                 className={
@@ -126,17 +94,6 @@ const Navbar = () => {
               >
                 Resources
               </Link>
-              {/* Resources Dropdown */}
-              {isResourcesDropdownOpen && (
-                <div
-                  className={styles.dropdownContent}
-                  onMouseLeave={handleMouseLeave}
-                >
-                  {/* Add your dropdown content here */}
-                  <Link href="/resource1">Resource 1</Link>
-                  <Link href="/resource2">Resource 2</Link>
-                </div>
-              )}
             </li>
             <li>
               <Link
@@ -150,13 +107,10 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-
         <div className="flex justify-center mobile-hidden">
           <button className="btn-line-normal">Book a Demo</button>
           <button className="btn-normal ml-4">Try for free!</button>
         </div>
-
-        {/* On screen */}
         <div className={styles.navbar_menu}>
           <HiMenuAlt4 onClick={() => setToogle(true)} />
           {toogle && (
