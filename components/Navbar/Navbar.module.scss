@@ -75,15 +75,6 @@
       letter-spacing: 1px;
       font-size: 16px;
 
-      div {
-        width: 5px;
-        height: 5px;
-        background: transparent;
-        border-radius: 50%;
-
-        margin-bottom: 5px;
-      }
-
       a {
         color: var(--black-color);
         text-decoration: none;
@@ -241,12 +232,19 @@
 }
 
 .dropdownContent {
-  // display: block;
   position: absolute;
-  background-color: #fff;
+  background-color: #F9F9F9;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   z-index: 1;
+  padding: 12px;
+  margin-top: 15px;
+
+  h2 {
+    padding-bottom: 12px;
+    border-bottom: 1px solid #CBCBCB;
+    cursor: auto;
+  }
 
   a {
     color: #333;
@@ -254,7 +252,6 @@
     display: block;
     padding: 10px;
     transition: background-color 0.3s;
-    border-bottom: 1px solid #eee;
 
     &:hover {
       background-color: #f8f8f8;

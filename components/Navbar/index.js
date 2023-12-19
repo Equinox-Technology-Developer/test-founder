@@ -97,10 +97,11 @@ const Navbar = () => {
                   className={styles.dropdownContent}
                   onMouseLeave={handleMouseLeave}
                 >
+                  <h2>Product Tour</h2>
                   {/* Add your dropdown content here */}
-                  <Link href="/products">Product 1</Link>
-                  <Link href="/sciences">Product 2</Link>
-                  <Link href="/test-library">Product 2</Link>
+                  <Link href="/products">Products</Link>
+                  <Link href="/sciences">Sciences</Link>
+                  <Link href="/test-library">Test Library</Link>
                 </div>
               )}
             </li>
@@ -131,6 +132,7 @@ const Navbar = () => {
                   className={styles.dropdownContent}
                   onMouseLeave={handleMouseLeave}
                 >
+                  <h2>Learn</h2>
                   {/* Add your dropdown content here */}
                   <Link href="/case-studies">Case Studies</Link>
                   <Link href="/skills-based-hiring">Skills-based hiring</Link>
@@ -139,6 +141,7 @@ const Navbar = () => {
                 </div>
               )}
             </li>
+            {/* About */}
             <li>
               <Link
                 href="/about"
@@ -152,7 +155,7 @@ const Navbar = () => {
           </ul>
         </div>
 
-        <div className=" flex justify-center">
+        <div className="flex justify-center">
           <div className="mobile-hidden flex justify-center">
             <button className="2xl:btn-line-normal lg:btn-line-medium btn-line-medium">
               Book a Demo

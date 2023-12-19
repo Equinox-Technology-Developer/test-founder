@@ -97,6 +97,7 @@ export default function Home() {
       </Head>
 
       <Layout pageTitle="Homepage">
+        
         {/* Banner */}
         <section className="bg-[#F9F9F9] bg-blur bg-right bg-no-repeat pt-0">
           <div className="container mx-auto">
@@ -211,9 +212,12 @@ export default function Home() {
             </div>
           </div>
         </section>
-        {/* Explanation */}
-        <section className="z-50 flex h-fit items-center bg-[#F9F9F9] px-4 py-6 sm:min-h-[700px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
-          <div className="container mx-auto ">
+
+                
+        
+        {/* Explanation 1 */}
+        <section className='z-50 flex h-fit items-center bg-[#F9F9F9] px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0'>
+        <div className="container mx-auto ">
             <div className="flex flex-col items-center gap-[50px] lg:flex-row">
               <div className="z-50 mb-1 sm:mb-16 md:mb-0 md:w-full md:text-left lg:flex-grow">
                 <Image
@@ -245,19 +249,20 @@ export default function Home() {
                   See Tests
                 </button>
               </div>
-            </div>
-          </div>
-          <Image
+            <Image
             src="/assets/bg_blur_2.png"
             alt="Hero Image"
             width={730}
             height={565}
             sizes="100vw"
-            className="absolute left-[12%] top-[149%] blur-xl sm:left-[10%] sm:top-auto"
+            className="absolute"
           />
+            </div>
+          </div>
         </section>
+        
         {/* Explanation 2 */}
-        <section className="flex h-fit items-center bg-[#F9F9F9] px-4 py-6 sm:min-h-[700px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
+        <section className="flex h-fit items-center bg-[#F9F9F9] px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
           <div className="container mx-auto">
             <div className="flex flex-col-reverse items-center gap-[41px] md:flex-col-reverse lg:flex-row">
               <div className="z-50 mb-1 flex flex-col items-center text-center sm:mb-16 md:mb-0 md:w-full md:items-start  md:pr-16 md:text-left lg:flex-grow lg:pr-24">
@@ -293,7 +298,7 @@ export default function Home() {
         </section>
 
         {/* Explanation 3*/}
-        <section className="flex h-fit items-center bg-[#F9F9F9] px-4 py-6 sm:min-h-[700px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
+        <section className="flex h-fit items-center bg-[#F9F9F9] px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
           <div className="container mx-auto ">
             <div className="flex flex-col items-center gap-[50px] lg:flex-row">
               <div className="mb-16 w-full sm:w-full md:mb-0 md:text-left ">
@@ -326,7 +331,7 @@ export default function Home() {
         </section>
 
         {/* Explanation 4 */}
-        <section className="flex h-fit items-center bg-[#F9F9F9] px-4 py-6 sm:min-h-[700px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
+        <section className="flex h-fit items-center bg-[#F9F9F9] px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
           <div className="container mx-auto">
             <div className="flex flex-col-reverse items-center gap-[41px] md:flex-col-reverse lg:flex-row">
               <div className="z-50 mb-16 flex flex-col items-center text-center md:mb-0 md:w-full md:items-start md:pr-16 md:text-left lg:flex-grow lg:pr-24">
@@ -363,12 +368,12 @@ export default function Home() {
             width={730}
             height={565}
             sizes="100vw"
-            className="absolute right-[10%] top-[450%] z-0 blur-xl sm:top-auto"
+            className="absolute right-10"
           />
         </section>
 
         {/* Explanation 5 */}
-        <section className="flex h-fit items-center bg-[#F9F9F9] px-4 py-6 sm:h-fit sm:min-h-[700px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
+        <section className="flex h-fit items-center bg-[#F9F9F9] px-4 py-6 sm:h-fit sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
           <div className="container mx-auto ">
             <div className="flex flex-col items-center gap-0 sm:gap-[21px] lg:flex-row">
               <div className="z-50 mb-1 w-full sm:mb-16 md:mb-0 md:w-full md:text-left">
@@ -395,20 +400,19 @@ export default function Home() {
                   and data-focused HR culture in your company.
                 </p>
               </div>
-            </div>
-          </div>
           <Image
             src="/assets/bg_blur_4.png"
             alt="Hero Image"
             width={730}
             height={565}
             sizes="100vw"
-            className="absolute left-[10%] top-[550%] blur-xl sm:top-auto"
+            className="absolute pl-10"
           />
+            </div>
+          </div>
         </section>
 
         {/* Testimonials */}
-
         <div className="w-full bg-[#F9F9F9] pb-[44px] sm:pb-[100px]">
           <div className="container mx-auto flex h-[367px] items-center rounded-[20px] bg-white px-[14px] py-[12px] md:px-[55px] md:py-[32px] lg:px-[82px] lg:py-[32px]">
             <Swiper
@@ -534,7 +538,7 @@ export default function Home() {
         </div>
 
         {/* Explanation 7 */}
-        <div className="min-h-[366px] w-full space-y-6 bg-[#D0F3FC26] pb-[60px]">
+        <div className="min-h-[366px] w-full space-y-6 bg-[#D0F3FC26]">
           <div className="container mx-auto flex flex-col items-center justify-center space-y-6 px-4 py-6 text-center sm:px-0 sm:py-[60px]">
             <h1 className="heading-2 sm:heading-1">
               Top talent is priceless. We make finding it affordable.

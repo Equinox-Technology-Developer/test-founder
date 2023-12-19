@@ -17,7 +17,7 @@ const images = {
   badge_top_100,
   capterra,
   HeroImageProduct,
-  top_banner_science
+  top_banner_science,
 };
 
 export default images;
