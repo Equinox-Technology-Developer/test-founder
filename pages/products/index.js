@@ -69,7 +69,6 @@ const testimonies = [
   },
 ];
 
-
 const Products = () => {
   return (
     <Layout pageTitle="Products">
@@ -77,7 +76,7 @@ const Products = () => {
       <section className="bg-[#F9F9F9] bg-blur bg-right bg-no-repeat pt-0">
         <div className="container mx-auto">
           <div className="relative flex flex-col items-center sm:static lg:flex-row">
-            <div className="mb-16 mt-4 flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:px-[0px] md:py-[32px] md:text-left lg:mt-24 lg:flex-grow lg:items-start lg:pr-24">
+            <div className="mt-4 flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:px-[0px] md:py-[32px] md:text-left lg:mb-16 lg:mt-24 lg:flex-grow lg:items-start lg:pr-24">
               <h1 className="sm:heading-1 heading-2 mb-6 mt-0 ">
                 <span className="text-primary-500">TestFounder</span> works.
                 Resumes don't.
@@ -102,7 +101,7 @@ const Products = () => {
                 width={512}
                 height={638}
                 sizes="100vw"
-                className=" z-10 mt-20 flex h-auto w-[80%] md:w-[60%] lg:w-full"
+                className=" z-10 flex h-auto w-[80%] md:w-[60%] lg:mt-20 lg:w-full"
               />
             </div>
           </div>
@@ -110,16 +109,16 @@ const Products = () => {
       </section>
 
       {/* Section Click 1 */}
-      <section className="bg-[#F9F9F9] lg:pb-[46px]">
+      <section className="bg-[#F9F9F9] px-4 py-6 lg:pb-[46px]">
         <div className="container mx-auto">
-          <h1 className="heading-1 mb-6">
+          <h1 className="heading-2 lg:heading-1 mb-6">
             1. Create high-quality assessments, fast.
           </h1>
-          <p className="caption-regular-1">
+          <p className="caption-regular-3 lg:caption-regular-1 mb-6 sm:mb-0">
             Building assessments is a breeze with TestGorilla. Get started with
             these simple steps.
           </p>
-          <div className="flex lg:flex-row">
+          <div className="flex flex-col lg:flex-row">
             <div className="lg:mt-12 lg:w-1/2">
               <CardAssessmentDefault
                 title="Pick the perfect assessment name"
@@ -145,16 +144,16 @@ const Products = () => {
                 width={566}
                 height={357}
                 sizes="100vw"
-                className="z-50 object-cover"
+                className="z-50 hidden object-cover lg:block"
               />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#F9F9F9]">
+      <section className="bg-[#F9F9F9] px-4 py-6">
         <div className="container mx-auto">
-          <div className="flex lg:flex-row">
+          <div className="flex flex-col lg:flex-row">
             <div className="lg:mt-12 lg:w-1/2">
               <Image
                 src="/assets/hero-mail.png"
@@ -166,7 +165,9 @@ const Products = () => {
               />
             </div>
             <div className="flex flex-col justify-center lg:w-1/2">
-              <h1 className="heading-1 mb-6">2. Invite candidates your way.</h1>
+              <h1 className="heading-2 lg:heading-1 mb-6">
+                2. Invite candidates your way.
+              </h1>
               <p className="caption-regular-1">
                 Connect with candidates by sending email invites directly from
                 TestGorilla or straight from your ATS. Have a long list of
@@ -178,16 +179,16 @@ const Products = () => {
         </div>
       </section>
 
-      <section className="bg-[#F9F9F9] lg:pb-[98px] lg:pt-[60px]">
+      <section className="bg-[#F9F9F9] px-4 py-6 lg:pb-[98px] lg:pt-[60px]">
         <div className="container mx-auto">
-          <h1 className="heading-1 mb-6">
+          <h1 className="heading-2 lg:heading-1 mb-6">
             3. Analyze and decide on the best candidates.
           </h1>
-          <p className="caption-regular-1">
+          <p className="caption-regular-3 lg:caption-regular-1 mb-6 sm:mb-0">
             Watch the results roll in and discover your strongest candidates
             with TestGorilla’s easy-to-read output reports.
           </p>
-          <div className="flex lg:flex-row">
+          <div className="flex flex-col lg:flex-row">
             <div className="lg:mt-12 lg:w-1/2">
               <CardAssessmentDefault
                 title="Real-time assessment results"
@@ -213,139 +214,153 @@ const Products = () => {
                 width={577}
                 height={281}
                 sizes="100vw"
-                className="z-50 object-cover"
+                className="z-50 hidden object-cover lg:block"
               />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#D0F3FC26] lg:py-[60px] ">
+      <section className="bg-[#D0F3FC26] px-8 py-6 lg:py-[60px]">
         <div className="container mx-auto">
-          <h1 className="heading-1 mb-6 text-center">
+          <h1 className="heading-2 lg:heading-1 mb-6 text-start lg:text-center">
             More reasons businesses are choosing TestFounder.
           </h1>
-          <div className="flex justify-center lg:w-full lg:flex-row lg:flex-wrap lg:gap-6">
-            <div className="max-w-[310px] lg:mt-[34px]">
+          <div className="flex flex-col justify-center space-y-6 lg:w-full lg:flex-row lg:flex-wrap lg:gap-6 ">
+            <div className="flex max-w-full flex-col items-center lg:mt-[34px] lg:max-w-[310px] lg:items-start">
               <Image
                 src="/assets/icon-simple.svg"
                 alt="icon-simple"
                 width={64}
                 height={64}
                 sizes="100vw"
-                className="z-50 object-cover"
+                className="z-50 h-[40px] w-[40px] object-cover lg:h-[64px] lg:w-[64px]"
               />
-              <p className="caption-semibold-1">Surprisingly simple</p>
-              <p className="caption-light-2">
+              <p className="caption-semibold-3 lg:caption-semibold-1">
+                Surprisingly simple
+              </p>
+              <p className="caption-light-3 lg:caption-light-2 text-center lg:text-start">
                 We’ve designed it so anyone can easily create assessments, add
                 custom questions, rank candidates, export custom CSV files and
                 more.
               </p>
             </div>
-            <div className="max-w-[310px] lg:mt-[34px]">
+            <div className="flex max-w-full flex-col items-center lg:mt-[34px] lg:max-w-[310px] lg:items-start">
               <Image
-                src="/assets/icon-simple.svg"
+                src="/assets/icon-value.svg"
                 alt="icon-simple"
                 width={64}
                 height={64}
                 sizes="100vw"
-                className="z-50 object-cover"
+                className="z-50 h-[40px] w-[40px] object-cover lg:h-[64px] lg:w-[64px]"
               />
-              <p className="caption-semibold-1">Incredible value</p>
-              <p className="caption-light-2">
+              <p className="caption-semibold-3 lg:caption-semibold-1">
+                Incredible value
+              </p>
+              <p className="caption-light-3 lg:caption-light-2 text-center lg:text-start">
                 We make professional assessments affordable for everyone and
                 streamline the hiring process for any size business.
               </p>
             </div>
-            <div className="max-w-[310px] lg:mt-[34px]">
+            <div className="flex max-w-full flex-col items-center lg:mt-[34px] lg:max-w-[310px] lg:items-start">
               <Image
-                src="/assets/icon-simple.svg"
+                src="/assets/icon-positive-candidte.svg"
                 alt="icon-simple"
                 width={64}
                 height={64}
                 sizes="100vw"
-                className="z-50 object-cover"
+                className="z-50 h-[40px] w-[40px] object-cover lg:h-[64px] lg:w-[64px]"
               />
-              <p className="caption-semibold-1">
+              <p className="caption-semibold-3 lg:caption-semibold-1">
                 Positive candidate experience
               </p>
-              <p className="caption-light-2">
+              <p className="caption-light-3 lg:caption-light-2 text-center lg:text-start">
                 No accounts necessary for candidates taking your assessment.
                 Utilize your logo to leave a lasting brand impression.
               </p>
             </div>
-            <div className="max-w-[310px] lg:mt-[34px]">
+            <div className="flex max-w-full flex-col items-center lg:mt-[34px] lg:max-w-[310px] lg:items-start">
               <Image
                 src="/assets/icon-simple.svg"
                 alt="icon-simple"
                 width={64}
                 height={64}
                 sizes="100vw"
-                className="z-50 object-cover"
+                className="z-50 h-[40px] w-[40px] object-cover lg:h-[64px] lg:w-[64px]"
               />
-              <p className="caption-semibold-1">Cheating prevention</p>
-              <p className="caption-light-2">
+              <p className="caption-semibold-3 lg:caption-semibold-1">
+                Cheating prevention
+              </p>
+              <p className="caption-light-3 lg:caption-light-2 text-center lg:text-start">
                 View automatic snapshots of candidates as they’re being tested.
                 Receive alerts if a candidate exits full-screen mode.
               </p>
             </div>
-            <div className="max-w-[310px] lg:mt-[34px]">
+            <div className="flex max-w-full flex-col items-center lg:mt-[34px] lg:max-w-[310px] lg:items-start">
               <Image
-                src="/assets/icon-simple.svg"
+                src="/assets/icon-flexible-file-upload.svg"
                 alt="icon-simple"
                 width={64}
                 height={64}
                 sizes="100vw"
-                className="z-50 object-cover"
+                className="z-50 h-[40px] w-[40px] object-cover lg:h-[64px] lg:w-[64px]"
               />
-              <p className="caption-semibold-1">Flexible file uploads</p>
-              <p className="caption-light-2">
+              <p className="caption-semibold-3 lg:caption-semibold-1">
+                Flexible file uploads
+              </p>
+              <p className="caption-light-3 lg:caption-light-2 text-center lg:text-start">
                 Allow candidates to upload key documents such as a resume or
                 portfolio.
               </p>
             </div>
-            <div className="max-w-[310px] lg:mt-[34px]">
+            <div className="flex max-w-full flex-col items-center lg:mt-[34px] lg:max-w-[310px] lg:items-start">
               <Image
-                src="/assets/icon-simple.svg"
+                src="/assets/icon-support.svg"
                 alt="icon-simple"
                 width={64}
                 height={64}
                 sizes="100vw"
-                className="z-50 object-cover"
+                className="z-50 h-[40px] w-[40px] object-cover lg:h-[64px] lg:w-[64px]"
               />
-              <p className="caption-semibold-1">Stellar support</p>
-              <p className="caption-light-2">
+              <p className="caption-semibold-3 lg:caption-semibold-1">
+                Stellar support
+              </p>
+              <p className="caption-light-3 lg:caption-light-2 text-center lg:text-start">
                 Get answers to your questions, fast. Our team is always here to
                 help.
               </p>
             </div>
-            <div className="max-w-[310px] lg:mt-[34px]">
+            <div className="flex max-w-full flex-col items-center lg:mt-[34px] lg:max-w-[310px] lg:items-start">
               <Image
-                src="/assets/icon-simple.svg"
+                src="/assets/icon-smarter-integration.svg"
                 alt="icon-simple"
                 width={64}
                 height={64}
                 sizes="100vw"
-                className="z-50 object-cover"
+                className="z-50 h-[40px] w-[40px] object-cover lg:h-[64px] lg:w-[64px]"
               />
-              <p className="caption-semibold-1">Smarter integration</p>
-              <p className="caption-light-2">
+              <p className="caption-semibold-3 lg:caption-semibold-1">
+                Smarter integration
+              </p>
+              <p className="caption-light-3 lg:caption-light-2 text-center lg:text-start">
                 Native integration with software like Workable, Greenhouse,
                 Lever, SmartRecruiters, Recruitee, BreezyHR, Bullhorn, JazzHR,
                 and Zapier.
               </p>
             </div>
-            <div className="max-w-[310px] lg:mt-[34px]">
+            <div className="flex max-w-full flex-col items-center lg:mt-[34px] lg:max-w-[310px] lg:items-start">
               <Image
-                src="/assets/icon-simple.svg"
+                src="/assets/icon-mobile-friendly.svg"
                 alt="icon-simple"
                 width={64}
                 height={64}
                 sizes="100vw"
-                className="z-50 object-cover"
+                className="z-50 h-[40px] w-[40px] object-cover lg:h-[64px] lg:w-[64px]"
               />
-              <p className="caption-semibold-1">Mobile-friendly features</p>
-              <p className="caption-light-2">
+              <p className="caption-semibold-3 lg:caption-semibold-1">
+                Mobile-friendly features
+              </p>
+              <p className="caption-light-3 lg:caption-light-2 text-center lg:text-start">
                 Optimized for all platforms. Build and review assessments on the
                 go. Let candidates showcase their talents on any device.
               </p>
