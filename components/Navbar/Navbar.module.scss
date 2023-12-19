@@ -4,9 +4,13 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-color: #f9f9f9;
   padding-top: 1rem;
-  background: transparent;
+  position: fixed;
+  top: 40;
+  left: 0;
+  background-color: transparent;
+  width: 100%;
+
 
   @media (max-width: 640px) {
     padding-top: 0;
@@ -46,6 +50,10 @@
   flex-shrink: 0;
   width: 120px;
   height: 30px;
+
+  img {
+    padding: 10px;
+  }
 
   @media screen and (max-width: 450px) {
     margin: 0;
@@ -216,6 +224,10 @@
   z-index: 1000;
   background-color: $navbar-background; /* Add your desired background color */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add your desired box shadow */
+
+  @media screen and (min-width: 999px) {
+    padding-bottom: 20px;
+  }
 }
 
 /* Dropdown styles */
