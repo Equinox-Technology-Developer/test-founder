@@ -123,7 +123,7 @@ const Navbar = () => {
               onMouseEnter={handleResourcesHover}
               className={isResourcesDropdownOpen ? styles.dropdownActive : ''}
             >
-              <Link href="/resources" className={styles.nonActive}>
+              <Link href="/blog" className={styles.nonActive}>
                 Resources
               </Link>
               {/* Resources Dropdown */}
@@ -210,9 +210,9 @@ const Navbar = () => {
                   </li>
                   <li>
                     <Link
-                      href="/resources"
+                      href="/blog"
                       className={
-                        router.pathname == '/resources'
+                        router.pathname == '/blog'
                           ? styles.active
                           : styles.nonActive
                       }
