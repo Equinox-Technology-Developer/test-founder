@@ -213,8 +213,6 @@ export default function Home() {
           </div>
         </section>
 
-                
-        
         {/* Explanation 1 */}
         <section className='z-50 flex h-fit items-center bg-[#F9F9F9] px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0'>
         <div className="container mx-auto ">
