@@ -7,6 +7,8 @@ import badge_top_100 from '../public/assets/badge-top-100.svg';
 import capterra from '../public/assets/capterra.svg';
 import HeroImageProduct from '../public/assets/HeroImageProduct.png'
 import top_banner_science from '../public/assets/top-banner-science.png'
+import top_banner_testLibrary from '../public/assets/hero-image-test-library.png'
+
 
 const images = {
   default_image,
@@ -18,6 +20,7 @@ const images = {
   capterra,
   HeroImageProduct,
   top_banner_science,
+  top_banner_testLibrary
 };
 
 export default images;
