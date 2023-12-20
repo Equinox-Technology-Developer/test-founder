@@ -8,7 +8,7 @@ import styles from './Blog.module.scss'
 
 const Resources = () => {
   return (
-    <Layout pageTitle="Resources">
+    <Layout pageTitle="Blog">
 
       {/* Bottom Banner */}
       <section className="bg-[#F9F9F9] bg-blur bg-right bg-no-repeat pt-0">
@@ -56,32 +56,32 @@ const Resources = () => {
             <div className={`${styles.blog_wrapper}`}>
               <div className={styles.blog_single}>
                 <Image src='/assets/Mentor-1.png' alt='Blog Image Grid' width={321} height={213} />
-                <h3 class={``}>A brief introduction to: Test validation</h3>
+                <h3 className={``}>A brief introduction to: Test validation</h3>
                 <p className={``}>Science series materials are brought to you by TestFounder’s Assessment Team: A group of IO psycho...</p>
               </div>
               <div className={styles.blog_single}>
                 <Image src='/assets/Mentor-2.png' alt='Blog Image Grid' width={321} height={213} />
-                <h3 class={``}>A brief introduction to: Test validation</h3>
+                <h3 className={``}>A brief introduction to: Test validation</h3>
                 <p className={``}>Science series materials are brought to you by TestFounder’s Assessment Team: A group of IO psycho...</p>
               </div>
               <div className={styles.blog_single}>
                 <Image src='/assets/Mentor-3.png' alt='Blog Image Grid' width={321} height={213} />
-                <h3 class={``}>A brief introduction to: Test validation</h3>
+                <h3 className={``}>A brief introduction to: Test validation</h3>
                 <p className={``}>Science series materials are brought to you by TestFounder’s Assessment Team: A group of IO psycho...</p>
               </div>
               <div className={styles.blog_single}>
                 <Image src='/assets/Mentor-4.png' alt='Blog Image Grid' width={321} height={213} />
-                <h3 class={``}>A brief introduction to: Test validation</h3>
+                <h3 className={``}>A brief introduction to: Test validation</h3>
                 <p className={``}>Science series materials are brought to you by TestFounder’s Assessment Team: A group of IO psycho...</p>
               </div>
               <div className={styles.blog_single}>
                 <Image src='/assets/Mentor-5.png' alt='Blog Image Grid' width={321} height={213} />
-                <h3 class={``}>A brief introduction to: Test validation</h3>
+                <h3 className={``}>A brief introduction to: Test validation</h3>
                 <p className={``}>Science series materials are brought to you by TestFounder’s Assessment Team: A group of IO psycho...</p>
               </div>
               <div className={styles.blog_single}>
                 <Image src='/assets/Mentor-6.png' alt='Blog Image Grid' width={321} height={213} />
-                <h3 class={``}>A brief introduction to: Test validation</h3>
+                <h3 className={``}>A brief introduction to: Test validation</h3>
                 <p className={``}>Science series materials are brought to you by TestFounder’s Assessment Team: A group of IO psycho...</p>
               </div>
             </div>
