@@ -9,7 +9,7 @@ import styles from './CaseStudies.module.scss'
 
 const Resources = () => {
   return (
-    <Layout pageTitle="Resources">
+    <Layout pageTitle="Case Studies">
 
       {/* Bottom Banner */}
       <section className="bg-[#F9F9F9] bg-blur bg-right bg-no-repeat pt-0">
@@ -30,6 +30,56 @@ const Resources = () => {
       <div className={styles.blog_container}>
           <div className={`container mx-auto m-10`}>
             <div className={`${styles.blog_wrapper}`}>
+                <div className={`${styles.blog_single}`}>
+                    <Image src="/assets/image 39.png" alt="Case Studies Image 1" width={392} height={236}/>
+                    <div className={styles.content}>
+                        <h3>Dyninno Group improves recruitment productivity by 400% using TestFounder</h3>
+                        <p>Dyninno is a group of companies,  providing products and services in the travel, finance, entertainment, and technology sectors in more than 50 countries. Founded in 2004, now the company has 25 offices with total headcount of 5,000 employees.   Since the start of 2022, Dyninno Group has rapidly expanded its business across multiple companies and divisions, and as a result, needed to recruit more than 2,000 employees in less than six months in 2023. However, Pavel Bahu, Global human resources director at Trevolution (travel division of Dyninno), faced the challenge of effectively screening the increased number of candidates without diminishing the efficiency of their current hiring process – especially as they continue to hire 100s of candidates each month in different locations.</p>
+                        <div className={styles.readmore}>
+                            <p>Read More <span><MdChevronRight/></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div className={`${styles.blog_single}`}>
+                    <Image src="/assets/image 39.png" alt="Case Studies Image 1" width={392} height={236}/>
+                    <div className={styles.content}>
+                        <h3>Dyninno Group improves recruitment productivity by 400% using TestFounder</h3>
+                        <p>Dyninno is a group of companies,  providing products and services in the travel, finance, entertainment, and technology sectors in more than 50 countries. Founded in 2004, now the company has 25 offices with total headcount of 5,000 employees.   Since the start of 2022, Dyninno Group has rapidly expanded its business across multiple companies and divisions, and as a result, needed to recruit more than 2,000 employees in less than six months in 2023. However, Pavel Bahu, Global human resources director at Trevolution (travel division of Dyninno), faced the challenge of effectively screening the increased number of candidates without diminishing the efficiency of their current hiring process – especially as they continue to hire 100s of candidates each month in different locations.</p>
+                        <div className={styles.readmore}>
+                            <p>Read More <span><MdChevronRight/></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div className={`${styles.blog_single}`}>
+                    <Image src="/assets/image 39.png" alt="Case Studies Image 1" width={392} height={236}/>
+                    <div className={styles.content}>
+                        <h3>Dyninno Group improves recruitment productivity by 400% using TestFounder</h3>
+                        <p>Dyninno is a group of companies,  providing products and services in the travel, finance, entertainment, and technology sectors in more than 50 countries. Founded in 2004, now the company has 25 offices with total headcount of 5,000 employees.   Since the start of 2022, Dyninno Group has rapidly expanded its business across multiple companies and divisions, and as a result, needed to recruit more than 2,000 employees in less than six months in 2023. However, Pavel Bahu, Global human resources director at Trevolution (travel division of Dyninno), faced the challenge of effectively screening the increased number of candidates without diminishing the efficiency of their current hiring process – especially as they continue to hire 100s of candidates each month in different locations.</p>
+                        <div className={styles.readmore}>
+                            <p>Read More <span><MdChevronRight/></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div className={`${styles.blog_single}`}>
+                    <Image src="/assets/image 39.png" alt="Case Studies Image 1" width={392} height={236}/>
+                    <div className={styles.content}>
+                        <h3>Dyninno Group improves recruitment productivity by 400% using TestFounder</h3>
+                        <p>Dyninno is a group of companies,  providing products and services in the travel, finance, entertainment, and technology sectors in more than 50 countries. Founded in 2004, now the company has 25 offices with total headcount of 5,000 employees.   Since the start of 2022, Dyninno Group has rapidly expanded its business across multiple companies and divisions, and as a result, needed to recruit more than 2,000 employees in less than six months in 2023. However, Pavel Bahu, Global human resources director at Trevolution (travel division of Dyninno), faced the challenge of effectively screening the increased number of candidates without diminishing the efficiency of their current hiring process – especially as they continue to hire 100s of candidates each month in different locations.</p>
+                        <div className={styles.readmore}>
+                            <p>Read More <span><MdChevronRight/></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div className={`${styles.blog_single}`}>
+                    <Image src="/assets/image 39.png" alt="Case Studies Image 1" width={392} height={236}/>
+                    <div className={styles.content}>
+                        <h3>Dyninno Group improves recruitment productivity by 400% using TestFounder</h3>
+                        <p>Dyninno is a group of companies,  providing products and services in the travel, finance, entertainment, and technology sectors in more than 50 countries. Founded in 2004, now the company has 25 offices with total headcount of 5,000 employees.   Since the start of 2022, Dyninno Group has rapidly expanded its business across multiple companies and divisions, and as a result, needed to recruit more than 2,000 employees in less than six months in 2023. However, Pavel Bahu, Global human resources director at Trevolution (travel division of Dyninno), faced the challenge of effectively screening the increased number of candidates without diminishing the efficiency of their current hiring process – especially as they continue to hire 100s of candidates each month in different locations.</p>
+                        <div className={styles.readmore}>
+                            <p>Read More <span><MdChevronRight/></span></p>
+                        </div>
+                    </div>
+                </div>
                 <div className={`${styles.blog_single}`}>
                     <Image src="/assets/image 39.png" alt="Case Studies Image 1" width={392} height={236}/>
                     <div className={styles.content}>
