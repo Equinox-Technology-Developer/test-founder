@@ -85,23 +85,44 @@ height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 32px;
 }
 
 .blog_single {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    width: 100%;
+    
     .content {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        gap: 12px;
+
+        h3 {
+            font-weight: 700;
+        }
+        
+        .readmore {
+            height: 30px;
+            p {
+                font-weight: 700;
+                gap: 4px;
+                display :flex;
+                align-items: center;
+                width: 100%;
+            }
+        }
+
+        @media screen and (min-width: 999px) {
+            max-width: 1050px;
+        }
     }
     
-    .readmore {
-        width: 100%;
-        display :flex;
-        align-items: center;
+    
+    @media screen and (min-width: 999px) {
+        gap: 16px;
     }
 }
 
