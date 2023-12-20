@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { fetchContentfulEntries } from '@/helper/contenfulHelper';
-
 import Image from 'next/image';
 import Link from 'next/link';
-
 import { useRouter } from 'next/router';
+import { motion } from 'framer-motion';
+
 import { images } from '../../constants';
+import { fetchContentfulEntries } from '@/helper/contenfulHelper';
+
+
 import { HiMenuAlt4, HiX } from 'react-icons/hi';
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+
 
 import styles from './Navbar.module.scss';
 
@@ -89,7 +92,7 @@ const Navbar = () => {
               className={isProductsDropdownOpen ? styles.dropdownActive : ''}
             >
               <Link href="/products" className={styles.nonActive}>
-                Product
+                Product  <MdOutlineKeyboardArrowDown/>
               </Link>
               {/* Products Dropdown */}
               {isProductsDropdownOpen && (
@@ -124,7 +127,7 @@ const Navbar = () => {
               className={isResourcesDropdownOpen ? styles.dropdownActive : ''}
             >
               <Link href="/blog" className={styles.nonActive}>
-                Resources
+                Resources  <span><MdOutlineKeyboardArrowDown/></span>
               </Link>
               {/* Resources Dropdown */}
               {isResourcesDropdownOpen && (
@@ -230,31 +233,5 @@ const Navbar = () => {
   );
 };
 
-// export async function getStaticProps() {
-//   const contentType = 'landingPage'; // Modify the content type here
-//   const propsKey = 'products'; // Modify the props key here
-//   const catchKey = 'error'; // Modify the catch key here
-//   const indexToRead = 10; // Modify the index you want to read
-
-//   try {
-//     const dynamicData = await fetchContentfulEntries(
-//       contentType,
-//       propsKey,
-//       catchKey,
-//       indexToRead,
-//     );
-
-//     return {
-//       props: dynamicData,
-//     };
-//   } catch (error) {
-//     console.error('Error in getStaticProps:', error);
-//     return {
-//       props: {
-//         [catchKey]: 'An unexpected error occurred.',
-//       },
-//     };
-//   }
-// }
 
 export default Navbar;
