@@ -5,13 +5,12 @@ import certificate2 from '../public/assets/certificate2.svg';
 import badge_leader from '../public/assets/badge-leader.svg';
 import badge_top_100 from '../public/assets/badge-top-100.svg';
 import capterra from '../public/assets/capterra.svg';
-import HeroImageProduct from '../public/assets/HeroImageProduct.png'
-import HeroImageSkillsBasedTraining from '../public/assets/HeroImageSkillsBasedTraining.png'
-import HeroImageMiddleBanner_pricing from '../public/assets/HeroImageMiddleBanner_pricing.png'
-import iPad from '../public/assets/iPad.png'
-import top_banner_science from '../public/assets/top-banner-science.png'
-import top_banner_testLibrary from '../public/assets/hero-image-test-library.png'
-
+import HeroImageProduct from '../public/assets/HeroImageProduct.png';
+import HeroImageSkillsBasedTraining from '../public/assets/HeroImageSkillsBasedTraining.png';
+import HeroImageTestAssessment from '../public/assets/hero-image-test-assessment.png';
+import iPad from '../public/assets/iPad.png';
+import top_banner_science from '../public/assets/top-banner-science.png';
+import top_banner_testLibrary from '../public/assets/hero-image-test-library.png';
 
 const images = {
   default_image,
@@ -25,6 +24,7 @@ const images = {
   top_banner_science,
   top_banner_testLibrary,
   HeroImageSkillsBasedTraining,
+  HeroImageTestAssessment,
   HeroImageMiddleBanner_pricing,
   iPad
 };
