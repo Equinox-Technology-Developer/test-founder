@@ -66,7 +66,7 @@ const testimonies = [
     name: 'Bessie Cooper',
     company: 'Talent Aquitition Specialist',
     quote:
-      '“We evaluated many options, and for us, the integration and simple installation were magic. It makes all the difference.”',
+      'We evaluated many options, and for us, the integration and simple installation were magic. It makes all the difference.',
     src: '/assets/bessie-cooper.png',
     date: '10/11/2023',
   },
@@ -97,12 +97,11 @@ export default function Home() {
       </Head>
 
       <Layout pageTitle="Homepage">
-        
         {/* Banner */}
         <section className="bg-[#F9F9F9] bg-blur bg-right bg-no-repeat pt-0">
           <div className="container mx-auto">
             <div className="relative flex flex-col items-center sm:static lg:flex-row">
-              <div className="mb-16 mt-20 flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:py-[32px] md:pr-[40px] md:text-left lg:mt-24 lg:flex-grow lg:items-start lg:pr-24">
+              <div className="mb-0 mt-20 flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:py-[32px] md:pr-[40px] md:text-left lg:mt-24 lg:flex-grow lg:items-start lg:pr-24">
                 <h1 className="sm:heading-1 heading-2 mb-6 mt-0 ">
                   <span className="text-primary-500">TestFounder</span> works.
                   Resumes don't.
@@ -214,8 +213,8 @@ export default function Home() {
         </section>
 
         {/* Explanation 1 */}
-        <section className='z-50 flex h-fit items-center bg-[#F9F9F9] px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0'>
-        <div className="container mx-auto ">
+        <section className="z-50 flex h-fit items-center bg-[#F9F9F9] px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
+          <div className="container mx-auto ">
             <div className="flex flex-col items-center gap-[50px] lg:flex-row">
               <div className="z-50 mb-1 sm:mb-16 md:mb-0 md:w-full md:text-left lg:flex-grow">
                 <Image
@@ -247,18 +246,18 @@ export default function Home() {
                   See Tests
                 </button>
               </div>
-            <Image
-            src="/assets/bg_blur_2.png"
-            alt="Hero Image"
-            width={730}
-            height={565}
-            sizes="100vw"
-            className="absolute"
-          />
+              <Image
+                src="/assets/bg_blur_2.png"
+                alt="Hero Image"
+                width={730}
+                height={565}
+                sizes="100vw"
+                className="absolute"
+              />
             </div>
           </div>
         </section>
-        
+
         {/* Explanation 2 */}
         <section className="flex h-fit items-center bg-[#F9F9F9] px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
           <div className="container mx-auto">
@@ -298,10 +297,10 @@ export default function Home() {
         {/* Explanation 3*/}
         <section className="flex h-fit items-center bg-[#F9F9F9] px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
           <div className="container mx-auto ">
-            <div className="flex flex-col items-center gap-[50px] lg:flex-row">
-              <div className="mb-16 w-full sm:w-full md:mb-0 md:text-left ">
+            <div className="flex flex-col items-center gap-[50px] lg:flex-row ">
+              <div className="mb-16 w-full sm:w-full md:mb-0 md:text-left lg:w-1/2">
                 <Image
-                  src="/assets/man-percent.png"
+                  src="/assets/smart-man.png"
                   alt="Hero Image"
                   width={644}
                   height={469}
@@ -398,21 +397,21 @@ export default function Home() {
                   and data-focused HR culture in your company.
                 </p>
               </div>
-          <Image
-            src="/assets/bg_blur_4.png"
-            alt="Hero Image"
-            width={730}
-            height={565}
-            sizes="100vw"
-            className="absolute pl-10"
-          />
+              <Image
+                src="/assets/bg_blur_4.png"
+                alt="Hero Image"
+                width={730}
+                height={565}
+                sizes="100vw"
+                className="absolute pl-10"
+              />
             </div>
           </div>
         </section>
 
         {/* Testimonials */}
         <div className="w-full bg-[#F9F9F9] pb-[44px] sm:pb-[100px]">
-          <div className="container mx-auto flex h-[367px] items-center rounded-[20px] bg-white px-[14px] py-[12px] md:px-[55px] md:py-[32px] lg:px-[82px] lg:py-[32px]">
+          <div className="container mx-auto flex h-full items-center rounded-[20px] bg-white px-[14px] py-[12px] md:h-[367px] md:px-[55px] md:py-[32px] lg:px-[82px] lg:py-[32px]">
             <Swiper
               modules={[Autoplay]}
               spaceBetween={40}
@@ -434,98 +433,172 @@ export default function Home() {
             >
               {testimonies.map((testimonial, index) => (
                 <SwiperSlide key={index}>
-                  <div className="flex max-w-[518px] flex-row">
-                    <Image
-                      src={testimonial.src}
-                      alt="Testimonial Image"
-                      width={170}
-                      height={303}
-                      sizes="100vw"
-                      className="z-50 object-cover"
-                    />
-                    <div className="flex flex-col justify-between pl-3">
-                      <div className="flex flex-col">
-                        <Image
-                          src="/assets/quote.svg"
-                          alt="Hero Image"
-                          width={42}
-                          height={42}
-                          sizes="100vw"
-                          className="z-50"
-                        />
-                        <h3 className="heading-3 mt-0">{testimonial.name}</h3>
-                        <p className="caption-regular-3">
-                          {testimonial.company}
-                        </p>
-                        <p className="caption-light-2">{testimonial.quote}</p>
-                      </div>
-                      <div className="flex justify-between">
-                        <div className="flex">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                          >
-                            <path
-                              d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
-                              fill="#FCC773"
-                            />
-                          </svg>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                          >
-                            <path
-                              d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
-                              fill="#FCC773"
-                            />
-                          </svg>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                          >
-                            <path
-                              d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
-                              fill="#FCC773"
-                            />
-                          </svg>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                          >
-                            <path
-                              d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
-                              fill="#FCC773"
-                            />
-                          </svg>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                          >
-                            <path
-                              d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
-                              fill="#FCC773"
-                            />
-                          </svg>
+                  <div className="mt-10 flex w-full flex-col sm:mt-0 md:max-w-[518px] md:flex-row">
+                    <div className="flex flex-row">
+                      <Image
+                        src={testimonial.src}
+                        alt="Testimonial Image"
+                        width={170}
+                        height={303}
+                        sizes="100vw"
+                        className="z-50 w-[40%] rounded-[10px] object-cover lg:w-auto"
+                      />
+                      <div className="flex flex-col justify-center pl-3 md:justify-between ">
+                        <div className="flex flex-col">
+                          <Image
+                            src="/assets/quote.svg"
+                            alt="Hero Image"
+                            width={42}
+                            height={42}
+                            sizes="100vw"
+                            className="z-50"
+                          />
+                          <h3 className="heading-3 mt-0">{testimonial.name}</h3>
+                          <p className="caption-regular-3">
+                            {testimonial.company}
+                          </p>
+                          <p className="caption-light-2 hidden md:block">
+                            “{testimonial.quote}”
+                          </p>
                         </div>
-                        <p className="caption-regular-3 text-neutral-100">
-                          {testimonial.date}
-                        </p>
+                        <div className="hidden justify-between md:flex">
+                          <div className="flex">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                            >
+                              <path
+                                d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
+                                fill="#FCC773"
+                              />
+                            </svg>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                            >
+                              <path
+                                d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
+                                fill="#FCC773"
+                              />
+                            </svg>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                            >
+                              <path
+                                d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
+                                fill="#FCC773"
+                              />
+                            </svg>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                            >
+                              <path
+                                d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
+                                fill="#FCC773"
+                              />
+                            </svg>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                            >
+                              <path
+                                d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
+                                fill="#FCC773"
+                              />
+                            </svg>
+                          </div>
+                          <p className="caption-regular-3 text-neutral-100">
+                            {testimonial.date}
+                          </p>
+                        </div>
                       </div>
+                    </div>
+                    <p className="caption-light-2 pt-[20px] md:hidden">
+                      “{testimonial.quote}
+                    </p>
+                    <div className="mt-4 flex justify-between md:hidden">
+                      <div className="flex">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
+                            fill="#FCC773"
+                          />
+                        </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
+                            fill="#FCC773"
+                          />
+                        </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
+                            fill="#FCC773"
+                          />
+                        </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
+                            fill="#FCC773"
+                          />
+                        </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M12 17.2698L16.15 19.7798C16.91 20.2398 17.84 19.5598 17.64 18.6998L16.54 13.9798L20.21 10.7998C20.88 10.2198 20.52 9.11977 19.64 9.04977L14.81 8.63977L12.92 4.17977C12.58 3.36977 11.42 3.36977 11.08 4.17977L9.19 8.62977L4.36 9.03977C3.48 9.10977 3.12 10.2098 3.79 10.7898L7.46 13.9698L6.36 18.6898C6.16 19.5498 7.09 20.2298 7.85 19.7698L12 17.2698Z"
+                            fill="#FCC773"
+                          />
+                        </svg>
+                      </div>
+                      <p className="caption-regular-3 text-neutral-100">
+                        {testimonial.date}
+                      </p>
                     </div>
                   </div>
                 </SwiperSlide>
@@ -550,8 +623,8 @@ export default function Home() {
               Start screening with us today on our free plan.
             </p>
             <div className="flex flex-row gap-4">
-              <button className="btn-line-medium">Talk to us</button>
-              <button className="btn-medium">Sign Up Free</button>
+              <button className="btn-line-normal">Talk to us</button>
+              <button className="btn-line-normal">Sign Up Free</button>
             </div>
           </div>
         </div>
