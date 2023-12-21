@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { RiDoubleQuotesL  } from "react-icons/ri";
+import { GoQuestion } from "react-icons/go";
 import { IoCheckmark } from "react-icons/io5";
 
 
@@ -30,6 +31,8 @@ const Pricing = () => {
               <h1 className="sm:heading-1 heading-2">
                 Hire Without Limits
               </h1>
+
+              {/* Pricing Cards */}
               <div className={`${styles.pricingCards_wrapper}`}>
                 <div className={`${styles.pricing_cards}`}>
                   <div className={`${styles.pricing_cardsTitle}`}>
@@ -170,12 +173,304 @@ const Pricing = () => {
                 > Compare plans in detail <span><MdOutlineKeyboardArrowDown/></span> </button>
                 {/* Detail Table Comparison */}
                 {showTable && (
-                  <div className={styles.table_comparisonDetail}>
+                  <div className={`${styles.table_comparisonDetail} ${styles.detail_head}`}>
                     {/* Content of the comparison detail table goes here */}
                     {/* You can replace this div with your actual comparison detail table */}
-                    <div>
-                      Table Comparison Detail
-                      {/* ... */}
+                    <div className={`${styles.table_row}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}></div>
+                      <div className={`${styles.table_cell}`}>Free</div>
+                      <div className={`${styles.table_cell}`}>Lite</div>
+                      <div className={`${styles.table_cell}`}>Starter</div>
+                      <div className={`${styles.table_cell}`}>Pro</div>
+                    </div>
+                    {/* Assessment & Test */}
+                    <div className={`${styles.table_row} ${styles.table_head}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Assessment & Test</div>
+                      <div className={`${styles.table_cell}`}></div>
+                      <div className={`${styles.table_cell}`}></div>
+                      <div className={`${styles.table_cell}`}></div>
+                      <div className={`${styles.table_cell}`}></div>
+                    </div>
+                    <div className={`${styles.table_row} ${styles.bg_abu}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Assessment</div>
+                      <div className={`${styles.table_cell}`}>Unlimited</div>
+                      <div className={`${styles.table_cell}`}>1</div>
+                      <div className={`${styles.table_cell}`}>Unlimited</div>
+                      <div className={`${styles.table_cell}`}>Unlimited</div>
+                    </div>
+                    <div className={`${styles.table_row}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Test library</div>
+                      <div className={`${styles.table_cell}`}>5 <span><GoQuestion/></span></div>
+                      <div className={`${styles.table_cell}`}>401 test <span><GoQuestion/></span></div>
+                      <div className={`${styles.table_cell}`}>401 test <span><GoQuestion/></span></div>
+                      <div className={`${styles.table_cell}`}>401 test <span><GoQuestion/></span></div>
+                    </div>
+                    <div className={`${styles.table_row} ${styles.bg_abu}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Assessment</div>
+                      <div className={`${styles.table_cell}`}>Free</div>
+                      <div className={`${styles.table_cell}`}>Lite</div>
+                      <div className={`${styles.table_cell}`}>Starter</div>
+                      <div className={`${styles.table_cell}`}>Pro</div>
+                    </div>
+                    <div className={`${styles.table_row}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Assessment</div>
+                      <div className={`${styles.table_cell}`}>Free</div>
+                      <div className={`${styles.table_cell}`}>Lite</div>
+                      <div className={`${styles.table_cell}`}>Starter</div>
+                      <div className={`${styles.table_cell}`}>Pro</div>
+                    </div>
+                    <div className={`${styles.table_row} ${styles.bg_abu}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Assessment</div>
+                      <div className={`${styles.table_cell}`}>Free</div>
+                      <div className={`${styles.table_cell}`}>Lite</div>
+                      <div className={`${styles.table_cell}`}>Starter</div>
+                      <div className={`${styles.table_cell}`}>Pro</div>
+                    </div>
+                    <div className={`${styles.table_row}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Assessment</div>
+                      <div className={`${styles.table_cell}`}>Free</div>
+                      <div className={`${styles.table_cell}`}>Lite</div>
+                      <div className={`${styles.table_cell}`}>Starter</div>
+                      <div className={`${styles.table_cell}`}>Pro</div>
+                    </div>
+                    <div className={`${styles.table_row} ${styles.bg_abu}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Assessment</div>
+                      <div className={`${styles.table_cell}`}>Free</div>
+                      <div className={`${styles.table_cell}`}>Lite</div>
+                      <div className={`${styles.table_cell}`}>Starter</div>
+                      <div className={`${styles.table_cell}`}>Pro</div>
+                    </div>
+
+                    {/* Skill-Based Hiring & Test */}
+                    <div className={`${styles.table_row} ${styles.table_head}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Skill-Based Hiring</div>
+                      <div className={`${styles.table_cell}`}></div>
+                      <div className={`${styles.table_cell}`}></div>
+                      <div className={`${styles.table_cell}`}></div>
+                      <div className={`${styles.table_cell}`}></div>
+                    </div>
+                    <div className={`${styles.table_row} ${styles.bg_abu}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Assessment</div>
+                      <div className={`${styles.table_cell}`}>Unlimited</div>
+                      <div className={`${styles.table_cell}`}>1</div>
+                      <div className={`${styles.table_cell}`}>Unlimited</div>
+                      <div className={`${styles.table_cell}`}>Unlimited</div>
+                    </div>
+                    <div className={`${styles.table_row}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Test library</div>
+                      <div className={`${styles.table_cell}`}>5 <span><GoQuestion/></span></div>
+                      <div className={`${styles.table_cell}`}>401 test <span><GoQuestion/></span></div>
+                      <div className={`${styles.table_cell}`}>401 test <span><GoQuestion/></span></div>
+                      <div className={`${styles.table_cell}`}>401 test <span><GoQuestion/></span></div>
+                    </div>
+                    <div className={`${styles.table_row} ${styles.bg_abu}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Assessment</div>
+                      <div className={`${styles.table_cell}`}>Free</div>
+                      <div className={`${styles.table_cell}`}>Lite</div>
+                      <div className={`${styles.table_cell}`}>Starter</div>
+                      <div className={`${styles.table_cell}`}>Pro</div>
+                    </div>
+                    <div className={`${styles.table_row}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Assessment</div>
+                      <div className={`${styles.table_cell}`}>Free</div>
+                      <div className={`${styles.table_cell}`}>Lite</div>
+                      <div className={`${styles.table_cell}`}>Starter</div>
+                      <div className={`${styles.table_cell}`}>Pro</div>
+                    </div>
+                    <div className={`${styles.table_row} ${styles.bg_abu}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Assessment</div>
+                      <div className={`${styles.table_cell}`}>Free</div>
+                      <div className={`${styles.table_cell}`}>Lite</div>
+                      <div className={`${styles.table_cell}`}>Starter</div>
+                      <div className={`${styles.table_cell}`}>Pro</div>
+                    </div>
+                    <div className={`${styles.table_row}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Assessment</div>
+                      <div className={`${styles.table_cell}`}>Free</div>
+                      <div className={`${styles.table_cell}`}>Lite</div>
+                      <div className={`${styles.table_cell}`}>Starter</div>
+                      <div className={`${styles.table_cell}`}>Pro</div>
+                    </div>
+                    <div className={`${styles.table_row} ${styles.bg_abu}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Assessment</div>
+                      <div className={`${styles.table_cell}`}>Free</div>
+                      <div className={`${styles.table_cell}`}>Lite</div>
+                      <div className={`${styles.table_cell}`}>Starter</div>
+                      <div className={`${styles.table_cell}`}>Pro</div>
+                    </div>
+
+                    {/* Functionality to hire Developers & Test */}
+                    <div className={`${styles.table_row} ${styles.table_head}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Functionality to hire Developers</div>
+                      <div className={`${styles.table_cell}`}></div>
+                      <div className={`${styles.table_cell}`}></div>
+                      <div className={`${styles.table_cell}`}></div>
+                      <div className={`${styles.table_cell}`}></div>
+                    </div>
+                    <div className={`${styles.table_row} ${styles.bg_abu}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Assessment</div>
+                      <div className={`${styles.table_cell}`}>Unlimited</div>
+                      <div className={`${styles.table_cell}`}>1</div>
+                      <div className={`${styles.table_cell}`}>Unlimited</div>
+                      <div className={`${styles.table_cell}`}>Unlimited</div>
+                    </div>
+                    <div className={`${styles.table_row}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Test library</div>
+                      <div className={`${styles.table_cell}`}>5 <span><GoQuestion/></span></div>
+                      <div className={`${styles.table_cell}`}>401 test <span><GoQuestion/></span></div>
+                      <div className={`${styles.table_cell}`}>401 test <span><GoQuestion/></span></div>
+                      <div className={`${styles.table_cell}`}>401 test <span><GoQuestion/></span></div>
+                    </div>
+                    <div className={`${styles.table_row} ${styles.bg_abu}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Assessment</div>
+                      <div className={`${styles.table_cell}`}>Free</div>
+                      <div className={`${styles.table_cell}`}>Lite</div>
+                      <div className={`${styles.table_cell}`}>Starter</div>
+                      <div className={`${styles.table_cell}`}>Pro</div>
+                    </div>
+                    <div className={`${styles.table_row}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Assessment</div>
+                      <div className={`${styles.table_cell}`}>Free</div>
+                      <div className={`${styles.table_cell}`}>Lite</div>
+                      <div className={`${styles.table_cell}`}>Starter</div>
+                      <div className={`${styles.table_cell}`}>Pro</div>
+                    </div>
+                    <div className={`${styles.table_row} ${styles.bg_abu}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Assessment</div>
+                      <div className={`${styles.table_cell}`}>Free</div>
+                      <div className={`${styles.table_cell}`}>Lite</div>
+                      <div className={`${styles.table_cell}`}>Starter</div>
+                      <div className={`${styles.table_cell}`}>Pro</div>
+                    </div>
+                    <div className={`${styles.table_row}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Assessment</div>
+                      <div className={`${styles.table_cell}`}>Free</div>
+                      <div className={`${styles.table_cell}`}>Lite</div>
+                      <div className={`${styles.table_cell}`}>Starter</div>
+                      <div className={`${styles.table_cell}`}>Pro</div>
+                    </div>
+                    <div className={`${styles.table_row} ${styles.bg_abu}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Assessment</div>
+                      <div className={`${styles.table_cell}`}>Free</div>
+                      <div className={`${styles.table_cell}`}>Lite</div>
+                      <div className={`${styles.table_cell}`}>Starter</div>
+                      <div className={`${styles.table_cell}`}>Pro</div>
+                    </div>
+
+                    {/* Reporting & Analytics & Test */}
+                    <div className={`${styles.table_row} ${styles.table_head}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Reporting & Analytics</div>
+                      <div className={`${styles.table_cell}`}></div>
+                      <div className={`${styles.table_cell}`}></div>
+                      <div className={`${styles.table_cell}`}></div>
+                      <div className={`${styles.table_cell}`}></div>
+                    </div>
+                    <div className={`${styles.table_row} ${styles.bg_abu}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Assessment</div>
+                      <div className={`${styles.table_cell}`}>Unlimited</div>
+                      <div className={`${styles.table_cell}`}>1</div>
+                      <div className={`${styles.table_cell}`}>Unlimited</div>
+                      <div className={`${styles.table_cell}`}>Unlimited</div>
+                    </div>
+                    <div className={`${styles.table_row}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Test library</div>
+                      <div className={`${styles.table_cell}`}>5 <span><GoQuestion/></span></div>
+                      <div className={`${styles.table_cell}`}>401 test <span><GoQuestion/></span></div>
+                      <div className={`${styles.table_cell}`}>401 test <span><GoQuestion/></span></div>
+                      <div className={`${styles.table_cell}`}>401 test <span><GoQuestion/></span></div>
+                    </div>
+                    <div className={`${styles.table_row} ${styles.bg_abu}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Assessment</div>
+                      <div className={`${styles.table_cell}`}>Free</div>
+                      <div className={`${styles.table_cell}`}>Lite</div>
+                      <div className={`${styles.table_cell}`}>Starter</div>
+                      <div className={`${styles.table_cell}`}>Pro</div>
+                    </div>
+                    <div className={`${styles.table_row}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Assessment</div>
+                      <div className={`${styles.table_cell}`}>Free</div>
+                      <div className={`${styles.table_cell}`}>Lite</div>
+                      <div className={`${styles.table_cell}`}>Starter</div>
+                      <div className={`${styles.table_cell}`}>Pro</div>
+                    </div>
+                    <div className={`${styles.table_row} ${styles.bg_abu}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Assessment</div>
+                      <div className={`${styles.table_cell}`}>Free</div>
+                      <div className={`${styles.table_cell}`}>Lite</div>
+                      <div className={`${styles.table_cell}`}>Starter</div>
+                      <div className={`${styles.table_cell}`}>Pro</div>
+                    </div>
+                    <div className={`${styles.table_row}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Assessment</div>
+                      <div className={`${styles.table_cell}`}>Free</div>
+                      <div className={`${styles.table_cell}`}>Lite</div>
+                      <div className={`${styles.table_cell}`}>Starter</div>
+                      <div className={`${styles.table_cell}`}>Pro</div>
+                    </div>
+                    <div className={`${styles.table_row} ${styles.bg_abu}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Assessment</div>
+                      <div className={`${styles.table_cell}`}>Free</div>
+                      <div className={`${styles.table_cell}`}>Lite</div>
+                      <div className={`${styles.table_cell}`}>Starter</div>
+                      <div className={`${styles.table_cell}`}>Pro</div>
+                    </div>
+
+                    {/* Customer Support & Test */}
+                    <div className={`${styles.table_row} ${styles.table_head}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Reporting & Analytics</div>
+                      <div className={`${styles.table_cell}`}></div>
+                      <div className={`${styles.table_cell}`}></div>
+                      <div className={`${styles.table_cell}`}></div>
+                      <div className={`${styles.table_cell}`}></div>
+                    </div>
+                    <div className={`${styles.table_row} ${styles.bg_abu}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Assessment</div>
+                      <div className={`${styles.table_cell}`}>Unlimited</div>
+                      <div className={`${styles.table_cell}`}>1</div>
+                      <div className={`${styles.table_cell}`}>Unlimited</div>
+                      <div className={`${styles.table_cell}`}>Unlimited</div>
+                    </div>
+                    <div className={`${styles.table_row}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Test library</div>
+                      <div className={`${styles.table_cell}`}>5 <span><GoQuestion/></span></div>
+                      <div className={`${styles.table_cell}`}>401 test <span><GoQuestion/></span></div>
+                      <div className={`${styles.table_cell}`}>401 test <span><GoQuestion/></span></div>
+                      <div className={`${styles.table_cell}`}>401 test <span><GoQuestion/></span></div>
+                    </div>
+                    <div className={`${styles.table_row} ${styles.bg_abu}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Assessment</div>
+                      <div className={`${styles.table_cell}`}>Free</div>
+                      <div className={`${styles.table_cell}`}>Lite</div>
+                      <div className={`${styles.table_cell}`}>Starter</div>
+                      <div className={`${styles.table_cell}`}>Pro</div>
+                    </div>
+                    <div className={`${styles.table_row}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Assessment</div>
+                      <div className={`${styles.table_cell}`}>Free</div>
+                      <div className={`${styles.table_cell}`}>Lite</div>
+                      <div className={`${styles.table_cell}`}>Starter</div>
+                      <div className={`${styles.table_cell}`}>Pro</div>
+                    </div>
+                    <div className={`${styles.table_row} ${styles.bg_abu}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Assessment</div>
+                      <div className={`${styles.table_cell}`}>Free</div>
+                      <div className={`${styles.table_cell}`}>Lite</div>
+                      <div className={`${styles.table_cell}`}>Starter</div>
+                      <div className={`${styles.table_cell}`}>Pro</div>
+                    </div>
+                    <div className={`${styles.table_row}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Assessment</div>
+                      <div className={`${styles.table_cell}`}>Free</div>
+                      <div className={`${styles.table_cell}`}>Lite</div>
+                      <div className={`${styles.table_cell}`}>Starter</div>
+                      <div className={`${styles.table_cell}`}>Pro</div>
+                    </div>
+                    <div className={`${styles.table_row} ${styles.bg_abu}`}>
+                      <div className={`${styles.table_cell} ${styles.table_cellTitle}`}>Assessment</div>
+                      <div className={`${styles.table_cell}`}>Free</div>
+                      <div className={`${styles.table_cell}`}>Lite</div>
+                      <div className={`${styles.table_cell}`}>Starter</div>
+                      <div className={`${styles.table_cell}`}>Pro</div>
                     </div>
                   </div>
                 )}

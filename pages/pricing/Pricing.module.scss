@@ -28,7 +28,6 @@
   
   h1 {
       margin-top: 70px;
-  
       @media screen and (min-width: 999px) {
       margin-top: 0;
       }
@@ -41,6 +40,11 @@
       text-align: center;
     }
   }
+
+  @media screen and (max-width: 1200px) {
+    padding: 20px;
+  }
+  
 } 
 
 
@@ -48,7 +52,6 @@
   width: 100%;
   display: grid;
   justify-content: space-between;
-  padding: 0 25px;
   gap: 34px;
   
   @media screen and (min-width: 1200px) {
@@ -204,10 +207,6 @@
 
     }
   }
-
-  @media screen and (min-width: 768px) {
-
-  }
 }
 
 .cards_blue {
@@ -260,10 +259,14 @@
   }
 }
 
+
+// ==========FAQ================
+
 .section {
   background-color: #f9f9f9;
   background-repeat: no-repeat;
   padding: 20px 0;
+  padding: 16px 24px;
 }
 
 .content_wrapper {
@@ -279,18 +282,21 @@
   }
 
   @media screen and (min-width: 999px) {
-      padding: 80px 64px;
+      padding: 80px 0px;
   }
 }
 
 .topicsIcon_wrapper {
-  max-width: 866px;
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
   align-items: center;
   justify-content: space-between;
   gap: 24px;
+  display: grid;
+
+  @media screen and (min-width: 768px) {
+    padding: 0;
+    grid-template-columns: repeat(2,1fr);
+  }
 }
 
 .topic_single {
@@ -311,8 +317,60 @@
       height: auto;
 
   }
+}
 
-  @media screen and (min-width: 999px) {
-    min-width: 644px;
+
+// ==========TABLE COMPARISON================
+
+.table_comparisonDetail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px 0;
+
+  .bg_abu {
+    background-color: #EAEAEA;
   }
+}
+
+.table_row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.table_cell {
+  width: 160px;
+  height: auto;
+  padding: 4px 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+
+  svg {
+    color: #cbcbcb;
+  }
+}
+
+.table_cellTitle {
+  width: 672px;
+  text-align: left;
+  padding: 4px 12px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.table_head {
+  margin: 13px 0;
+  border-bottom: .031rem solid #eaeaea;
+  color: $color-primary;
+  font-weight: 700;
+  line-height: 24px;
 }
