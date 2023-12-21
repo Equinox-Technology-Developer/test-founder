@@ -204,7 +204,7 @@ const index = () => {
                 width={389}
                 height={226}
               />
-              <h3 class={``}>What is skills-based hiring?</h3>
+              <h3 className={``}>What is skills-based hiring?</h3>
               <p className={``}>
                 Skills-based hiring is a hiring process where evidence of
                 candidates’ skills, rather than other information such as their
@@ -218,7 +218,7 @@ const index = () => {
                 width={389}
                 height={226}
               />
-              <h3 class={``}>
+              <h3 className={``}>
                 Skills-based hiring is on the rise. What does this mean for
                 recruitment?
               </h3>
@@ -235,7 +235,7 @@ const index = () => {
                 width={389}
                 height={226}
               />
-              <h3 class={``}>
+              <h3 className={``}>
                 How skills-based hiring delivers what job candidates want in
                 2023
               </h3>
@@ -252,7 +252,7 @@ const index = () => {
                 width={389}
                 height={226}
               />
-              <h3 class={``}>
+              <h3 className={``}>
                 How the focus on skills in hiring is driving the degree “reset”
                 – and where universities...
               </h3>
@@ -269,7 +269,7 @@ const index = () => {
                 width={389}
                 height={226}
               />
-              <h3 class={``}>
+              <h3 className={``}>
                 How skills-based hiring can change the way we view retention and
                 internal mobility
               </h3>
@@ -286,7 +286,7 @@ const index = () => {
                 width={389}
                 height={226}
               />
-              <h3 class={``}>
+              <h3 className={``}>
                 How skills-based hiring helps STARs tear down the paper ceiling
               </h3>
               <p className={``}>
@@ -348,7 +348,7 @@ const index = () => {
                 width={389}
                 height={226}
               />
-              <h3 class={``}>What is skills-based hiring?</h3>
+              <h3 className={``}>What is skills-based hiring?</h3>
               <p className={``}>
                 Skills-based hiring is a hiring process where evidence of
                 candidates’ skills, rather than other information such as their
@@ -362,7 +362,7 @@ const index = () => {
                 width={389}
                 height={226}
               />
-              <h3 class={``}>
+              <h3 className={``}>
                 Skills-based hiring is on the rise. What does this mean for
                 recruitment?
               </h3>
@@ -379,7 +379,7 @@ const index = () => {
                 width={389}
                 height={226}
               />
-              <h3 class={``}>
+              <h3 className={``}>
                 How skills-based hiring delivers what job candidates want in
                 2023
               </h3>
@@ -396,7 +396,7 @@ const index = () => {
                 width={389}
                 height={226}
               />
-              <h3 class={``}>
+              <h3 className={``}>
                 How the focus on skills in hiring is driving the degree “reset”
                 – and where universities...
               </h3>
@@ -413,7 +413,7 @@ const index = () => {
                 width={389}
                 height={226}
               />
-              <h3 class={``}>
+              <h3 className={``}>
                 How skills-based hiring can change the way we view retention and
                 internal mobility
               </h3>
@@ -430,7 +430,7 @@ const index = () => {
                 width={389}
                 height={226}
               />
-              <h3 class={``}>
+              <h3 className={``}>
                 How skills-based hiring helps STARs tear down the paper ceiling
               </h3>
               <p className={``}>
@@ -491,7 +491,7 @@ const index = () => {
                 width={389}
                 height={226}
               />
-              <h3 class={``}>What is skills-based hiring?</h3>
+              <h3 className={``}>What is skills-based hiring?</h3>
               <p className={``}>
                 Skills-based hiring is a hiring process where evidence of
                 candidates’ skills, rather than other information such as their
@@ -505,7 +505,7 @@ const index = () => {
                 width={389}
                 height={226}
               />
-              <h3 class={``}>
+              <h3 className={``}>
                 Skills-based hiring is on the rise. What does this mean for
                 recruitment?
               </h3>
@@ -522,7 +522,7 @@ const index = () => {
                 width={389}
                 height={226}
               />
-              <h3 class={``}>
+              <h3 className={``}>
                 How skills-based hiring delivers what job candidates want in
                 2023
               </h3>
@@ -539,7 +539,7 @@ const index = () => {
                 width={389}
                 height={226}
               />
-              <h3 class={``}>
+              <h3 className={``}>
                 How the focus on skills in hiring is driving the degree “reset”
                 – and where universities...
               </h3>
@@ -556,7 +556,7 @@ const index = () => {
                 width={389}
                 height={226}
               />
-              <h3 class={``}>
+              <h3 className={``}>
                 How skills-based hiring can change the way we view retention and
                 internal mobility
               </h3>
@@ -573,7 +573,7 @@ const index = () => {
                 width={389}
                 height={226}
               />
-              <h3 class={``}>
+              <h3 className={``}>
                 How skills-based hiring helps STARs tear down the paper ceiling
               </h3>
               <p className={``}>
@@ -633,7 +633,7 @@ const index = () => {
                 width={389}
                 height={226}
               />
-              <h3 class={``}>What is skills-based hiring?</h3>
+              <h3 className={``}>What is skills-based hiring?</h3>
               <p className={``}>
                 Skills-based hiring is a hiring process where evidence of
                 candidates’ skills, rather than other information such as their
@@ -647,7 +647,7 @@ const index = () => {
                 width={389}
                 height={226}
               />
-              <h3 class={``}>
+              <h3 className={``}>
                 Skills-based hiring is on the rise. What does this mean for
                 recruitment?
               </h3>
@@ -664,7 +664,7 @@ const index = () => {
                 width={389}
                 height={226}
               />
-              <h3 class={``}>
+              <h3 className={``}>
                 How skills-based hiring delivers what job candidates want in
                 2023
               </h3>
@@ -681,7 +681,7 @@ const index = () => {
                 width={389}
                 height={226}
               />
-              <h3 class={``}>
+              <h3 className={``}>
                 How the focus on skills in hiring is driving the degree “reset”
                 – and where universities...
               </h3>
@@ -698,7 +698,7 @@ const index = () => {
                 width={389}
                 height={226}
               />
-              <h3 class={``}>
+              <h3 className={``}>
                 How skills-based hiring can change the way we view retention and
                 internal mobility
               </h3>
@@ -715,7 +715,7 @@ const index = () => {
                 width={389}
                 height={226}
               />
-              <h3 class={``}>
+              <h3 className={``}>
                 How skills-based hiring helps STARs tear down the paper ceiling
               </h3>
               <p className={``}>
@@ -778,7 +778,7 @@ const index = () => {
                 width={389}
                 height={226}
               />
-              <h3 class={``}>What is skills-based hiring?</h3>
+              <h3 className={``}>What is skills-based hiring?</h3>
               <p className={``}>
                 Skills-based hiring is a hiring process where evidence of
                 candidates’ skills, rather than other information such as their
@@ -792,7 +792,7 @@ const index = () => {
                 width={389}
                 height={226}
               />
-              <h3 class={``}>
+              <h3 className={``}>
                 Skills-based hiring is on the rise. What does this mean for
                 recruitment?
               </h3>
@@ -809,7 +809,7 @@ const index = () => {
                 width={389}
                 height={226}
               />
-              <h3 class={``}>
+              <h3 className={``}>
                 How skills-based hiring delivers what job candidates want in
                 2023
               </h3>
@@ -826,7 +826,7 @@ const index = () => {
                 width={389}
                 height={226}
               />
-              <h3 class={``}>
+              <h3 className={``}>
                 How the focus on skills in hiring is driving the degree “reset”
                 – and where universities...
               </h3>
@@ -843,7 +843,7 @@ const index = () => {
                 width={389}
                 height={226}
               />
-              <h3 class={``}>
+              <h3 className={``}>
                 How skills-based hiring can change the way we view retention and
                 internal mobility
               </h3>
@@ -860,7 +860,7 @@ const index = () => {
                 width={389}
                 height={226}
               />
-              <h3 class={``}>
+              <h3 className={``}>
                 How skills-based hiring helps STARs tear down the paper ceiling
               </h3>
               <p className={``}>

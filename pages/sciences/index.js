@@ -292,7 +292,7 @@ const ProductScience = () => {
                   width={321}
                   height={213}
                 />
-                <h3 class={``}>A brief introduction to: Test validation</h3>
+                <h3 className={``}>A brief introduction to: Test validation</h3>
                 <p className={``}>
                   Science series materials are brought to you by TestFounder’s
                   Assessment Team: A group of IO psycho...
@@ -305,7 +305,7 @@ const ProductScience = () => {
                   width={321}
                   height={213}
                 />
-                <h3 class={``}>A brief introduction to: Test validation</h3>
+                <h3 className={``}>A brief introduction to: Test validation</h3>
                 <p className={``}>
                   Science series materials are brought to you by TestFounder’s
                   Assessment Team: A group of IO psycho...
@@ -318,7 +318,7 @@ const ProductScience = () => {
                   width={321}
                   height={213}
                 />
-                <h3 class={``}>A brief introduction to: Test validation</h3>
+                <h3 className={``}>A brief introduction to: Test validation</h3>
                 <p className={``}>
                   Science series materials are brought to you by TestFounder’s
                   Assessment Team: A group of IO psycho...
@@ -331,7 +331,7 @@ const ProductScience = () => {
                   width={321}
                   height={213}
                 />
-                <h3 class={``}>A brief introduction to: Test validation</h3>
+                <h3 className={``}>A brief introduction to: Test validation</h3>
                 <p className={``}>
                   Science series materials are brought to you by TestFounder’s
                   Assessment Team: A group of IO psycho...
@@ -344,7 +344,7 @@ const ProductScience = () => {
                   width={321}
                   height={213}
                 />
-                <h3 class={``}>A brief introduction to: Test validation</h3>
+                <h3 className={``}>A brief introduction to: Test validation</h3>
                 <p className={``}>
                   Science series materials are brought to you by TestFounder’s
                   Assessment Team: A group of IO psycho...
@@ -357,7 +357,7 @@ const ProductScience = () => {
                   width={321}
                   height={213}
                 />
-                <h3 class={``}>A brief introduction to: Test validation</h3>
+                <h3 className={``}>A brief introduction to: Test validation</h3>
                 <p className={``}>
                   Science series materials are brought to you by TestFounder’s
                   Assessment Team: A group of IO psycho...
