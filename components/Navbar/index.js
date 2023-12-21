@@ -139,7 +139,7 @@ const Navbar = () => {
                   {/* Add your dropdown content here */}
                   <Link href="/case-studies">Case Studies</Link>
                   <Link href="/skills-based-hiring">Skills-based hiring</Link>
-                  <Link href="/calent-assessment">Talent Assessment</Link>
+                  <Link href="/talent-assessment">Talent Assessment</Link>
                   <Link href="/blog">Blog</Link>
                 </div>
               )}
