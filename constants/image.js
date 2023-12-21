@@ -25,7 +25,8 @@ const images = {
   top_banner_testLibrary,
   HeroImageSkillsBasedTraining,
   HeroImageTestAssessment,
-  iPad,
+  HeroImageMiddleBanner_pricing,
+  iPad
 };
 
 export default images;
