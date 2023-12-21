@@ -2,48 +2,55 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-
 import { Layout } from '@/components';
 import { images } from '@/constants';
 
-import styles from './TestLibrary.module.scss'
+import styles from './TestLibrary.module.scss';
 
 const testLibrary = ({}) => {
   return (
     <>
       <Layout pageTitle="Test Library">
-
         {/* Top Banner */}
         <section className="bg-[#F9F9F9] bg-blur bg-right bg-no-repeat pt-0">
-          <div className="container mx-auto"> <div className={` ${styles.banner_topContent}`}>
-            <div className={styles.banner_topContentText}>
-              <h1 className="sm:heading-1 heading-2">
-                The science behind
-                <span className="text-primary-500"> TestFounder</span>.
-              </h1>
-              <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center lg:text-start">
-                Our mission is to provide you and your candidates with an enjoyable, highly accurate, and science-backed talent assessment experience – without bias or stress. We achieve this by taking a deeply scientific, multi-layered approach that ensures our screening tests are always valid, reliable, and fair.
-              </p>
-              <div className="mb-6 flex justify-center">
-                <button className="btn-medium sm:btn-normal">
-                  Try for free!
-                </button>
-                <button className="ml-4 btn-line-medium sm:btn-line-normal">
-                  Get Started
-                </button>
+          <div className="container mx-auto">
+            {' '}
+            <div className={` ${styles.banner_topContent}`}>
+              <div className={styles.banner_topContentText}>
+                <h1 className="sm:heading-1 heading-2">
+                  The science behind
+                  <span className="text-primary-500"> TestFounder</span>.
+                </h1>
+                <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center lg:text-start">
+                  Our mission is to provide you and your candidates with an
+                  enjoyable, highly accurate, and science-backed talent
+                  assessment experience – without bias or stress. We achieve
+                  this by taking a deeply scientific, multi-layered approach
+                  that ensures our screening tests are always valid, reliable,
+                  and fair.
+                </p>
+                <div className="mb-6 flex justify-center">
+                  <button className="btn-medium sm:btn-normal">
+                    Try for free!
+                  </button>
+                  <button className="btn-line-medium sm:btn-line-normal ml-4">
+                    Get Started
+                  </button>
+                </div>
+              </div>
+              <div
+                className={`relative flex w-full justify-center md:w-full lg:w-full lg:max-w-lg ${styles.banner_topContentImage}`}
+              >
+                <Image
+                  src={images.top_banner_testLibrary}
+                  alt="Hero Image"
+                  width={617}
+                  height={602}
+                  sizes="100vw"
+                  className={`z-10 flex h-auto w-[80%] md:w-[60%] lg:w-full `}
+                />
               </div>
             </div>
-            <div className={`relative flex w-full justify-center md:w-full lg:w-full lg:max-w-lg ${styles.banner_topContentImage}`}>
-              <Image
-                src={images.top_banner_testLibrary}
-                alt="Hero Image"
-                width={617}
-                height={602}
-                sizes="100vw"
-                className={`z-10 flex h-auto w-[80%] md:w-[60%] lg:w-full `}
-              />
-            </div>
-          </div>
           </div>
         </section>
 
@@ -89,7 +96,7 @@ const testLibrary = ({}) => {
             <div className={`${styles.library_wrapper}`}>
               <div className={`${styles.exercise_cards}`}>
                 <div className={`${styles.cards_tags}`}>
-                <Image
+                  <Image
                     src="/assets/candidates.svg"
                     alt="icon-candidates"
                     width={32}
@@ -97,12 +104,19 @@ const testLibrary = ({}) => {
                     sizes="100vw"
                     className="flex h-auto"
                   />
-                  <p className="text-white" text="Popular">Popular</p>
+                  <p className="text-white" text="Popular">
+                    Popular
+                  </p>
                 </div>
                 <div className={`${styles.cards_content}`}>
                   <div className={`${styles.cards_contentText}`}>
                     <h3>Culture add</h3>
-                    <p>This culture add test assesses how a candidate’s values and behaviors align with your organization values and the behaviors that would make your ideal hire successful in a specific role, based on a customized survey you fill out.</p>
+                    <p>
+                      This culture add test assesses how a candidate’s values
+                      and behaviors align with your organization values and the
+                      behaviors that would make your ideal hire successful in a
+                      specific role, based on a customized survey you fill out.
+                    </p>
                   </div>
                   <div className={`${styles.cards_contentDetails}`}>
                     <div className={`${styles.time}`}>
@@ -116,8 +130,8 @@ const testLibrary = ({}) => {
                         <path
                           d="M12 13V9M21 6L19 4M10 2H14M12 21C9.87827 21 7.84344 20.1571 6.34315 18.6569C4.84285 17.1566 4 15.1217 4 13C4 10.8783 4.84285 8.84344 6.34315 7.34315C7.84344 5.84285 9.87827 5 12 5C14.1217 5 16.1566 5.84285 17.6569 7.34315C19.1571 8.84344 20 10.8783 20 13C20 15.1217 19.1571 17.1566 17.6569 18.6569C16.1566 20.1571 14.1217 21 12 21Z"
                           stroke="black"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         />
                       </svg>
                       <p>10 Min</p>
@@ -128,7 +142,7 @@ const testLibrary = ({}) => {
               </div>
               <div className={`${styles.exercise_cards}`}>
                 <div className={`${styles.cards_tags}`}>
-                <Image
+                  <Image
                     src="/assets/candidates.svg"
                     alt="icon-candidates"
                     width={32}
@@ -141,7 +155,12 @@ const testLibrary = ({}) => {
                 <div className={`${styles.cards_content}`}>
                   <div className={`${styles.cards_contentText}`}>
                     <h3>Culture add</h3>
-                    <p>This culture add test assesses how a candidate’s values and behaviors align with your organization values and the behaviors that would make your ideal hire successful in a specific role, based on a customized survey you fill out.</p>
+                    <p>
+                      This culture add test assesses how a candidate’s values
+                      and behaviors align with your organization values and the
+                      behaviors that would make your ideal hire successful in a
+                      specific role, based on a customized survey you fill out.
+                    </p>
                   </div>
                   <div className={`${styles.cards_contentDetails}`}>
                     <div className={`${styles.time}`}>
@@ -155,8 +174,8 @@ const testLibrary = ({}) => {
                         <path
                           d="M12 13V9M21 6L19 4M10 2H14M12 21C9.87827 21 7.84344 20.1571 6.34315 18.6569C4.84285 17.1566 4 15.1217 4 13C4 10.8783 4.84285 8.84344 6.34315 7.34315C7.84344 5.84285 9.87827 5 12 5C14.1217 5 16.1566 5.84285 17.6569 7.34315C19.1571 8.84344 20 10.8783 20 13C20 15.1217 19.1571 17.1566 17.6569 18.6569C16.1566 20.1571 14.1217 21 12 21Z"
                           stroke="black"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         />
                       </svg>
                       <p>10 Min</p>
@@ -167,7 +186,7 @@ const testLibrary = ({}) => {
               </div>
               <div className={`${styles.exercise_cards}`}>
                 <div className={`${styles.cards_tags}`}>
-                <Image
+                  <Image
                     src="/assets/candidates.svg"
                     alt="icon-candidates"
                     width={32}
@@ -180,7 +199,12 @@ const testLibrary = ({}) => {
                 <div className={`${styles.cards_content}`}>
                   <div className={`${styles.cards_contentText}`}>
                     <h3>Culture add</h3>
-                    <p>This culture add test assesses how a candidate’s values and behaviors align with your organization values and the behaviors that would make your ideal hire successful in a specific role, based on a customized survey you fill out.</p>
+                    <p>
+                      This culture add test assesses how a candidate’s values
+                      and behaviors align with your organization values and the
+                      behaviors that would make your ideal hire successful in a
+                      specific role, based on a customized survey you fill out.
+                    </p>
                   </div>
                   <div className={`${styles.cards_contentDetails}`}>
                     <div className={`${styles.time}`}>
@@ -194,8 +218,8 @@ const testLibrary = ({}) => {
                         <path
                           d="M12 13V9M21 6L19 4M10 2H14M12 21C9.87827 21 7.84344 20.1571 6.34315 18.6569C4.84285 17.1566 4 15.1217 4 13C4 10.8783 4.84285 8.84344 6.34315 7.34315C7.84344 5.84285 9.87827 5 12 5C14.1217 5 16.1566 5.84285 17.6569 7.34315C19.1571 8.84344 20 10.8783 20 13C20 15.1217 19.1571 17.1566 17.6569 18.6569C16.1566 20.1571 14.1217 21 12 21Z"
                           stroke="black"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         />
                       </svg>
                       <p>10 Min</p>
@@ -206,7 +230,7 @@ const testLibrary = ({}) => {
               </div>
               <div className={`${styles.exercise_cards}`}>
                 <div className={`${styles.cards_tags}`}>
-                <Image
+                  <Image
                     src="/assets/candidates.svg"
                     alt="icon-candidates"
                     width={32}
@@ -219,7 +243,12 @@ const testLibrary = ({}) => {
                 <div className={`${styles.cards_content}`}>
                   <div className={`${styles.cards_contentText}`}>
                     <h3>Culture add</h3>
-                    <p>This culture add test assesses how a candidate’s values and behaviors align with your organization values and the behaviors that would make your ideal hire successful in a specific role, based on a customized survey you fill out.</p>
+                    <p>
+                      This culture add test assesses how a candidate’s values
+                      and behaviors align with your organization values and the
+                      behaviors that would make your ideal hire successful in a
+                      specific role, based on a customized survey you fill out.
+                    </p>
                   </div>
                   <div className={`${styles.cards_contentDetails}`}>
                     <div className={`${styles.time}`}>
@@ -233,8 +262,8 @@ const testLibrary = ({}) => {
                         <path
                           d="M12 13V9M21 6L19 4M10 2H14M12 21C9.87827 21 7.84344 20.1571 6.34315 18.6569C4.84285 17.1566 4 15.1217 4 13C4 10.8783 4.84285 8.84344 6.34315 7.34315C7.84344 5.84285 9.87827 5 12 5C14.1217 5 16.1566 5.84285 17.6569 7.34315C19.1571 8.84344 20 10.8783 20 13C20 15.1217 19.1571 17.1566 17.6569 18.6569C16.1566 20.1571 14.1217 21 12 21Z"
                           stroke="black"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         />
                       </svg>
                       <p>10 Min</p>
@@ -245,7 +274,7 @@ const testLibrary = ({}) => {
               </div>
               <div className={`${styles.exercise_cards}`}>
                 <div className={`${styles.cards_tags}`}>
-                <Image
+                  <Image
                     src="/assets/candidates.svg"
                     alt="icon-candidates"
                     width={32}
@@ -258,7 +287,12 @@ const testLibrary = ({}) => {
                 <div className={`${styles.cards_content}`}>
                   <div className={`${styles.cards_contentText}`}>
                     <h3>Culture add</h3>
-                    <p>This culture add test assesses how a candidate’s values and behaviors align with your organization values and the behaviors that would make your ideal hire successful in a specific role, based on a customized survey you fill out.</p>
+                    <p>
+                      This culture add test assesses how a candidate’s values
+                      and behaviors align with your organization values and the
+                      behaviors that would make your ideal hire successful in a
+                      specific role, based on a customized survey you fill out.
+                    </p>
                   </div>
                   <div className={`${styles.cards_contentDetails}`}>
                     <div className={`${styles.time}`}>
@@ -272,8 +306,8 @@ const testLibrary = ({}) => {
                         <path
                           d="M12 13V9M21 6L19 4M10 2H14M12 21C9.87827 21 7.84344 20.1571 6.34315 18.6569C4.84285 17.1566 4 15.1217 4 13C4 10.8783 4.84285 8.84344 6.34315 7.34315C7.84344 5.84285 9.87827 5 12 5C14.1217 5 16.1566 5.84285 17.6569 7.34315C19.1571 8.84344 20 10.8783 20 13C20 15.1217 19.1571 17.1566 17.6569 18.6569C16.1566 20.1571 14.1217 21 12 21Z"
                           stroke="black"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         />
                       </svg>
                       <p>10 Min</p>
@@ -284,7 +318,7 @@ const testLibrary = ({}) => {
               </div>
               <div className={`${styles.exercise_cards}`}>
                 <div className={`${styles.cards_tags}`}>
-                <Image
+                  <Image
                     src="/assets/candidates.svg"
                     alt="icon-candidates"
                     width={32}
@@ -297,7 +331,12 @@ const testLibrary = ({}) => {
                 <div className={`${styles.cards_content}`}>
                   <div className={`${styles.cards_contentText}`}>
                     <h3>Culture add</h3>
-                    <p>This culture add test assesses how a candidate’s values and behaviors align with your organization values and the behaviors that would make your ideal hire successful in a specific role, based on a customized survey you fill out.</p>
+                    <p>
+                      This culture add test assesses how a candidate’s values
+                      and behaviors align with your organization values and the
+                      behaviors that would make your ideal hire successful in a
+                      specific role, based on a customized survey you fill out.
+                    </p>
                   </div>
                   <div className={`${styles.cards_contentDetails}`}>
                     <div className={`${styles.time}`}>
@@ -311,8 +350,8 @@ const testLibrary = ({}) => {
                         <path
                           d="M12 13V9M21 6L19 4M10 2H14M12 21C9.87827 21 7.84344 20.1571 6.34315 18.6569C4.84285 17.1566 4 15.1217 4 13C4 10.8783 4.84285 8.84344 6.34315 7.34315C7.84344 5.84285 9.87827 5 12 5C14.1217 5 16.1566 5.84285 17.6569 7.34315C19.1571 8.84344 20 10.8783 20 13C20 15.1217 19.1571 17.1566 17.6569 18.6569C16.1566 20.1571 14.1217 21 12 21Z"
                           stroke="black"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         />
                       </svg>
                       <p>10 Min</p>
@@ -323,7 +362,7 @@ const testLibrary = ({}) => {
               </div>
               <div className={`${styles.exercise_cards}`}>
                 <div className={`${styles.cards_tags}`}>
-                <Image
+                  <Image
                     src="/assets/candidates.svg"
                     alt="icon-candidates"
                     width={32}
@@ -336,7 +375,12 @@ const testLibrary = ({}) => {
                 <div className={`${styles.cards_content}`}>
                   <div className={`${styles.cards_contentText}`}>
                     <h3>Culture add</h3>
-                    <p>This culture add test assesses how a candidate’s values and behaviors align with your organization values and the behaviors that would make your ideal hire successful in a specific role, based on a customized survey you fill out.</p>
+                    <p>
+                      This culture add test assesses how a candidate’s values
+                      and behaviors align with your organization values and the
+                      behaviors that would make your ideal hire successful in a
+                      specific role, based on a customized survey you fill out.
+                    </p>
                   </div>
                   <div className={`${styles.cards_contentDetails}`}>
                     <div className={`${styles.time}`}>
@@ -350,8 +394,8 @@ const testLibrary = ({}) => {
                         <path
                           d="M12 13V9M21 6L19 4M10 2H14M12 21C9.87827 21 7.84344 20.1571 6.34315 18.6569C4.84285 17.1566 4 15.1217 4 13C4 10.8783 4.84285 8.84344 6.34315 7.34315C7.84344 5.84285 9.87827 5 12 5C14.1217 5 16.1566 5.84285 17.6569 7.34315C19.1571 8.84344 20 10.8783 20 13C20 15.1217 19.1571 17.1566 17.6569 18.6569C16.1566 20.1571 14.1217 21 12 21Z"
                           stroke="black"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         />
                       </svg>
                       <p>10 Min</p>
@@ -362,7 +406,7 @@ const testLibrary = ({}) => {
               </div>
               <div className={`${styles.exercise_cards}`}>
                 <div className={`${styles.cards_tags}`}>
-                <Image
+                  <Image
                     src="/assets/candidates.svg"
                     alt="icon-candidates"
                     width={32}
@@ -375,7 +419,12 @@ const testLibrary = ({}) => {
                 <div className={`${styles.cards_content}`}>
                   <div className={`${styles.cards_contentText}`}>
                     <h3>Culture add</h3>
-                    <p>This culture add test assesses how a candidate’s values and behaviors align with your organization values and the behaviors that would make your ideal hire successful in a specific role, based on a customized survey you fill out.</p>
+                    <p>
+                      This culture add test assesses how a candidate’s values
+                      and behaviors align with your organization values and the
+                      behaviors that would make your ideal hire successful in a
+                      specific role, based on a customized survey you fill out.
+                    </p>
                   </div>
                   <div className={`${styles.cards_contentDetails}`}>
                     <div className={`${styles.time}`}>
@@ -389,8 +438,8 @@ const testLibrary = ({}) => {
                         <path
                           d="M12 13V9M21 6L19 4M10 2H14M12 21C9.87827 21 7.84344 20.1571 6.34315 18.6569C4.84285 17.1566 4 15.1217 4 13C4 10.8783 4.84285 8.84344 6.34315 7.34315C7.84344 5.84285 9.87827 5 12 5C14.1217 5 16.1566 5.84285 17.6569 7.34315C19.1571 8.84344 20 10.8783 20 13C20 15.1217 19.1571 17.1566 17.6569 18.6569C16.1566 20.1571 14.1217 21 12 21Z"
                           stroke="black"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         />
                       </svg>
                       <p>10 Min</p>
@@ -401,7 +450,7 @@ const testLibrary = ({}) => {
               </div>
               <div className={`${styles.exercise_cards}`}>
                 <div className={`${styles.cards_tags}`}>
-                <Image
+                  <Image
                     src="/assets/candidates.svg"
                     alt="icon-candidates"
                     width={32}
@@ -414,7 +463,12 @@ const testLibrary = ({}) => {
                 <div className={`${styles.cards_content}`}>
                   <div className={`${styles.cards_contentText}`}>
                     <h3>Culture add</h3>
-                    <p>This culture add test assesses how a candidate’s values and behaviors align with your organization values and the behaviors that would make your ideal hire successful in a specific role, based on a customized survey you fill out.</p>
+                    <p>
+                      This culture add test assesses how a candidate’s values
+                      and behaviors align with your organization values and the
+                      behaviors that would make your ideal hire successful in a
+                      specific role, based on a customized survey you fill out.
+                    </p>
                   </div>
                   <div className={`${styles.cards_contentDetails}`}>
                     <div className={`${styles.time}`}>
@@ -428,8 +482,8 @@ const testLibrary = ({}) => {
                         <path
                           d="M12 13V9M21 6L19 4M10 2H14M12 21C9.87827 21 7.84344 20.1571 6.34315 18.6569C4.84285 17.1566 4 15.1217 4 13C4 10.8783 4.84285 8.84344 6.34315 7.34315C7.84344 5.84285 9.87827 5 12 5C14.1217 5 16.1566 5.84285 17.6569 7.34315C19.1571 8.84344 20 10.8783 20 13C20 15.1217 19.1571 17.1566 17.6569 18.6569C16.1566 20.1571 14.1217 21 12 21Z"
                           stroke="black"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         />
                       </svg>
                       <p>10 Min</p>
@@ -440,7 +494,7 @@ const testLibrary = ({}) => {
               </div>
               <div className={`${styles.exercise_cards}`}>
                 <div className={`${styles.cards_tags}`}>
-                <Image
+                  <Image
                     src="/assets/candidates.svg"
                     alt="icon-candidates"
                     width={32}
@@ -453,7 +507,12 @@ const testLibrary = ({}) => {
                 <div className={`${styles.cards_content}`}>
                   <div className={`${styles.cards_contentText}`}>
                     <h3>Culture add</h3>
-                    <p>This culture add test assesses how a candidate’s values and behaviors align with your organization values and the behaviors that would make your ideal hire successful in a specific role, based on a customized survey you fill out.</p>
+                    <p>
+                      This culture add test assesses how a candidate’s values
+                      and behaviors align with your organization values and the
+                      behaviors that would make your ideal hire successful in a
+                      specific role, based on a customized survey you fill out.
+                    </p>
                   </div>
                   <div className={`${styles.cards_contentDetails}`}>
                     <div className={`${styles.time}`}>
@@ -467,8 +526,8 @@ const testLibrary = ({}) => {
                         <path
                           d="M12 13V9M21 6L19 4M10 2H14M12 21C9.87827 21 7.84344 20.1571 6.34315 18.6569C4.84285 17.1566 4 15.1217 4 13C4 10.8783 4.84285 8.84344 6.34315 7.34315C7.84344 5.84285 9.87827 5 12 5C14.1217 5 16.1566 5.84285 17.6569 7.34315C19.1571 8.84344 20 10.8783 20 13C20 15.1217 19.1571 17.1566 17.6569 18.6569C16.1566 20.1571 14.1217 21 12 21Z"
                           stroke="black"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         />
                       </svg>
                       <p>10 Min</p>
@@ -479,7 +538,7 @@ const testLibrary = ({}) => {
               </div>
               <div className={`${styles.exercise_cards}`}>
                 <div className={`${styles.cards_tags}`}>
-                <Image
+                  <Image
                     src="/assets/candidates.svg"
                     alt="icon-candidates"
                     width={32}
@@ -492,7 +551,12 @@ const testLibrary = ({}) => {
                 <div className={`${styles.cards_content}`}>
                   <div className={`${styles.cards_contentText}`}>
                     <h3>Culture add</h3>
-                    <p>This culture add test assesses how a candidate’s values and behaviors align with your organization values and the behaviors that would make your ideal hire successful in a specific role, based on a customized survey you fill out.</p>
+                    <p>
+                      This culture add test assesses how a candidate’s values
+                      and behaviors align with your organization values and the
+                      behaviors that would make your ideal hire successful in a
+                      specific role, based on a customized survey you fill out.
+                    </p>
                   </div>
                   <div className={`${styles.cards_contentDetails}`}>
                     <div className={`${styles.time}`}>
@@ -506,8 +570,8 @@ const testLibrary = ({}) => {
                         <path
                           d="M12 13V9M21 6L19 4M10 2H14M12 21C9.87827 21 7.84344 20.1571 6.34315 18.6569C4.84285 17.1566 4 15.1217 4 13C4 10.8783 4.84285 8.84344 6.34315 7.34315C7.84344 5.84285 9.87827 5 12 5C14.1217 5 16.1566 5.84285 17.6569 7.34315C19.1571 8.84344 20 10.8783 20 13C20 15.1217 19.1571 17.1566 17.6569 18.6569C16.1566 20.1571 14.1217 21 12 21Z"
                           stroke="black"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         />
                       </svg>
                       <p>10 Min</p>
@@ -518,7 +582,7 @@ const testLibrary = ({}) => {
               </div>
               <div className={`${styles.exercise_cards}`}>
                 <div className={`${styles.cards_tags}`}>
-                <Image
+                  <Image
                     src="/assets/candidates.svg"
                     alt="icon-candidates"
                     width={32}
@@ -531,7 +595,12 @@ const testLibrary = ({}) => {
                 <div className={`${styles.cards_content}`}>
                   <div className={`${styles.cards_contentText}`}>
                     <h3>Culture add</h3>
-                    <p>This culture add test assesses how a candidate’s values and behaviors align with your organization values and the behaviors that would make your ideal hire successful in a specific role, based on a customized survey you fill out.</p>
+                    <p>
+                      This culture add test assesses how a candidate’s values
+                      and behaviors align with your organization values and the
+                      behaviors that would make your ideal hire successful in a
+                      specific role, based on a customized survey you fill out.
+                    </p>
                   </div>
                   <div className={`${styles.cards_contentDetails}`}>
                     <div className={`${styles.time}`}>
@@ -545,8 +614,8 @@ const testLibrary = ({}) => {
                         <path
                           d="M12 13V9M21 6L19 4M10 2H14M12 21C9.87827 21 7.84344 20.1571 6.34315 18.6569C4.84285 17.1566 4 15.1217 4 13C4 10.8783 4.84285 8.84344 6.34315 7.34315C7.84344 5.84285 9.87827 5 12 5C14.1217 5 16.1566 5.84285 17.6569 7.34315C19.1571 8.84344 20 10.8783 20 13C20 15.1217 19.1571 17.1566 17.6569 18.6569C16.1566 20.1571 14.1217 21 12 21Z"
                           stroke="black"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                         />
                       </svg>
                       <p>10 Min</p>
@@ -555,7 +624,6 @@ const testLibrary = ({}) => {
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </section>
