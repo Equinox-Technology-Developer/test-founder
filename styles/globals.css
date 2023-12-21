@@ -44,6 +44,8 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  color: #1882D6;
+  font-weight: 700;
 }
 
 * {
@@ -85,46 +87,13 @@ a {
   align-items: center;
 }
 
-.content1_shape {
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
+.text-abu {
+  color: #CBCBCB;
 }
 
-.content1_shape svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 78px;
-}
-
-.content1_shape .shape-fill {
-  fill: #ffffff;
-}
-.content2_shape {
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-}
-
-.content2_shape svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 78px;
-}
-
-.content2_shape .shape-fill {
-  fill: #e8f8f7;
-}
-
-
-
-li:hover svg {
+li:hover svg, button:hover svg  {
+  display: inline-block; /* Ensures inline rotation works as expected */
+  transition: transform 0.3s ease; /* Adjust the duration and timing function as needed */
   transform: rotate(180deg);
 }
 
@@ -138,6 +107,49 @@ li:hover svg {
     align-items: center;
   }
 }
+
+
+/*======================
+    404 page
+=======================*/
+
+
+.page_404{ 
+  /* padding:40px 0; */
+  background:#fff; 
+  font-family: 'Arvo', serif;
+  height: 100vh;
+  display: grid;
+  align-items: center;
+}
+
+.page_404  img{ width:100%;}
+
+.four_zero_four_bg{
+  background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+  height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+ }
+ 
+.four_zero_four_bg h1{
+  font-size:80px;
+  margin-bottom: 50px;
+}
+ 
+.four_zero_four_bg h3{
+  font-size:80px;
+}
+			 
+.link_404{			 
+	color: #fff!important;
+  padding: 10px 20px;
+  background: #39ac31;
+  margin: 20px 0;
+  display: inline-block;
+}
+
+.contant_box_404{ margin-top:-50px;}
 
 @layer components {
   .heading-1 {

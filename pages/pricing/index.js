@@ -1,589 +1,272 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { RiDoubleQuotesL  } from "react-icons/ri";
+import { IoCheckmark } from "react-icons/io5";
+
+
 import { Layout } from '@/components';
-import { fetchContentfulEntries } from '@/helper/contenfulHelper';
-import React from 'react';
+import { images } from '@/constants';
+
 
 import styles from './Pricing.module.scss';
 
-// const Pricing = ({pricing}) => {
 const Pricing = () => {
-  const [isAnnual, setIsAnnual] = useState(false);
+  const [showTable, setShowTable] = useState(false);
 
-  const plans = [
-    {
-      title: 'Basic',
-      monthlyPrice: 9.99,
-      annualPrice: 99.99,
-    },
-    {
-      title: 'Standard',
-      monthlyPrice: 19.99,
-      annualPrice: 199.99,
-    },
-    {
-      title: 'Premium',
-      monthlyPrice: 29.99,
-      annualPrice: 299.99,
-    },
-  ];
+  const handleButtonClick = () => {
+    setShowTable(!showTable);
+  };
   return (
     <Layout pageTitle="Pricing">
-      {/* <section className="text-gray-700 body-font">
-        <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-          <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-            <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
-              Before they sold out
-            </h1>
-            <p className="mb-8 leading-relaxed">
-              Copper mug try-hard pitchfork pour-over freegan heirloom neutra
-              air plant cold-pressed tacos poke beard tote bag. Heirloom echo
-              park mlkshk tote bag selvage hot chicken authentic tumeric
-              truffaut hexagon try-hard chambray.
-            </p>
-            <div className="flex justify-center">
-              <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-                Button
-              </button>
-              <button className="ml-4 inline-flex text-gray-700 bg-gray-200 border-0 py-2 px-6 focus:outline-none hover:bg-gray-300 rounded text-lg">
-                Button
-              </button>
-            </div>
-          </div>
-          <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-            <img
-              className="object-cover object-center rounded"
-              alt="hero"
-              src="https://dummyimage.com/720x600/edf2f7/a5afbd"
-            />
-          </div>
-        </div>
-      </section> */}
 
-      <div className="container flex flex-col mx-auto justify-center">
-        <h1 className="text-4xl mt-10 text-center">Hire without limits</h1>
-        <div className="flex justify-center">
-          <div
-            className={`card p-8 rounded-lg shadow-md w-full md:w-2/3 lg:w-1/2 ${styles.card}`}
-          >
-            <h2 className="text-3xl font-semibold mb-6">Choose Your Plan</h2>
-
-            {/* Toggle Switch for Monthly/Annual */}
-            <div className="flex justify-between mb-6">
-              <span className="text-gray-600">Monthly</span>
-              <label className="switch">
-                <input
-                  type="checkbox"
-                  onChange={() => setIsAnnual(!isAnnual)}
-                  className="hidden"
-                />
-                <span className="slider"></span>
-              </label>
-              <span className="text-gray-600">Annual</span>
-            </div>
-
-            {/* Pricing Cards */}
-            <div className="flex justify-between">
-              {plans.map((plan, index) => (
-                <div
-                  key={index}
-                  className={`w-1/3 ${isAnnual ? '' : 'hidden'}`}
-                >
-                  <div className="bg-blue-500 text-white p-6 rounded-lg mb-4">
-                    <h3 className="text-xl font-semibold mb-2">{plan.title}</h3>
-                    <p className="text-lg">${plan.annualPrice}/year</p>
+     {/* Pricing Cards */}
+     <section className="bg-[#F9F9F9] bg-blur bg-right bg-no-repeat pt-0">
+          <div className={`container mx-auto ${styles.container}`}> 
+          <div className={` ${styles.banner_blogContainer}`}>
+            <div className={styles.banner_blogContentText}>
+              <h1 className="sm:heading-1 heading-2">
+                Hire Without Limits
+              </h1>
+              <div className={`${styles.pricingCards_wrapper}`}>
+                <div className={`${styles.pricing_cards}`}>
+                  <div className={`${styles.pricing_cardsTitle}`}>
+                    <h2>Free</h2>
+                    <p>Test for essential skills</p>
+                  </div>
+                  <div className={`${styles.pricing_cardsCheck}`}>
+                    <p><span><IoCheckmark/></span>Any size company</p>
+                    <p><span><IoCheckmark/></span>Free forever</p>
+                  </div>
+                  <div className={`${styles.pricing_price}`}>
+                    <div className={`${styles.pricing_currency}`}>
+                      <h2>$0</h2> 
+                      <div className={`${styles.pricing_details}`}>
+                        <p>USD</p>
+                        <h6>per month</h6>
+                      </div>
+                    </div>
+                    <p className='text-abut'>Free Forever</p>
+                  </div>
+                  <button type='button'>Try for free</button>
+                  <div className={`${styles.pricing_cardsDetail}`}>
+                    <ul>
+                      <li>5 free tests</li>
+                      <li>Designed to test widely applicable essential skills</li>
+                      <li>Invite unlimited candidates</li>
+                    </ul>
                   </div>
                 </div>
-              ))}
-            </div>
-
-            {/* Monthly Pricing Cards */}
-            <div className="flex justify-between">
-              {plans.map((plan, index) => (
-                <div
-                  key={index}
-                  className={`w-1/3 ${isAnnual ? 'hidden' : ''}`}
-                >
-                  <div className="bg-blue-500 text-white p-6 rounded-lg mb-4">
-                    <h3 className="text-xl font-semibold mb-2">{plan.title}</h3>
-                    <p className="text-lg">${plan.monthlyPrice}/month</p>
+                <div className={`${styles.pricing_cards}`}>
+                  <div className={`${styles.pricing_cardsTitle}`}>
+                    <h2>Lite</h2>
+                    <p>Hire for one role at a time</p>
+                  </div>
+                  <div className={`${styles.pricing_cardsCheck}`}>
+                    <p><span><IoCheckmark/></span>Any size company</p>
+                    <p><span><IoCheckmark/></span>Free forever</p>
+                  </div>
+                  <div className={`${styles.pricing_price}`}>
+                    <div className={`${styles.pricing_currency}`}>
+                      <h2>$499</h2> 
+                      <div className={`${styles.pricing_details}`}>
+                        <p>USD</p>
+                        <h6>per month</h6>
+                      </div>
+                    </div>
+                    <p className='text-abut'>Zero commitment, cancel anytime</p>
+                  </div>
+                  <button type='button'>Talk to Sale</button>
+                  <div className={`${styles.pricing_cardsDetail}`}>
+                    <ul>
+                      <li>All 401 tests in the test library</li>
+                      <li>1 active assessment at a time</li>
+                      <li>Invite unlimited candidates</li>
+                      <li>Custom essay, multiple choice, and file-upload questions</li>
+                    </ul>
                   </div>
                 </div>
-              ))}
+                <div className={`${styles.pricing_cards}  ${styles.cards_blue}`}>
+                  <div className={`${styles.pricing_cardsTitle}`}>
+                    <h2>Starter</h2>
+                    <p>Hire for all roles</p>
+                  </div>
+                  <div className={`${styles.pricing_cardsCheck}`}>
+                    <div className={`${styles.select_employees}`}>
+                      <button type='button'>10-100 employees<span><MdOutlineKeyboardArrowDown/></span></button>
+                    </div>
+                    <div className={`${styles.select_option}`}>
+                      <p className={`${styles.annual}`}>Annual<span>SAVE $1,260</span></p>
+                      <p className={`${styles.monthly}`}>Monthly</p>
+                    </div>
+                  </div>
+                  <div className={`${styles.pricing_price}`}>
+                    <div className={`${styles.pricing_currency}`}>
+                      <h2>$700</h2> 
+                      <div className={`${styles.pricing_details}`}>
+                        <p>USD</p>
+                        <h6>per month</h6>
+                      </div>
+                    </div>
+                    <p className='text-abu'>1-year commitment, pay $8,400 upfront</p>
+                  </div>
+                  <button type='button'>Start 15-day trial</button>
+                  <div className={`${styles.pricing_cardsDetail}`}>
+                    <ul>
+                      <li>All 401 tests in the test library</li>
+                      <li>Unlimited active assessments</li>
+                      <li>Invite unlimited candidates</li>
+                      <li>Create custom essay, multiple-choice, and file-upload questions</li>
+                    </ul>
+                  </div>
+                </div>
+                <div className={`${styles.pricing_cards}`}>
+                  <div className={`${styles.pricing_cardsTitle}`}>
+                    <h2>Free</h2>
+                    <p>Test for essential skills</p>
+                  </div>
+                  <div className={`${styles.pricing_cardsCheck} ${styles.card_white}`}>
+                    <div className={`${styles.select_employees}`}>
+                      <button type='button'>10-100 employees<span><MdOutlineKeyboardArrowDown/></span></button>
+                    </div>
+                    <div className={`${styles.select_option}`}>
+                      <p className={`${styles.annual}`}>Annual<span>SAVE $1,260</span></p>
+                      <p className={`${styles.monthly}`}>Monthly</p>
+                    </div>
+                  </div>
+                  <div className={`${styles.pricing_price}`}>
+                    <div className={`${styles.pricing_currency}`}>
+                      <h2>$1000</h2> 
+                      <div className={`${styles.pricing_details}`}>
+                        <p>USD</p>
+                        <h6>per month</h6>
+                      </div>
+                    </div>
+                    <p className='text-abut'>1-year commitment, pay $12,000 upfront</p>
+                  </div>
+                  <button type='button'>Start 15-day trial</button>
+                  <div className={`${styles.pricing_cardsDetail}`}>
+                    <ul>
+                      <li>Everything in the Starter plan, plus...</li>
+                      <li>API access and ATS integration</li>
+                      <li>Custom tests and coding challenges</li>
+                      <li>Custom branded assessments</li>
+                      <li>Video questions</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <p><b>Fair usage statement:</b>  Unlimited evaluation for internal or direct recruitment only. <Link href="/" >Contact us</Link > for recruiting agencies or sourcing platforms pricing.</p>
+              
+              <div className={`${styles.table_details}`}>
+                <button 
+                  id='button_compare' 
+                  name='button_compare' 
+                  type='button' 
+                  className={`${styles.button_compare}`} 
+                 onClick={handleButtonClick}
+                > Compare plans in detail <span><MdOutlineKeyboardArrowDown/></span> </button>
+                {/* Detail Table Comparison */}
+                {showTable && (
+                  <div className={styles.table_comparisonDetail}>
+                    {/* Content of the comparison detail table goes here */}
+                    {/* You can replace this div with your actual comparison detail table */}
+                    <div>
+                      Table Comparison Detail
+                      {/* ... */}
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+          </div>
+     </section> 
 
-      <section className="text-gray-700 body-font overflow-hidden border-t border-gray-200">
-        <div className="container px-5 py-24 mx-auto flex flex-wrap">
-          <div className="lg:w-1/4 mt-48 hidden lg:block">
-            <div className="mt-px border-t border-gray-300 border-b border-l rounded-tl-lg rounded-bl-lg overflow-hidden">
-              <p className="bg-gray-100 text-gray-900 h-12 text-center px-4 flex items-center justify-start -mt-px">
-                Fingerstache disrupt
-              </p>
-              <p className="text-gray-900 h-12 text-center px-4 flex items-center justify-start">
-                Franzen hashtag
-              </p>
-              <p className="bg-gray-100 text-gray-900 h-12 text-center px-4 flex items-center justify-start">
-                Tilde art party
-              </p>
-              <p className="text-gray-900 h-12 text-center px-4 flex items-center justify-start">
-                Banh mi cornhole
-              </p>
-              <p className="bg-gray-100 text-gray-900 h-12 text-center px-4 flex items-center justify-start">
-                Waistcoat squid hexagon
-              </p>
-              <p className="text-gray-900 h-12 text-center px-4 flex items-center justify-start">
-                Pinterest occupy authentic
-              </p>
-              <p className="bg-gray-100 text-gray-900 h-12 text-center px-4 flex items-center justify-start">
-                Brooklyn helvetica
-              </p>
-              <p className="text-gray-900 h-12 text-center px-4 flex items-center justify-start">
-                Long Feature Two
-              </p>
-              <p className="bg-gray-100 text-gray-900 h-12 text-center px-4 flex items-center justify-start">
-                Feature One
-              </p>
+
+     {/* Middle Banner */}
+    <section className="bg-[#0C4B9A] bg-no-repeat pt-0">
+        <div className="container mx-auto">
+          <div className="py-10 relative flex flex-col items-center sm:static lg:flex-row justify-between">
+            <div className="relative flex w-full justify-center md:w-full lg:w-full lg:max-w-lg ml-8">
+              <Image
+                src={images.HeroImageMiddleBanner_pricing}
+                alt="Hero Image"
+                width={552}
+                height={457}
+                sizes="100vw"
+                className=" z-10flex h-auto w-[80%] md:w-[60%] lg:w-full"
+              />
             </div>
-          </div>
-          <div className="flex lg:w-3/4 w-full flex-wrap lg:border border-gray-300 rounded-lg">
-            <div className="lg:w-1/3 lg:mt-px w-full mb-10 lg:mb-0 border-2 border-gray-300 lg:border-none rounded-lg lg:rounded-none">
-              <div className="px-2 text-center h-48 flex flex-col items-center justify-center">
-                <h3 className="tracking-widest">START</h3>
-                <h2 className="text-5xl text-gray-900 font-medium leading-none mb-4 mt-2">
-                  Free
-                </h2>
-                <span className="text-sm text-gray-600">Next 3 months</span>
-              </div>
-              <p className="bg-gray-100 text-gray-600 h-12 text-center px-2 flex items-center -mt-px justify-center border-t border-gray-300">
-                Schlitz single-origin
-              </p>
-              <p className="text-gray-600 text-center h-12 flex items-center justify-center">
-                <span className="w-5 h-5 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="3"
-                    className="w-3 h-3"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M20 6L9 17l-5-5"></path>
-                  </svg>
-                </span>
-              </p>
-              <p className="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                <span className="w-5 h-5 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="3"
-                    className="w-3 h-3"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M20 6L9 17l-5-5"></path>
-                  </svg>
-                </span>
-              </p>
-              <p className="h-12 text-gray-600 px-6 text-center leading-relaxed flex items-center justify-center">
-                Feature
-              </p>
-              <p className="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                <span className="w-5 h-5 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="3"
-                    className="w-3 h-3"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M20 6L9 17l-5-5"></path>
-                  </svg>
-                </span>
-              </p>
-              <p className="text-gray-600 text-center h-12 flex items-center justify-center">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2.2"
-                  className="w-5 h-5 text-gray-500"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M18 6L6 18M6 6l12 12"></path>
-                </svg>
-              </p>
-              <p className="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2.2"
-                  className="w-5 h-5 text-gray-500"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M18 6L6 18M6 6l12 12"></path>
-                </svg>
-              </p>
-              <p className="text-gray-600 text-center h-12 flex items-center justify-center">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2.2"
-                  className="w-5 h-5 text-gray-500"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M18 6L6 18M6 6l12 12"></path>
-                </svg>
-              </p>
-              <p className="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2.2"
-                  className="w-5 h-5 text-gray-500"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M18 6L6 18M6 6l12 12"></path>
-                </svg>
-              </p>
-              <div className="border-t border-gray-300 p-6 text-center rounded-bl-lg">
-                <button className="flex items-center mt-auto text-white bg-indigo-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-indigo-600 rounded">
-                  Button
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="w-4 h-4 ml-auto"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </button>
-                <p className="text-xs text-gray-500 mt-3">
-                  Literally you probably haven't heard of them jean shorts.
-                </p>
-              </div>
-            </div>
-            <div className="lg:w-1/3 lg:-mt-px w-full mb-10 lg:mb-0 border-2 rounded-lg border-indigo-500 relative">
-              <span className="bg-indigo-500 text-white px-3 py-1 tracking-widest text-xs absolute right-0 top-0 rounded-bl">
-                POPULAR
-              </span>
-              <div className="px-2 text-center h-48 flex flex-col items-center justify-center">
-                <h3 className="tracking-widest">PRO</h3>
-                <h2 className="text-5xl text-gray-900 font-medium flex items-center justify-center leading-none mb-4 mt-2">
-                  $38
-                  <span className="text-gray-600 text-base ml-1">/mo</span>
-                </h2>
-                <span className="text-sm text-gray-600">
-                  Charging $456 per year
-                </span>
-              </div>
-              <p className="bg-gray-100 text-gray-600 h-12 text-center px-2 flex items-center -mt-px justify-center border-t border-gray-300">
-                Schlitz single-origin
-              </p>
-              <p className="text-gray-600 text-center h-12 flex items-center justify-center">
-                <span className="w-5 h-5 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="3"
-                    className="w-3 h-3"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M20 6L9 17l-5-5"></path>
-                  </svg>
-                </span>
-              </p>
-              <p className="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                <span className="w-5 h-5 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="3"
-                    className="w-3 h-3"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M20 6L9 17l-5-5"></path>
-                  </svg>
-                </span>
-              </p>
-              <p className="h-12 text-gray-600 text-center leading-relaxed flex items-center justify-center">
-                Feature
-              </p>
-              <p className="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                <span className="w-5 h-5 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="3"
-                    className="w-3 h-3"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M20 6L9 17l-5-5"></path>
-                  </svg>
-                </span>
-              </p>
-              <p className="text-gray-600 text-center h-12 flex items-center justify-center">
-                <span className="w-5 h-5 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="3"
-                    className="w-3 h-3"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M20 6L9 17l-5-5"></path>
-                  </svg>
-                </span>
-              </p>
-              <p className="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2.2"
-                  className="w-5 h-5 text-gray-500"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M18 6L6 18M6 6l12 12"></path>
-                </svg>
-              </p>
-              <p className="text-gray-600 text-center h-12 flex items-center justify-center">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2.2"
-                  className="w-5 h-5 text-gray-500"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M18 6L6 18M6 6l12 12"></path>
-                </svg>
-              </p>
-              <p className="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2.2"
-                  className="w-5 h-5 text-gray-500"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M18 6L6 18M6 6l12 12"></path>
-                </svg>
-              </p>
-              <div className="p-6 text-center border-t border-gray-300">
-                <button className="flex items-center mt-auto text-white bg-indigo-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-indigo-600 rounded">
-                  Button
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="w-4 h-4 ml-auto"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </button>
-                <p className="text-xs text-gray-500 mt-3">
-                  Literally you probably haven't heard of them jean shorts.
-                </p>
-              </div>
-            </div>
-            <div className="lg:w-1/3 w-full lg:mt-px border-2 border-gray-300 lg:border-none rounded-lg lg:rounded-none">
-              <div className="px-2 text-center h-48 flex flex-col items-center justify-center">
-                <h3 className="tracking-widest">BUSINESS</h3>
-                <h2 className="text-5xl text-gray-900 font-medium flex items-center justify-center leading-none mb-4 mt-2">
-                  $54
-                  <span className="text-gray-600 text-base ml-1">/mo</span>
-                </h2>
-                <span className="text-sm text-gray-600">
-                  Charging $648 per year
-                </span>
-              </div>
-              <p className="bg-gray-100 text-gray-600 h-12 text-center px-2 flex items-center -mt-px justify-center border-t border-gray-300">
-                Schlitz single-origin
-              </p>
-              <p className="text-gray-600 text-center h-12 flex items-center justify-center">
-                <span className="w-5 h-5 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="3"
-                    className="w-3 h-3"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M20 6L9 17l-5-5"></path>
-                  </svg>
-                </span>
-              </p>
-              <p className="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                <span className="w-5 h-5 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="3"
-                    className="w-3 h-3"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M20 6L9 17l-5-5"></path>
-                  </svg>
-                </span>
-              </p>
-              <p className="h-12 text-gray-600 text-center leading-relaxed flex items-center justify-center">
-                Feature
-              </p>
-              <p className="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                <span className="w-5 h-5 inline-flex items-center justify-center bg-gray-500 text-white rounded-full flex-shrink-0">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="3"
-                    className="w-3 h-3"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M20 6L9 17l-5-5"></path>
-                  </svg>
-                </span>
-              </p>
-              <p className="text-gray-600 text-center h-12 flex items-center justify-center">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2.2"
-                  className="w-5 h-5 text-gray-500"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M18 6L6 18M6 6l12 12"></path>
-                </svg>
-              </p>
-              <p className="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2.2"
-                  className="w-5 h-5 text-gray-500"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M18 6L6 18M6 6l12 12"></path>
-                </svg>
-              </p>
-              <p className="text-gray-600 text-center h-12 flex items-center justify-center">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2.2"
-                  className="w-5 h-5 text-gray-500"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M18 6L6 18M6 6l12 12"></path>
-                </svg>
-              </p>
-              <p className="bg-gray-100 text-gray-600 text-center h-12 flex items-center justify-center">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2.2"
-                  className="w-5 h-5 text-gray-500"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M18 6L6 18M6 6l12 12"></path>
-                </svg>
-              </p>
-              <div className="p-6 text-center border-t border-gray-300">
-                <button className="flex items-center mt-auto text-white bg-indigo-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-indigo-600 rounded">
-                  Button
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="w-4 h-4 ml-auto"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </button>
-                <p className="text-xs text-gray-500 mt-3">
-                  Literally you probably haven't heard of them jean shorts.
-                </p>
-              </div>
+            <div className={`max-w-2xl flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:px-[0px] md:py-[32px] md:text-left lg:flex-grow lg:items-start lg:pr-24 text-white  ${styles.text_middleBanner}`}>
+              <h1 className="sm:heading-1 heading-2 mb-6 flex m-0">
+                <RiDoubleQuotesL /> 
+              </h1>
+              <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center lg:text-start font-light">
+              We receive 100’s of applications each year and struggled to select the best ones efficiently and without bias. With TestFounder we now automate our candidate screening based on job skills and fit. It saves us so much time and good candidates love to showcase their talent!              </p>
+              <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center lg:text-start font-light">
+              <b>Esther Howard</b>, Head of Global Recruiting, AKG International  </p>
             </div>
           </div>
         </div>
-      </section>
+    </section>
+
+    {/* FAQ */}
+    <section className={`${styles.section}`}>
+        <div className={`container mx-auto`}>
+            <div className={`${styles.content_wrapper}`}>
+                <h2>Frequently Asked Questions</h2>
+                <div className={`${styles.topicsIcon_wrapper}`}>
+                    <div className={`${styles.topic_single}`}>
+                        <Image src="/assets/faq_grey.svg" width={60} height={60} alt="Icon Topics FAQ" />
+                        <p>How do I get started?</p>
+                    </div>
+                    <div className={`${styles.topic_single}`}>
+                        <Image src="/assets/faq_grey.svg" width={60} height={60} alt="Icon Topics FAQ" />
+                        <p>What payment methods do you accept?</p>
+                    </div>
+                    <div className={`${styles.topic_single}`}>
+                        <Image src="/assets/faq_grey.svg" width={60} height={60} alt="Icon Topics FAQ" />
+                        <p>How does Testfounder’s pricing work?</p>
+                    </div>
+                    <div className={`${styles.topic_single}`}>
+                        <Image src="/assets/faq_grey.svg" width={60} height={60} alt="Icon Topics FAQ" />
+                        <p>What’s then difference between an assessment and last a test?</p>
+                    </div>
+                    <div className={`${styles.topic_single}`}>
+                        <Image src="/assets/faq_grey.svg" width={60} height={60} alt="Icon Topics FAQ" />
+                        <p>What are caniddates?</p>
+                    </div>
+                    <div className={`${styles.topic_single}`}>
+                        <Image src="/assets/faq_grey.svg" width={60} height={60} alt="Icon Topics FAQ" />
+                        <p>Is TestFounder easy to use?</p>
+                    </div>
+                    <div className={`${styles.topic_single}`}>
+                        <Image src="/assets/faq_grey.svg" width={60} height={60} alt="Icon Topics FAQ" />
+                        <p>Which Applicant Track System can integrate with TesFounder?</p>
+                    </div>
+                    <div className={`${styles.topic_single}`}>
+                        <Image src="/assets/faq_grey.svg" width={60} height={60} alt="Icon Topics FAQ" />
+                        <p>What type of support do you offer?</p>
+                    </div>
+                    <div className={`${styles.topic_single}`}>
+                        <Image src="/assets/faq_grey.svg" width={60} height={60} alt="Icon Topics FAQ" />
+                        <p>How does TestFounder protect my data?</p>
+                    </div>
+                    <div className={`${styles.topic_single}`}>
+                        <Image src="/assets/faq_grey.svg" width={60} height={60} alt="Icon Topics FAQ" />
+                        <p>I have more questions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     </Layout>
   );
 };
 
-// export async function getStaticProps() {
-//   const contentType = 'landingPage'; // Modify the content type here
-//   const propsKey = 'pricing'; // Modify the props key here
-//   const catchKey = 'error'; // Modify the catch key here
-//   const indexToRead = 12; // Modify the index you want to read
 
-//   try {
-//     const dynamicData = await fetchContentfulEntries(
-//       contentType,
-//       propsKey,
-//       catchKey,
-//       indexToRead,
-//     );
-
-//     return {
-//       props: dynamicData,
-//     };
-//   } catch (error) {
-//     console.error('Error in getStaticProps:', error);
-//     return {
-//       props: {
-//         [catchKey]: 'An unexpected error occurred.',
-//       },
-//     };
-//   }
-// }
 
 export default Pricing;
