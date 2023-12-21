@@ -56,33 +56,120 @@ const Resources = () => {
             <div className={`${styles.blog_wrapper}`}>
               <div className={styles.blog_single}>
                 <Image src='/assets/Mentor-1.png' alt='Blog Image Grid' width={321} height={213} />
-                <h3 className={``}>A brief introduction to: Test validation</h3>
-                <p className={``}>Science series materials are brought to you by TestFounder’s Assessment Team: A group of IO psycho...</p>
+                <h4 className={`${styles.blog_categories}`}>Hiring & Recruiting</h4>
+                <h3 className={``}>How to hire a procurement manager</h3>
+                <p className={``}>When hiring a supply chain specialist – specifically a procurement manager – you want to ensure the candidate you’re selecting is up to the task.  Does your candidate kno...</p>
+                <div className={`${styles.published_at}`}>
+                  <div className={`${styles.author_wrapper}`}>
+                    <Image src="/assets/benjamin-walker.png" width={24} height={24}/>
+                    <p>Benjamin Walker</p>
+                  </div> 
+                  <p>Desember 8, 2023</p>
+                </div>
               </div>
               <div className={styles.blog_single}>
-                <Image src='/assets/Mentor-2.png' alt='Blog Image Grid' width={321} height={213} />
-                <h3 className={``}>A brief introduction to: Test validation</h3>
-                <p className={``}>Science series materials are brought to you by TestFounder’s Assessment Team: A group of IO psycho...</p>
+                <Image src='/assets/Mentor-1.png' alt='Blog Image Grid' width={321} height={213} />
+                <h4 className={`${styles.blog_categories}`}>Human Resources</h4>
+                <h3 className={``}>How to hire a Drupal developer</h3>
+                <p className={``}>Drupal, an open-source content management system (CMS), is known for its flexibility and security, making it a top choice for building robust websites. The right Drupal...</p>
+                <div className={`${styles.published_at}`}>
+                  <div className={`${styles.author_wrapper}`}>
+                    <Image src="/assets/benjamin-walker.png" width={24} height={24}/>
+                    <p>Benjamin Walker</p>
+                  </div> 
+                  <p>Desember 8, 2023</p>
+                </div>
               </div>
               <div className={styles.blog_single}>
-                <Image src='/assets/Mentor-3.png' alt='Blog Image Grid' width={321} height={213} />
-                <h3 className={``}>A brief introduction to: Test validation</h3>
-                <p className={``}>Science series materials are brought to you by TestFounder’s Assessment Team: A group of IO psycho...</p>
+                <Image src='/assets/Mentor-1.png' alt='Blog Image Grid' width={321} height={213} />
+                <h4 className={`${styles.blog_categories}`}>Hiring & Recruiting</h4>
+                <h3 className={``}>How to recruit collage students</h3>
+                <p className={``}>Hiring college students can be a great way to bring in fresh talent at lower costs while giving students much-needed job experience.  Unfortunately, recruiters don’t always kno...</p>
+                <div className={`${styles.published_at}`}>
+                  <div className={`${styles.author_wrapper}`}>
+                    <Image src="/assets/benjamin-walker.png" width={24} height={24}/>
+                    <p>Benjamin Walker</p>
+                  </div> 
+                  <p>Desember 8, 2023</p>
+                </div>
               </div>
               <div className={styles.blog_single}>
-                <Image src='/assets/Mentor-4.png' alt='Blog Image Grid' width={321} height={213} />
+                <Image src='/assets/Mentor-1.png' alt='Blog Image Grid' width={321} height={213} />
+                <h4 className={`${styles.blog_categories}`}>Hiring & Recruiting</h4>
                 <h3 className={``}>A brief introduction to: Test validation</h3>
                 <p className={``}>Science series materials are brought to you by TestFounder’s Assessment Team: A group of IO psycho...</p>
+                <div className={`${styles.published_at}`}>
+                  <div className={`${styles.author_wrapper}`}>
+                    <Image src="/assets/benjamin-walker.png" width={24} height={24}/>
+                    <p>Benjamin Walker</p>
+                  </div> 
+                  <p>Desember 8, 2023</p>
+                </div>
               </div>
               <div className={styles.blog_single}>
-                <Image src='/assets/Mentor-5.png' alt='Blog Image Grid' width={321} height={213} />
+                <Image src='/assets/Mentor-1.png' alt='Blog Image Grid' width={321} height={213} />
+                <h4 className={`${styles.blog_categories}`}>Hiring & Recruiting</h4>
                 <h3 className={``}>A brief introduction to: Test validation</h3>
                 <p className={``}>Science series materials are brought to you by TestFounder’s Assessment Team: A group of IO psycho...</p>
+                <div className={`${styles.published_at}`}>
+                  <div className={`${styles.author_wrapper}`}>
+                    <Image src="/assets/benjamin-walker.png" width={24} height={24}/>
+                    <p>Benjamin Walker</p>
+                  </div> 
+                  <p>Desember 8, 2023</p>
+                </div>
               </div>
               <div className={styles.blog_single}>
-                <Image src='/assets/Mentor-6.png' alt='Blog Image Grid' width={321} height={213} />
+                <Image src='/assets/Mentor-1.png' alt='Blog Image Grid' width={321} height={213} />
+                <h4 className={`${styles.blog_categories}`}>Hiring & Recruiting</h4>
                 <h3 className={``}>A brief introduction to: Test validation</h3>
                 <p className={``}>Science series materials are brought to you by TestFounder’s Assessment Team: A group of IO psycho...</p>
+                <div className={`${styles.published_at}`}>
+                  <div className={`${styles.author_wrapper}`}>
+                    <Image src="/assets/benjamin-walker.png" width={24} height={24}/>
+                    <p>Benjamin Walker</p>
+                  </div> 
+                  <p>Desember 8, 2023</p>
+                </div>
+              </div>
+              <div className={styles.blog_single}>
+                <Image src='/assets/Mentor-1.png' alt='Blog Image Grid' width={321} height={213} />
+                <h4 className={`${styles.blog_categories}`}>Hiring & Recruiting</h4>
+                <h3 className={``}>A brief introduction to: Test validation</h3>
+                <p className={``}>Science series materials are brought to you by TestFounder’s Assessment Team: A group of IO psycho...</p>
+                <div className={`${styles.published_at}`}>
+                  <div className={`${styles.author_wrapper}`}>
+                    <Image src="/assets/benjamin-walker.png" width={24} height={24}/>
+                    <p>Benjamin Walker</p>
+                  </div> 
+                  <p>Desember 8, 2023</p>
+                </div>
+              </div>
+              <div className={styles.blog_single}>
+                <Image src='/assets/Mentor-1.png' alt='Blog Image Grid' width={321} height={213} />
+                <h4 className={`${styles.blog_categories}`}>Hiring & Recruiting</h4>
+                <h3 className={``}>A brief introduction to: Test validation</h3>
+                <p className={``}>Science series materials are brought to you by TestFounder’s Assessment Team: A group of IO psycho...</p>
+                <div className={`${styles.published_at}`}>
+                  <div className={`${styles.author_wrapper}`}>
+                    <Image src="/assets/benjamin-walker.png" width={24} height={24}/>
+                    <p>Benjamin Walker</p>
+                  </div> 
+                  <p>Desember 8, 2023</p>
+                </div>
+              </div>
+              <div className={styles.blog_single}>
+                <Image src='/assets/Mentor-1.png' alt='Blog Image Grid' width={321} height={213} />
+                <h4 className={`${styles.blog_categories}`}>Hiring & Recruiting</h4>
+                <h3 className={``}>A brief introduction to: Test validation</h3>
+                <p className={``}>Science series materials are brought to you by TestFounder’s Assessment Team: A group of IO psycho...</p>
+                <div className={`${styles.published_at}`}>
+                  <div className={`${styles.author_wrapper}`}>
+                    <Image src="/assets/benjamin-walker.png" width={24} height={24}/>
+                    <p>Benjamin Walker</p>
+                  </div> 
+                  <p>Desember 8, 2023</p>
+                </div>
               </div>
             </div>
           </div>
