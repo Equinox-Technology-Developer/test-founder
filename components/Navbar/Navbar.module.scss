@@ -96,7 +96,7 @@
         flex-direction: column;
         display: grid;
         column-gap: 10px;
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
         align-items: center;
         transition:
           color 250ms ease-in-out,
@@ -107,7 +107,7 @@
           font-weight: 600;
           transition: all;
         }
-        
+
         svg {
           display: inline-block; /* Ensures inline rotation works as expected */
           transition: transform 0.3s ease; /* Adjust the duration and timing function as needed */
@@ -135,8 +135,6 @@
     }
   }
 }
-
-
 
 .navbar_menu {
   width: 35px;

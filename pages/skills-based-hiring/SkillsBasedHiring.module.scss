@@ -1,67 +1,65 @@
 .section {
-    background-color: #f9f9f9;
-    background-repeat: no-repeat;
+  background-color: #f9f9f9;
+  background-repeat: no-repeat;
 }
 .section_grey {
-    background-color: #EAEAEA;
-    background-repeat: no-repeat;
+  background-color: #eaeaea;
+  background-repeat: no-repeat;
 }
 
 .content_wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    gap: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 40px;
 
-    h2 {
-        font-weight: 700;
-        font-size: 40px;
-    }
+  h2 {
+    font-weight: 700;
+    font-size: 40px;
+  }
 
-    @media screen and (min-width: 999px) {
-        padding: 80px 64px;
-    }
+  @media screen and (min-width: 999px) {
+    padding: 80px 64px;
+  }
 }
 
 .topicsIcon_wrapper {
   max-width: 866px;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
   justify-content: space-between;
   gap: 24px;
 }
 
 .topic_single {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    gap: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 16px;
 
-    img {
-        width: 60px;
-        height: auto;
-
-    }
+  img {
+    width: 60px;
+    height: auto;
+  }
 }
 
 .color_text {
-    font-size: 30px;
-    line-height: 40px;
-    font-weight: 700;
+  font-size: 30px;
+  line-height: 40px;
+  font-weight: 700;
 }
-.color88{
-    color: #1882D6;
+.color88 {
+  color: #1882d6;
 }
-.color86{
-    color: #058A6D;
+.color86 {
+  color: #058a6d;
 }
-.color82{
-    color: #0BC175;
+.color82 {
+  color: #0bc175;
 }
-.color76{
-    color: #B7851D;
+.color76 {
+  color: #b7851d;
 }
-
