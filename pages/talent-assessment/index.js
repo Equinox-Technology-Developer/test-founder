@@ -879,7 +879,7 @@ const index = () => {
           <div className="flex flex-wrap justify-between gap-6">
             <div className="flex max-h-[104px] w-[49%] items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6">
               <Image
-                src="/assets/FAQ Icon_x40.png"
+                src="/assets/faq_grey.svg"
                 width={46}
                 height={46}
                 alt="Icon Topics FAQ"
@@ -891,7 +891,7 @@ const index = () => {
             </div>
             <div className="flex max-h-[104px] w-[49%] items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6">
               <Image
-                src="/assets/FAQ Icon_x40.png"
+                src="/assets/faq_grey.svg"
                 width={46}
                 height={46}
                 alt="Icon Topics FAQ"
@@ -902,7 +902,7 @@ const index = () => {
             </div>
             <div className="flex max-h-[104px] w-[49%] items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6">
               <Image
-                src="/assets/FAQ Icon_x40.png"
+                src="/assets/faq_grey.svg"
                 width={46}
                 height={46}
                 alt="Icon Topics FAQ"
@@ -914,7 +914,7 @@ const index = () => {
             </div>
             <div className="flex max-h-[104px] w-[49%] items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6">
               <Image
-                src="/assets/FAQ Icon_x40.png"
+                src="/assets/faq_grey.svg"
                 width={46}
                 height={46}
                 alt="Icon Topics FAQ"
@@ -925,7 +925,7 @@ const index = () => {
             </div>
             <div className="flex max-h-[104px] w-[49%] items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6">
               <Image
-                src="/assets/FAQ Icon_x40.png"
+                src="/assets/faq_grey.svg"
                 width={46}
                 height={46}
                 alt="Icon Topics FAQ"
@@ -936,7 +936,7 @@ const index = () => {
             </div>
             <div className="flex max-h-[104px] w-[49%] items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6">
               <Image
-                src="/assets/FAQ Icon_x40.png"
+                src="/assets/faq_grey.svg"
                 width={46}
                 height={46}
                 alt="Icon Topics FAQ"

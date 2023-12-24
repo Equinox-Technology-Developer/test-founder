@@ -1,131 +1,124 @@
 @import 'styles/color';
 
 .banner_topContent {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;  
-    width: 100%;
-    flex-direction: column;
-    
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex-direction: column;
+
+  @media screen and (min-width: 999px) {
+    flex-direction: row;
+    padding: 150px 0 80px;
+  }
+}
+
+.banner_topContentText {
+  width: 100%;
+  max-width: 646px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  h1 {
+    margin-top: 70px;
+
     @media screen and (min-width: 999px) {
-      flex-direction: row;
-      padding: 150px 0 80px;
+      margin-top: 0;
     }
   }
-  
-.banner_topContentText {
-    width: 100%;
-    max-width: 646px;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
-    h1 {
-        margin-top: 70px;
-
-        @media screen and (min-width: 999px) {
-        margin-top: 0;
-        }
-    }
 }
 
 .banner_topContentImage {
-width: 100%;
-height: auto;
+  width: 100%;
+  height: auto;
 
-@media screen and (min-width: 999px) {
+  @media screen and (min-width: 999px) {
     width: 100%;
     min-width: 609px !important;
     min-height: 403px !important;
-}
+  }
 }
 
-.banner_blogContainer{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;  
+.banner_blogContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  @media screen and (min-width: 999px) {
+    flex-direction: row;
     width: 100%;
-
-    @media screen and (min-width: 999px) {
-        flex-direction: row;
-        width: 100%;
-        padding: 150px 0 80px;
-        align-items: center;
-        justify-content: center;
-    }
+    padding: 150px 0 80px;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .banner_blogContentText {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
-    
-    h1 {
-        margin-top: 70px;
-    
-        @media screen and (min-width: 999px) {
-        margin-top: 0;
-        }
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+
+  h1 {
+    margin-top: 70px;
+
+    @media screen and (min-width: 999px) {
+      margin-top: 0;
     }
-} 
-
-
+  }
+}
 
 .blog_container {
-    background-color: #EAEAEA;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background-color: #eaeaea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .blog_wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
 }
 
 .blog_single {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  .content {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: space-between;
-    width: 100%;
-    
-    .content {
+    gap: 12px;
+
+    h3 {
+      font-weight: 700;
+    }
+
+    .readmore {
+      height: 30px;
+      p {
+        font-weight: 700;
+        gap: 4px;
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        gap: 12px;
-
-        h3 {
-            font-weight: 700;
-        }
-        
-        .readmore {
-            height: 30px;
-            p {
-                font-weight: 700;
-                gap: 4px;
-                display :flex;
-                align-items: center;
-                width: 100%;
-            }
-        }
-
-        @media screen and (min-width: 999px) {
-            max-width: 1050px;
-        }
+        align-items: center;
+        width: 100%;
+      }
     }
-    
-    
+
     @media screen and (min-width: 999px) {
-        gap: 16px;
+      max-width: 1050px;
     }
+  }
+
+  @media screen and (min-width: 999px) {
+    gap: 16px;
+  }
 }
-
-
-
-

@@ -6,10 +6,10 @@ export default function SwiperNavButton() {
 
   return (
     <>
-      <div className="absolute right-0 bottom-9 z-50">
+      <div className="absolute bottom-9 right-0 z-50">
         <button
           onClick={() => swiper.slideNext()}
-          className="bg-white border-none w-6 h-6 rounded-full shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)] flex items-center justify-center cursor-pointer z-50"
+          className="z-50 flex h-6 w-6 cursor-pointer items-center justify-center rounded-full border-none bg-white shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)]"
         >
           <svg
             width="8"
@@ -28,10 +28,10 @@ export default function SwiperNavButton() {
           </svg>
         </button>
       </div>
-      <div className="absolute left-2 bottom-9 z-50 ">
+      <div className="absolute bottom-9 left-2 z-50 ">
         <button
           onClick={() => swiper.slidePrev()}
-          className="bg-white border-none w-6 h-6 rounded-full shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)] flex items-center justify-center cursor-pointer z-50"
+          className="z-50 flex h-6 w-6 cursor-pointer items-center justify-center rounded-full border-none bg-white shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)]"
         >
           <svg
             width="8"

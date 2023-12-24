@@ -7,10 +7,8 @@ import { motion } from 'framer-motion';
 import { images } from '../../constants';
 import { fetchContentfulEntries } from '@/helper/contenfulHelper';
 
-
 import { HiMenuAlt4, HiX } from 'react-icons/hi';
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-
+import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
 
 import styles from './Navbar.module.scss';
 
@@ -82,8 +80,7 @@ const Navbar = () => {
             <li
               onMouseEnter={handleProductsHover}
               className={isProductsDropdownOpen ? styles.dropdownActive : ''}
-            >
-            </li>
+            ></li>
           </ul>
           <ul className={styles.app__navbarLinks}>
             {/* Products */}
@@ -92,7 +89,7 @@ const Navbar = () => {
               className={isProductsDropdownOpen ? styles.dropdownActive : ''}
             >
               <Link href="/products" className={styles.nonActive}>
-                Product  <MdOutlineKeyboardArrowDown/>
+                Product <MdOutlineKeyboardArrowDown />
               </Link>
               {/* Products Dropdown */}
               {isProductsDropdownOpen && (
@@ -127,7 +124,10 @@ const Navbar = () => {
               className={isResourcesDropdownOpen ? styles.dropdownActive : ''}
             >
               <Link href="/blog" className={styles.nonActive}>
-                Resources  <span><MdOutlineKeyboardArrowDown/></span>
+                Resources{' '}
+                <span>
+                  <MdOutlineKeyboardArrowDown />
+                </span>
               </Link>
               {/* Resources Dropdown */}
               {isResourcesDropdownOpen && (
@@ -180,7 +180,9 @@ const Navbar = () => {
                     <Link
                       href="/"
                       className={
-                        router.pathname == '/' ? styles.active : styles.nonActive
+                        router.pathname == '/'
+                          ? styles.active
+                          : styles.nonActive
                       }
                     >
                       {' '}
@@ -232,6 +234,5 @@ const Navbar = () => {
     </nav>
   );
 };
-
 
 export default Navbar;

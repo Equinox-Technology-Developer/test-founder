@@ -5,11 +5,11 @@ import CardAssessmentButton from '../../components/CardAssessment/CardAssessment
 const Components = () => {
   return (
     <>
-      <main className="px-5 py-5 space-x-10 flex">
-        <div className="flex flex-col space-y-10 w-[50%]">
+      <main className="flex space-x-10 px-5 py-5">
+        <div className="flex w-[50%] flex-col space-y-10">
           <CardAssessmentDefault />
         </div>
-        <div className="flex flex-col space-y-10 w-[50%]">
+        <div className="flex w-[50%] flex-col space-y-10">
           <CardAssessmentButton />
         </div>
       </main>
