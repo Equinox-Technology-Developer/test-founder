@@ -39,7 +39,7 @@
 .topic_single {
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 16px;
 
   img {
@@ -102,8 +102,8 @@
 .blog_single {
   display: flex;
   flex-direction: column;
-  align-items: start;
-  justify-content: start;
+  align-items: flex-start;
+  justify-content: flex-start;
   padding: 16px;
   border-radius: 20px;
 
