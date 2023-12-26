@@ -299,56 +299,138 @@ const Pricing = () => {
                       <div
                         className={`${styles.table_cell} ${styles.table_cellTitle}`}
                       >
-                        Assessment
+                        Tests per assessment
                       </div>
-                      <div className={`${styles.table_cell}`}>Free</div>
-                      <div className={`${styles.table_cell}`}>Lite</div>
-                      <div className={`${styles.table_cell}`}>Starter</div>
-                      <div className={`${styles.table_cell}`}>Pro</div>
+                      <div className={`${styles.table_cell}`}>5</div>
+                      <div className={`${styles.table_cell}`}>5</div>
+                      <div className={`${styles.table_cell}`}>5</div>
+                      <div className={`${styles.table_cell}`}>5</div>
                     </div>
                     <div className={`${styles.table_row}`}>
                       <div
                         className={`${styles.table_cell} ${styles.table_cellTitle}`}
                       >
-                        Assessment
+                        Custom questions per assessment
                       </div>
-                      <div className={`${styles.table_cell}`}>Free</div>
-                      <div className={`${styles.table_cell}`}>Lite</div>
-                      <div className={`${styles.table_cell}`}>Starter</div>
-                      <div className={`${styles.table_cell}`}>Pro</div>
+                      <div className={`${styles.table_cell}`}>Coming Soon</div>
+                      <div className={`${styles.table_cell}`}>5</div>
+                      <div className={`${styles.table_cell}`}>5</div>
+                      <div className={`${styles.table_cell}`}>20</div>
                     </div>
                     <div className={`${styles.table_row} ${styles.bg_abu}`}>
                       <div
                         className={`${styles.table_cell} ${styles.table_cellTitle}`}
                       >
-                        Assessment
+                        Qualifying questions
                       </div>
-                      <div className={`${styles.table_cell}`}>Free</div>
-                      <div className={`${styles.table_cell}`}>Lite</div>
-                      <div className={`${styles.table_cell}`}>Starter</div>
-                      <div className={`${styles.table_cell}`}>Pro</div>
+                      <div className={`${styles.table_cell}`}></div>
+                      <div className={`${styles.table_cell}`}></div>
+                      <div className={`${styles.table_cell}`}>
+                        30-60 minutes
+                      </div>
+                      <div className={`${styles.table_cell}`}></div>
                     </div>
                     <div className={`${styles.table_row}`}>
                       <div
                         className={`${styles.table_cell} ${styles.table_cellTitle}`}
                       >
-                        Assessment
+                        Typical assessment length
                       </div>
-                      <div className={`${styles.table_cell}`}>Free</div>
-                      <div className={`${styles.table_cell}`}>Lite</div>
-                      <div className={`${styles.table_cell}`}>Starter</div>
-                      <div className={`${styles.table_cell}`}>Pro</div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
                     </div>
                     <div className={`${styles.table_row} ${styles.bg_abu}`}>
                       <div
                         className={`${styles.table_cell} ${styles.table_cellTitle}`}
                       >
-                        Assessment
+                        Test recommendations based on job roles
                       </div>
-                      <div className={`${styles.table_cell}`}>Free</div>
-                      <div className={`${styles.table_cell}`}>Lite</div>
-                      <div className={`${styles.table_cell}`}>Starter</div>
-                      <div className={`${styles.table_cell}`}>Pro</div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                    </div>
+                    <div className={`${styles.table_row}`}>
+                      <div
+                        className={`${styles.table_cell} ${styles.table_cellTitle}`}
+                      >
+                        Assessment templates based on job roles
+                      </div>
+                      <div className={`${styles.table_cell}`}>1</div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                    </div>
+                    <div className={`${styles.table_row} ${styles.bg_abu}`}>
+                      <div
+                        className={`${styles.table_cell} ${styles.table_cellTitle}`}
+                      >
+                        Assessment deadlines
+                      </div>
+                      <div className={`${styles.table_cell}`}></div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                    </div>
+                    <div className={`${styles.table_row}`}>
+                      <div
+                        className={`${styles.table_cell} ${styles.table_cellTitle}`}
+                      >
+                        File upload questions
+                      </div>
+                      <div className={`${styles.table_cell}`}></div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                    </div>
+                    <div className={`${styles.table_row} ${styles.bg_abu}`}>
+                      <div
+                        className={`${styles.table_cell} ${styles.table_cellTitle}`}
+                      >
+                        Video interview questions
+                      </div>
+                      <div className={`${styles.table_cell}`}></div>
+                      <div className={`${styles.table_cell}`}></div>
+                      <div className={`${styles.table_cell}`}></div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
                     </div>
 
                     {/* Skill-Based Hiring & Test */}
@@ -367,10 +449,10 @@ const Pricing = () => {
                       <div
                         className={`${styles.table_cell} ${styles.table_cellTitle}`}
                       >
-                        Assessment
+                        Candidate evaluation
                       </div>
                       <div className={`${styles.table_cell}`}>Unlimited</div>
-                      <div className={`${styles.table_cell}`}>1</div>
+                      <div className={`${styles.table_cell}`}>Unlimited</div>
                       <div className={`${styles.table_cell}`}>Unlimited</div>
                       <div className={`${styles.table_cell}`}>Unlimited</div>
                     </div>
@@ -378,91 +460,191 @@ const Pricing = () => {
                       <div
                         className={`${styles.table_cell} ${styles.table_cellTitle}`}
                       >
-                        Test library
-                      </div>
-                      <div className={`${styles.table_cell}`}>
-                        5{' '}
+                        Public link to invite candidates
                         <span>
                           <GoQuestion />
                         </span>
                       </div>
                       <div className={`${styles.table_cell}`}>
-                        401 test{' '}
-                        <span>
-                          <GoQuestion />
-                        </span>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
                       </div>
                       <div className={`${styles.table_cell}`}>
-                        401 test{' '}
-                        <span>
-                          <GoQuestion />
-                        </span>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
                       </div>
                       <div className={`${styles.table_cell}`}>
-                        401 test{' '}
-                        <span>
-                          <GoQuestion />
-                        </span>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
                       </div>
                     </div>
                     <div className={`${styles.table_row} ${styles.bg_abu}`}>
                       <div
                         className={`${styles.table_cell} ${styles.table_cellTitle}`}
                       >
-                        Assessment
+                        Customize invitation and rejection emails
                       </div>
-                      <div className={`${styles.table_cell}`}>Free</div>
-                      <div className={`${styles.table_cell}`}>Lite</div>
-                      <div className={`${styles.table_cell}`}>Starter</div>
-                      <div className={`${styles.table_cell}`}>Pro</div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
                     </div>
                     <div className={`${styles.table_row}`}>
                       <div
                         className={`${styles.table_cell} ${styles.table_cellTitle}`}
                       >
-                        Assessment
+                        No login required for candidates
                       </div>
-                      <div className={`${styles.table_cell}`}>Free</div>
-                      <div className={`${styles.table_cell}`}>Lite</div>
-                      <div className={`${styles.table_cell}`}>Starter</div>
-                      <div className={`${styles.table_cell}`}>Pro</div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
                     </div>
                     <div className={`${styles.table_row} ${styles.bg_abu}`}>
                       <div
                         className={`${styles.table_cell} ${styles.table_cellTitle}`}
                       >
-                        Assessment
+                        Mobile-friendly
                       </div>
-                      <div className={`${styles.table_cell}`}>Free</div>
-                      <div className={`${styles.table_cell}`}>Lite</div>
-                      <div className={`${styles.table_cell}`}>Starter</div>
-                      <div className={`${styles.table_cell}`}>Pro</div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
                     </div>
                     <div className={`${styles.table_row}`}>
                       <div
                         className={`${styles.table_cell} ${styles.table_cellTitle}`}
                       >
-                        Assessment
+                        Help and support for your candidates
                       </div>
-                      <div className={`${styles.table_cell}`}>Free</div>
-                      <div className={`${styles.table_cell}`}>Lite</div>
-                      <div className={`${styles.table_cell}`}>Starter</div>
-                      <div className={`${styles.table_cell}`}>Pro</div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
                     </div>
                     <div className={`${styles.table_row} ${styles.bg_abu}`}>
                       <div
                         className={`${styles.table_cell} ${styles.table_cellTitle}`}
                       >
-                        Assessment
+                        Manual and automated bulk actions to manage candidates
                       </div>
-                      <div className={`${styles.table_cell}`}>Free</div>
-                      <div className={`${styles.table_cell}`}>Lite</div>
-                      <div className={`${styles.table_cell}`}>Starter</div>
-                      <div className={`${styles.table_cell}`}>Pro</div>
+                      <div className={`${styles.table_cell}`}></div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                    </div>
+                    <div className={`${styles.table_row}`}>
+                      <div
+                        className={`${styles.table_cell} ${styles.table_cellTitle}`}
+                      >
+                        Your company's intro or outro video
+                      </div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                    </div>
+                    <div className={`${styles.table_row} ${styles.bg_abu}`}>
+                      <div
+                        className={`${styles.table_cell} ${styles.table_cellTitle}`}
+                      >
+                        Create custom tests
+                      </div>
+                      <div className={`${styles.table_cell}`}></div>
+                      <div className={`${styles.table_cell}`}></div>
+                      <div className={`${styles.table_cell}`}></div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                    </div>
+                    <div className={`${styles.table_row}`}>
+                      <div
+                        className={`${styles.table_cell} ${styles.table_cellTitle}`}
+                      >
+                        Multiple public links to invite candidates
+                      </div>
+                      <div className={`${styles.table_cell}`}></div>
+                      <div className={`${styles.table_cell}`}></div>
+                      <div className={`${styles.table_cell}`}></div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                    </div>
+                    <div className={`${styles.table_row} ${styles.bg_abu}`}>
+                      <div
+                        className={`${styles.table_cell} ${styles.table_cellTitle}`}
+                      >
+                        Brand assessments with your logo and color
+                      </div>
+                      <div className={`${styles.table_cell}`}></div>
+                      <div className={`${styles.table_cell}`}></div>
+                      <div className={`${styles.table_cell}`}></div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
+                    </div>
+                    <div className={`${styles.table_row}`}>
+                      <div
+                        className={`${styles.table_cell} ${styles.table_cellTitle}`}
+                      >
+                        Manage user access to assessments
+                      </div>
+                      <div className={`${styles.table_cell}`}></div>
+                      <div className={`${styles.table_cell}`}></div>
+                      <div className={`${styles.table_cell}`}></div>
+                      <div className={`${styles.table_cell}`}>
+                        <IoCheckmark className="h-6 w-6" color="#0bc175" />
+                      </div>
                     </div>
 
                     {/* Functionality to hire Developers & Test */}
-                    <div className={`${styles.table_row} ${styles.table_head}`}>
+                    {/* <div className={`${styles.table_row} ${styles.table_head}`}>
                       <div
                         className={`${styles.table_cell} ${styles.table_cellTitle}`}
                       >
@@ -569,10 +751,10 @@ const Pricing = () => {
                       <div className={`${styles.table_cell}`}>Lite</div>
                       <div className={`${styles.table_cell}`}>Starter</div>
                       <div className={`${styles.table_cell}`}>Pro</div>
-                    </div>
+                    </div> */}
 
                     {/* Reporting & Analytics & Test */}
-                    <div className={`${styles.table_row} ${styles.table_head}`}>
+                    {/* <div className={`${styles.table_row} ${styles.table_head}`}>
                       <div
                         className={`${styles.table_cell} ${styles.table_cellTitle}`}
                       >
@@ -679,10 +861,10 @@ const Pricing = () => {
                       <div className={`${styles.table_cell}`}>Lite</div>
                       <div className={`${styles.table_cell}`}>Starter</div>
                       <div className={`${styles.table_cell}`}>Pro</div>
-                    </div>
+                    </div> */}
 
                     {/* Customer Support & Test */}
-                    <div className={`${styles.table_row} ${styles.table_head}`}>
+                    {/* <div className={`${styles.table_row} ${styles.table_head}`}>
                       <div
                         className={`${styles.table_cell} ${styles.table_cellTitle}`}
                       >
@@ -789,7 +971,7 @@ const Pricing = () => {
                       <div className={`${styles.table_cell}`}>Lite</div>
                       <div className={`${styles.table_cell}`}>Starter</div>
                       <div className={`${styles.table_cell}`}>Pro</div>
-                    </div>
+                    </div> */}
                   </div>
                 )}
               </div>
