@@ -20,7 +20,7 @@
   text-align: left;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
 
   h1 {
     margin-top: 70px;
@@ -45,9 +45,8 @@
 .library_wrapper {
   display: grid;
   gap: 54px;
-  padding: 12px;
-
-  @media screen and (min-width: 999px) {
+  padding: 16px 0;
+  @media screen and (min-width: 768px) {
     padding: 0;
     gap: 24px;
     grid-template-columns: repeat(2, 1fr);
@@ -68,7 +67,7 @@
 .cards_tags {
   border-radius: 10px 10px 0 0;
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   background-color: #1165b8;
   display: flex;
   align-items: center;

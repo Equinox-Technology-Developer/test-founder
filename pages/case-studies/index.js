@@ -33,7 +33,7 @@ const Resources = () => {
           <div className={`${styles.blog_wrapper}`}>
             <div className={`${styles.blog_single}`}>
               <Image
-                src="/assets/image 39.png"
+                src="/assets/dyninno.png"
                 alt="Case Studies Image 1"
                 width={392}
                 height={236}
@@ -71,31 +71,20 @@ const Resources = () => {
             </div>
             <div className={`${styles.blog_single}`}>
               <Image
-                src="/assets/image 39.png"
+                src="/assets/lilab.png"
                 alt="Case Studies Image 1"
                 width={392}
                 height={236}
               />
               <div className={styles.content}>
-                <h3>
-                  Dyninno Group improves recruitment productivity by 400% using
-                  TestFounder
-                </h3>
+                <h3>LILAB boosts new employee retention up to 90%</h3>
                 <p>
-                  Dyninno is a group of companies,  providing products and
-                  services in the travel, finance, entertainment, and technology
-                  sectors in more than 50 countries. Founded in 2004, now the
-                  company has 25 offices with total headcount of 5,000
-                  employees.   Since the start of 2022, Dyninno Group has
-                  rapidly expanded its business across multiple companies and
-                  divisions, and as a result, needed to recruit more than 2,000
-                  employees in less than six months in 2023. However, Pavel
-                  Bahu, Global human resources director at Trevolution (travel
-                  division of Dyninno), faced the challenge of effectively
-                  screening the increased number of candidates without
-                  diminishing the efficiency of their current hiring process –
-                  especially as they continue to hire 100s of candidates each
-                  month in different locations.
+                  Based in Peru, Lima Innovation Lab (LILAB) is a leading
+                  software company dedicated to creating innovative digital
+                  solutions. From the start, their team of over 100 people has
+                  been committed to providing the best service in the digital
+                  technology field. We spoke with Dayana Castro, recruiter at
+                  LILAB.
                 </p>
                 <div className={styles.readmore}>
                   <p>
@@ -109,31 +98,29 @@ const Resources = () => {
             </div>
             <div className={`${styles.blog_single}`}>
               <Image
-                src="/assets/image 39.png"
+                src="/assets/design-pickle.png"
                 alt="Case Studies Image 1"
                 width={392}
                 height={236}
               />
               <div className={styles.content}>
                 <h3>
-                  Dyninno Group improves recruitment productivity by 400% using
+                  Design Pickle boost applicant completion rate 25% by using
                   TestFounder
                 </h3>
                 <p>
-                  Dyninno is a group of companies,  providing products and
-                  services in the travel, finance, entertainment, and technology
-                  sectors in more than 50 countries. Founded in 2004, now the
-                  company has 25 offices with total headcount of 5,000
-                  employees.   Since the start of 2022, Dyninno Group has
-                  rapidly expanded its business across multiple companies and
-                  divisions, and as a result, needed to recruit more than 2,000
-                  employees in less than six months in 2023. However, Pavel
-                  Bahu, Global human resources director at Trevolution (travel
-                  division of Dyninno), faced the challenge of effectively
-                  screening the increased number of candidates without
-                  diminishing the efficiency of their current hiring process –
-                  especially as they continue to hire 100s of candidates each
-                  month in different locations.
+                  Design Pickle is a subscription-based creative services
+                  platform from Scottsdale, in the United States, that has a
+                  remote-first workforce in 14 countries. Since their beginning
+                  eight years ago, their mission has been to deliver reliable,
+                  affordable, and scalable content to any business.&nbsp; With a
+                  growing team of more than 500 employees around the world,
+                  Design Pickle was in need of a scalable recruitment solution
+                  to help validate creative quality from creatives with more
+                  efficiency than time-consuming traditional methods like
+                  checking resumes and portfolios. Cailean Bailey, Design
+                  Pickle’s Head of Global Talent Acquisition, is responsible for
+                  the company’s talent acquisition and recruiting.
                 </p>
                 <div className={styles.readmore}>
                   <p>
@@ -147,31 +134,26 @@ const Resources = () => {
             </div>
             <div className={`${styles.blog_single}`}>
               <Image
-                src="/assets/image 39.png"
+                src="/assets/revolut.png"
                 alt="Case Studies Image 1"
                 width={392}
                 height={236}
               />
               <div className={styles.content}>
-                <h3>
-                  Dyninno Group improves recruitment productivity by 400% using
-                  TestFounder
-                </h3>
+                <h3>Revolut improves time-to-hire by 40% using TestFounder</h3>
                 <p>
-                  Dyninno is a group of companies,  providing products and
-                  services in the travel, finance, entertainment, and technology
-                  sectors in more than 50 countries. Founded in 2004, now the
-                  company has 25 offices with total headcount of 5,000
-                  employees.   Since the start of 2022, Dyninno Group has
-                  rapidly expanded its business across multiple companies and
-                  divisions, and as a result, needed to recruit more than 2,000
-                  employees in less than six months in 2023. However, Pavel
-                  Bahu, Global human resources director at Trevolution (travel
-                  division of Dyninno), faced the challenge of effectively
-                  screening the increased number of candidates without
-                  diminishing the efficiency of their current hiring process –
-                  especially as they continue to hire 100s of candidates each
-                  month in different locations.
+                  Design Pickle is a subscription-based creative services
+                  platform from Scottsdale, in the United States, that has a
+                  remote-first workforce in 14 countries. Since their beginning
+                  eight years ago, their mission has been to deliver reliable,
+                  affordable, and scalable content to any business.&nbsp; With a
+                  growing team of more than 500 employees around the world,
+                  Design Pickle was in need of a scalable recruitment solution
+                  to help validate creative quality from creatives with more
+                  efficiency than time-consuming traditional methods like
+                  checking resumes and portfolios. Cailean Bailey, Design
+                  Pickle’s Head of Global Talent Acquisition, is responsible for
+                  the company’s talent acquisition and recruiting.
                 </p>
                 <div className={styles.readmore}>
                   <p>
@@ -185,31 +167,27 @@ const Resources = () => {
             </div>
             <div className={`${styles.blog_single}`}>
               <Image
-                src="/assets/image 39.png"
+                src="/assets/trutrip.png"
                 alt="Case Studies Image 1"
                 width={392}
                 height={236}
               />
               <div className={styles.content}>
                 <h3>
-                  Dyninno Group improves recruitment productivity by 400% using
-                  TestFounder
+                  How TestFounder helped TruTrip save money and improve the
+                  employee experience
                 </h3>
                 <p>
-                  Dyninno is a group of companies,  providing products and
-                  services in the travel, finance, entertainment, and technology
-                  sectors in more than 50 countries. Founded in 2004, now the
-                  company has 25 offices with total headcount of 5,000
-                  employees.   Since the start of 2022, Dyninno Group has
-                  rapidly expanded its business across multiple companies and
-                  divisions, and as a result, needed to recruit more than 2,000
-                  employees in less than six months in 2023. However, Pavel
-                  Bahu, Global human resources director at Trevolution (travel
-                  division of Dyninno), faced the challenge of effectively
-                  screening the increased number of candidates without
-                  diminishing the efficiency of their current hiring process –
-                  especially as they continue to hire 100s of candidates each
-                  month in different locations.
+                  TruTrip is a Singapore-based company that aims to take the
+                  stress out of business travel management and make it more
+                  intuitive, useful, straightforward, and accessible. To achieve
+                  this, the company combines the latest travel technology with
+                  Southeast Asia’s travel ecosystem into a simple and affordable
+                  travel-management tool for businesses of all sizes. Hugh
+                  Batley, the founder of TruTrip, needed a way to reliably
+                  assess candidates’ skills when hiring and avoid mis-hires that
+                  cost the organization time and money – and had negatively
+                  affected teamwork in the past.
                 </p>
                 <div className={styles.readmore}>
                   <p>
@@ -223,31 +201,23 @@ const Resources = () => {
             </div>
             <div className={`${styles.blog_single}`}>
               <Image
-                src="/assets/image 39.png"
+                src="/assets/digital-care.png"
                 alt="Case Studies Image 1"
                 width={392}
                 height={236}
               />
               <div className={styles.content}>
                 <h3>
-                  Dyninno Group improves recruitment productivity by 400% using
-                  TestFounder
+                  How TestFounder transformed Digital Care’s hiring process
                 </h3>
                 <p>
-                  Dyninno is a group of companies,  providing products and
-                  services in the travel, finance, entertainment, and technology
-                  sectors in more than 50 countries. Founded in 2004, now the
-                  company has 25 offices with total headcount of 5,000
-                  employees.   Since the start of 2022, Dyninno Group has
-                  rapidly expanded its business across multiple companies and
-                  divisions, and as a result, needed to recruit more than 2,000
-                  employees in less than six months in 2023. However, Pavel
-                  Bahu, Global human resources director at Trevolution (travel
-                  division of Dyninno), faced the challenge of effectively
-                  screening the increased number of candidates without
-                  diminishing the efficiency of their current hiring process –
-                  especially as they continue to hire 100s of candidates each
-                  month in different locations.
+                  Digital Care is a South African business process outsourcing
+                  (BPO) company working with large enterprise clients in the
+                  telecommunications industry.  Francois Allison, Digital Care’s
+                  Operational Manager, is responsible for talent acquisition and
+                  recruiting. He and his team were looking for ways to improve
+                  their hiring process to find the best candidates for their
+                  open roles.
                 </p>
                 <div className={styles.readmore}>
                   <p>
