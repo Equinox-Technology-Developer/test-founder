@@ -107,11 +107,6 @@
           font-weight: 600;
           transition: all;
         }
-
-        svg {
-          display: inline-block; /* Ensures inline rotation works as expected */
-          transition: transform 0.3s ease; /* Adjust the duration and timing function as needed */
-        }
       }
 
       .active {
@@ -119,6 +114,12 @@
         text-underline-offset: 10px;
         text-decoration: underline $color-primary;
       }
+    }
+
+    li:hover svg {
+      display: inline-block;
+      transition: transform 0.3s ease;
+      transform: rotate(180deg);
     }
 
     @media screen and (max-width: 900px) {

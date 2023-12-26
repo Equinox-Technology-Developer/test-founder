@@ -238,11 +238,12 @@
     font-weight: 700;
     padding: 16px 0;
     border-radius: 10px;
+  }
 
-    svg {
-      display: inline-block; /* Ensures inline rotation works as expected */
-      transition: transform 0.3s ease; /* Adjust the duration and timing function as needed */
-    }
+  .button_compare:hover svg {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    transform: rotate(180deg);
   }
 
   @media screen and (max-width: 768px) {
@@ -357,7 +358,7 @@
   text-align: left;
   padding: 4px 12px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
 }
 

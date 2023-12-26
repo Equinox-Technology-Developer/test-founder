@@ -13,28 +13,25 @@ const testLibrary = ({}) => {
       <Layout pageTitle="Test Library">
         {/* Top Banner */}
         <section className="bg-[#F9F9F9] bg-blur bg-right bg-no-repeat pt-0">
-          <div className="container mx-auto">
+          <div className="container mx-auto p-[10px] md:px-[40px] md:py-[58px]">
             {' '}
             <div className={` ${styles.banner_topContent}`}>
               <div className={styles.banner_topContentText}>
-                <h1 className="sm:heading-1 heading-2">
-                  The science behind
-                  <span className="text-primary-500"> TestFounder</span>.
+                <h1 className="sm:heading-1 heading-2 text-center lg:text-start">
+                  Resumes aren’t working.{' '}
+                  <span className="text-primary-500"> Skills-based </span>{' '}
+                  hiring does.
                 </h1>
-                <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center lg:text-start">
-                  Our mission is to provide you and your candidates with an
-                  enjoyable, highly accurate, and science-backed talent
-                  assessment experience – without bias or stress. We achieve
-                  this by taking a deeply scientific, multi-layered approach
-                  that ensures our screening tests are always valid, reliable,
-                  and fair.
+                <p className="caption-regular-3 sm:caption-regular-1 mb-4 mt-4 text-center md:mb-6 md:mt-6 lg:text-start">
+                  Choose from our 300+ candidate-friendly skills and personality
+                  tests for fast and accurate pre-employment screening
                 </p>
-                <div className="mb-6 flex justify-center">
+                <div className="mb-6 flex w-full justify-center lg:justify-start">
                   <button className="btn-medium sm:btn-normal">
                     Try for free!
                   </button>
                   <button className="btn-line-medium sm:btn-line-normal ml-4">
-                    Get Started
+                    Book a demo
                   </button>
                 </div>
               </div>
@@ -55,16 +52,16 @@ const testLibrary = ({}) => {
         </section>
 
         {/* Library */}
-        <section className="bg-[#F9F9F9] lg:pb-[62px] lg:pt-[60px]">
+        <section className="bg-[#F9F9F9] px-4 lg:px-0 lg:pb-[62px] lg:pt-[60px]">
           <div className="container mx-auto">
-            <h1 className="heading-1 text-center lg:mb-[34px]">
+            <h1 className="heading-2 md:heading-1 my-[24px] text-center md:my-[32px] lg:mb-[34px] lg:mt-[24px]">
               Search our test library
             </h1>
-            <div className="flex justify-between lg:mb-8">
+            <div className="mb-4 flex flex-col justify-between gap-6 md:mb-6 lg:mb-8 lg:flex-row lg:gap-0">
               <div className="relative flex">
                 <input
                   type="text"
-                  className="w-full rounded-[5px] border-[0.75px] border-[#CBCBCB] bg-white px-4 py-[10px] placeholder:text-base placeholder:text-[#CBCBCB] xl:w-[644px]"
+                  className="w-full rounded-[5px] border-[0.75px] border-[#CBCBCB] bg-white px-4 py-[10px] placeholder:text-base placeholder:text-[#CBCBCB] lg:w-[500px] xl:w-[644px]"
                   placeholder="Search anything here"
                 />
                 <Image
@@ -80,10 +77,11 @@ const testLibrary = ({}) => {
                 <select
                   name="test"
                   id="test"
-                  className="w-full rounded-[5px] border-[0.75px] border-[#CBCBCB] bg-white px-4 py-[10px] placeholder:text-base placeholder:text-[#CBCBCB] xl:w-[644px] "
+                  className="w-full rounded-[5px] border-[0.75px] border-[#CBCBCB] bg-white px-4 py-[10px] placeholder:text-base placeholder:text-[#CBCBCB] lg:w-[500px] xl:w-[644px] "
                   placeholder="Test Type"
+                  defaultValue={'DEFAULT'}
                 >
-                  <option value="" disabled selected hidden clas>
+                  <option value="DEFAULT" disabled selected hidden>
                     Test Type
                   </option>
                   <option value="volvo">Language</option>
