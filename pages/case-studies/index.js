@@ -11,7 +11,7 @@ const Resources = () => {
   return (
     <Layout pageTitle="Case Studies">
       {/* Bottom Banner */}
-      <section className="bg-[#F9F9F9] bg-blur bg-right bg-no-repeat pt-0">
+      <section className="bg-[#F9F9F9] pt-0">
         <div className="container mx-auto">
           <div className={` ${styles.banner_blogContainer}`}>
             <div className={styles.banner_blogContentText}>
@@ -235,18 +235,18 @@ const Resources = () => {
 
       {/* Bottom Banner */}
       <section className="bg-[#F9F9F9] bg-blur bg-right bg-no-repeat pt-0">
-        <div className="container mx-auto">
+        <div className="container mx-auto px-4 py-6 md:px-10 md:py-8">
           {' '}
           <div className={` ${styles.banner_topContent}`}>
             <div className={styles.banner_topContentText}>
-              <h1 className="sm:heading-1 heading-2">
+              <h1 className="sm:heading-1 heading-2 text-center lg:text-start">
                 Hire the best candidates with TestFounder!
               </h1>
-              <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center lg:text-start">
-                Create talent assessments in minutes to screen candidates, save
-                time, and hire the best talent.{' '}
+              <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-6 text-center lg:text-start">
+                Create pre-employment assessments in minutes to screen
+                candidates, save time, and hire the best talent.
               </p>
-              <div className="mb-6 flex justify-center">
+              <div className="mb-6 flex w-full justify-center lg:w-fit">
                 <button className="btn-line-medium sm:btn-line-normal">
                   Try for free!
                 </button>
@@ -261,7 +261,7 @@ const Resources = () => {
                 width={617}
                 height={602}
                 sizes="100vw"
-                className={`z-10 flex h-auto w-[80%] md:w-[60%] lg:w-full `}
+                className={`z-10 flex h-auto w-[80%] md:w-[80%] lg:w-full `}
               />
             </div>
           </div>
