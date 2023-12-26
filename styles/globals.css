@@ -44,7 +44,7 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-  color: #1882D6;
+  color: #1882d6;
   font-weight: 700;
 }
 
@@ -88,7 +88,7 @@ a {
 }
 
 .text-abu {
-  color: #CBCBCB;
+  color: #cbcbcb;
 }
 
 .content1_shape svg {
@@ -120,12 +120,6 @@ a {
   fill: #e8f8f7;
 }
 
-li:hover svg, button:hover svg  {
-  display: inline-block; /* Ensures inline rotation works as expected */
-  transition: transform 0.3s ease; /* Adjust the duration and timing function as needed */
-  transform: rotate(180deg);
-}
-
 @media screen and (max-width: 768px) {
   .mobile-hidden {
     display: none;
@@ -137,48 +131,50 @@ li:hover svg, button:hover svg  {
   }
 }
 
-
 /*======================
     404 page
 =======================*/
 
-
-.page_404{ 
+.page_404 {
   /* padding:40px 0; */
-  background:#fff; 
+  background: #fff;
   font-family: 'Arvo', serif;
   height: 100vh;
   display: grid;
   align-items: center;
 }
 
-.page_404  img{ width:100%;}
+.page_404 img {
+  width: 100%;
+}
 
-.four_zero_four_bg{
+.four_zero_four_bg {
   background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
   height: 400px;
   background-position: center;
   background-repeat: no-repeat;
- }
- 
-.four_zero_four_bg h1{
-  font-size:80px;
+}
+
+.four_zero_four_bg h1 {
+  font-size: 80px;
   margin-bottom: 50px;
 }
- 
-.four_zero_four_bg h3{
-  font-size:80px;
+
+.four_zero_four_bg h3 {
+  font-size: 80px;
 }
-			 
-.link_404{			 
-	color: #fff!important;
+
+.link_404 {
+  color: #fff !important;
   padding: 10px 20px;
   background: #39ac31;
   margin: 20px 0;
   display: inline-block;
 }
 
-.contant_box_404{ margin-top:-50px;}
+.contant_box_404 {
+  margin-top: -50px;
+}
 
 @layer components {
   .heading-1 {

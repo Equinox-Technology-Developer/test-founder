@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 import { Layout } from '../components';
 import SwiperNavButton from '../components/SwiperNavButton';
+import SwiperTestimonialButton from '../components/SwiperTestimonialButton';
 // import { createClient } from 'contentful';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -411,10 +412,10 @@ export default function Home() {
 
         {/* Testimonials */}
         <div className="w-full bg-[#F9F9F9] pb-[44px] sm:pb-[100px]">
-          <div className="container mx-auto flex h-full items-center rounded-[20px] bg-white px-[14px] py-[12px] md:h-[367px] md:px-[55px] md:py-[32px] lg:px-[82px] lg:py-[32px]">
+          <div className="container mx-auto flex h-full items-center rounded-[20px] bg-white">
             <Swiper
               modules={[Autoplay]}
-              spaceBetween={40}
+              spaceBetween={20}
               autoplay={{
                 delay: 2500,
                 disableOnInteraction: false,
@@ -433,7 +434,7 @@ export default function Home() {
             >
               {testimonies.map((testimonial, index) => (
                 <SwiperSlide key={index}>
-                  <div className="mt-10 flex w-full flex-col sm:mt-0 md:max-w-[518px] md:flex-row">
+                  <div className="mt-10 flex w-full flex-col px-[14px] py-[12px] sm:mt-0 md:h-[367px] md:max-w-[85%] md:flex-row md:py-[32px] md:pl-[0px] lg:max-w-[85%] lg:py-[32px] lg:pl-[82px]">
                     <div className="flex flex-row">
                       <Image
                         src={testimonial.src}
@@ -603,7 +604,7 @@ export default function Home() {
                   </div>
                 </SwiperSlide>
               ))}
-              {/* <SwiperNavButton /> */}
+              <SwiperTestimonialButton />
             </Swiper>
           </div>
         </div>
