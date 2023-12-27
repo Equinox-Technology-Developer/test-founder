@@ -8,9 +8,9 @@ import { FcGoogle } from 'react-icons/fc';
 const Login = ({}) => {
   return (
     <>
-      <main className="bg">
-        <div className=" flex h-screen w-screen flex-col lg:flex-row">
-          <div className="flex w-full flex-col items-start justify-center space-y-6 bg-grayscale-100 lg:w-1/2 lg:pl-[132px] lg:pr-[92px]">
+      <main className="flex h-screen w-screen flex-col lg:flex-row">
+        <div className="flex w-full justify-center bg-grayscale-100 lg:w-1/2 lg:pl-[132px] lg:pr-[92px]">
+          <div className="flex w-[508px] flex-col items-start justify-center space-y-6">
             <Link href="/">
               <Image
                 src={images.logo_desktop}
@@ -22,7 +22,7 @@ const Login = ({}) => {
             </Link>
             <h3 className="heading-3">We are glad to see you again.</h3>
             <button className="caption-semibold-3 flex h-[48px] w-full items-center justify-center gap-[12px] rounded-[5px] border-[0.75px] border-[#CBCBCB] bg-shade-0 px-4 py-[10px]">
-              <FcGoogle />
+              <FcGoogle className="h-6 w-6" />
               Continue for Google
             </button>
             <div className="flex items-center justify-center gap-6 self-stretch">
@@ -67,19 +67,19 @@ const Login = ({}) => {
               </Link>
             </p>
           </div>
-          <div className="flex w-full flex-col items-center justify-center space-y-[60px] bg-primary-500 px-[120px] lg:w-1/2">
-            <h1 className="text-center text-[60px] font-bold leading-[60px] tracking-[1%] text-shade-0">
-              Is this the end of the resume
-            </h1>
-            <Image src="/assets/lamp-login.png" width="274" height="310" />
-            <p className="heading-3 text-center text-shade-0">
-              Discover more insights in our new report on the State of
-              Skills-Based Hiring 2023
-            </p>
-            <button className="caption-semibold-1 rounded-[40px] bg-shade-0 px-5 py-2 text-shade-100">
-              Learn More
-            </button>
-          </div>
+        </div>
+        <div className="flex w-full flex-col items-center justify-center space-y-[60px] bg-primary-500 px-[120px] lg:w-1/2">
+          <h1 className="text-center text-[60px] font-bold leading-[60px] tracking-[1%] text-shade-0">
+            Is this the end of the resume
+          </h1>
+          <Image src="/assets/lamp-login.png" width="274" height="310" />
+          <p className="heading-3 text-center text-shade-0">
+            Discover more insights in our new report on the State of
+            Skills-Based Hiring 2023
+          </p>
+          <button className="caption-semibold-1 rounded-[40px] bg-shade-0 px-5 py-2 text-shade-100">
+            Learn More
+          </button>
         </div>
       </main>
     </>
