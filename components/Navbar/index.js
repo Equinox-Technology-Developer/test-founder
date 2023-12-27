@@ -160,12 +160,16 @@ const Navbar = () => {
 
         <div className="flex justify-center">
           <div className="mobile-hidden flex justify-center">
-            <button className="2xl:btn-line-normal lg:btn-line-medium btn-line-medium">
-              Book a Demo
-            </button>
-            <button className="2xl:btn-normal lg:btn-medium btn-medium ml-4">
-              Try for free!
-            </button>
+            <Link href="/book-demo">
+              <button className="2xl:btn-line-normal lg:btn-line-medium btn-line-medium">
+                Book a Demo
+              </button>
+            </Link>
+            <Link href="/signup">
+              <button className="2xl:btn-normal lg:btn-medium btn-medium ml-4">
+                Try for free!
+              </button>
+            </Link>
           </div>
           <div className={styles.navbar_menu}>
             <HiMenuAlt4 onClick={() => setToogle(true)} />

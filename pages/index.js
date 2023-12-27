@@ -102,8 +102,8 @@ export default function Home() {
         <section className="bg-[#F9F9F9] bg-blur bg-right bg-no-repeat pt-0">
           <div className="container mx-auto">
             <div className="relative flex flex-col items-center sm:static lg:flex-row">
-              <div className="mb-0 mt-20 flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:py-[32px] md:pr-[40px] md:text-left lg:mt-24 lg:flex-grow lg:items-start lg:pr-24">
-                <h1 className="sm:heading-1 heading-2 mb-6 mt-0 ">
+              <div className="mb-0 mt-20 flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:px-[40px] md:py-[32px] md:text-left lg:mt-24 lg:flex-grow lg:items-start lg:pr-24">
+                <h1 className="sm:heading-1 heading-2 mb-6 mt-0 text-center lg:text-start">
                   <span className="text-primary-500">TestFounder</span> works.
                   Resumes don't.
                 </h1>
@@ -119,8 +119,8 @@ export default function Home() {
                     Talk to sales
                   </button>
                 </div>
-                <div className="flex flex-col justify-center sm:flex-row">
-                  <div className="flex justify-center space-x-4">
+                <div className="flex flex-col justify-center gap-[39px] sm:flex-row">
+                  <div className="flex flex-shrink-0 justify-center space-x-4 md:justify-start">
                     <Image
                       src="/assets/badge-top-100.svg"
                       alt="Hero Image"
@@ -138,7 +138,7 @@ export default function Home() {
                       className="h-auto w-fit"
                     />
                   </div>
-                  <p className="caption-regular-1 my-0 ml-0 sm:ml-10">
+                  <p className="caption-regular-1 my-0 ml-0 ">
                     Rated #1 in talent assessments Top 100 fastest-growing
                     software globally
                   </p>
@@ -153,22 +153,14 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="relative flex w-full justify-center md:w-full lg:w-full lg:max-w-lg">
+              <div className="flex w-full justify-center md:w-full lg:w-full lg:max-w-lg">
                 <Image
                   src="/assets/hero-image.png"
                   alt="Hero Image"
-                  width={512}
+                  width={559}
                   height={638}
                   sizes="100vw"
                   className=" z-10 mt-20 flex h-auto w-[80%] md:w-[60%] lg:w-full"
-                />
-                <Image
-                  src="/assets/card-customer.png"
-                  alt="Hero Image"
-                  width={325}
-                  height={151}
-                  sizes="100vw"
-                  className="absolute bottom-10 left-6 z-20 h-auto max-h-[151px] w-[50%] max-w-[325px] sm:w-full md:bottom-16 md:left-24 lg:-left-12 lg:bottom-24"
                 />
               </div>
             </div>
@@ -226,19 +218,19 @@ export default function Home() {
                   sizes="100vw"
                 />
               </div>
-              <div className="relative z-50 flex w-full flex-col items-center space-y-6 md:w-full md:items-start lg:w-full">
-                <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center sm:text-start">
+              <div className="relative z-50 flex w-full flex-col items-center space-y-6 md:w-full lg:w-full lg:items-start">
+                <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center lg:text-start">
                   A barometer for job success.
                 </h1>
-                <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
+                <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
                   Use our library of 401 scientifically validated tests.
                 </p>
-                <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
+                <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
                   Test candidates for job-specific skills like coding or digital
                   marketing, as well as more general skills like critical
                   thinking.
                 </p>
-                <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
+                <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
                   Our unique personality and value tests allow you to get to
                   know your applicants as real people – not just pieces of
                   paper.
@@ -263,20 +255,20 @@ export default function Home() {
         <section className="flex h-fit items-center bg-[#F9F9F9] px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
           <div className="container mx-auto">
             <div className="flex flex-col-reverse items-center gap-[41px] md:flex-col-reverse lg:flex-row">
-              <div className="z-50 mb-1 flex flex-col items-center text-center sm:mb-16 md:mb-0 md:w-full md:items-start  md:pr-16 md:text-left lg:flex-grow lg:pr-24">
-                <h1 className="heading-2 sm:heading-1 mb-6 mt-0">
+              <div className="z-50 mb-1 flex flex-col items-center text-center sm:mb-16 md:mb-0 md:w-full md:items-start md:pr-0 md:text-left lg:w-1/2 lg:flex-grow lg:pr-0">
+                <h1 className="heading-2 sm:heading-1 mb-6 mt-0 text-center lg:text-start">
                   Quality time for quality candidates.
                 </h1>
-                <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0">
+                <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center lg:text-start">
                   Boom. No more time wasted on screening resumes and
                   pre-qualifying interviews.
                 </p>
-                <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0">
+                <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center lg:text-start">
                   We automatically grade and rank your candidates. In the time
                   it takes to savor a cup of coffee, you can watch video
                   responses to custom questions.
                 </p>
-                <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0">
+                <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center lg:text-start">
                   Our screening process automation lets you focus on the best
                   people for the job.
                 </p>
@@ -309,18 +301,18 @@ export default function Home() {
                   className="z-50"
                 />
               </div>
-              <div className="relative flex w-full flex-col items-center space-y-6 md:w-full md:items-start lg:w-1/2">
-                <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center sm:text-start">
+              <div className="relative flex w-full flex-col items-center space-y-6 md:w-full lg:w-1/2 lg:items-start">
+                <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center lg:text-start">
                   Say goodbye to unconscious bias.
                 </h1>
-                <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
+                <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
                   Diverse teams perform better.
                 </p>
-                <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
+                <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
                   With TestFounder, you give all applicants an equal, unbiased
                   opportunity to showcase themselves.
                 </p>
-                <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
+                <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
                   This ensures you get the best talent from all walks of life.
                 </p>
               </div>
@@ -332,18 +324,18 @@ export default function Home() {
         <section className="flex h-fit items-center bg-[#F9F9F9] px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
           <div className="container mx-auto">
             <div className="flex flex-col-reverse items-center gap-[41px] md:flex-col-reverse lg:flex-row">
-              <div className="z-50 mb-16 flex flex-col items-center text-center md:mb-0 md:w-full md:items-start md:pr-16 md:text-left lg:flex-grow lg:pr-24">
-                <h1 className="heading-2 sm:heading-1 mb-6 mt-0">
+              <div className="z-50 mb-16 flex flex-col items-center text-center md:mb-0 md:w-full md:pr-0 md:text-left lg:w-1/2 lg:flex-grow lg:items-start lg:pr-0">
+                <h1 className="heading-2 sm:heading-1 mb-6 mt-0 text-center lg:text-start">
                   Offer a positive candidate experience.
                 </h1>
-                <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0">
+                <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center lg:text-start">
                   Good candidates appreciate good screening tests.
                 </p>
-                <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0">
+                <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center lg:text-start">
                   Our professional, well-designed tests serve as an extension of
                   your brand and personality.
                 </p>
-                <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0">
+                <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center lg:text-start">
                   Your applicants get the motivation and engagement they need to
                   truly shine.
                 </p>
@@ -374,7 +366,7 @@ export default function Home() {
         <section className="flex h-fit items-center bg-[#F9F9F9] px-4 py-6 sm:h-fit sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
           <div className="container mx-auto ">
             <div className="flex flex-col items-center gap-0 sm:gap-[21px] lg:flex-row">
-              <div className="z-50 mb-1 w-full sm:mb-16 md:mb-0 md:w-full md:text-left">
+              <div className="z-50 mb-1 w-full sm:mb-16 md:mb-0 md:w-fit md:text-left">
                 <Image
                   src="/assets/people-conection.png"
                   alt="Hero Image"
@@ -385,15 +377,15 @@ export default function Home() {
                 />
               </div>
               <div className="relative z-50 flex w-full flex-col items-center space-y-6 md:w-full md:items-start lg:w-1/2">
-                <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center sm:text-start">
+                <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center lg:text-start">
                   Champion a data-driven HR culture.
                 </h1>
-                <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
+                <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
                   We rank your applicants according to test scores certified by
                   our experts. This means your HR team can rely on good data to
                   make important decisions – and not just their gut feeling.
                 </p>
-                <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
+                <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
                   With TestGorilla, you’ll lead the shift to a more professional
                   and data-focused HR culture in your company.
                 </p>
@@ -611,7 +603,7 @@ export default function Home() {
 
         {/* Explanation 7 */}
         <div className="min-h-[366px] w-full space-y-6 bg-[#D0F3FC26]">
-          <div className="container mx-auto flex flex-col items-center justify-center space-y-6 px-4 py-6 text-center sm:px-0 sm:py-[60px]">
+          <div className="container mx-auto flex flex-col items-center justify-center space-y-6 px-4 py-6 text-center md:px-[40px] md:py-[32px] lg:px-[62px] lg:py-[60px]">
             <h1 className="heading-2 sm:heading-1">
               Top talent is priceless. We make finding it affordable.
             </h1>
