@@ -74,9 +74,9 @@ const Products = () => {
     <Layout pageTitle="Products">
       {/* Banner */}
       <section className="bg-[#F9F9F9] bg-blur bg-right bg-no-repeat pt-0">
-        <div className="container mx-auto">
+        <div className="container mx-auto ">
           <div className="relative flex flex-col items-center sm:static lg:flex-row">
-            <div className="mt-20 flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:px-[0px] md:py-[32px] md:text-left lg:mb-16 lg:mt-24 lg:flex-grow lg:items-start lg:pr-24">
+            <div className="mt-20 flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:px-[0px] md:py-[32px] md:text-left lg:mb-16 lg:mt-24 lg:flex-grow lg:items-start lg:pr-24 ">
               <h1 className="sm:heading-1 heading-2 mb-6 mt-0 ">
                 <span className="text-primary-500">TestFounder</span> works.
                 Resumes don't.
@@ -94,14 +94,14 @@ const Products = () => {
                 </button>
               </div>
             </div>
-            <div className="relative flex w-full justify-center md:w-full lg:w-full lg:max-w-lg">
+            <div className="relative flex w-full justify-center md:w-full lg:mt-20 lg:w-full lg:max-w-lg">
               <Image
                 src={images.HeroImageProduct}
                 alt="Hero Image"
                 width={512}
                 height={638}
                 sizes="100vw"
-                className=" z-10 flex h-auto w-[80%] md:w-[60%] lg:mt-20 lg:w-full"
+                className="z-10 flex h-auto w-[80%] md:w-[60%] lg:w-full"
               />
             </div>
           </div>

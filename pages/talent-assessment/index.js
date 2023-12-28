@@ -30,14 +30,14 @@ const index = () => {
                 </button>
               </div>
             </div>
-            <div className="relative flex w-full justify-center md:w-full lg:w-full lg:max-w-lg">
+            <div className="relative flex w-full justify-center md:w-full lg:mt-20 lg:w-full lg:max-w-lg">
               <Image
                 src={images.HeroImageTestAssessment}
                 alt="Hero Image"
                 width={512}
                 height={638}
                 sizes="100vw"
-                className="z-10 mt-20 flex h-auto w-[80%] md:w-[60%] lg:w-full"
+                className="z-10 flex h-auto w-[80%] md:w-[60%] lg:w-full"
               />
             </div>
           </div>
