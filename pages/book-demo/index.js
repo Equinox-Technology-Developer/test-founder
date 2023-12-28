@@ -77,7 +77,7 @@ const BookDemo = ({}) => {
                       </label>
                       <input
                         type="email"
-                        className="h-[48px] rounded-[5px] border-[0.75px] border-[#CBCBCB] bg-shade-0"
+                        className="h-[48px] rounded-[5px] border-[0.75px] border-[#CBCBCB] bg-shade-0 px-4 py-[10px]"
                       />
                     </div>
                     <div className="flex flex-col">
@@ -86,7 +86,7 @@ const BookDemo = ({}) => {
                       </label>
                       <input
                         type="text"
-                        className="h-[48px] rounded-[5px] border-[0.75px] border-[#CBCBCB] bg-shade-0"
+                        className="h-[48px] rounded-[5px] border-[0.75px] border-[#CBCBCB] bg-shade-0 px-4 py-[10px]"
                       />
                     </div>
                     <div className="flex items-start justify-between gap-6">
@@ -96,7 +96,7 @@ const BookDemo = ({}) => {
                         </label>
                         <input
                           type="email"
-                          className="h-[48px] rounded-[5px] border-[0.75px] border-[#CBCBCB] bg-shade-0"
+                          className="h-[48px] rounded-[5px] border-[0.75px] border-[#CBCBCB] bg-shade-0 px-4 py-[10px]"
                         />
                       </div>
                       <div className="flex w-full max-w-[240px] flex-col">
@@ -105,7 +105,7 @@ const BookDemo = ({}) => {
                         </label>
                         <input
                           type="text"
-                          className="h-[48px] rounded-[5px] border-[0.75px] border-[#CBCBCB] bg-shade-0"
+                          className="h-[48px] rounded-[5px] border-[0.75px] border-[#CBCBCB] bg-shade-0 px-4 py-[10px]"
                         />
                       </div>
                     </div>
