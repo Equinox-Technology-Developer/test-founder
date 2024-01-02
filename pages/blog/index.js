@@ -24,7 +24,7 @@ const Resources = () => {
               <div className="relative flex w-full xl:w-fit">
                 <input
                   type="text"
-                  className="xl:w-[600 px] w-full rounded-[30px] bg-white px-4 py-[10px] shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)] placeholder:text-base  placeholder:text-[#CBCBCB]"
+                  className="w-full rounded-[30px] bg-white px-4 py-[10px] shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)] placeholder:text-base placeholder:text-[#CBCBCB]  xl:w-[600px]"
                   placeholder="Search anything here"
                 />
                 <Image
