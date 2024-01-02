@@ -20,17 +20,17 @@ const Footer = ({ products }) => {
         {/* Content Tab 1 */}
         <div className={styles.content_wrapper}>
           <div className={styles.footer_content}>
-            <a href="">
+            <a href="/help">
               Help Center <MdChevronRight />
             </a>
           </div>
           <div className={styles.footer_content}>
-            <a href="">
+            <a href="/candidates-guide">
               Information for Candidates <MdChevronRight />
             </a>
           </div>
           <div className={styles.footer_content}>
-            <a href="">
+            <a href="/skills-based-hiring">
               Skills-based hiring <MdChevronRight />
             </a>
           </div>
@@ -39,19 +39,19 @@ const Footer = ({ products }) => {
         {/* Content Tab 2 */}
         <div className={styles.content_wrapper}>
           <div className={styles.footer_content}>
-            <a href="">
+            <a href="/careers">
               Careers <legend className="legend-primary">Hiring!</legend>{' '}
               <MdChevronRight />
             </a>
           </div>
           <div className={styles.footer_content}>
-            <a href="">
+            <a href="/blog">
               Blog
               <MdChevronRight />
             </a>
           </div>
           <div className={styles.footer_content}>
-            <a href="">
+            <a href="/contact">
               Contact <MdChevronRight />
             </a>
           </div>
@@ -60,18 +60,18 @@ const Footer = ({ products }) => {
         {/* Content Tab 3 */}
         <div className={styles.content_wrapper}>
           <div className={styles.footer_content}>
-            <a href="">
+            <a href="/terms">
               {' '}
               Legal Stuff <MdChevronRight />
             </a>
           </div>
           <div className={styles.footer_content}>
-            <a href="">
+            <a href="/privacy-policy">
               Privacy policy <MdChevronRight />
             </a>
           </div>
           <div className={styles.footer_content}>
-            <a href="">
+            <a href="/sitemap">
               Sitemap
               <MdChevronRight />
             </a>
