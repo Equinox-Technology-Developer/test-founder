@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { Layout } from '@/components';
 import { images } from '@/constants';
@@ -247,9 +248,11 @@ const Resources = () => {
                 candidates, save time, and hire the best talent.
               </p>
               <div className="mb-6 flex w-full justify-center lg:w-fit">
-                <button className="btn-line-medium sm:btn-line-normal">
-                  Try for free!
-                </button>
+                <Link href="/signup">
+                  <button className="btn-line-medium sm:btn-line-normal">
+                    Try for free!
+                  </button>
+                </Link>
               </div>
             </div>
             <div

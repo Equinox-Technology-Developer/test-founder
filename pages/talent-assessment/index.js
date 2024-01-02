@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { Layout } from '@/components';
 import { images } from '@/constants';
@@ -22,12 +23,16 @@ const index = () => {
                 and hiring managers key insights into candidate potential.
               </p>
               <div className="mb-6 flex justify-center">
-                <button className="btn-medium sm:btn-normal">
-                  Try for free!
-                </button>
-                <button className="btn-line-medium sm:btn-line-normal ml-4">
-                  Get a demo
-                </button>
+                <Link href="/signup">
+                  <button className="btn-medium sm:btn-normal">
+                    Try for free!
+                  </button>
+                </Link>
+                <Link href="/book-demo">
+                  <button className="btn-line-medium sm:btn-line-normal ml-4">
+                    Get a demo
+                  </button>
+                </Link>
               </div>
             </div>
             <div className="relative flex w-full justify-center md:w-full lg:w-full lg:max-w-lg">
@@ -185,9 +190,11 @@ const index = () => {
                 the right match between candidates and organizational goals for
                 sustained success.
               </p>
-              <button className="btn-line-normal-black">
-                Try us for free now!
-              </button>
+              <Link href="/signup">
+                <button className="btn-line-normal-black">
+                  Try us for free now!
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -319,9 +326,11 @@ const index = () => {
                 high-performing workforce, ultimately boosting organizational
                 productivity and success.
               </p>
-              <button className="btn-line-normal-black">
-                Try us for free now!
-              </button>
+              <Link href="/signup">
+                <button className="btn-line-normal-black">
+                  Try us for free now!
+                </button>
+              </Link>
             </div>
             <div className="mb-16 w-full sm:w-1/2 md:mb-0 md:text-left ">
               <Image
@@ -472,9 +481,11 @@ const index = () => {
                 identifying top-tier talent aligned with your organizational
                 objectives and company culture.
               </p>
-              <button className="btn-line-normal-black">
-                Try us for free now!
-              </button>
+              <Link href="/signup">
+                <button className="btn-line-normal-black">
+                  Try us for free now!
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -604,9 +615,11 @@ const index = () => {
                 hiring top talent a breeze. Make informed decisions to enhance
                 your hiring process with our insights and comparisons.
               </p>
-              <button className="btn-line-normal-black">
-                Try us for free now!
-              </button>
+              <Link href="/signup">
+                <button className="btn-line-normal-black">
+                  Try us for free now!
+                </button>
+              </Link>
             </div>
             <div className="mb-16 w-full sm:w-1/2 md:mb-0 md:text-left ">
               <Image
@@ -759,9 +772,11 @@ const index = () => {
                 interviewing techniques, to ensure a seamless recruitment
                 process.
               </p>
-              <button className="btn-line-normal-black">
-                Try us for free now!
-              </button>
+              <Link href="/signup">
+                <button className="btn-line-normal-black">
+                  Try us for free now!
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -963,8 +978,12 @@ const index = () => {
             Start screening with us today on our free plan.
           </p>
           <div className="flex flex-row gap-4">
-            <button className="btn-line-medium-white">Talk to us</button>
-            <button className="btn-medium-white">Try us for free!</button>
+            <Link href="/book-demo">
+              <button className="btn-line-medium-white">Book a demo</button>
+            </Link>
+            <Link href="/signup">
+              <button className="btn-medium-white">Try us for free!</button>
+            </Link>
           </div>
         </div>
       </div>
