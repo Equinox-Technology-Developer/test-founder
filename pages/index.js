@@ -112,12 +112,16 @@ export default function Home() {
                   and make your hiring decisions faster, easier, and bias-free.
                 </p>
                 <div className="mb-6 flex justify-center">
-                  <button className="btn-medium sm:btn-normal">
-                    Try for free!
-                  </button>
-                  <button className="btn-line-medium sm:btn-line-normal ml-4">
-                    Talk to sales
-                  </button>
+                  <Link href="/signup">
+                    <button className="btn-medium sm:btn-normal">
+                      Try for free!
+                    </button>
+                  </Link>
+                  <Link href="/book-demo">
+                    <button className="btn-line-medium sm:btn-line-normal ml-4">
+                      Talk to sales
+                    </button>
+                  </Link>
                 </div>
                 <div className="flex flex-col justify-center gap-[39px] sm:flex-row">
                   <div className="flex flex-shrink-0 justify-center space-x-4 md:justify-start">
@@ -235,9 +239,11 @@ export default function Home() {
                   know your applicants as real people – not just pieces of
                   paper.
                 </p>
-                <button className="btn-line-medium sm:btn-line-normal">
-                  See Tests
-                </button>
+                <Link href="/test-library">
+                  <button className="btn-line-medium sm:btn-line-normal">
+                    See Tests
+                  </button>
+                </Link>
               </div>
               <Image
                 src="/assets/bg_blur_2.png"
@@ -616,8 +622,12 @@ export default function Home() {
               Start screening with us today on our free plan.
             </p>
             <div className="flex flex-row gap-4">
-              <button className="btn-line-normal">Talk to us</button>
-              <button className="btn-line-normal">Sign Up Free</button>
+              <Link href="/book-demo">
+                <button className="btn-line-normal">Talk to us</button>
+              </Link>
+              <Link href="/signup">
+                <button className="btn-line-normal">Sign Up Free</button>
+              </Link>
             </div>
           </div>
         </div>

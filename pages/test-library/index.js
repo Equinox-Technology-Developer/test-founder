@@ -27,12 +27,16 @@ const testLibrary = ({}) => {
                   tests for fast and accurate pre-employment screening
                 </p>
                 <div className="mb-6 flex w-full justify-center lg:justify-start">
-                  <button className="btn-medium sm:btn-normal">
-                    Try for free!
-                  </button>
-                  <button className="btn-line-medium sm:btn-line-normal ml-4">
-                    Book a demo
-                  </button>
+                  <Link href="/signup">
+                    <button className="btn-medium sm:btn-normal">
+                      Try for free!
+                    </button>
+                  </Link>
+                  <Link href="/book-demo">
+                    <button className="btn-line-medium sm:btn-line-normal ml-4">
+                      Book a demo
+                    </button>
+                  </Link>
                 </div>
               </div>
               <div

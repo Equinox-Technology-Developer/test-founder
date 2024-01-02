@@ -33,9 +33,11 @@ const ProductScience = () => {
                   and fair.
                 </p>
                 <div className="mb-6 flex w-full justify-center lg:justify-start">
-                  <button className="btn-line-medium sm:btn-line-normal">
-                    Get Started
-                  </button>
+                  <Link href="/signup">
+                    <button className="btn-line-medium sm:btn-line-normal">
+                      Get Started
+                    </button>
+                  </Link>
                 </div>
               </div>
               <div
@@ -376,8 +378,12 @@ const ProductScience = () => {
               challenges to discover how we can help.
             </p>
             <div className="flex flex-row gap-4">
-              <button className="btn-line-medium">Request demo</button>
-              <button className="btn-medium">Get started</button>
+              <Link href="/book-demo">
+                <button className="btn-line-medium">Request demo</button>
+              </Link>
+              <Link href="/signup">
+                <button className="btn-medium">Get started</button>
+              </Link>
             </div>
             <p className="italic">
               The contents of this page are intended for general information
