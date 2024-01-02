@@ -163,141 +163,143 @@ const PrivacyPolicy = () => {
           </p>
         </div>
         <table className="mb-10 w-full">
-          <tr>
-            <th className="text-start">Company</th>
-            <th className="text-center">Contact</th>
-            <th className="text-center">Country</th>
-          </tr>
-          <tr>
-            <td className="caption-bold-3">Personal Data</td>
-          </tr>
-          <tr>
-            <td className="caption-regular-3">full name</td>
-            <td align="center">
-              <IoCheckmark />
-            </td>
-            <td align="center">
-              <IoCheckmark />
-            </td>
-          </tr>
-          <tr>
-            <td className="caption-regular-3">gender</td>
-            <td align="center">
-              <IoCheckmark />
-            </td>
-            <td align="center">
-              <IoCheckmark />
-            </td>
-          </tr>
-          <tr>
-            <td className="caption-regular-3">
-              address, postal, code, city, state
-            </td>
-            <td align="center">
-              <IoCheckmark />
-            </td>
-            <td align="center">
-              <IoCheckmark />
-            </td>
-          </tr>
-          <tr>
-            <td className="caption-regular-3">e-mail address</td>
-            <td align="center">
-              <IoCheckmark />
-            </td>
-            <td align="center">
-              <IoCheckmark />
-            </td>
-          </tr>
-          <tr>
-            <td className="caption-regular-3">date of birth</td>
-            <td align="center">
-              <IoCheckmark />
-            </td>
-            <td align="center">
-              <IoCheckmark />
-            </td>
-          </tr>
-          <tr>
-            <td className="caption-regular-3">
-              your username and password when you register for an account
-            </td>
-            <td align="center">
-              <IoCheckmark />
-            </td>
-            <td align="center">
-              <IoCheckmark />
-            </td>
-          </tr>
-          <tr>
-            <td className="caption-regular-3">video recording</td>
-            <td align="center">
-              <IoCheckmark />
-            </td>
-            <td align="center">
-              <IoCheckmark />
-            </td>
-          </tr>
-          <tr>
-            <td className="caption-regular-3">demographic data (optional)</td>
-            <td align="center">
-              <IoCheckmark />
-            </td>
-            <td align="center">
-              <IoCheckmark />
-            </td>
-          </tr>
-          <tr>
-            <td className="caption-regular-3">IP address</td>
-            <td align="center">
-              <IoCheckmark />
-            </td>
-            <td align="center">
-              <IoCheckmark />
-            </td>
-          </tr>
-          <tr>
-            <td className="caption-regular-3">
-              career-related information (e.g. education, job history)
-            </td>
-            <td align="center">
-              <IoCheckmark />
-            </td>
-            <td align="center">
-              <IoCheckmark />
-            </td>
-          </tr>
-          <tr>
-            <td className="caption-regular-3">
-              the answers you give to test questions
-            </td>
-            <td align="center">
-              <IoCheckmark />
-            </td>
-            <td align="center">
-              <IoCheckmark />
-            </td>
-          </tr>
-          <tr>
-            <td className="caption-regular-3">
-              communications between you and us
-            </td>
-            <td align="center">
-              <IoCheckmark />
-            </td>
-            <td align="center">
-              <IoCheckmark />
-            </td>
-          </tr>
-          <tr>
-            <td className="caption-regular-3">subscriptions/preferences</td>
-            <td align="center">
-              <IoCheckmark />
-            </td>
-            <td align="center">
-              <IoCheckmark />
-            </td>
-          </tr>
+          <tbody>
+            <tr>
+              <th className="text-start">Company</th>
+              <th className="text-center">Contact</th>
+              <th className="text-center">Country</th>
+            </tr>
+            <tr>
+              <td className="caption-bold-3">Personal Data</td>
+            </tr>
+            <tr>
+              <td className="caption-regular-3">full name</td>
+              <td align="center">
+                <IoCheckmark />
+              </td>
+              <td align="center">
+                <IoCheckmark />
+              </td>
+            </tr>
+            <tr>
+              <td className="caption-regular-3">gender</td>
+              <td align="center">
+                <IoCheckmark />
+              </td>
+              <td align="center">
+                <IoCheckmark />
+              </td>
+            </tr>
+            <tr>
+              <td className="caption-regular-3">
+                address, postal, code, city, state
+              </td>
+              <td align="center">
+                <IoCheckmark />
+              </td>
+              <td align="center">
+                <IoCheckmark />
+              </td>
+            </tr>
+            <tr>
+              <td className="caption-regular-3">e-mail address</td>
+              <td align="center">
+                <IoCheckmark />
+              </td>
+              <td align="center">
+                <IoCheckmark />
+              </td>
+            </tr>
+            <tr>
+              <td className="caption-regular-3">date of birth</td>
+              <td align="center">
+                <IoCheckmark />
+              </td>
+              <td align="center">
+                <IoCheckmark />
+              </td>
+            </tr>
+            <tr>
+              <td className="caption-regular-3">
+                your username and password when you register for an account
+              </td>
+              <td align="center">
+                <IoCheckmark />
+              </td>
+              <td align="center">
+                <IoCheckmark />
+              </td>
+            </tr>
+            <tr>
+              <td className="caption-regular-3">video recording</td>
+              <td align="center">
+                <IoCheckmark />
+              </td>
+              <td align="center">
+                <IoCheckmark />
+              </td>
+            </tr>
+            <tr>
+              <td className="caption-regular-3">demographic data (optional)</td>
+              <td align="center">
+                <IoCheckmark />
+              </td>
+              <td align="center">
+                <IoCheckmark />
+              </td>
+            </tr>
+            <tr>
+              <td className="caption-regular-3">IP address</td>
+              <td align="center">
+                <IoCheckmark />
+              </td>
+              <td align="center">
+                <IoCheckmark />
+              </td>
+            </tr>
+            <tr>
+              <td className="caption-regular-3">
+                career-related information (e.g. education, job history)
+              </td>
+              <td align="center">
+                <IoCheckmark />
+              </td>
+              <td align="center">
+                <IoCheckmark />
+              </td>
+            </tr>
+            <tr>
+              <td className="caption-regular-3">
+                the answers you give to test questions
+              </td>
+              <td align="center">
+                <IoCheckmark />
+              </td>
+              <td align="center">
+                <IoCheckmark />
+              </td>
+            </tr>
+            <tr>
+              <td className="caption-regular-3">
+                communications between you and us
+              </td>
+              <td align="center">
+                <IoCheckmark />
+              </td>
+              <td align="center">
+                <IoCheckmark />
+              </td>
+            </tr>
+            <tr>
+              <td className="caption-regular-3">subscriptions/preferences</td>
+              <td align="center">
+                <IoCheckmark />
+              </td>
+              <td align="center">
+                <IoCheckmark />
+              </td>
+            </tr>
+          </tbody>
         </table>
         <h3 className="heading-3">
           2. For what purposes do we use your personal data?
