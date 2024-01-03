@@ -392,7 +392,7 @@ export default function Home() {
                   make important decisions – and not just their gut feeling.
                 </p>
                 <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
-                  With TestGorilla, you’ll lead the shift to a more professional
+                  With TestFounder, you’ll lead the shift to a more professional
                   and data-focused HR culture in your company.
                 </p>
               </div>
@@ -615,7 +615,7 @@ export default function Home() {
             </h1>
             <p className="caption-regular-3 sm:caption-regular-1 text-center">
               A time-consuming screening process costs you a lot. Painful
-              mis-hires cost you much, much more. With TestGorilla, you avoid
+              mis-hires cost you much, much more. With TestFounder, you avoid
               all of this and see a huge return on investment every single year.
             </p>
             <p className="caption-regular-3 sm:caption-regular-1 text-center">

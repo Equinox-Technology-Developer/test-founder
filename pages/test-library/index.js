@@ -40,7 +40,7 @@ const testLibrary = ({}) => {
                 </div>
               </div>
               <div
-                className={`relative flex w-full justify-center md:w-full lg:w-full lg:max-w-lg ${styles.banner_topContentImage}`}
+                className={`flex w-full justify-center md:w-full lg:w-full lg:max-w-lg ${styles.banner_topContentImage}`}
               >
                 <Image
                   src={images.top_banner_testLibrary}
@@ -48,7 +48,7 @@ const testLibrary = ({}) => {
                   width={617}
                   height={602}
                   sizes="100vw"
-                  className={`z-10 flex h-auto w-[80%] md:w-[60%] lg:w-full `}
+                  className={`flex h-auto w-[80%] md:w-[60%] lg:w-full `}
                 />
               </div>
             </div>

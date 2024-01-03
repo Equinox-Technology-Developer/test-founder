@@ -89,7 +89,7 @@ const About = ({ resources }) => {
                   width={644}
                   height={424}
                   sizes="100vw"
-                  className="z-10 flex h-auto w-[80%] md:w-[60%] lg:w-full"
+                  className="flex h-auto w-[80%] md:w-[60%] lg:w-full"
                 />
               </div>
             </div>
