@@ -971,7 +971,7 @@ const index = () => {
           </h1>
           <p className="caption-regular-3 sm:caption-regular-1 text-center text-white">
             A time-consuming screening process costs you a lot. Painful
-            mis-hires cost you much, much more. With TestGorilla, you avoid all
+            mis-hires cost you much, much more. With TestFounder, you avoid all
             of this and see a huge return on investment every single year.
           </p>
           <p className="caption-regular-3 sm:caption-regular-1 text-center text-white">

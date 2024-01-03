@@ -38,14 +38,14 @@ const Contact = ({}) => {
                           -
                         </option>
                         <option value="1-15">
-                          I am a candidate using TestGorilla to apply for a job.
+                          I am a candidate using TestFounder to apply for a job.
                         </option>
                         <option value="16-30">
-                          Our company uses TestGorilla for screening applicants
+                          Our company uses TestFounder for screening applicants
                           (I am a customer).
                         </option>
                         <option value="31-50">
-                          I may be interested in using TestGorilla at my
+                          I may be interested in using TestFounder at my
                           company.
                         </option>
                         <option value="51-100">

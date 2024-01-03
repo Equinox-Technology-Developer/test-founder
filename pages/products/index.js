@@ -117,7 +117,7 @@ const Products = () => {
             1. Create high-quality assessments, fast.
           </h1>
           <p className="caption-regular-3 md:caption-regular-1 mb-6 sm:mb-0">
-            Building assessments is a breeze with TestGorilla. Get started with
+            Building assessments is a breeze with TestFounder. Get started with
             these simple steps.
           </p>
           <div className="flex flex-col lg:flex-row">
@@ -172,7 +172,7 @@ const Products = () => {
               </h1>
               <p className="caption-regular-1">
                 Connect with candidates by sending email invites directly from
-                TestGorilla or straight from your ATS. Have a long list of
+                TestFounder or straight from your ATS. Have a long list of
                 candidates? Easily send multiple invites with a single click. Or
                 have candidates sign up by sharing a direct link.
               </p>
@@ -188,7 +188,7 @@ const Products = () => {
           </h1>
           <p className="caption-regular-3 md:caption-regular-1 mb-6 sm:mb-0">
             Watch the results roll in and discover your strongest candidates
-            with TestGorilla’s easy-to-read output reports.
+            with TestFounder’s easy-to-read output reports.
           </p>
           <div className="flex flex-col lg:flex-row">
             <div className="lg:mt-12 lg:w-1/2">

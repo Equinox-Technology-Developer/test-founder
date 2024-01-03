@@ -181,7 +181,7 @@ const BookDemo = ({}) => {
                   skills-based hiring
                 </h1>
                 <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
-                  Fill out the form above and let us show you how TestGorilla
+                  Fill out the form above and let us show you how TestFounder
                   can help improve your hiring.
                 </p>
                 <button className="btn-line-normal-black">Book a Demo</button>
@@ -190,8 +190,8 @@ const BookDemo = ({}) => {
                 <Image
                   src="/assets/book-a-demo.png"
                   alt="Hero Image"
-                  width={644}
-                  height={484}
+                  width={462}
+                  height={473}
                   sizes="100vw"
                   className="z-50"
                 />

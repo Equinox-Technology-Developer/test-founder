@@ -352,8 +352,8 @@ const index = () => {
               <Image
                 src="/assets/img-why-skill-based-hiring.png"
                 alt="Hero Image"
-                width={562}
-                height={516}
+                width={575}
+                height={449}
                 sizes="100vw"
                 className="z-50"
               />
@@ -469,8 +469,8 @@ const index = () => {
               <Image
                 src="/assets/img-who-using-skill-based.png"
                 alt="Hero Image"
-                width={557}
-                height={508}
+                width={524}
+                height={375}
                 sizes="100vw"
                 className="z-50"
               />
@@ -674,8 +674,8 @@ const index = () => {
               <Image
                 src="/assets/img-implement-skill-based-hiring.png"
                 alt="Hero Image"
-                width={562}
-                height={516}
+                width={485}
+                height={509}
                 sizes="100vw"
                 className="z-50"
               />
@@ -795,12 +795,12 @@ const index = () => {
           <div className="flex flex-col items-center gap-6 lg:flex-row lg:py-[60px]">
             <div className="mb-16 w-full sm:w-1/2 md:mb-0 md:text-left ">
               <Image
-                src="/assets/skill-based-hiring-resources.png"
+                src={images.HeroImageSkillsBasedTraining}
                 alt="Hero Image"
-                width={562}
-                height={562}
+                width={575}
+                height={467}
                 sizes="100vw"
-                className="z-50"
+                className="z-10 flex h-auto w-[80%] md:w-[60%] lg:w-full"
               />
             </div>
             <div className="relative flex w-full flex-col items-center space-y-6 md:w-full md:items-start lg:w-1/2">
@@ -823,11 +823,11 @@ const index = () => {
       <section className="flex h-fit items-center bg-white px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
         <div className="container mx-auto ">
           <div className="flex flex-col items-center gap-6 lg:flex-row lg:py-[60px]">
-            <div className="mb-16 w-full sm:w-1/2 md:mb-0 md:text-left ">
+            <div className="mb-16 w-1/2 md:mb-0 md:text-left">
               <Image
                 src={images.iPad}
                 alt="Hero Image"
-                width={777}
+                width={644}
                 height={530}
                 sizes="100vw"
                 className="z-50"
@@ -853,8 +853,8 @@ const index = () => {
               <Image
                 src="/assets/science-series.png"
                 alt="Hero Image"
-                width={643}
-                height={428}
+                width={533}
+                height={473}
                 sizes="100vw"
                 className="z-50"
               />
