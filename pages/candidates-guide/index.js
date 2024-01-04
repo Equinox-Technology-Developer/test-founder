@@ -1,6 +1,5 @@
 import React from 'react';
 
-import styles from './CandidatesGuide.module.scss';
 import { Layout } from '@/components';
 import Link from 'next/link';
 import Image from 'next/image';

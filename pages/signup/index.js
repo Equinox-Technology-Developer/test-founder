@@ -9,8 +9,8 @@ const Signup = ({}) => {
   return (
     <>
       <main className="flex h-screen w-screen flex-col lg:flex-row">
-        <div className="flex w-full items-center justify-center bg-grayscale-100 lg:w-full">
-          <div className="flex h-fit w-[580px] flex-col items-start justify-center space-y-6 rounded-[20px] bg-white px-[42px] py-[32px] shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)]">
+        <div className="flex min-h-screen w-full items-center justify-center bg-grayscale-100 px-[30px] py-[60px] md:px-0 md:py-0 lg:w-full">
+          <div className="flex h-fit w-[580px] flex-col items-start justify-center space-y-6 rounded-[20px] bg-white px-[16px] py-[32px] shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)] md:px-[42px] md:py-[32px]">
             <Link href="/">
               <Image
                 src={images.logo_desktop}
@@ -20,16 +20,20 @@ const Signup = ({}) => {
                 priority
               />
             </Link>
-            <h3 className="heading-3">Get started with your Free plan.</h3>
-            <p className="caption-regular-3">
+            <h3 className="sm:heading-3 text-xs font-bold leading-[27.9px]">
+              Get started with your Free plan.
+            </h3>
+            <p className="caption-regular-4 sm:caption-regular-3">
               Account creation is exclusively for companies. Click{' '}
               <Link href="/candidates-guide">
                 {' '}
-                <span className="caption-bold-3 text-primary-500">here</span>
+                <span className="sm:caption-bold-3 text-[12px] font-bold text-primary-500">
+                  here
+                </span>
               </Link>{' '}
               if you’re a candidate.
             </p>
-            <button className="caption-semibold-3 flex h-[48px] w-full items-center justify-center gap-[12px] rounded-[5px] border-[0.75px] border-[#CBCBCB] bg-shade-0 px-4 py-[10px]">
+            <button className="sm:caption-semibold-3 flex h-[48px] w-full items-center justify-center gap-[12px] rounded-[5px] border-[0.75px] border-[#CBCBCB] bg-shade-0 px-4 py-[10px] text-xs font-semibold leading-4">
               <FcGoogle className="h-6 w-6" />
               Continue for Google
             </button>
@@ -40,28 +44,34 @@ const Signup = ({}) => {
             </div>
             <input
               type="email"
-              className="h-[48px] w-full rounded-[5px] border-[0.75px] border-[#CBCBCB] bg-shade-0 px-4 py-[10px]"
+              className="placeholder:caption-regular-3 placeholder:sm:caption-regular-2 h-[48px] w-full rounded-[5px] border-[0.75px] border-[#CBCBCB] bg-shade-0 px-4 py-[10px]"
               placeholder="Work Email"
             />
-            <button className="caption-semibold-1 h-[48px] w-full rounded-[40px] bg-primary-500 px-[20px] py-[8px] text-center text-shade-0">
+            <button className="caption-semibold-3 sm:caption-semibold-1 h-[48px] w-full rounded-[40px] bg-primary-500 px-[20px] py-[8px] text-center text-shade-0">
               Create my account
             </button>
-            <p className="caption-regular-3">
+            <p className="sm:caption-regular-3 text-xs font-normal">
               Already have a TestFounder in account
               <Link href="/login">
-                <span className="caption-semibold-3 pl-2">Log in</span>
+                <span className="sm:caption-semibold-3 pl-2 text-xs font-bold">
+                  Log in
+                </span>
               </Link>
             </p>
-            <p className="caption-regular-3">
+            <p className="sm:caption-regular-3 caption-regular-4">
               By creating an account, you confirm that you have read and agree
               to TestFounder's
               <Link href="/terms">
                 {' '}
-                <span className="caption-semibold-3">terms of use</span>
+                <span className="sm:caption-regular-3 caption-regular-4">
+                  terms of use
+                </span>
               </Link>
               <span> and </span>
               <Link href="/privacy-policy">
-                <span className="caption-semibold-3">privacy policy</span>
+                <span className="sm:caption-regular-3 caption-regular-4">
+                  privacy policy
+                </span>
               </Link>
             </p>
           </div>
