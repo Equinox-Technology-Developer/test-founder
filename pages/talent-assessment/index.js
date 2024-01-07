@@ -9,12 +9,12 @@ import styles from './TalentAssessment.module.scss';
 
 const index = () => {
   return (
-    <Layout pageTitle="Talent Assesment">
+    <Layout pageTitle="Talent Assessment">
       {/* Banner */}
-      <section className="bg-[#F9F9F9] bg-blur bg-right bg-no-repeat pt-0">
+      <section className="bg-[#F9F9F9] bg-blur bg-right bg-no-repeat pb-6 pt-0 md:pb-[32px] lg:pb-[80px]">
         <div className="container mx-auto">
           <div className="relative flex flex-col items-center sm:static lg:flex-row">
-            <div className="mb-16 mt-4 flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:px-[0px] md:py-[32px] md:text-left lg:mt-24 lg:flex-grow lg:items-start lg:pr-24">
+            <div className="mt-4 flex flex-col items-center px-4 py-6 text-center md:mb-0 md:w-full md:items-center md:px-[0px] md:py-[32px] md:text-left lg:mt-24 lg:flex-grow lg:items-start lg:pr-24">
               <h1 className="sm:heading-1 heading-2 mb-6 mt-20 ">
                 Talent assessment
               </h1>
@@ -39,8 +39,8 @@ const index = () => {
               <Image
                 src={images.HeroImageTestAssessment}
                 alt="Hero Image"
-                width={512}
-                height={638}
+                width={580}
+                height={494}
                 sizes="100vw"
                 className="z-10 flex h-auto w-[80%] md:w-[60%] lg:w-full"
               />
@@ -51,9 +51,9 @@ const index = () => {
 
       {/* Browse Topics */}
       <section className={`${styles.section_grey}`}>
-        <div className={`container mx-auto`}>
+        <div className={`container mx-auto px-4 py-6`}>
           <div className={`${styles.content_wrapper}`}>
-            <h2>Browse Topics</h2>
+            <h3 className={`heading-2 md:heading-1`}>Browse Topics</h3>
             <div className={`${styles.topicsIcon_wrapper}`}>
               <div className={`${styles.topic_single}`}>
                 <Image
@@ -117,18 +117,18 @@ const index = () => {
       {/* The impact of talent assessment */}
       <section className="">
         <div className="container mx-auto">
-          <div className="flex lg:flex-col lg:px-16 lg:py-20">
-            <h2 className="heading-1 lg:mb-6 lg:text-center">
+          <div className="flex flex-col px-4 py-6 md:px-[40px] md:py-[32px] lg:px-16 lg:py-20">
+            <h2 className="heading-2 md:heading-1 text-center lg:mb-6">
               The impact of talent assessment
             </h2>
-            <p className="caption-semibold-1 lg:text-center">
+            <p className="caption-semibold-1 text-center">
               Source:{' '}
               <span className="text-sm font-light italic">
                 TestFounder’s State of Skills-based Hiring 2023 report
               </span>
             </p>
-            <div className="flex justify-center lg:mt-10 lg:gap-6">
-              <div className="flex max-w-[421px] flex-col">
+            <div className="flex flex-col justify-center lg:mt-10 lg:flex-row lg:gap-6">
+              <div className="flex max-w-full flex-col lg:max-w-[421px]">
                 <div className="text-center text-[54px] font-bold text-primary-500">
                   92%
                 </div>
@@ -137,7 +137,7 @@ const index = () => {
                   in mis-hires
                 </p>
               </div>
-              <div className="flex max-w-[421px] flex-col">
+              <div className="flex max-w-full flex-col lg:max-w-[421px]">
                 <div className="text-center text-[54px] font-bold text-primary-500">
                   89%
                 </div>
@@ -146,7 +146,7 @@ const index = () => {
                   reduction in cost-to-hire
                 </p>
               </div>
-              <div className="flex max-w-[421px] flex-col">
+              <div className="flex max-w-full flex-col lg:max-w-[421px]">
                 <div className="text-center text-[54px] font-bold text-primary-500">
                   54%
                 </div>
@@ -163,27 +163,26 @@ const index = () => {
       {/* Middle Banner */}
       <section className="flex h-fit items-center bg-white px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
         <div className="container mx-auto ">
-          <div className="flex flex-col items-center gap-6 lg:flex-row lg:py-[60px]">
+          <div className="flex flex-col-reverse items-center gap-6 lg:flex-row lg:py-[60px]">
             <div className="mb-16 w-full sm:w-1/2 md:mb-0 md:text-left ">
               <Image
                 src="/assets/img-talent-1.png"
                 alt="Hero Image"
-                width={644}
-                height={551}
+                width={517}
+                height={544}
                 sizes="100vw"
-                className="z-50"
               />
             </div>
-            <div className="relative flex w-full flex-col items-center space-y-6 md:w-full md:items-start lg:w-1/2">
+            <div className="relative flex w-full flex-col items-center space-y-6 md:w-full lg:w-1/2 lg:items-start">
               <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center sm:text-start">
                 What is talent assessment?
               </h1>
-              <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
+              <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
                 Unlock the power of talent assessment, which provides recruiters
                 and hiring managers with invaluable insights into candidate
                 potential.
               </p>
-              <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
+              <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
                 Explore the significance of evaluating skills, behavior, and
                 culture add, streamlining the hiring process for optimal talent
                 acquisition. Learn how to make data-driven decisions, ensuring
@@ -202,7 +201,9 @@ const index = () => {
 
       <section className={styles.blog_container}>
         <div className={`container m-10 mx-auto`}>
-          <h1>Read more</h1>
+          <h1 className="heading-2 md:heading-1 text-center lg:text-start">
+            Read more
+          </h1>
           <div className={`${styles.blog_wrapper}`}>
             <div className={styles.blog_single}>
               <Image
@@ -309,16 +310,16 @@ const index = () => {
       <section className="flex h-fit items-center bg-white px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
         <div className="container mx-auto ">
           <div className="flex flex-col items-center gap-6 lg:flex-row lg:py-[60px]">
-            <div className="relative flex w-full flex-col items-center space-y-6 md:w-full md:items-start lg:w-1/2">
+            <div className="relative flex w-full flex-col items-center space-y-6 md:w-full lg:w-1/2 lg:items-start">
               <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center sm:text-start">
                 Benefits of talent assessments
               </h1>
-              <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
+              <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
                 How can talent assessments help your business grow? Explore our
                 talent assessment gateway to see the many benefits it offers for
                 recruiters and hiring managers.
               </p>
-              <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
+              <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
                 Gain a comprehensive understanding of how talent assessments
                 streamline the hiring process, ensuring optimal candidate
                 selection. Discover how these assessments drive informed
@@ -339,7 +340,6 @@ const index = () => {
                 width={645}
                 height={513}
                 sizes="100vw"
-                className="z-50"
               />
             </div>
           </div>
@@ -348,7 +348,9 @@ const index = () => {
 
       <section className={styles.blog_container}>
         <div className={`container m-10 mx-auto`}>
-          <h1>Read more about the benefit</h1>
+          <h3 className="heading-2 md:heading-1 text-center lg:text-start">
+            Read more about the benefit
+          </h3>
           <div className={`${styles.blog_wrapper}`}>
             <div className={styles.blog_single}>
               <Image
@@ -454,7 +456,7 @@ const index = () => {
 
       <section className="flex h-fit items-center bg-white px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
         <div className="container mx-auto ">
-          <div className="flex flex-col items-center gap-6 lg:flex-row lg:py-[60px]">
+          <div className="flex flex-col-reverse items-center gap-6 lg:flex-row lg:py-[60px]">
             <div className="mb-16 w-full sm:w-1/2 md:mb-0 md:text-left ">
               <Image
                 src="/assets/img-talent-3.png"
@@ -462,21 +464,20 @@ const index = () => {
                 width={644}
                 height={551}
                 sizes="100vw"
-                className="z-50"
               />
             </div>
-            <div className="relative flex w-full flex-col items-center space-y-6 md:w-full md:items-start lg:w-1/2">
+            <div className="relative flex w-full flex-col items-center space-y-6 md:w-full lg:w-1/2 lg:items-start">
               <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center sm:text-start">
                 Talent assessment tools
               </h1>
-              <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
+              <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
                 Discover the diverse, effective ways to evaluate candidate
                 potential. Find out how cognitive tests, skills-based
                 evaluations, and behavioral assessments offer recruiters and
                 hiring managers invaluable insights for informed
                 decision-making.
               </p>
-              <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
+              <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
                 Uncover the power of tailored assessment strategies in
                 identifying top-tier talent aligned with your organizational
                 objectives and company culture.
@@ -493,7 +494,9 @@ const index = () => {
 
       <section className={styles.blog_container}>
         <div className={`container m-10 mx-auto`}>
-          <h1>Read more about the different talent assessment tools...</h1>
+          <h1 className="heading-2 md:heading-1 text-center lg:text-start">
+            Read more about the different talent assessment tools...
+          </h1>
           <div className={`${styles.blog_wrapper}`}>
             <div className={styles.blog_single}>
               <Image
@@ -600,17 +603,17 @@ const index = () => {
       <section className="flex h-fit items-center bg-white px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
         <div className="container mx-auto ">
           <div className="flex flex-col items-center gap-6 lg:flex-row lg:py-[60px]">
-            <div className="relative flex w-full flex-col items-center space-y-6 md:w-full md:items-start lg:w-1/2">
-              <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center sm:text-start">
+            <div className="relative flex w-full flex-col items-center space-y-6 md:w-full lg:w-1/2 lg:items-start">
+              <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center lg:text-start">
                 Talent assessment tools comparison
               </h1>
-              <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
+              <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
                 Explore our talent assessment tools comparison in our
                 'TestFounder vs.' series. We'll break down the features and
                 pricing of different tools and help you understand their pros
                 and cons.
               </p>
-              <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
+              <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
                 Discover which one suits your recruitment needs best and makes
                 hiring top talent a breeze. Make informed decisions to enhance
                 your hiring process with our insights and comparisons.
@@ -626,9 +629,8 @@ const index = () => {
                 src="/assets/img-talent-4.png"
                 alt="Hero Image"
                 width={643}
-                height={564}
+                height={588}
                 sizes="100vw"
-                className="z-50"
               />
             </div>
           </div>
@@ -637,7 +639,9 @@ const index = () => {
 
       <section className={styles.blog_container}>
         <div className={`container m-10 mx-auto`}>
-          <h1>Talent Assessment tools comparison</h1>
+          <h1 className="heading-2 md:heading-1 text-center lg:text-start">
+            Talent Assessment tools comparison
+          </h1>
           <div className={`${styles.blog_wrapper}`}>
             <div className={styles.blog_single}>
               <Image
@@ -743,22 +747,21 @@ const index = () => {
 
       <section className="flex h-fit items-center bg-white px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
         <div className="container mx-auto ">
-          <div className="flex flex-col items-center gap-6 lg:flex-row lg:py-[60px]">
+          <div className="flex flex-col-reverse items-center gap-6 lg:flex-row lg:py-[60px]">
             <div className="mb-16 w-full sm:w-1/2 md:mb-0 md:text-left ">
               <Image
                 src="/assets/img-talent-5.png"
                 alt="Hero Image"
-                width={644}
-                height={551}
+                width={537}
+                height={614}
                 sizes="100vw"
-                className="z-50"
               />
             </div>
-            <div className="relative flex w-full flex-col items-center space-y-6 md:w-full md:items-start lg:w-1/2">
+            <div className="relative flex w-full flex-col items-center space-y-6 md:w-full lg:w-1/2 lg:items-start">
               <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center sm:text-start">
                 How to recruit talent
               </h1>
-              <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
+              <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
                 How and where do you find the best talent? Maximize your
                 recruitment success with our top blogs, which provide essential
                 insights for recruiters and hiring managers. Discover innovative
@@ -766,7 +769,7 @@ const index = () => {
                 comprehensive recruitment methods, and how to foster a diverse,
                 inclusive workforce.
               </p>
-              <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
+              <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
                 Uncover the key to successful talent acquisition, from crafting
                 compelling job descriptions to implementing effective
                 interviewing techniques, to ensure a seamless recruitment
@@ -784,7 +787,9 @@ const index = () => {
 
       <section className={styles.blog_container}>
         <div className={`container m-10 mx-auto`}>
-          <h1>Read more about how to recruit the best talent</h1>
+          <h1 className="heading-2 md:heading-1 text-center lg:text-start">
+            Read more about how to recruit the best talent
+          </h1>
           <div className={`${styles.blog_wrapper}`}>
             <div className={styles.blog_single}>
               <Image
@@ -888,11 +893,13 @@ const index = () => {
         </div>
       </section>
 
-      <section className="lg:px-16 lg:py-[60px]">
+      <section className="py-6 lg:px-16 lg:py-[60px]">
         <div className="container mx-auto">
-          <h1 className="heading-1 lg:mb-8">Talent Assessment FAQ</h1>
-          <div className="flex flex-wrap justify-between gap-6">
-            <div className="flex max-h-[104px] w-[49%] items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6">
+          <h1 className="md:heading-1 heading-2 text-center lg:mb-8 lg:text-start">
+            Talent Assessment FAQ
+          </h1>
+          <div className="flex flex-wrap justify-between gap-6 px-4 py-6 md:px-[40px] md:py-[32px] lg:px-0 lg:py-0">
+            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px]  border-[#CBCBCB] p-6 lg:w-[49%]">
               <Image
                 src="/assets/faq_grey.svg"
                 width={46}
@@ -904,7 +911,7 @@ const index = () => {
                 assessment?
               </p>
             </div>
-            <div className="flex max-h-[104px] w-[49%] items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6">
+            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px]  border-[#CBCBCB] p-6 lg:w-[49%]">
               <Image
                 src="/assets/faq_grey.svg"
                 width={46}
@@ -915,7 +922,7 @@ const index = () => {
                 How do I choose the right talent assessment for my needs?
               </p>
             </div>
-            <div className="flex max-h-[104px] w-[49%] items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6">
+            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px]  border-[#CBCBCB] p-6 lg:w-[49%]">
               <Image
                 src="/assets/faq_grey.svg"
                 width={46}
@@ -927,7 +934,7 @@ const index = () => {
                 unbiased?
               </p>
             </div>
-            <div className="flex max-h-[104px] w-[49%] items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6">
+            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px]  border-[#CBCBCB] p-6 lg:w-[49%]">
               <Image
                 src="/assets/faq_grey.svg"
                 width={46}
@@ -938,7 +945,7 @@ const index = () => {
                 How do I interpret the results of talent assessments?
               </p>
             </div>
-            <div className="flex max-h-[104px] w-[49%] items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6">
+            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px]  border-[#CBCBCB] p-6 lg:w-[49%]">
               <Image
                 src="/assets/faq_grey.svg"
                 width={46}
@@ -949,7 +956,7 @@ const index = () => {
                 What are the best practices for using talent assessments in HR?
               </p>
             </div>
-            <div className="flex max-h-[104px] w-[49%] items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6">
+            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px]  border-[#CBCBCB] p-6 lg:w-[49%]">
               <Image
                 src="/assets/faq_grey.svg"
                 width={46}
@@ -990,14 +997,14 @@ const index = () => {
 
       <section className="py-[60px]">
         <div className="container mx-auto">
-          <h1 className="heading-1 text-center lg:mb-20">
+          <h1 className="heading-2 md:heading-1 mb-6 text-center lg:mb-20">
             Latest posts on talent assessment
           </h1>
           <div className="flex w-full justify-center">
             <div className="relative w-fit justify-center">
               <input
                 type="text"
-                className="w-full rounded-[30px] bg-white px-6 py-3 shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)] placeholder:text-base placeholder:text-[#CBCBCB] xl:w-[600px]"
+                className="w-full rounded-[30px] bg-white px-6 py-3 shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)] placeholder:text-base placeholder:text-[#CBCBCB] md:w-[600px]"
                 placeholder="Search"
               />
               <Image
@@ -1013,9 +1020,9 @@ const index = () => {
         </div>
       </section>
 
-      <section className="bg-grayscale-200 lg:py-[60px]">
+      <section className="bg-grayscale-200 px-4 py-6 md:px-[40px] md:py-[32px] lg:px-0 lg:py-[60px]">
         <div className="container mx-auto">
-          <div className="flex flex-wrap justify-center gap-[43px]">
+          <div className="flex flex-wrap justify-center gap-[43px] ">
             <div className="max-w-[401px] space-y-4 rounded-[20px] bg-white p-4">
               <Image
                 src="/assets/img-card-blog-1.png"
