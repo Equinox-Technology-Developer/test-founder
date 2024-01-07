@@ -12,7 +12,7 @@ const index = () => {
       {/* Banner */}
       <section className="bg-[#F9F9F9] bg-blur bg-right bg-no-repeat pt-0">
         <div className="container mx-auto">
-          <div className="relative flex flex-col items-center sm:static lg:flex-row">
+          <div className="relative flex flex-col items-center px-4 py-6 sm:static md:px-[40px] md:py-[32px] lg:flex-row lg:px-0 lg:py-0">
             <div className="mb-16 mt-4 flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:px-[0px] md:py-[32px] md:text-left lg:mt-24 lg:flex-grow lg:items-start lg:pr-24">
               <h1 className="sm:heading-1 heading-2 mb-6 mt-20 ">
                 Skills-based hiring
@@ -51,7 +51,7 @@ const index = () => {
       <section className={`${styles.section}`}>
         <div className={`container mx-auto`}>
           <div className={`${styles.content_wrapper}`}>
-            <h2>Browse Topics</h2>
+            <h3 className={`heading-2 md:heading-1`}>Browse Topics</h3>
             <div className={`${styles.topicsIcon_wrapper}`}>
               <div className={`${styles.topic_single}`}>
                 <Image
@@ -148,7 +148,7 @@ const index = () => {
       {/* Middle Banner */}
       <section className="bg-[#0C4B9A] bg-no-repeat pt-0">
         <div className="container mx-auto">
-          <div className="relative flex flex-col items-center sm:static lg:flex-row">
+          <div className="relative flex flex-col-reverse items-center px-4 py-6 sm:static md:px-[40px] md:py-[32px] lg:flex-row lg:px-0 lg:py-0">
             <div className="mb-16 mt-4 flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:px-[0px] md:py-[32px] md:text-left lg:mt-24 lg:flex-grow lg:items-start lg:pr-24">
               <h1 className="sm:heading-1 heading-2 mb-6 text-shade-0">
                 The state of skills-based hiring in 2023
@@ -189,7 +189,7 @@ const index = () => {
                 width={512}
                 height={638}
                 sizes="100vw"
-                className=" z-10 mt-20 flex h-auto w-[80%] md:w-[60%] lg:w-full"
+                className="z-10 flex h-auto w-[90%] md:w-[75%] lg:w-full"
               />
             </div>
           </div>
@@ -229,7 +229,7 @@ const index = () => {
 
       <section className={styles.blog_container}>
         <div className={`container m-10 mx-auto`}>
-          <h1>Read more</h1>
+          <h1 className="text-center lg:text-start">Read more</h1>
           <div className={`${styles.blog_wrapper}`}>
             <div className={styles.blog_single}>
               <Image
@@ -237,6 +237,7 @@ const index = () => {
                 alt="Blog Image Grid"
                 width={389}
                 height={226}
+                className="object-cover md:max-h-[327px]"
               />
               <h3 className={``}>What is skills-based hiring?</h3>
               <p className={``}>
@@ -464,7 +465,7 @@ const index = () => {
 
       <section className="flex h-fit items-center bg-white px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
         <div className="container mx-auto ">
-          <div className="flex flex-col items-center gap-6 lg:flex-row lg:py-[60px]">
+          <div className="flex flex-col-reverse items-center gap-6 lg:flex-row lg:py-[60px]">
             <div className="mb-16 w-full sm:w-1/2 md:mb-0 md:text-left ">
               <Image
                 src="/assets/img-who-using-skill-based.png"
@@ -792,22 +793,22 @@ const index = () => {
 
       <section className="flex h-fit items-center bg-white px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
         <div className="container mx-auto ">
-          <div className="flex flex-col items-center gap-6 lg:flex-row lg:py-[60px]">
-            <div className="mb-16 w-full sm:w-1/2 md:mb-0 md:text-left ">
+          <div className="flex flex-col-reverse items-center gap-6 lg:flex-row lg:py-[60px]">
+            <div className="mb-16 flex h-full w-full content-stretch justify-center sm:w-1/2 md:mb-0 md:text-left">
               <Image
                 src={images.HeroImageSkillsBasedTraining}
                 alt="Hero Image"
                 width={575}
                 height={467}
                 sizes="100vw"
-                className="z-10 flex h-auto w-[80%] md:w-[60%] lg:w-full"
+                className="flex h-auto object-cover"
               />
             </div>
             <div className="relative flex w-full flex-col items-center space-y-6 md:w-full md:items-start lg:w-1/2">
-              <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center sm:text-start">
+              <h1 className="heading-2 md:heading-1 mb-0 mt-0 text-center sm:text-start">
                 Skills-based hiring resources
               </h1>
-              <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
+              <p className="caption-regular-3 md:caption-regular-1 text-center sm:text-start">
                 Skills-based hiring is a growing trend that shows no signs of
                 abating, with 53.4% of respondents believing it will be the
                 dominant hiring method in the future. Stay ahead of the curve by
@@ -822,18 +823,18 @@ const index = () => {
 
       <section className="flex h-fit items-center bg-white px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
         <div className="container mx-auto ">
-          <div className="flex flex-col items-center gap-6 lg:flex-row lg:py-[60px]">
-            <div className="mb-16 w-1/2 md:mb-0 md:text-left">
+          <div className="flex flex-col-reverse items-center gap-6 lg:flex-row lg:py-[60px]">
+            <div className="mb-16 flex w-full justify-center md:mb-0 md:text-left lg:w-1/2">
               <Image
                 src={images.iPad}
                 alt="Hero Image"
                 width={644}
                 height={530}
                 sizes="100vw"
-                className="z-50"
+                className="flex h-auto lg:w-full"
               />
             </div>
-            <div className="relative flex w-full flex-col items-center space-y-6 md:w-full md:items-start lg:w-1/2">
+            <div className="relative flex w-full flex-col items-center space-y-6 md:w-full lg:w-1/2 lg:items-start">
               <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center sm:text-start">
                 Report
               </h1>
@@ -848,7 +849,7 @@ const index = () => {
 
       <section className="flex h-fit items-center bg-white px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
         <div className="container mx-auto ">
-          <div className="flex flex-col items-center gap-6 lg:flex-row lg:py-[60px]">
+          <div className="flex flex-col-reverse items-center gap-6 lg:flex-row lg:py-[60px]">
             <div className="mb-16 w-full sm:w-1/2 md:mb-0 md:text-left ">
               <Image
                 src="/assets/science-series.png"
@@ -859,7 +860,7 @@ const index = () => {
                 className="z-50"
               />
             </div>
-            <div className="relative flex w-full flex-col items-center space-y-6 md:w-full md:items-start lg:w-1/2">
+            <div className="relative flex w-full flex-col items-center space-y-6 md:w-full lg:w-1/2 lg:items-start">
               <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center sm:text-start">
                 Science series
               </h1>
@@ -875,9 +876,11 @@ const index = () => {
 
       <section className="lg:px-16 lg:py-[60px]">
         <div className="container mx-auto">
-          <h1 className="heading-1 lg:mb-8">Skills-based hiring FAQ</h1>
-          <div className="flex flex-wrap justify-between gap-6">
-            <div className="flex max-h-[104px] w-[49%] items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6">
+          <h1 className="md:heading-1 heading-2 text-center lg:mb-8 lg:text-start">
+            Skills-based hiring FAQ
+          </h1>
+          <div className="flex flex-wrap justify-between gap-6 px-4 py-6 md:px-[40px] md:py-[32px] lg:px-0 lg:py-0">
+            <div className="flex max-h-[104px]  w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]">
               <Image
                 src="/assets/faq_grey.svg"
                 width={46}
@@ -888,7 +891,7 @@ const index = () => {
                 Whats is skills-based hiring?
               </p>
             </div>
-            <div className="flex max-h-[104px] w-[49%] items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6">
+            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]">
               <Image
                 src="/assets/faq_grey.svg"
                 width={46}
@@ -899,7 +902,7 @@ const index = () => {
                 How does skills-based hiring work?
               </p>
             </div>
-            <div className="flex max-h-[104px] w-[49%] items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6">
+            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]">
               <Image
                 src="/assets/faq_grey.svg"
                 width={46}
@@ -910,7 +913,7 @@ const index = () => {
                 What are the benefits of skills-based hiring?
               </p>
             </div>
-            <div className="flex max-h-[104px] w-[49%] items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6">
+            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]">
               <Image
                 src="/assets/faq_grey.svg"
                 width={46}
@@ -921,7 +924,7 @@ const index = () => {
                 How do you adopt skills-based hiring practices?
               </p>
             </div>
-            <div className="flex max-h-[104px] w-[49%] items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6">
+            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]">
               <Image
                 src="/assets/faq_grey.svg"
                 width={46}
@@ -932,7 +935,7 @@ const index = () => {
                 What are the challenges of implementing skills-based hiring?
               </p>
             </div>
-            <div className="flex max-h-[104px] w-[49%] items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6">
+            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]">
               <Image
                 src="/assets/faq_grey.svg"
                 width={46}
@@ -943,7 +946,7 @@ const index = () => {
                 What is a skills-based organization?
               </p>
             </div>
-            <div className="flex max-h-[104px] w-[49%] items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6">
+            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]">
               <Image
                 src="/assets/faq_grey.svg"
                 width={46}
@@ -955,7 +958,7 @@ const index = () => {
                 inclusion (DE&I) effort?
               </p>
             </div>
-            <div className="flex max-h-[104px] w-[49%] items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6">
+            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]">
               <Image
                 src="/assets/faq_grey.svg"
                 width={46}
@@ -971,15 +974,15 @@ const index = () => {
       </section>
 
       <section className="py-[60px]">
-        <div className="container mx-auto">
-          <h1 className="heading-1 text-center lg:mb-20">
+        <div className="container mx-auto hidden md:block">
+          <h1 className="heading-1 text-center md:mb-8">
             Latest posts on skills-based hiring
           </h1>
           <div className="flex w-full justify-center">
             <div className="relative w-fit justify-center">
               <input
                 type="text"
-                className="w-full rounded-[30px] bg-white px-6 py-3 shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)] placeholder:text-base placeholder:text-[#CBCBCB] xl:w-[600px]"
+                className="w-full rounded-[30px] bg-white px-6 py-3 shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)] placeholder:text-base placeholder:text-[#CBCBCB] md:w-[552px]"
                 placeholder="Search"
               />
               <Image
@@ -997,7 +1000,7 @@ const index = () => {
 
       <section className="bg-grayscale-200 lg:py-[60px]">
         <div className="container mx-auto">
-          <div className="flex flex-wrap justify-center gap-[43px]">
+          <div className="flex flex-wrap justify-center gap-[43px] px-4 py-6 md:px-[40px] md:py-[32px] lg:px-0 lg:py-0">
             <div className="max-w-[401px] space-y-4 rounded-[20px] bg-white p-4">
               <Image
                 src="/assets/img-card-blog-1.png"

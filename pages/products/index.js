@@ -373,7 +373,7 @@ const Products = () => {
 
       {/* Testimonials */}
       <div className="w-full bg-[#F9F9F9] pb-[44px] sm:pb-[100px] lg:pt-[100px]">
-        <div className="container mx-auto flex h-[367px] items-center rounded-[20px] bg-white px-[14px] py-[12px] md:px-[55px] md:py-[32px] lg:px-[82px] lg:py-[32px]">
+        <div className="container mx-auto flex h-full items-center rounded-[20px] bg-white">
           <Swiper
             modules={[Autoplay]}
             spaceBetween={40}
