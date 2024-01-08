@@ -30,6 +30,9 @@
       margin-top: 0;
     }
   }
+  @media screen and (max-width: 1023px) {
+    display: none;
+  }
 }
 
 .banner_topContentImage {
