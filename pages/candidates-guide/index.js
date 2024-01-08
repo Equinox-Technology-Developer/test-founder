@@ -8,9 +8,9 @@ const CandidatesGuide = () => {
   return (
     <Layout pageTitle="For Candidates">
       <section className="bg-[#F9F9F9] bg-blur bg-right bg-no-repeat pt-0">
-        <div className="container mx-auto">
-          <div className="relative flex flex-col items-center sm:static lg:flex-row lg:py-[80px]">
-            <div className="mb-0 mt-20 flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:px-[40px] md:py-[32px] md:text-left lg:mt-24 lg:flex-grow lg:items-start lg:pr-24">
+        <div className="container mx-auto px-4 py-6 sm:min-h-[520px] md:px-10 md:py-8 lg:px-0 lg:py-0">
+          <div className="relative flex flex-col items-center sm:static lg:flex-row lg:gap-[27px] lg:py-[80px]">
+            <div className="mb-0 mt-20 flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:px-[40px] md:py-[32px] md:text-left lg:mt-24 lg:w-1/2 lg:flex-grow lg:items-start lg:px-0">
               <h1 className="sm:heading-1 heading-2 mb-6 mt-0 text-center lg:text-start">
                 Candidate support
               </h1>
@@ -23,7 +23,7 @@ const CandidatesGuide = () => {
               <div className="relative flex w-full xl:w-fit">
                 <input
                   type="text"
-                  className="w-full rounded-[30px] bg-white px-4 py-[10px] shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)] placeholder:text-base placeholder:text-[#CBCBCB]  xl:w-[600px]"
+                  className="placeholder:caption-regular-3 w-full rounded-[30px] bg-white px-4 py-[10px] shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)] placeholder:text-[#CBCBCB] xl:w-[600px]"
                   placeholder="Type your question here"
                 />
                 <Image
@@ -36,14 +36,14 @@ const CandidatesGuide = () => {
                 />
               </div>
             </div>
-            <div className="flex w-full justify-center md:w-full lg:w-full lg:max-w-lg">
+            <div className="flex w-full justify-center md:w-full lg:max-w-[46%]">
               <Image
                 src="/assets/hero-image-for-candidate.png"
                 alt="Hero Image"
                 width={599}
                 height={531}
                 sizes="100vw"
-                className=" z-10 mt-20 flex h-auto w-[80%] md:w-[60%] lg:w-full"
+                className=" z-10 mt-8 flex h-auto w-[80%] md:w-[60%] lg:mt-20 lg:w-full"
               />
             </div>
           </div>
@@ -51,25 +51,27 @@ const CandidatesGuide = () => {
       </section>
 
       <section className="bg-grayscale-200">
-        <div className="container mx-auto py-[80px]">
-          <h2 className="heading-2 mb-8">
+        <div className="container mx-auto px-4 py-6 sm:min-h-[520px] md:px-10 md:py-8 lg:px-0 lg:py-[80px]">
+          <h2 className="heading-2 mb-8 text-center lg:text-start">
             Our recommended reads to help you get started
           </h2>
-          <div className="flex flex-wrap gap-6">
-            <div className="flex w-[calc(50%-12px)] flex-grow gap-6 rounded-[10px] bg-shade-0 p-4">
-              <div className="h-16 w-16 rounded-[5px] bg-primary-100 p-3">
+          <div className="flex flex-col flex-wrap gap-6 lg:flex-row">
+            <div className="flex w-full flex-grow gap-6 rounded-[10px] bg-shade-0 p-4 lg:w-[calc(50%-12px)]">
+              <div className="h-fit w-fit rounded-[5px] bg-primary-100 p-3">
                 <Image
                   src="/assets/assesment-for-candidate.svg"
                   alt="Hero Image"
                   width={40}
                   height={40}
                   sizes="100vw"
-                  className="z-10 flex h-auto w-[80%] md:w-[60%] lg:w-full"
+                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
                 />
               </div>
-              <div className="flex w-full justify-between">
+              <div className="flex w-full items-center justify-between">
                 <div className="flex flex-col justify-center">
-                  <h3 className="heading-3">Tools for taking an assessment</h3>
+                  <h3 className="md:heading-3 body-1 font-semibold">
+                    Tools for taking an assessment
+                  </h3>
                   <p className="caption-regular-3">
                     Information to ensure that your assessment runs smothly
                   </p>
@@ -80,24 +82,24 @@ const CandidatesGuide = () => {
                   width={40}
                   height={40}
                   sizes="100vw"
-                  className="z-10 flex h-auto w-[80%] md:w-[60%] lg:w-fit"
+                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
                 />
               </div>
             </div>
-            <div className="flex w-[calc(50%-12px)] flex-grow gap-6 rounded-[10px] bg-shade-0 p-4">
-              <div className="h-16 w-16 rounded-[5px] bg-primary-100 p-3">
+            <div className="flex w-full flex-grow gap-6 rounded-[10px] bg-shade-0 p-4 lg:w-[calc(50%-12px)]">
+              <div className="h-fit w-fit rounded-[5px] bg-primary-100 p-3">
                 <Image
                   src="/assets/path-assessment-for-candidate.svg"
                   alt="Hero Image"
                   width={40}
                   height={40}
                   sizes="100vw"
-                  className="z-10 flex h-auto w-[80%] md:w-[60%] lg:w-full"
+                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
                 />
               </div>
-              <div className="flex w-full justify-between">
+              <div className="flex w-full items-center justify-between">
                 <div className="flex flex-col justify-center">
-                  <h3 className="heading-3">
+                  <h3 className="md:heading-3 body-1 font-semibold">
                     FAQ and troubleshooting for candidates
                   </h3>
                   <p className="caption-regular-3">
@@ -111,24 +113,24 @@ const CandidatesGuide = () => {
                   width={40}
                   height={40}
                   sizes="100vw"
-                  className="z-10 flex h-auto w-[80%] md:w-[60%] lg:w-fit"
+                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
                 />
               </div>
             </div>
-            <div className="flex w-[calc(50%-12px)] flex-grow gap-6 rounded-[10px] bg-shade-0 p-4">
-              <div className="h-16 w-16 rounded-[5px] bg-primary-100 p-3">
+            <div className="flex w-full flex-grow  gap-6 rounded-[10px] bg-shade-0 p-4 lg:w-[calc(50%-12px)]">
+              <div className="h-fit w-fit rounded-[5px] bg-primary-100 p-3">
                 <Image
                   src="/assets/settings-question-for-candidate.svg"
                   alt="Hero Image"
                   width={40}
                   height={40}
                   sizes="100vw"
-                  className="z-10 flex h-auto w-[80%] md:w-[60%] lg:w-full"
+                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
                 />
               </div>
-              <div className="flex w-full justify-between">
+              <div className="flex w-full items-center justify-between">
                 <div className="flex flex-col justify-center">
-                  <h3 className="heading-3">
+                  <h3 className="md:heading-3 body-1 font-semibold">
                     Step-by-step guide to taking your assessment
                   </h3>
                   <p className="caption-regular-3">
@@ -142,24 +144,26 @@ const CandidatesGuide = () => {
                   width={40}
                   height={40}
                   sizes="100vw"
-                  className="z-10 flex h-auto w-[80%] md:w-[60%] lg:w-fit"
+                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
                 />
               </div>
             </div>
-            <div className="flex w-[calc(50%-12px)] flex-grow gap-6 rounded-[10px] bg-shade-0 p-4">
-              <div className="h-16 w-16 rounded-[5px] bg-primary-100 p-3">
+            <div className="flex w-full flex-grow  gap-6 rounded-[10px] bg-shade-0 p-4 lg:w-[calc(50%-12px)]">
+              <div className="h-fit w-fit rounded-[5px] bg-primary-100 p-3">
                 <Image
                   src="/assets/user-for-candidate.svg"
                   alt="Hero Image"
                   width={40}
                   height={40}
                   sizes="100vw"
-                  className="z-10 flex h-auto w-[80%] md:w-[60%] lg:w-full"
+                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
                 />
               </div>
-              <div className="flex w-full justify-between">
+              <div className="flex w-full items-center justify-between">
                 <div className="flex flex-col justify-center">
-                  <h3 className="heading-3">Guide to TestFounder Profiles</h3>
+                  <h3 className="md:heading-3 body-1 font-semibold">
+                    Guide to TestFounder Profiles
+                  </h3>
                   <p className="caption-regular-3">
                     This guides illustrates the steps of creating a TestFounder
                     Profile and analyzing your result
@@ -171,7 +175,7 @@ const CandidatesGuide = () => {
                   width={40}
                   height={40}
                   sizes="100vw"
-                  className="z-10 flex h-auto w-[80%] md:w-[60%] lg:w-fit"
+                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
                 />
               </div>
             </div>
@@ -182,10 +186,10 @@ const CandidatesGuide = () => {
       <section className="flex h-fit items-center bg-white px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
         <div className="container mx-auto ">
           <div className="flex flex-col items-center gap-6 lg:flex-row lg:py-[60px]">
-            <div className="relative flex w-full flex-col items-center space-y-6 md:w-full md:items-start lg:w-1/2">
-              <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center sm:text-start">
+            <div className="relative flex w-full flex-col items-center space-y-6 md:w-full lg:w-1/2 lg:items-start">
+              <h3 className="heading-2 md:heading-1 mb-0 mt-0 text-center sm:text-start">
                 Practice makes perfect
-              </h1>
+              </h3>
               <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
                 Practice is crucial for success, so in order to get used to our
                 platform you’ll receive 4 practice questions at the start of
@@ -214,7 +218,7 @@ const CandidatesGuide = () => {
 
       <section className="flex h-fit items-center bg-white px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
         <div className="container mx-auto">
-          <div className="flex flex-col items-center gap-6 lg:flex-row lg:py-[60px]">
+          <div className="flex flex-col-reverse items-center gap-6 lg:flex-row lg:py-[60px]">
             <div className="mb-16 w-full sm:w-1/2 md:mb-0 md:text-left ">
               <Image
                 src="/assets/taking-the-tests.png"
@@ -225,10 +229,10 @@ const CandidatesGuide = () => {
                 className="z-50"
               />
             </div>
-            <div className="relative flex w-full flex-col items-center space-y-6 md:w-full md:items-start lg:w-1/2">
-              <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center sm:text-start">
+            <div className="relative flex w-full flex-col items-center space-y-6 md:w-full lg:w-1/2 lg:items-start">
+              <h3 className="heading-2 md:heading-1 mb-0 mt-0 text-center sm:text-start">
                 Taking the tests
-              </h1>
+              </h3>
               <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
                 After the practice questions, your test will begin. The
                 different types of questions you may be asked to answer are:
@@ -253,10 +257,10 @@ const CandidatesGuide = () => {
       <section className="flex h-fit items-center bg-white px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
         <div className="container mx-auto ">
           <div className="flex flex-col items-center gap-6 lg:flex-row lg:py-[60px]">
-            <div className="relative flex w-full flex-col items-center space-y-6 md:w-full md:items-start lg:w-1/2">
-              <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center sm:text-start">
+            <div className="relative flex w-full flex-col items-center space-y-6 md:w-full lg:w-1/2 lg:items-start">
+              <h3 className="heading-2 md:heading-1 mb-0 mt-0 text-center sm:text-start">
                 Taking a break
-              </h1>
+              </h3>
               <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
                 We know that taking a test can be a stressful experience, which
                 is why our platform allows for breaks between tests in an
@@ -287,10 +291,12 @@ const CandidatesGuide = () => {
       </section>
 
       <section className="bg-grayscale-200">
-        <div className="container mx-auto py-[80px]">
-          <h2 className="heading-2 mb-8">Relate Post</h2>
-          <div className="flex flex-wrap gap-6">
-            <div className="w-[calc(33%-12px)] p-4">
+        <div className="container mx-auto py-6 lg:py-[80px]">
+          <h2 className="heading-2 mb-8 text-center lg:text-start">
+            Relate Post
+          </h2>
+          <div className="flex flex-col flex-wrap gap-6 lg:flex-row">
+            <div className="flex w-full flex-col items-center p-4 lg:w-[calc(33%-12px)]">
               <Image
                 src="/assets/relate-post-1.png"
                 alt="Hero Image"
@@ -298,11 +304,11 @@ const CandidatesGuide = () => {
                 height={228}
                 sizes="100vw mb-4 w-full"
               />
-              <p className="caption-semibold-1">
+              <p className="lg:caption-semibold-1 caption-semibold-3">
                 Do years of experience make candidates qualified?
               </p>
             </div>
-            <div className="w-[calc(33%-12px)] p-4">
+            <div className="flex w-full flex-col items-center p-4 lg:w-[calc(33%-12px)]">
               <Image
                 src="/assets/relate-post-2.png"
                 alt="Hero Image"
@@ -310,11 +316,11 @@ const CandidatesGuide = () => {
                 height={228}
                 sizes="100vw mb-4"
               />
-              <p className="caption-semibold-1">
+              <p className="lg:caption-semibold-1 caption-semibold-3">
                 Do years of experience make candidates qualified?
               </p>
             </div>
-            <div className="w-[calc(33%-12px)] p-4">
+            <div className="flex w-full flex-col items-center p-4 lg:w-[calc(33%-12px)]">
               <Image
                 src="/assets/relate-post-3.png"
                 alt="Hero Image"
@@ -322,7 +328,7 @@ const CandidatesGuide = () => {
                 height={228}
                 sizes="100vw mb-4"
               />
-              <p className="caption-semibold-1">
+              <p className="lg:caption-semibold-1 caption-semibold-3">
                 Do years of experience make candidates qualified?
               </p>
             </div>
@@ -331,116 +337,120 @@ const CandidatesGuide = () => {
       </section>
 
       <section className="lg:px-16 lg:py-[60px]">
-        <div className="container mx-auto">
-          <h1 className="heading-1 lg:mb-8">Frequently asked question</h1>
+        <div className="container mx-auto px-4 py-6 md:px-[40px] md:py-[32px] lg:px-0 lg:py-0">
+          <h3 className="md:heading-1 heading-2 mb-8 text-center lg:text-start">
+            Frequently asked question
+          </h3>
           <div className="flex flex-wrap justify-between gap-6">
-            <div className="flex max-h-[104px] w-[49%] items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6">
+            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]">
               <Image
                 src="/assets/faq_grey.svg"
                 width={46}
                 height={46}
                 alt="Icon Topics FAQ"
               />
-              <p className="caption-semibold-1">
+              <p className="lg:caption-semibold-1 caption-semibold-3">
                 Can Testfounder help me find a job?
               </p>
             </div>
-            <div className="flex max-h-[104px] w-[49%] items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6">
+            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]">
               <Image
                 src="/assets/faq_grey.svg"
                 width={46}
                 height={46}
                 alt="Icon Topics FAQ"
               />
-              <p className="caption-semibold-1">
+              <p className="lg:caption-semibold-1 caption-semibold-3">
                 What should I do if I haven't received my email invitation yet?
               </p>
             </div>
-            <div className="flex max-h-[104px] w-[49%] items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6">
+            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]">
               <Image
                 src="/assets/faq_grey.svg"
                 width={46}
                 height={46}
                 alt="Icon Topics FAQ"
               />
-              <p className="caption-semibold-1">
+              <p className="lg:caption-semibold-1 caption-semibold-3">
                 I am using a public invitation link, but my email address is not
                 accepted. How do I take the assessment?
               </p>
             </div>
-            <div className="flex max-h-[104px] w-[49%] items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6">
+            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]">
               <Image
                 src="/assets/faq_grey.svg"
                 width={46}
                 height={46}
                 alt="Icon Topics FAQ"
               />
-              <p className="caption-semibold-1">Where can I see my results?</p>
+              <p className="lg:caption-semibold-1 caption-semibold-3">
+                Where can I see my results?
+              </p>
             </div>
-            <div className="flex max-h-[104px] w-[49%] items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6">
+            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]">
               <Image
                 src="/assets/faq_grey.svg"
                 width={46}
                 height={46}
                 alt="Icon Topics FAQ"
               />
-              <p className="caption-semibold-1">
+              <p className="lg:caption-semibold-1 caption-semibold-3">
                 Can I try the assessment again?
               </p>
             </div>
-            <div className="flex max-h-[104px] w-[49%] items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6">
+            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]">
               <Image
                 src="/assets/faq_grey.svg"
                 width={46}
                 height={46}
                 alt="Icon Topics FAQ"
               />
-              <p className="caption-semibold-1">
+              <p className="lg:caption-semibold-1 caption-semibold-3">
                 Why did my assessment end after only a few questions?
               </p>
             </div>
-            <div className="flex max-h-[104px] w-[49%] items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6">
+            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]">
               <Image
                 src="/assets/faq_grey.svg"
                 width={46}
                 height={46}
                 alt="Icon Topics FAQ"
               />
-              <p className="caption-semibold-1">
+              <p className="lg:caption-semibold-1 caption-semibold-3">
                 I have completed my assessment. What happens next?
               </p>
             </div>
-            <div className="flex max-h-[104px] w-[49%] items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6">
+            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]">
               <Image
                 src="/assets/faq_grey.svg"
                 width={46}
                 height={46}
                 alt="Icon Topics FAQ"
               />
-              <p className="caption-semibold-1">
+              <p className="lg:caption-semibold-1 caption-semibold-3">
                 Why can’t I log in/create an account?
               </p>
             </div>
-            <div className="flex max-h-[104px] w-[49%] items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6">
+            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]">
               <Image
                 src="/assets/faq_grey.svg"
                 width={46}
                 height={46}
                 alt="Icon Topics FAQ"
               />
-              <p className="caption-semibold-1">
+              <p className="lg:caption-semibold-1 caption-semibold-3">
                 What do I do if the questions are loading slowly or my test has
                 frozen?
               </p>
             </div>
-            <div className="flex max-h-[104px] w-[49%] items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6">
+            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]">
               <Image
                 src="/assets/faq_grey.svg"
                 width={46}
                 height={46}
                 alt="Icon Topics FAQ"
               />
-              <p className="caption-semibold-1">
+              <p className="lg:caption-semibold-1 caption-semibold-3">
                 When I click the link why does the page say, "The assessment is
                 no longer available"/"The assessment is currently unavailable"?
               </p>
@@ -451,9 +461,9 @@ const CandidatesGuide = () => {
 
       <section className="flex h-full min-h-[366px] w-full items-center space-y-6 bg-primary-500">
         <div className="container mx-auto flex flex-col items-center justify-center space-y-6 px-4 py-6 text-center sm:px-0 sm:py-[60px]">
-          <h1 className="heading-2 sm:heading-1 text-white">
+          <h3 className="heading-2 md:heading-1 text-white">
             Looking for more information?
-          </h1>
+          </h3>
           <p className="caption-regular-3 sm:caption-regular-1 text-center text-white">
             Find out more about how TestFounder assessments are reinventing
             hiring.
