@@ -33,9 +33,9 @@ const About = ({ resources }) => {
       <Layout pageTitle="About">
         <section className="bg-[#F9F9F9] bg-blur bg-right bg-no-repeat lg:py-[100px]">
           <div className="container mx-auto mt-20">
-            <div className="relative flex flex-col items-start sm:static lg:flex-row">
+            <div className="relative flex flex-col items-start px-4 py-6 sm:static md:px-10 md:py-8 lg:flex-row lg:px-0 lg:py-0">
               <div className="mb-0 flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:text-left lg:w-1/2 ">
-                <div className="flex h-[424px] flex-col justify-between">
+                <div className="flex h-[424px] flex-col justify-center lg:justify-between">
                   <div className="flex flex-col">
                     <h1 className="sm:heading-1 heading-2 mb-6 mt-0 text-center lg:text-start">
                       <span className="text-primary-500">TestFounder</span>{' '}
@@ -96,9 +96,9 @@ const About = ({ resources }) => {
           </div>
         </section>
 
-        <section className="flex h-fit items-center bg-white px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
+        <section className="flex h-fit items-center bg-[#F9F9F9] px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
           <div className="container mx-auto ">
-            <div className="flex flex-col items-center gap-6 lg:flex-row lg:py-[60px]">
+            <div className="flex flex-col-reverse items-center gap-6 lg:flex-row lg:py-[60px]">
               <div className="mb-16 w-full sm:w-1/2 md:mb-0 md:text-left ">
                 <Image
                   src="/assets/smile-chart.png"
@@ -109,8 +109,8 @@ const About = ({ resources }) => {
                   className="z-50"
                 />
               </div>
-              <div className="relative flex w-full flex-col items-center space-y-6 md:w-full md:items-start lg:w-1/2">
-                <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center sm:text-start">
+              <div className="relative flex w-full flex-col items-center space-y-6 md:w-full lg:w-1/2 lg:items-start">
+                <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center lg:text-start">
                   About TestFounder
                 </h1>
                 <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
@@ -128,13 +128,13 @@ const About = ({ resources }) => {
           </div>
         </section>
 
-        <section className="container mx-auto">
-          <div className="flex lg:flex-col  lg:py-20">
-            <h2 className="heading-1 lg:mb-6 lg:text-center">
+        <section className="container mx-auto bg-[#F9F9F9] px-4 py-6 md:px-10 md:py-8 lg:px-0 lg:py-0">
+          <div className="flex flex-col lg:py-20">
+            <h2 className="md:heading-1 heading-2 text-center lg:mb-6">
               Our Three Pillar of TestFounder
             </h2>
-            <div className="flex justify-center lg:mt-10 lg:gap-6">
-              <div className="flex max-w-[421px] flex-col items-center">
+            <div className="flex flex-col justify-center lg:mt-10 lg:flex-row lg:gap-6">
+              <div className="flex max-w-full flex-col items-center lg:max-w-[421px]">
                 <Image
                   src="/assets/time_efficiency.svg"
                   alt="Hero Image"
@@ -150,7 +150,7 @@ const About = ({ resources }) => {
                   in mis-hires
                 </p>
               </div>
-              <div className="flex max-w-[421px] flex-col items-center">
+              <div className="flex max-w-full flex-col items-center lg:max-w-[421px]">
                 <Image
                   src="/assets/detection-making.svg"
                   alt="Hero Image"
@@ -166,7 +166,7 @@ const About = ({ resources }) => {
                   reduction in cost-to-hire
                 </p>
               </div>
-              <div className="flex max-w-[421px] flex-col items-center">
+              <div className="flex max-w-full flex-col items-center lg:max-w-[421px]">
                 <Image
                   src="/assets/candidate-experience.svg"
                   alt="Hero Image"
@@ -186,9 +186,11 @@ const About = ({ resources }) => {
           </div>
         </section>
 
-        <section className="container mx-auto">
-          <div className="flex lg:flex-col lg:px-16 lg:py-20">
-            <h2 className="heading-1 lg:mb-6 lg:text-center">Our Partner</h2>
+        <section className="container mx-auto bg-[#F9F9F9] px-4 py-6 md:px-10 md:py-8 lg:px-0 lg:py-0">
+          <div className="flex flex-col lg:px-16 lg:py-20">
+            <h2 className="heading-1 text-center md:mb-[10px] lg:mb-6">
+              Our Partner
+            </h2>
             <div className="flex justify-center lg:mt-10 lg:gap-6">
               <Swiper
                 modules={[Autoplay]}
@@ -231,9 +233,9 @@ const About = ({ resources }) => {
         </section>
 
         <section className="h-full w-full bg-grayscale-200">
-          <div className="container mx-auto">
-            <div className="flex lg:flex-col lg:py-20">
-              <h2 className="heading-1 lg:mb-6 lg:text-center">
+          <div className="container mx-auto px-4 py-6 md:px-10 md:py-8 lg:px-0 lg:py-0">
+            <div className="flex flex-col lg:py-20">
+              <h2 className="heading-1 text-center lg:mb-6">
                 Meet our leaders
               </h2>
               <div className="flex flex-wrap justify-center gap-[26px]">
@@ -322,9 +324,11 @@ const About = ({ resources }) => {
           </div>
         </section>
 
-        <section className="container mx-auto">
-          <div className="flex lg:flex-col lg:px-16 lg:py-20">
-            <h2 className="heading-1 lg:mb-6 lg:text-center">Our Client</h2>
+        <section className="container mx-auto px-4 py-6 md:px-10 md:py-8 lg:px-0 lg:py-0">
+          <div className="flex flex-col lg:px-16 lg:py-20">
+            <h2 className="heading-1 text-center md:mb-[10px] lg:mb-6">
+              Our Client
+            </h2>
             <div className="flex justify-center lg:mt-10 lg:gap-6">
               <Swiper
                 modules={[Autoplay]}
@@ -366,10 +370,10 @@ const About = ({ resources }) => {
           </div>
         </section>
 
-        <section className="flex h-fit items-center px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
+        <section className="flex h-fit items-center bg-[#F9F9F9] px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
           <div className="container mx-auto">
             <div className="flex flex-col items-center gap-6 lg:flex-row lg:py-[60px]">
-              <div className="relative flex w-full flex-col items-center space-y-6 md:w-full md:items-start lg:w-1/2">
+              <div className="relative flex w-full flex-col items-center space-y-6 md:w-full lg:w-1/2 lg:items-start">
                 <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center sm:text-start">
                   Endless Discovey in Your Inbox
                 </h1>
@@ -378,6 +382,16 @@ const About = ({ resources }) => {
                   collections, invites to private events, and other personalized
                   offerings.
                 </p>
+                <div className="relative w-[90%]">
+                  <input
+                    type="email"
+                    className="placeholder:body-2 h-[48px] w-full rounded-[40px] bg-shade-0 py-3 pl-6 shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)] placeholder:text-[#CBCBCB]"
+                    placeholder="Your e-mail"
+                  />
+                  <button className="absolute right-0 rounded-[40px] bg-primary-500 px-6 py-3 text-white">
+                    Subscribe
+                  </button>
+                </div>
               </div>
               <div className="mb-16 flex w-full justify-center sm:w-1/2 md:mb-0 md:text-left">
                 <Image
