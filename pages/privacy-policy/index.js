@@ -9,11 +9,11 @@ const PrivacyPolicy = () => {
 
   return (
     <Layout pageTitle="Terms of use">
-      <main className="container mx-auto py-[140px]">
-        <div className="px-[100px]">
+      <main className="container mx-auto px-4 py-[120px] md:px-[40px] md:py-[130px] lg:px-16 lg:py-[140px]">
+        <div className="px-0 lg:px-[100px]">
           <nav className="mb-[60px]">
             <ul className="flex flex-wrap justify-center gap-[35px]">
-              <li className="caption-semibold-1">
+              <li className="lg:caption-semibold-1 caption-semibold-2">
                 <Link
                   href="/terms"
                   className={
@@ -25,7 +25,7 @@ const PrivacyPolicy = () => {
                   Customer term of use
                 </Link>
               </li>
-              <li className="caption-semibold-1">
+              <li className="lg:caption-semibold-1 caption-semibold-2">
                 <Link
                   href="/candidate-terms"
                   className={
@@ -37,7 +37,7 @@ const PrivacyPolicy = () => {
                   Candidate term of use
                 </Link>
               </li>
-              <li className="caption-semibold-1">
+              <li className="lg:caption-semibold-1 caption-semibold-2">
                 <Link
                   href="/privacy-policy"
                   className={
@@ -49,7 +49,7 @@ const PrivacyPolicy = () => {
                   Privacy policy
                 </Link>
               </li>
-              <li className="caption-semibold-1">
+              <li className="lg:caption-semibold-1 caption-semibold-2">
                 <Link
                   href="/cookie-policy"
                   className={
@@ -61,7 +61,7 @@ const PrivacyPolicy = () => {
                   Cookie policy
                 </Link>
               </li>
-              <li className="caption-semibold-1">
+              <li className="lg:caption-semibold-1 caption-semibold-2">
                 <Link
                   href="/security-measures"
                   className={
@@ -73,7 +73,7 @@ const PrivacyPolicy = () => {
                   Security measures
                 </Link>
               </li>
-              <li className="caption-semibold-1">
+              <li className="lg:caption-semibold-1 caption-semibold-2">
                 {' '}
                 <Link
                   href="/dpa"
@@ -86,7 +86,7 @@ const PrivacyPolicy = () => {
                   Data processing agreement
                 </Link>
               </li>
-              <li className="caption-semibold-1">
+              <li className="lg:caption-semibold-1 caption-semibold-2">
                 {' '}
                 <Link
                   href="/service-level-agreement"
@@ -102,10 +102,12 @@ const PrivacyPolicy = () => {
             </ul>
           </nav>
         </div>
-        <h1 className="heading-1">Testfounder Privacy policy</h1>
+        <h1 className="md:heading-1 heading-2">Testfounder Privacy policy</h1>
         <div className="my-6 space-y-4">
-          <p className="caption-regular-2">Updated December 2022</p>
-          <p className="caption-regular-2">
+          <p className="md:caption-regular-2 caption-regular-3">
+            Updated December 2022
+          </p>
+          <p className="md:caption-regular-2 caption-regular-3">
             Testfounder B.V., a Dutch limited liability company registered with
             the Trade Register of the Chamber of Commerce under no. 77597249
             (“Testfounder”, “we,” “us” or “our”) is committed to protecting and
@@ -127,7 +129,7 @@ const PrivacyPolicy = () => {
             Platform, please ensure that you have read and understood our
             Privacy Policy.
           </p>
-          <p className="caption-regular-2">
+          <p className="md:caption-regular-2 caption-regular-3">
             These Terms are a legally binding contract between You and
             Testfounder. If you do not agree with these Terms, do not register
             for a Testfounder account, or purchase or use Services. By using or
@@ -139,7 +141,7 @@ const PrivacyPolicy = () => {
             paid contract in effect with Testfounder, in which event the
             separate paid contract governs your use of the Services.
           </p>
-          <p className="caption-regular-2">
+          <p className="md:caption-regular-2 caption-regular-3">
             In these Terms, we refer collectively to these Terms, the Data
             Processing Agreement and the applicable Service Level Agreement
             (“SLA”), other instructions and policies (“Documentation”) available
@@ -151,12 +153,12 @@ const PrivacyPolicy = () => {
           <h3 className="heading-3">
             1. What kind of information do we collect?
           </h3>
-          <p className="caption-bold-2">
+          <p className="md:caption-bold-2 caption-bold-3">
             Information we collect when you use our platform
           </p>
         </div>
         <div className="my-6 space-y-4">
-          <p className="caption-regular-2">
+          <p className="md:caption-regular-2 caption-regular-3">
             Please find below the types of personal data we may require from you
             and which we process in order to provide our services on the
             Platform:
@@ -305,18 +307,20 @@ const PrivacyPolicy = () => {
           2. For what purposes do we use your personal data?
         </h3>
         <div className="my-6 space-y-4">
-          <p className="caption-regular-2">
+          <p className="md:caption-regular-2 caption-regular-3">
             We use your personal data to help us provide and support (the
             services on) our Platform. Here is how:
           </p>
           <ol type="1" className="list-inside list-decimal space-y-3">
-            <li className="caption-bold-2">Service provision:</li>
-            <p className="caption-regular-2">
+            <li className="md:caption-bold-2 caption-bold-3">
+              Service provision:
+            </li>
+            <p className="md:caption-regular-2 caption-regular-3">
               we use the information to carry out and administer the tests you
               book or take;
             </p>
-            <li className="caption-bold-2">Communication:</li>
-            <p className="caption-regular-2">
+            <li className="md:caption-bold-2 caption-bold-3">Communication:</li>
+            <p className="md:caption-regular-2 caption-regular-3">
               sending emails, newsletters, and other messages to keep you
               informed of the Platform. You may opt out of receiving any, or
               all, of these communications from us by following the unsubscribe
@@ -324,35 +328,43 @@ const PrivacyPolicy = () => {
               complaints made by you relating to the Platform and to address
               your questions, issues, and concerns;
             </p>
-            <li className="caption-bold-2">Website monitoring:</li>
-            <p className="caption-regular-2">
+            <li className="md:caption-bold-2 caption-bold-3">
+              Website monitoring:
+            </li>
+            <p className="md:caption-regular-2 caption-regular-3">
               to check the Platform and our other technology services are being
               used appropriately and to optimize their functionality;
             </p>
-            <li className="caption-bold-2">Platform optimization:</li>
-            <p className="caption-regular-2">
+            <li className="md:caption-bold-2 caption-bold-3">
+              Platform optimization:
+            </li>
+            <p className="md:caption-regular-2 caption-regular-3">
               improve, test, and monitor the effectiveness of our Platform and
               diagnose or fix technology problems;
             </p>
-            <li className="caption-bold-2">Managing suppliers:</li>
-            <p className="caption-regular-2">who deliver services to us;</p>
-            <li className="caption-bold-2">Statistics:</li>
-            <p className="caption-regular-2">
+            <li className="md:caption-bold-2 caption-bold-3">
+              Managing suppliers:
+            </li>
+            <p className="md:caption-regular-2 caption-regular-3">
+              who deliver services to us;
+            </p>
+            <li className="md:caption-bold-2 caption-bold-3">Statistics:</li>
+            <p className="md:caption-regular-2 caption-regular-3">
               to help you efficiently access your information after you sign in
               and to remember information so you will not have to re-enter it
               during your visit or the next time you visit the Platform;
             </p>
-            <li className="caption-bold-2">Development:</li>
-            <p className="caption-regular-2">
+            <li className="md:caption-bold-2 caption-bold-3">Development:</li>
+            <p className="md:caption-regular-2 caption-regular-3">
               develop and test new products and features.
             </p>
-            <li className="caption-bold-2">Benchmarks:</li>
-            <p className="caption-regular-2">
+            <li className="md:caption-bold-2 caption-bold-3">Benchmarks:</li>
+            <p className="md:caption-regular-2 caption-regular-3">
               use aggregated and anonymized test scores and aggregated
               demographics to provide benchmarks to our customers and improve
               our services.
             </p>
-            <p className="caption-regular-2">
+            <p className="md:caption-regular-2 caption-regular-3">
               We only process your personal data for the above purposes and
               ensure that it is only available to those who have a legitimate
               need to know and would require access to it.
@@ -363,29 +375,29 @@ const PrivacyPolicy = () => {
           3. Our legal grounds for using your personal data
         </h3>
         <div className="my-6 space-y-4">
-          <p className="caption-regular-2">
+          <p className="md:caption-regular-2 caption-regular-3">
             We will process your personal data for a number of reasons:
           </p>
         </div>
         <ol type="1" className="mb-6 list-inside list-disc space-y-3">
-          <li className="caption-regular-2">
+          <li className="md:caption-regular-2 caption-regular-3">
             You have given us consent; Where we are processing personal data
             with your consent, you can withdraw your consent at any time,
             without affecting the lawfulness of processing based on consent
             before its withdrawal;
           </li>
-          <li className="caption-regular-2">
+          <li className="md:caption-regular-2 caption-regular-3">
             We require to process personal data for the performance of the
             contractual relationship with you;
           </li>
-          <li className="caption-regular-2">
+          <li className="md:caption-regular-2 caption-regular-3">
             We need to process personal data to comply with the legal
             obligations we are subject to in The Netherlands or in other
             jurisdictions, which include such obligations as accessing,
             preserving and sharing your personal data in response to a legal
             request such as a search warrant, court order, or subpoena;
           </li>
-          <li className="caption-regular-2">
+          <li className="md:caption-regular-2 caption-regular-3">
             processing is necessary for our legitimate business interests. Our
             legitimate interests are:
             <ol className="list-inside list-disc space-y-3 pl-5">
@@ -421,25 +433,25 @@ const PrivacyPolicy = () => {
           4. With whom do we share your personal data?
         </h3>
         <div className="my-6 space-y-4">
-          <p className="caption-regular-2">
+          <p className="md:caption-regular-2 caption-regular-3">
             Other than with our sub-processors, we share your information with
             the following parties:
           </p>
         </div>
         <ol type="1" className="mb-6 list-inside list-decimal space-y-4">
-          <li className="caption-bold-2">Customers:</li>
-          <p className="caption-regular-2">
+          <li className="md:caption-bold-2 caption-bold-3">Customers:</li>
+          <p className="md:caption-regular-2 caption-regular-3">
             With our (prospective) customers we share information of Candidates
             in case customers administered tests to them or in case candidates
             agree to share test results with specific customers.
           </p>
-          <li className="caption-bold-2">Test authors:</li>
-          <p className="caption-regular-2">
+          <li className="md:caption-bold-2 caption-bold-3">Test authors:</li>
+          <p className="md:caption-regular-2 caption-regular-3">
             We share aggregated candidate test feedback to subject matter
             experts who have developed tests for product improvement.
           </p>
-          <li className="caption-bold-2">Suppliers:</li>
-          <p className="caption-regular-2">
+          <li className="md:caption-bold-2 caption-bold-3">Suppliers:</li>
+          <p className="md:caption-regular-2 caption-regular-3">
             Who support our business including IT and communication suppliers,
             outsourced business support, business intelligence, marketing, and
             advertising agencies, and back-up vendors. Our suppliers have to
@@ -449,7 +461,7 @@ const PrivacyPolicy = () => {
         </ol>
         <h3 className="heading-3">5. Safety and security</h3>
         <div className="my-6 space-y-4">
-          <p className="caption-regular-2">
+          <p className="md:caption-regular-2 caption-regular-3">
             Testfounder has taken appropriate technical and organizational
             measures by using the latest technologies to protect your personal
             data against loss or unlawful processing. We keep on improving our
@@ -467,7 +479,7 @@ const PrivacyPolicy = () => {
         </div>
         <h3 className="heading-3">6. Your Rights</h3>
         <div className="my-6 space-y-4">
-          <p className="caption-regular-2">
+          <p className="md:caption-regular-2 caption-regular-3">
             In accordance with the GDPR you have the following rights in respect
             of your personal data that we hold:
           </p>
@@ -475,7 +487,7 @@ const PrivacyPolicy = () => {
             7. Third-party applications, websites, and services
           </h3>
           <div className="my-6 space-y-4">
-            <p className="caption-regular-2">
+            <p className="md:caption-regular-2 caption-regular-3">
               We are not responsible for the practices employed by any
               applications, websites, or services linked to or from our
               Platform, including the information or content contained within
@@ -494,7 +506,7 @@ const PrivacyPolicy = () => {
           </div>
           <h3 className="heading-3">8. How long do we keep your data?</h3>
           <div className="my-6 space-y-4">
-            <p className="caption-regular-2">
+            <p className="md:caption-regular-2 caption-regular-3">
               We generally keep your information only as long as needed to
               provide the services on our Platform. We will retain your
               information as necessary to comply with legal, accounting, or
@@ -512,7 +524,7 @@ const PrivacyPolicy = () => {
           </div>
           <h3 className="heading-3">9. Where will your information be held?</h3>
           <div className="my-6 space-y-4">
-            <p className="caption-regular-2">
+            <p className="md:caption-regular-2 caption-regular-3">
               Your information will be held on servers in the European Economic
               Area. We will take steps to protect your information in line with
               locally applicable data protection requirements. Your information
@@ -529,7 +541,7 @@ const PrivacyPolicy = () => {
           </div>
           <h3 className="heading-3">10. Children</h3>
           <div className="my-6 space-y-4">
-            <p className="caption-regular-2">
+            <p className="md:caption-regular-2 caption-regular-3">
               Our Platform does not seek to address anyone under the age of 16
               (“Children”). We do not knowingly collect personal data from
               children under 16. We conduct our verification tests with the aim
@@ -543,7 +555,7 @@ const PrivacyPolicy = () => {
           </div>
           <h3 className="heading-3">11. Changes to this Policy</h3>
           <div className="my-6 space-y-4">
-            <p className="caption-regular-2">
+            <p className="md:caption-regular-2 caption-regular-3">
               We may modify or update our Privacy Policy from time to time. We
               will notify you of any changes by posting the new Privacy Policy
               on this page. You are advised to review this Privacy Policy
@@ -553,7 +565,7 @@ const PrivacyPolicy = () => {
           </div>
           <h3 className="heading-3">12. How to contact us</h3>
           <div className="my-6 space-y-4">
-            <p className="caption-regular-2">
+            <p className="md:caption-regular-2 caption-regular-3">
               If you have any questions about this Privacy Policy, please
               contact us.
             </p>
