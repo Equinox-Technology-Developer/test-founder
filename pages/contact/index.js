@@ -15,11 +15,11 @@ const Contact = ({}) => {
             {' '}
             <div className={` ${styles.banner_topContent}`}>
               <div
-                className={`flex w-full justify-center md:w-full lg:w-full lg:max-w-lg ${styles.banner_topContentImage}`}
+                className={`mt-24 flex w-full justify-center px-4 py-6 sm:min-h-[520px] md:w-full md:px-[40px] md:py-[40px] lg:mt-0 lg:w-full lg:max-w-lg lg:px-0 lg:py-0  ${styles.banner_topContentImage}`}
               >
-                <form className="h-full w-[580px] rounded-[20px] bg-shade-0 px-[24px] py-[32px] shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)]">
+                <form className="h-full w-full rounded-[20px] bg-shade-0 px-[24px] py-[32px] shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)] md:w-[580px]">
                   <div className="flex flex-col gap-6">
-                    <h1 className="heading-1">Submit a request</h1>
+                    <h1 className="md:heading-1 heading-2">Submit a request</h1>
                     <div className="flex flex-col">
                       <label className="caption-regular-4 text-shade-100">
                         Your email address
@@ -87,7 +87,7 @@ const Contact = ({}) => {
                 </form>
               </div>
               <div className={styles.banner_topContentText}>
-                <div className="flex flex-row items-center  gap-4">
+                <div className="flex flex-row items-center gap-4">
                   <Image
                     src="/assets/hero-contact.png"
                     alt="Hero Image"
