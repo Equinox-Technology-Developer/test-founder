@@ -10,6 +10,7 @@ import HeroImageSkillsBasedTraining from '../public/assets/HeroImageSkillsBasedT
 import HeroImageTestAssessment from '../public/assets/hero-image-test-assessment.png';
 import HeroImageMiddleBanner_pricing from '../public/assets/HeroImageMiddleBanner_pricing.png'
 import iPad from '../public/assets/iPad.png';
+import gif_404 from '../public/assets/404.gif';
 import top_banner_science from '../public/assets/top-banner-science.png';
 import top_banner_testLibrary from '../public/assets/hero-image-test-library.png';
 
@@ -27,7 +28,8 @@ const images = {
   HeroImageSkillsBasedTraining,
   HeroImageTestAssessment,
   HeroImageMiddleBanner_pricing,
-  iPad
+  iPad,
+  gif_404
 };
 
 export default images;
