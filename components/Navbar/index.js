@@ -53,7 +53,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav id="navbar" className={styles.navbar}>
+    <nav id="navbar" className={`${styles.navbar}`}>
       <div
         className={`${styles.navbar_container} ${
           toogle ? styles.toogleActive : ''

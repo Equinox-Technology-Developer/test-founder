@@ -58,9 +58,11 @@ const HelpCenter = () => {
               If you're a candidate, start here. Read our candidate guides to
               help you find your dream job.
             </p>
-            <button className="btn-normal text-[14px] font-semibold md:text-[18px]">
-              Read candidate guides
-            </button>
+            <Link href="/candidates-guide">
+              <button className="btn-normal text-[14px] font-semibold md:text-[18px]">
+                Read candidate guides
+              </button>
+            </Link>
           </div>
           <div className="flex w-full flex-col items-start md:w-1/2">
             <h2 className="md:heading-2 heading-3 mb-3 md:mb-6">I’m hiring</h2>
@@ -68,9 +70,11 @@ const HelpCenter = () => {
               If you're an employer, start here. Our guides are there to help
               you hire your dream candidates.
             </p>
-            <button className="btn-normal text-[14px] font-semibold md:text-[18px]">
-              Read candidate guides
-            </button>
+            <Link href="/employer-guide">
+              <button className="btn-normal text-[14px] font-semibold md:text-[18px]">
+                Read employer guides
+              </button>
+            </Link>
           </div>
         </div>
       </section>
