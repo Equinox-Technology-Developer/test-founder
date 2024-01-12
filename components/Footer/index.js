@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { images } from '@/constants';
 import { MdChevronRight } from 'react-icons/md';
-import { fetchContentfulEntries } from '@/helper/contenfulHelper';
+import { fetchContentfulEntries } from '@/components/helper/contenfulHelper';
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 
 import styles from './Footer.module.scss';

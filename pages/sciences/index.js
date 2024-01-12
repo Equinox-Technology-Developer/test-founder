@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import { Layout } from '@/components';
 import { images } from '@/constants';
-import { fetchContentfulEntries } from '@/helper/contenfulHelper';
+import { fetchContentfulEntries } from '@/components/helper/contenfulHelper';
 
 import styles from './Sciences.module.scss';
 
