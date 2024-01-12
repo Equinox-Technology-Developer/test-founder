@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { Layout } from '@/components';
 import { IoIosArrowForward } from 'react-icons/io';
 
-import { fetchContentfulEntries } from '@/components/helper/contenfulHelper';
+import { fetchContentfulEntries } from '@/pages/helper/contenfulHelper';
 
 // Swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
