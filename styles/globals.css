@@ -41,6 +41,7 @@ body {
   font-family: var(--font-base);
 }
 
+
 a {
   color: inherit;
   text-decoration: none;
@@ -74,6 +75,11 @@ a {
 
 #_next {
   height: 100%;
+}
+
+.svg-star {
+  width: 20px;
+  height: 20px;
 }
 
 .title-not-found {
@@ -131,6 +137,16 @@ a {
   }
 }
 
+@media screen and (max-width: 1024px) {
+  h1, h2 {
+    text-align: center;
+  }
+
+  .tab-hidden {
+    display: none;
+  }
+}
+
 /*======================
     404 page
 =======================*/
@@ -144,7 +160,7 @@ a {
   align-items: center;
 }
 
-.page_404 img {
+.page_404 img, .img {
   width: 100%;
 }
 
