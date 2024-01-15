@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { FaStar } from "react-icons/fa";
 
 import { Layout } from '@/components';
 import { images } from '@/constants';
@@ -32,6 +33,21 @@ const index = () => {
                   Explore Our Report
                 </button>
               </div>
+              <div className='flex items-center gap-2 '>
+                  <div>
+                    <Image src="/assets/test-library-banner_people.png" width={140} height={44} />
+                  </div>
+                  <div >
+                    <div className='flex text-star'>
+                      <FaStar className='svg-star' />
+                      <FaStar className='svg-star' />
+                      <FaStar className='svg-star' />
+                      <FaStar className='svg-star' />
+                      <FaStar className='svg-star' />
+                    </div>
+                    <p>Used by 500K+ recruiters </p>
+                  </div>
+                </div>
             </div>
             <div className="relative flex w-full justify-center md:w-full lg:mt-20 lg:w-full lg:max-w-lg">
               <Image
@@ -196,6 +212,7 @@ const index = () => {
         </div>
       </section>
 
+      {/* Explanation 1 */}
       <section className="flex h-fit items-center bg-white px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
         <div className="container mx-auto ">
           <div className="flex flex-col items-center gap-6 lg:flex-row lg:py-[60px]">
@@ -227,6 +244,7 @@ const index = () => {
         </div>
       </section>
 
+      {/* Blog Grid 1 */}
       <section className={styles.blog_container}>
         <div className={`container m-10 mx-auto`}>
           <h1 className="text-center lg:text-start">Read more</h1>
@@ -334,9 +352,10 @@ const index = () => {
         </div>
       </section>
 
+      {/* Explanation 2 */}
       <section className="flex h-fit items-center bg-white px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
         <div className="container mx-auto ">
-          <div className="flex flex-col items-center gap-6 lg:flex-row lg:py-[60px]">
+          <div className="flex flex-col justify-between items-center gap-6 lg:flex-row lg:py-[60px]">
             <div className="relative flex w-full flex-col items-center space-y-6 md:w-full md:items-start lg:w-1/2">
               <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center sm:text-start">
                 Why skills-based hiring?
@@ -356,13 +375,14 @@ const index = () => {
                 width={575}
                 height={449}
                 sizes="100vw"
-                className="z-50"
+                className="z-50 img"
               />
             </div>
           </div>
         </div>
       </section>
 
+      {/* Blog Grid 2 */}
       <section className={styles.blog_container}>
         <div className={`container m-10 mx-auto`}>
           <h1>Learn more</h1>
@@ -463,9 +483,10 @@ const index = () => {
         </div>
       </section>
 
+      {/* Explanation 3 */}
       <section className="flex h-fit items-center bg-white px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
         <div className="container mx-auto ">
-          <div className="flex flex-col-reverse items-center gap-6 lg:flex-row lg:py-[60px]">
+          <div className="flex flex-col-reverse items-center justify-between gap-6 lg:flex-row lg:py-[60px]">
             <div className="mb-16 w-full sm:w-1/2 md:mb-0 md:text-left ">
               <Image
                 src="/assets/img-who-using-skill-based.png"
@@ -473,7 +494,7 @@ const index = () => {
                 width={524}
                 height={375}
                 sizes="100vw"
-                className="z-50"
+                className="z-50 img"
               />
             </div>
             <div className="relative flex w-full flex-col items-center space-y-6 md:w-full md:items-start lg:w-1/2">
@@ -495,6 +516,7 @@ const index = () => {
         </div>
       </section>
 
+      {/* Blog Grid 3 */}
       <section className={styles.blog_container}>
         <div className={`container m-10 mx-auto`}>
           <h1>By Region</h1>
@@ -656,9 +678,10 @@ const index = () => {
         </div>
       </section>
 
+      {/* Explanation 4 */}
       <section className="flex h-fit items-center bg-white px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
         <div className="container mx-auto ">
-          <div className="flex flex-col items-center gap-6 lg:flex-row lg:py-[60px]">
+          <div className="flex flex-col justify-between items-center gap-6 lg:flex-row lg:py-[60px]">
             <div className="relative flex w-full flex-col items-center space-y-6 md:w-full md:items-start lg:w-1/2">
               <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center sm:text-start">
                 How to implement skills-based hiring
@@ -678,13 +701,14 @@ const index = () => {
                 width={485}
                 height={509}
                 sizes="100vw"
-                className="z-50"
+                className="z-50 img"
               />
             </div>
           </div>
         </div>
       </section>
 
+      {/* Blog Grid 4 */}
       <section className={styles.blog_container}>
         <div className={`container m-10 mx-auto`}>
           <h1>Read more</h1>
@@ -791,9 +815,10 @@ const index = () => {
         </div>
       </section>
 
+      {/* Explanation 5 */}
       <section className="flex h-fit items-center bg-white px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
         <div className="container mx-auto ">
-          <div className="flex flex-col-reverse items-center gap-6 lg:flex-row lg:py-[60px]">
+          <div className="flex flex-col-reverse items-center gap-6 justify-between lg:flex-row lg:py-[60px]">
             <div className="mb-16 flex h-full w-full content-stretch justify-center sm:w-1/2 md:mb-0 md:text-left">
               <Image
                 src={images.HeroImageSkillsBasedTraining}
@@ -801,7 +826,7 @@ const index = () => {
                 width={575}
                 height={467}
                 sizes="100vw"
-                className="flex h-auto object-cover"
+                className="flex h-auto object-cover img"
               />
             </div>
             <div className="relative flex w-full flex-col items-center space-y-6 md:w-full md:items-start lg:w-1/2">
@@ -821,6 +846,7 @@ const index = () => {
         </div>
       </section>
 
+      {/* Explanation 6 */}
       <section className="flex h-fit items-center bg-white px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
         <div className="container mx-auto ">
           <div className="flex flex-col-reverse items-center gap-6 lg:flex-row lg:py-[60px]">
@@ -847,6 +873,7 @@ const index = () => {
         </div>
       </section>
 
+      {/* Explanation 7 */}
       <section className="flex h-fit items-center bg-white px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
         <div className="container mx-auto ">
           <div className="flex flex-col-reverse items-center gap-6 lg:flex-row lg:py-[60px]">
@@ -874,6 +901,7 @@ const index = () => {
         </div>
       </section>
 
+      {/* FAQ */}
       <section className="lg:px-16 lg:py-[60px]">
         <div className="container mx-auto">
           <h1 className="md:heading-1 heading-2 text-center lg:mb-8 lg:text-start">
@@ -973,6 +1001,7 @@ const index = () => {
         </div>
       </section>
 
+      {/* Search Bar */}
       <section className="py-[60px]">
         <div className="container mx-auto hidden md:block">
           <h1 className="heading-1 text-center md:mb-8">
@@ -998,6 +1027,7 @@ const index = () => {
         </div>
       </section>
 
+      {/* Blog Grid 5 */}
       <section className="bg-grayscale-200 lg:py-[60px]">
         <div className="container mx-auto">
           <div className="flex flex-wrap justify-center gap-[43px] px-4 py-6 md:px-[40px] md:py-[32px] lg:px-0 lg:py-0">
