@@ -286,7 +286,7 @@ export default function Home() {
                   width={624}
                   height={449}
                   sizes="100vw"
-                  className="z-50"
+                  className="z-50 img"
                 />
               </div>
             </div>
@@ -304,7 +304,7 @@ export default function Home() {
                   width={644}
                   height={469}
                   sizes="100vw"
-                  className="z-50"
+                  className="z-50 img"
                 />
               </div>
               <div className="relative flex w-full flex-col items-center space-y-6 md:w-full lg:w-1/2 lg:items-start">
@@ -353,7 +353,7 @@ export default function Home() {
                   width={628}
                   height={596}
                   sizes="100vw"
-                  className="z-50"
+                  className="z-50 img"
                 />
               </div>
             </div>
@@ -371,7 +371,7 @@ export default function Home() {
         {/* Explanation 5 */}
         <section className="flex h-fit items-center bg-[#F9F9F9] px-4 py-6 sm:h-fit sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
           <div className="container mx-auto ">
-            <div className="flex flex-col items-center gap-0 sm:gap-[21px] lg:flex-row">
+            <div className="flex flex-col justify-between items-center gap-0 sm:gap-[21px] lg:flex-row">
               <div className="z-50 mb-1 w-full sm:mb-16 md:mb-0 md:w-fit md:text-left">
                 <Image
                   src="/assets/people-conection.png"
@@ -379,7 +379,7 @@ export default function Home() {
                   width={616}
                   height={344}
                   sizes="100vw"
-                  className="z-50"
+                  className="z-50 img"
                 />
               </div>
               <div className="relative z-50 flex w-full flex-col items-center space-y-6 md:w-full md:items-start lg:w-1/2">
