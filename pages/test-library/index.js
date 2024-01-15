@@ -1,6 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { FaStar } from "react-icons/fa";
+
 
 import { Layout } from '@/components';
 import { images } from '@/constants';
@@ -15,8 +17,8 @@ const testLibrary = ({}) => {
         <section className="bg-[#F9F9F9] bg-blur bg-right bg-no-repeat pt-0">
           <div className="container mx-auto p-[10px] md:px-[40px] md:py-[58px]">
             {' '}
-            <div className={` ${styles.banner_topContent}`}>
-              <div className={styles.banner_topContentText}>
+            <div className={`gap-5 ${styles.banner_topContent}`}>
+              <div className={`${styles.banner_topContentText}`}>
                 <h1 className="sm:heading-1 heading-2 text-center lg:text-start">
                   Resumes aren’t working.{' '}
                   <span className="text-primary-500"> Skills-based </span>{' '}
@@ -37,6 +39,21 @@ const testLibrary = ({}) => {
                       Book a demo
                     </button>
                   </Link>
+                </div>
+                <div className='flex items-center gap-2 '>
+                  <div>
+                    <Image src="/assets/test-library-banner_people.png" width={140} height={44} />
+                  </div>
+                  <div >
+                    <div className='flex text-star'>
+                      <FaStar className='svg-star' />
+                      <FaStar className='svg-star' />
+                      <FaStar className='svg-star' />
+                      <FaStar className='svg-star' />
+                      <FaStar className='svg-star' />
+                    </div>
+                    <p>Used by 500K+ recruiters </p>
+                  </div>
                 </div>
               </div>
               <div
