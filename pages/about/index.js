@@ -31,6 +31,7 @@ const About = ({ resources }) => {
   return (
     <>
       <Layout pageTitle="About">
+        {/* Top Banner */}
         <section className="bg-[#F9F9F9] bg-blur bg-right bg-no-repeat lg:py-[100px]">
           <div className="container mx-auto mt-20">
             <div className="relative flex flex-col items-start px-4 py-6 sm:static md:px-10 md:py-8 lg:flex-row lg:px-0 lg:py-0">
@@ -96,17 +97,18 @@ const About = ({ resources }) => {
           </div>
         </section>
 
+        {/* Explanation 1 */}
         <section className="flex h-fit items-center bg-[#F9F9F9] px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
           <div className="container mx-auto ">
-            <div className="flex flex-col-reverse items-center gap-6 lg:flex-row lg:py-[60px]">
+            <div className="flex flex-col-reverse items-center gap-6 lg:flex-row justify-between lg:py-[60px] w-full">
               <div className="mb-16 w-full sm:w-1/2 md:mb-0 md:text-left ">
                 <Image
                   src="/assets/smile-chart.png"
                   alt="Hero Image"
-                  width={478}
-                  height={471}
-                  sizes="100vw"
-                  className="z-50"
+                  width={636}
+                  height={476}
+                  // sizes="100vw"
+                  className="z-50 img"
                 />
               </div>
               <div className="relative flex w-full flex-col items-center space-y-6 md:w-full lg:w-1/2 lg:items-start">
@@ -128,7 +130,8 @@ const About = ({ resources }) => {
           </div>
         </section>
 
-        <section className="container mx-auto bg-[#F9F9F9] px-4 py-6 md:px-10 md:py-8 lg:px-0 lg:py-0">
+        {/* The PIllar */}
+        <section className="bg-[#F9F9F9] px-4 py-6 md:px-10 md:py-8 lg:px-0 lg:py-0">
           <div className="flex flex-col lg:py-20">
             <h2 className="md:heading-1 heading-2 text-center lg:mb-6">
               Our Three Pillar of TestFounder
@@ -186,7 +189,8 @@ const About = ({ resources }) => {
           </div>
         </section>
 
-        <section className="container mx-auto bg-[#F9F9F9] px-4 py-6 md:px-10 md:py-8 lg:px-0 lg:py-0">
+        {/* Our Partner */}
+        <section className=" bg-[#F9F9F9] px-4 py-6 md:px-10 md:py-8 lg:px-0 lg:py-0">
           <div className="flex flex-col lg:px-16 lg:py-20">
             <h2 className="heading-1 text-center md:mb-[10px] lg:mb-6">
               Our Partner
@@ -232,8 +236,9 @@ const About = ({ resources }) => {
           </div>
         </section>
 
+        {/* Our Leaders */}
         <section className="h-full w-full bg-grayscale-200">
-          <div className="container mx-auto px-4 py-6 md:px-10 md:py-8 lg:px-0 lg:py-0">
+          <div className=" px-4 py-6 md:px-10 md:py-8 lg:px-0 lg:py-0">
             <div className="flex flex-col lg:py-20">
               <h2 className="heading-1 text-center lg:mb-6">
                 Meet our leaders
@@ -324,6 +329,7 @@ const About = ({ resources }) => {
           </div>
         </section>
 
+        {/* Our CLient */}
         <section className="container mx-auto px-4 py-6 md:px-10 md:py-8 lg:px-0 lg:py-0">
           <div className="flex flex-col lg:px-16 lg:py-20">
             <h2 className="heading-1 text-center md:mb-[10px] lg:mb-6">
@@ -370,6 +376,7 @@ const About = ({ resources }) => {
           </div>
         </section>
 
+        {/* Newsletter */}
         <section className="flex h-fit items-center bg-[#F9F9F9] px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
           <div className="container mx-auto">
             <div className="flex flex-col items-center gap-6 lg:flex-row lg:py-[60px]">
