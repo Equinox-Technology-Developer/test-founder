@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
-import { images } from '@/constants';
 import Link from 'next/link';
 
 import { Layout } from '@/components';
@@ -18,13 +17,24 @@ import CardAssessmentDefault from '../../components/CardAssessment/CardAssessmen
 
 import styles from './Products.module.scss';
 
-
 // const Products = () => {
-const Products = ({contentfulEntries}) => {
-  
-  const bodyTextValue = contentfulEntries.topBanner.fields.bodyText.content[0].content[0].value || '';
+const Products = ({ contentfulEntries }) => {
+  const bodyTextValue =
+    contentfulEntries.topBanner.fields.bodyText.content[0].content[0].value ||
+    '';
   const imageUrl = contentfulEntries.topBanner.fields.image.fields.file.url;
-  const fullImageUrl = `https:${imageUrl}`
+  const fullImageUrl = `https:${imageUrl}`;
+
+  const [activeCard, setActiveCard] = useState('card1');
+  const [activeCardAnalyze, setActiveCardAnalyze] = useState('cardAnalyze1');
+
+  const handleCardClick = (cardId) => {
+    setActiveCard(cardId);
+  };
+
+  const handleCardAnalyzeClick = (cardId) => {
+    setActiveCardAnalyze(cardId);
+  };
 
   return (
     <Layout pageTitle="Products">
@@ -34,7 +44,7 @@ const Products = ({contentfulEntries}) => {
           <div className="relative flex flex-col items-center sm:static lg:flex-row">
             <div className="mt-20 flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:px-[0px] md:py-[32px] md:text-left lg:mb-16 lg:mt-24 lg:flex-grow lg:items-start lg:pr-24 ">
               <h1 className="sm:heading-1 heading-2 mb-6 mt-0 ">
-              {contentfulEntries.topBanner.fields.headline
+                {contentfulEntries.topBanner.fields.headline
                   .split(' ')
                   .map((word, index) => (
                     <span
@@ -46,18 +56,18 @@ const Products = ({contentfulEntries}) => {
                   ))}
               </h1>
               <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center lg:text-start">
-                { bodyTextValue}
+                {bodyTextValue}
               </p>
               <div className="mb-6 flex justify-center">
                 <Link href={contentfulEntries.topBanner.fields.ctaUrl}>
                   <button className="btn-medium sm:btn-normal">
-                  {contentfulEntries.topBanner.fields.ctaText}
+                    {contentfulEntries.topBanner.fields.ctaText}
                   </button>
                 </Link>
                 <Link href={contentfulEntries.topBanner.fields.ctaUrl2}>
-                <button className="btn-line-medium sm:btn-line-normal ml-4">
-                {contentfulEntries.topBanner.fields.ctaText2}
-                </button>
+                  <button className="btn-line-medium sm:btn-line-normal ml-4">
+                    {contentfulEntries.topBanner.fields.ctaText2}
+                  </button>
                 </Link>
               </div>
             </div>
@@ -86,28 +96,55 @@ const Products = ({contentfulEntries}) => {
             these simple steps.
           </p>
           <div className="flex flex-col lg:flex-row">
-            <div className="lg:mt-12 lg:w-1/2">
+            <div className="flex flex-col gap-3 lg:mt-12 lg:w-1/2 lg:gap-[19px]">
               <CardAssessmentDefault
+                id="card1"
                 title="Pick the perfect assessment name"
                 paragraph="Organize and optimize your assessment by choosing a distinct name and job role"
                 paragraph_2="Creating a unique and detailed name allows you to easily keep track of assessments. Selecting a job role lets us recommend the most relevant tests"
-                icon_url={'/assets/assessment.svg'}
+                icon_url={`/assets/${
+                  activeCard === 'card1' ? 'assessment' : 'icon-plus-product'
+                }.svg`}
+                isActive={activeCard === 'card1'}
+                onClick={() => handleCardClick('card1')}
               />
               <CardAssessmentDefault
-                title="Pick the perfect assessment name"
+                id="card2"
+                title="Select the tests that work for you"
                 paragraph="Explore our test library and find the best tests for any job role"
-                icon_url={'/assets/icon-plus-product.svg'}
+                icon_url={`/assets/${
+                  activeCard === 'card2'
+                    ? 'assessment-done'
+                    : 'icon-plus-product'
+                }.svg`}
+                isActive={activeCard === 'card2'}
+                onClick={() => handleCardClick('card2')}
               />
               <CardAssessmentDefault
+                id="card3"
                 title="Get personal with your own custom questions"
                 paragraph="Video responses from your candidates give unique insight into their personality"
-                icon_url={'/assets/icon-plus-product.svg'}
+                icon_url={`/assets/${
+                  activeCard === 'card3'
+                    ? 'in-depth-candidate'
+                    : 'icon-plus-product'
+                }.svg`}
+                isActive={activeCard === 'card3'}
+                onClick={() => handleCardClick('card3')}
               />
             </div>
             <div className="flex items-center justify-end lg:w-1/2">
               <Image
-                src="/assets/pick-assesment.png"
-                alt="Pick Assesment"
+                src={`/assets/${
+                  activeCard === 'card1'
+                    ? 'pick-assesment'
+                    : activeCard === 'card2'
+                      ? 'select-the-test'
+                      : activeCard === 'card3'
+                        ? 'get-personal'
+                        : ''
+                }.png`}
+                alt="Pick Assessment"
                 width={566}
                 height={357}
                 sizes="100vw"
@@ -122,26 +159,29 @@ const Products = ({contentfulEntries}) => {
       <section className="bg-[#F9F9F9] px-4 py-6 md:px-[50px] md:py-[40px]">
         <div className="container mx-auto">
           {contentfulEntries.topSection.map((content) => (
-          <div className="flex flex-col lg:flex-row">
-            <div className="lg:mt-12 lg:w-1/2">
-              <Image
-                src={`https:${content.fields.image.fields.file.url}`}
-                alt="Hero Mail"
-                width={566}
-                height={357}
-                sizes="100vw"
-                className="z-50 object-cover"
-              />
+            <div className="flex flex-col lg:flex-row">
+              <div className="lg:mt-12 lg:w-1/2">
+                <Image
+                  src={`https:${content.fields.image.fields.file.url}`}
+                  alt="Hero Mail"
+                  width={566}
+                  height={357}
+                  sizes="100vw"
+                  className="z-50 object-cover"
+                />
+              </div>
+              <div className="flex flex-col justify-center lg:w-1/2">
+                <h1
+                  key={content.fields.headline}
+                  className="heading-2 md:heading-1 mb-6"
+                >
+                  {content.fields.headline}
+                </h1>
+                <p className={`caption-regular-1 ${styles.pre}`}>
+                  {content.fields.bodyText.content[0].content[0].value}
+                </p>
+              </div>
             </div>
-            <div className="flex flex-col justify-center lg:w-1/2">
-              <h1 key={content.fields.headline} className="heading-2 md:heading-1 mb-6">
-              {content.fields.headline}
-              </h1>
-              <p className={`caption-regular-1 ${styles.pre}`}>
-              {content.fields.bodyText.content[0].content[0].value}
-              </p>
-            </div>
-          </div>
           ))}
         </div>
       </section>
@@ -159,25 +199,54 @@ const Products = ({contentfulEntries}) => {
           <div className="flex flex-col lg:flex-row">
             <div className="lg:mt-12 lg:w-1/2">
               <CardAssessmentDefault
+                id="cardAnalyze1"
                 title="Real-time assessment results"
                 paragraph="Review every single assessment status at a glance"
                 paragraph_2="See stats for each assesment, including how many candidates have started or finished and when the latest activity took place"
-                icon_url={'/assets/assessment.svg'}
+                icon_url={`/assets/${
+                  activeCardAnalyze === 'cardAnalyze1'
+                    ? 'assesment-result'
+                    : 'icon-plus-product'
+                }.svg`}
+                isActive={activeCardAnalyze === 'cardAnalyze1'}
+                onClick={() => handleCardAnalyzeClick('cardAnalyze1')}
               />
               <CardAssessmentDefault
+                id="cardAnalyze2"
                 title="Compare your candidates instantly"
                 paragraph="See your candidates ranked right away when you click on an assessment"
-                icon_url={'/assets/icon-plus-product.svg'}
+                icon_url={`/assets/${
+                  activeCardAnalyze === 'cardAnalyze2'
+                    ? 'compare-candidate'
+                    : 'icon-plus-product'
+                }.svg`}
+                isActive={activeCardAnalyze === 'cardAnalyze2'}
+                onClick={() => handleCardAnalyzeClick('cardAnalyze2')}
               />
               <CardAssessmentDefault
+                id="cardAnalyze3"
                 title="Go in-depth with a candidate review"
                 paragraph="Know your candidates from every angle by exploring detailed reports and watching their personalized video"
-                icon_url={'/assets/icon-plus-product.svg'}
+                icon_url={`/assets/${
+                  activeCardAnalyze === 'cardAnalyze3'
+                    ? 'vid-call'
+                    : 'icon-plus-product'
+                }.svg`}
+                isActive={activeCardAnalyze === 'cardAnalyze3'}
+                onClick={() => handleCardAnalyzeClick('cardAnalyze3')}
               />
             </div>
             <div className="flex items-center justify-end lg:w-1/2">
               <Image
-                src="/assets/assesment-table.png"
+                src={`/assets/${
+                  activeCardAnalyze === 'cardAnalyze1'
+                    ? 'assesment-table'
+                    : activeCardAnalyze === 'cardAnalyze2'
+                      ? 'compare-candidate-instantly'
+                      : activeCardAnalyze === 'cardAnalyze3'
+                        ? 'go-in-depth'
+                        : ''
+                }.png`}
                 alt="Pick Assesment"
                 width={577}
                 height={281}
@@ -382,15 +451,19 @@ const Products = ({contentfulEntries}) => {
                           sizes="100vw"
                           className="z-50"
                         />
-                        <h3 className="heading-3 mt-0">{testimonial.fields.name}</h3>
+                        <h3 className="heading-3 mt-0">
+                          {testimonial.fields.name}
+                        </h3>
                         <p className="caption-regular-3">
-                        {testimonial.fields.position}
+                          {testimonial.fields.position}
                         </p>
                         <p className="caption-light-2 hidden md:block">
-                          “{
-                          testimonial.fields.testimonialText.content[0]
-                            .content[0].value
-                        }”
+                          “
+                          {
+                            testimonial.fields.testimonialText.content[0]
+                              .content[0].value
+                          }
+                          ”
                         </p>
                       </div>
                       <div className="hidden justify-between md:flex">
@@ -457,16 +530,19 @@ const Products = ({contentfulEntries}) => {
                           </svg>
                         </div>
                         <p className="caption-regular-3 text-neutral-100">
-                          {new Date(testimonial.sys.updatedAt).toLocaleDateString()}
+                          {new Date(
+                            testimonial.sys.updatedAt,
+                          ).toLocaleDateString()}
                         </p>
                       </div>
                     </div>
                   </div>
                   <p className="caption-light-2 pt-[20px] md:hidden">
-                  “{
-                          testimonial.fields.testimonialText.content[0]
-                            .content[0].value
-                        }
+                    “
+                    {
+                      testimonial.fields.testimonialText.content[0].content[0]
+                        .value
+                    }
                   </p>
                   <div className="mt-4 flex justify-between md:hidden">
                     <div className="flex">
@@ -547,18 +623,23 @@ const Products = ({contentfulEntries}) => {
       <div className="min-h-[366px] w-full space-y-6 bg-[#D0F3FC26] pb-[60px]">
         <div className="container mx-auto flex flex-col items-center justify-center space-y-6 px-4 py-6 text-center sm:px-16 sm:py-[60px]">
           <h1 className="heading-2 sm:heading-1">
-          {contentfulEntries.extraSection[0].fields.headline}
+            {contentfulEntries.extraSection[0].fields.headline}
           </h1>
           <p className="caption-regular-3 sm:caption-regular-1 text-center">
-            { contentfulEntries.extraSection[0].fields.bodyText.content[0].content[0].value }
+            {
+              contentfulEntries.extraSection[0].fields.bodyText.content[0]
+                .content[0].value
+            }
           </p>
           <div className="flex flex-row gap-4">
             <Link href={contentfulEntries.extraSection[0].fields.ctaUrl}>
-              <button className="btn-line-medium">{contentfulEntries.extraSection[0].fields.ctaText}</button>
+              <button className="btn-line-medium">
+                {contentfulEntries.extraSection[0].fields.ctaText}
+              </button>
             </Link>
             <Link href={contentfulEntries.extraSection[0].fields.ctaUrl2}>
               <button className="btn-medium ">
-              {contentfulEntries.extraSection[0].fields.ctaText2}
+                {contentfulEntries.extraSection[0].fields.ctaText2}
                 <span className="pl-2">
                   <IoIosArrowForward />
                 </span>
