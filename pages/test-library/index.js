@@ -6,37 +6,48 @@ import { FaStar } from "react-icons/fa";
 
 import { Layout } from '@/components';
 import { images } from '@/constants';
+import { fetchContentfulEntries } from '@/helper';
 
 import styles from './TestLibrary.module.scss';
 
-const testLibrary = ({}) => {
+const testLibrary = ({contentfulEntries}) => {
+  const bodyTextValue = contentfulEntries.topBanner.fields.bodyText.content[0].content[0].value || '';
+  const imageUrl = contentfulEntries.topBanner.fields.image.fields.file.url;
+  const fullImageUrl = `https:${imageUrl}`
+
+  console.log(contentfulEntries)
   return (
     <>
       <Layout pageTitle="Test Library">
         {/* Top Banner */}
         <section className="bg-[#F9F9F9] bg-blur bg-right bg-no-repeat pt-0">
           <div className="container mx-auto p-[10px] md:px-[40px] md:py-[58px]">
-            {' '}
             <div className={`gap-5 ${styles.banner_topContent}`}>
               <div className={`${styles.banner_topContentText}`}>
                 <h1 className="sm:heading-1 heading-2 text-center lg:text-start">
-                  Resumes aren’t working.{' '}
-                  <span className="text-primary-500"> Skills-based </span>{' '}
-                  hiring does.
+                {contentfulEntries.topBanner.fields.headline
+                    .split(' ')
+                    .map((word, index) => (
+                      <span
+                        key={index}
+                        className={word === 'Skills-based' ? 'text-primary-500' : ''}
+                      >
+                        {word}{' '}
+                      </span>
+                  ))}
                 </h1>
                 <p className="caption-regular-3 sm:caption-regular-1 mb-4 mt-4 text-center md:mb-6 md:mt-6 lg:text-start">
-                  Choose from our 300+ candidate-friendly skills and personality
-                  tests for fast and accurate pre-employment screening
+                  {bodyTextValue}
                 </p>
                 <div className="mb-6 flex w-full justify-center lg:justify-start">
-                  <Link href="/signup">
+                  <Link href={contentfulEntries.topBanner.fields.ctaUrl}>
                     <button className="btn-medium sm:btn-normal">
-                      Try for free!
+                    {contentfulEntries.topBanner.fields.ctaText}
                     </button>
                   </Link>
-                  <Link href="/book-demo">
+                  <Link href={contentfulEntries.topBanner.fields.ctaUrl2}>
                     <button className="btn-line-medium sm:btn-line-normal ml-4">
-                      Book a demo
+                    {contentfulEntries.topBanner.fields.ctaText2}
                     </button>
                   </Link>
                 </div>
@@ -60,7 +71,7 @@ const testLibrary = ({}) => {
                 className={`flex w-full justify-center md:w-full lg:w-full lg:max-w-lg ${styles.banner_topContentImage}`}
               >
                 <Image
-                  src={images.top_banner_testLibrary}
+                  src={fullImageUrl}
                   alt="Hero Image"
                   width={617}
                   height={602}
@@ -652,3 +663,25 @@ const testLibrary = ({}) => {
 };
 
 export default testLibrary;
+
+export async function getStaticProps() {
+  const contentType = 'landingPage'; // Modify content type here
+  const { items } = await fetchContentfulEntries(contentType);
+
+  const entries = items.find(
+    (entry) => entry.fields.internalName === 'Test Library',
+  );
+
+  // Check if the entry is found
+  if (entries) {
+    console.log('Found the homepage entry:', entries);
+  } else {
+    console.log('Homepage entry not found.');
+  }
+
+  return {
+    props: {
+      contentfulEntries: entries ? entries.fields : {}, // Modify key-value of props
+    },
+  };
+}

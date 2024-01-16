@@ -3,9 +3,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { Layout } from '@/components';
-import { images } from '@/constants';
 import { fetchContentfulEntries } from '@/helper';
 import { IoIosArrowForward } from 'react-icons/io';
+import { FaStar } from "react-icons/fa";
 
 import styles from './Sciences.module.scss';
 
@@ -38,19 +38,34 @@ const ProductScience = ({contentfulEntries}) => {
                 <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center lg:text-start">
                   {bodyTextValue}
                 </p>
-                <div className="mb-6 flex w-full justify-center lg:justify-start">
+                <div className="mb-6 gap-3 flex w-full justify-center lg:justify-start">
                   <Link href={contentfulEntries.topBanner.fields.ctaUrl}>
                     <button className="btn-line-medium sm:btn-line-normal">
                     {contentfulEntries.topBanner.fields.ctaText}
                     </button>
                   </Link>
+                  <div className='flex items-center gap-2 '>
+                  <div>
+                    <Image src="/assets/test-library-banner_people.png" width={140} height={44} />
+                  </div>
+                  <div >
+                    <div className='flex text-star'>
+                      <FaStar className='svg-star' />
+                      <FaStar className='svg-star' />
+                      <FaStar className='svg-star' />
+                      <FaStar className='svg-star' />
+                      <FaStar className='svg-star' />
+                    </div>
+                    <p>Used by 500K+ recruiters </p>
+                  </div>
+                </div>
                 </div>
               </div>
               <div
                 className={`relative flex w-full justify-center md:w-full lg:w-full lg:max-w-lg ${styles.banner_topContentImage}`}
               >
                 <Image
-                  src={images.top_banner_science}
+                  src={fullImageUrl}
                   alt="Hero Image"
                   width={617}
                   height={602}
@@ -233,7 +248,6 @@ const ProductScience = ({contentfulEntries}) => {
 };
 
 export default ProductScience;
-
 
 export async function getStaticProps() {
   const contentType = 'landingPage'; // Modify content type here
