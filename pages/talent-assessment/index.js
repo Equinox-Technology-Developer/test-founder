@@ -160,7 +160,7 @@ const index = () => {
         </div>
       </section>
 
-      {/* Middle Banner */}
+      {/* Explanation 1 */}
       <section className="flex h-fit items-center bg-white px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
         <div className="container mx-auto ">
           <div className="flex flex-col-reverse items-center gap-6 lg:flex-row lg:py-[60px]">
@@ -199,6 +199,7 @@ const index = () => {
         </div>
       </section>
 
+      {/* Blog Grid 1 */}
       <section className={styles.blog_container}>
         <div className={`container m-10 mx-auto`}>
           <h1 className="heading-2 md:heading-1 text-center lg:text-start">
@@ -307,9 +308,10 @@ const index = () => {
         </div>
       </section>
 
+      {/* Explanation 2 */}
       <section className="flex h-fit items-center bg-white px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
         <div className="container mx-auto ">
-          <div className="flex flex-col items-center gap-6 lg:flex-row lg:py-[60px]">
+          <div className="flex flex-col justify-between items-center gap-6 lg:flex-row lg:py-[60px]">
             <div className="relative flex w-full flex-col items-center space-y-6 md:w-full lg:w-1/2 lg:items-start">
               <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center sm:text-start">
                 Benefits of talent assessments
@@ -340,12 +342,14 @@ const index = () => {
                 width={645}
                 height={513}
                 sizes="100vw"
+                className='img'
               />
             </div>
           </div>
         </div>
       </section>
 
+      {/* Blog Grid 2 */}
       <section className={styles.blog_container}>
         <div className={`container m-10 mx-auto`}>
           <h3 className="heading-2 md:heading-1 text-center lg:text-start">
@@ -454,6 +458,7 @@ const index = () => {
         </div>
       </section>
 
+      {/* Explanation 3 */}
       <section className="flex h-fit items-center bg-white px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
         <div className="container mx-auto ">
           <div className="flex flex-col-reverse items-center gap-6 lg:flex-row lg:py-[60px]">
@@ -464,6 +469,7 @@ const index = () => {
                 width={644}
                 height={551}
                 sizes="100vw"
+                className='img'
               />
             </div>
             <div className="relative flex w-full flex-col items-center space-y-6 md:w-full lg:w-1/2 lg:items-start">
@@ -492,6 +498,7 @@ const index = () => {
         </div>
       </section>
 
+      {/* Blog Grid 3 */}
       <section className={styles.blog_container}>
         <div className={`container m-10 mx-auto`}>
           <h1 className="heading-2 md:heading-1 text-center lg:text-start">
@@ -600,6 +607,7 @@ const index = () => {
         </div>
       </section>
 
+      {/* Explanation 4 */}
       <section className="flex h-fit items-center bg-white px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
         <div className="container mx-auto ">
           <div className="flex flex-col items-center gap-6 lg:flex-row lg:py-[60px]">
@@ -631,12 +639,14 @@ const index = () => {
                 width={643}
                 height={588}
                 sizes="100vw"
+                className='img'
               />
             </div>
           </div>
         </div>
       </section>
 
+      {/* Blog Grid 4 */}
       <section className={styles.blog_container}>
         <div className={`container m-10 mx-auto`}>
           <h1 className="heading-2 md:heading-1 text-center lg:text-start">
@@ -745,6 +755,7 @@ const index = () => {
         </div>
       </section>
 
+      {/* Explanation 5 */}
       <section className="flex h-fit items-center bg-white px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
         <div className="container mx-auto ">
           <div className="flex flex-col-reverse items-center gap-6 lg:flex-row lg:py-[60px]">
@@ -755,6 +766,7 @@ const index = () => {
                 width={537}
                 height={614}
                 sizes="100vw"
+                className='img'
               />
             </div>
             <div className="relative flex w-full flex-col items-center space-y-6 md:w-full lg:w-1/2 lg:items-start">
@@ -785,6 +797,7 @@ const index = () => {
         </div>
       </section>
 
+      {/* Blog Grid 5 */}
       <section className={styles.blog_container}>
         <div className={`container m-10 mx-auto`}>
           <h1 className="heading-2 md:heading-1 text-center lg:text-start">
@@ -893,6 +906,7 @@ const index = () => {
         </div>
       </section>
 
+      {/* FAQ */}
       <section className="py-6 lg:px-16 lg:py-[60px]">
         <div className="container mx-auto">
           <h1 className="md:heading-1 heading-2 text-center lg:mb-8 lg:text-start">
@@ -971,6 +985,7 @@ const index = () => {
         </div>
       </section>
 
+      {/* Bottom Banner */}
       <div className="min-h-[366px] w-full space-y-6 bg-primary-500">
         <div className="container mx-auto flex flex-col items-center justify-center space-y-6 px-4 py-6 text-center sm:px-0 sm:py-[60px]">
           <h1 className="heading-2 sm:heading-1 text-white">
@@ -995,6 +1010,7 @@ const index = () => {
         </div>
       </div>
 
+      {/* Search Bar*/}
       <section className="py-[60px]">
         <div className="container mx-auto">
           <h1 className="heading-2 md:heading-1 mb-6 text-center lg:mb-20">
@@ -1020,6 +1036,7 @@ const index = () => {
         </div>
       </section>
 
+      {/* Blog Grid 6 */}
       <section className="bg-grayscale-200 px-4 py-6 md:px-[40px] md:py-[32px] lg:px-0 lg:py-[60px]">
         <div className="container mx-auto">
           <div className="flex flex-wrap justify-center gap-[43px] ">

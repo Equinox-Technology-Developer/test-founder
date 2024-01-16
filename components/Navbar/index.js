@@ -159,7 +159,7 @@ const Navbar = () => {
         </div>
 
         <div className="flex justify-center">
-          <div className="mobile-hidden flex justify-center">
+          <div className="mobile-hidden  tab-hidden flex justify-center">
             <Link href="/book-demo">
               <button className="2xl:btn-line-normal lg:btn-line-medium btn-line-medium">
                 Book a Demo

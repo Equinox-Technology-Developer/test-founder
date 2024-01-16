@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
 import { images } from '../../constants';
 import { FcGoogle } from 'react-icons/fc';
+import { LuEye, LuEyeOff } from 'react-icons/lu';
 
 const Login = ({}) => {
+  const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   return (
     <>
       <main className="flex h-screen w-screen flex-col lg:flex-row">
@@ -37,11 +40,26 @@ const Login = ({}) => {
               className="h-[48px] w-full rounded-[5px] border-[0.75px] border-[#CBCBCB] bg-shade-0 px-4 py-[10px]"
               placeholder="Email"
             />
-            <input
-              type="password"
-              className="h-[48px] w-full rounded-[5px] border-[0.75px] border-[#CBCBCB] bg-shade-0 px-4 py-[10px]"
-              placeholder="Password"
-            />
+            <div className="relative w-full">
+              <input
+                type={showPassword ? 'text' : 'password'}
+                value={password}
+                className="absolute h-[48px] w-full rounded-[5px] border-[0.75px] border-[#CBCBCB] bg-shade-0 px-4 py-[10px]"
+                placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              {showPassword ? (
+                <LuEyeOff
+                  className="absolute right-4 top-4 h-5 w-5"
+                  onClick={() => setShowPassword(false)}
+                />
+              ) : (
+                <LuEye
+                  className="absolute right-4 top-4 h-5 w-5"
+                  onClick={() => setShowPassword(true)}
+                />
+              )}
+            </div>
             <div className="flex w-full items-center justify-between">
               <div className="flex items-center gap-[6px]">
                 <input type="checkbox" className="accent-primary-500" />

@@ -49,7 +49,7 @@ const ProductScience = () => {
                   width={617}
                   height={602}
                   sizes="100vw"
-                  className={`z-10 flex h-auto w-[80%] md:w-[60%] lg:w-full `}
+                  className={`z-10 flex h-auto w-[80%] md:w-[60%] lg:w-full img`}
                 />
               </div>
             </div>
@@ -66,7 +66,7 @@ const ProductScience = () => {
                   alt="Hero Image"
                   width={616}
                   height={404}
-                  sizes="100vw"
+                  sizes="100vw img"
                 />
               </div>
               <div className="relative z-50 flex w-full flex-col items-center space-y-6 md:w-full md:items-start lg:w-full">
@@ -98,7 +98,7 @@ const ProductScience = () => {
         {/* Explanation 2 */}
         <section className="flex h-fit items-center bg-[#F9F9F9] px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
           <div className="container mx-auto">
-            <div className="flex flex-col-reverse items-center md:flex-col-reverse lg:flex-row">
+            <div className="flex gap-12 flex-col-reverse items-center md:flex-col-reverse lg:flex-row">
               <div className="z-50 mb-1 flex flex-col items-center text-center sm:mb-16 md:mb-0 md:w-full md:items-start md:pr-0 md:text-left lg:w-1/2 lg:flex-grow lg:pr-0">
                 <h1 className="heading-2 sm:heading-1 mb-6 mt-0">
                   Reliable, science-backed tests.
@@ -118,7 +118,7 @@ const ProductScience = () => {
                   width={617}
                   height={422}
                   sizes="100vw"
-                  className="z-50"
+                  className="z-50 img"
                 />
               </div>
             </div>
@@ -163,7 +163,7 @@ const ProductScience = () => {
         {/* Explanation 4 */}
         <section className="flex h-fit items-center bg-[#F9F9F9] px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
           <div className="container mx-auto">
-            <div className="flex flex-col-reverse items-center gap-[41px] md:flex-col-reverse lg:flex-row">
+            <div className="flex gap-3 flex-col-reverse items-center gap-[41px] md:flex-col-reverse lg:flex-row">
               <div className="z-50 mb-16 flex flex-col items-center text-center md:mb-0 md:w-full md:items-start md:pr-16 md:text-left lg:w-1/2 lg:flex-grow lg:pr-0">
                 <h1 className="heading-2 sm:heading-1 mb-6 mt-0">
                   Fair for all candidates.
@@ -186,7 +186,7 @@ const ProductScience = () => {
                   width={618}
                   height={357}
                   sizes="100vw"
-                  className="z-50"
+                  className="z-50 img"
                 />
               </div>
             </div>
@@ -204,7 +204,7 @@ const ProductScience = () => {
         {/* Explanation 5 */}
         <section className="flex h-fit items-center bg-[#F9F9F9] px-4 py-6 sm:h-fit sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
           <div className="container mx-auto ">
-            <div className="flex flex-col items-center gap-0 sm:gap-[21px] lg:flex-row">
+            <div className="flex gap-3 flex-col items-center gap-0 sm:gap-[21px] lg:flex-row">
               <div className="z-50 mb-1 w-full sm:mb-16 md:mb-0 md:w-1/2 md:text-left">
                 <Image
                   src="/assets/an-enjoyable.png"
@@ -212,7 +212,7 @@ const ProductScience = () => {
                   width={636}
                   height={603}
                   sizes="100vw"
-                  className="z-50"
+                  className="z-50 img"
                 />
               </div>
               <div className="relative z-50 flex w-full flex-col items-center space-y-6 md:w-full md:items-start lg:w-1/2">
@@ -260,14 +260,14 @@ const ProductScience = () => {
                   impact the long-term success of your company.
                 </p>
               </div>
-              <div className="flex w-full justify-center md:w-full lg:w-1/2">
+              <div className="flex w-full justify-center">
                 <Image
                   src="/assets/insightful.png"
                   alt="Hero Image"
                   width={603}
                   height={301}
                   sizes="100vw"
-                  className="z-50"
+                  className="z-50 img"
                 />
               </div>
             </div>

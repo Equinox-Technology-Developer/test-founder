@@ -14,6 +14,79 @@ import styles from './Pricing.module.scss';
 
 const Pricing = () => {
   const [showTable, setShowTable] = useState(false);
+  const [selectedOption, setSelectedOption] = useState('31-50'); // Default option
+  const [showOptionsStarter, setshowOptionsStarter] = useState(false);
+  const [showOptionsPro, setshowOptionsPro] = useState(false);
+  const [billingOption, setBillingOption] = useState('annual'); // Default billing option
+
+
+  const handleOptionChangeStarter = (option) => {
+    setSelectedOption(option);
+    setshowOptionsStarter(false);
+  }
+
+  const handleOptionChangePro = (option) => {
+    setSelectedOption(option);
+    setshowOptionsPro(false);
+  }
+  
+  const handleBillingOptionChange = (option) => {
+    if (selectedOption !== '1-15') {
+      setBillingOption(option);
+    }
+  };
+
+  const renderPriceDetails = () => {
+    switch(selectedOption) {
+      case '1-15':
+        return {
+          price : billingOption === 'annual' ? 75 : null, // Monthly price not available for 1-15 employees
+          savings: '',
+          upfront: billingOption === 'annual' ? '$900 upfront' : 'monthly',
+          pro_price : billingOption === 'annual' ? 115 : null, // Monthly price not available for 1-15 employees
+          pro_savings: '',
+          pro_upfront: billingOption === 'annual' ? '$1,380 upfront' : 'monthly'
+        }
+      case '16-30':
+        return {
+          price : billingOption === 'annual' ? 138 : 120,
+          savings: 'SAVE $216',
+          upfront: billingOption === 'annual' ? '$1440 upfront' : 'monthly',
+          pro_price : billingOption === 'annual' ? 165 : 190, // Monthly price not available for 1-15 employees
+          pro_savings: 'SAVE $300',
+          pro_upfront: billingOption === 'annual' ? '$1,980 upfront' : 'monthly'
+        }
+      case '31-50':
+        return {
+          price : billingOption === 'annual' ? 240 : 208,
+          savings: 'SAVE $384',
+          upfront: billingOption === 'annual' ? '$2496 upfront': 'monthly',
+          pro_price : billingOption === 'annual' ? 310 : 360, // Monthly price not available for 1-15 employees
+          pro_savings: 'SAVE $600',
+          pro_upfront: billingOption === 'annual' ? '$3,720 upfront' : 'monthly'
+        }
+      case '51-100':
+        return {
+          price : billingOption === 'annual' ? 460 : 400,
+          savings:'SAVE $720',
+          upfront: billingOption === 'annual' ? '$4800 upfront' : 'monthly',
+          pro_price : billingOption === 'annual' ? 555 : 640, // Monthly price not available for 1-15 employees
+          pro_savings: 'SAVE $1,020',
+          pro_upfront: billingOption === 'annual' ? '$6,600 upfront' : 'monthly'
+        }
+      default:
+        return {
+          price : billingOption === 'annual' ? 700 : null,
+          savings:'SAVE $900',
+          upfront: billingOption === 'annual' ? '$900 upfront' : 'monthly',
+          pro_price : billingOption === 'annual' ? 115 : null, // Monthly price not available for 1-15 employees
+          pro_savings: '',
+          pro_upfront: billingOption === 'annual' ? '$900 upfront' : 'monthly'
+        }
+    }
+  }
+
+  const { price, savings, upfront, pro_price,  pro_savings, pro_upfront, } = renderPriceDetails();
 
   const handleButtonClick = () => {
     setShowTable(!showTable);
@@ -29,6 +102,7 @@ const Pricing = () => {
 
               {/* Pricing Cards */}
               <div className={`${styles.pricingCards_wrapper}`}>
+                {/* Free */}
                 <div className={`${styles.pricing_cards}`}>
                   <div className={`${styles.pricing_cardsTitle}`}>
                     <h2>Free</h2>
@@ -69,6 +143,7 @@ const Pricing = () => {
                     </ul>
                   </div>
                 </div>
+                {/* Lite */}
                 <div className={`${styles.pricing_cards}`}>
                   <div className={`${styles.pricing_cardsTitle}`}>
                     <h2>Lite</h2>
@@ -110,6 +185,7 @@ const Pricing = () => {
                     </ul>
                   </div>
                 </div>
+                {/* Starter */}
                 <div
                   className={`${styles.pricing_cards}  ${styles.cards_blue}`}
                 >
@@ -119,31 +195,50 @@ const Pricing = () => {
                   </div>
                   <div className={`${styles.pricing_cardsCheck}`}>
                     <div className={`${styles.select_employees}`}>
-                      <button type="button">
-                        10-100 employees
+                      <button type="button" onClick={() => setshowOptionsStarter(!showOptionsStarter)}>
+                        {`${selectedOption} employees`}
                         <span>
                           <MdOutlineKeyboardArrowDown />
                         </span>
                       </button>
+                      {showOptionsStarter && (
+                        <div className={`${styles.select_options}`}>
+                          <div onClick={() => handleOptionChangeStarter('1-15')} className={styles.option_selected}>1-15 employees</div>
+                          <div onClick={() => handleOptionChangeStarter('16-30')} className={styles.option_selected}>16-30 employees</div>
+                          <div onClick={() => handleOptionChangeStarter('31-50')} className={styles.option_selected}>31-50 employees</div>
+                          <div onClick={() => handleOptionChangeStarter('51-100')} className={styles.option_selected}>51-100 employees</div>
+                        </div>
+                      )}
                     </div>
                     <div className={`${styles.select_option}`}>
-                      <p className={`${styles.annual}`}>
-                        Annual<span>SAVE $1,260</span>
+                      <p
+                        className={`${styles.annual} ${billingOption === 'annual' && styles.selected}`}
+                        onClick={() => handleBillingOptionChange('annual')}
+                      >
+                        Annual<span>{savings}</span>
                       </p>
-                      <p className={`${styles.monthly}`}>Monthly</p>
+                      <p
+                        className={`${styles.monthly} ${billingOption === 'monthly' && styles.selected}`}
+                        onClick={() =>
+                          selectedOption !== '1-15' && handleBillingOptionChange('monthly')
+                        }
+                        style={{
+                          cursor: selectedOption === '1-15' ? 'not-allowed' : 'pointer',
+                        }}
+                      >
+                        Monthly
+                      </p>
                     </div>
                   </div>
                   <div className={`${styles.pricing_price}`}>
                     <div className={`${styles.pricing_currency}`}>
-                      <h2>$700</h2>
+                      <h2>${price}</h2>
                       <div className={`${styles.pricing_details}`}>
                         <p>USD</p>
                         <h6>per month</h6>
                       </div>
                     </div>
-                    <p className="text-abu">
-                      1-year commitment, pay $8,400 upfront
-                    </p>
+                    <p className="text-abu">{`1-year commitment, pay ${upfront}`}</p>
                   </div>
                   <button type="button">Start 15-day trial</button>
                   <div className={`${styles.pricing_cardsDetail}`}>
@@ -158,40 +253,60 @@ const Pricing = () => {
                     </ul>
                   </div>
                 </div>
+                {/* Pro */}
                 <div className={`${styles.pricing_cards}`}>
                   <div className={`${styles.pricing_cardsTitle}`}>
-                    <h2>Free</h2>
-                    <p>Test for essential skills</p>
+                    <h2>Pro</h2>
+                    <p>Maximize your hiring process</p>
                   </div>
                   <div
                     className={`${styles.pricing_cardsCheck} ${styles.card_white}`}
                   >
                     <div className={`${styles.select_employees}`}>
-                      <button type="button">
-                        10-100 employees
+                      <button type="button" onClick={() => setshowOptionsPro(!showOptionsPro)}>
+                        {`${selectedOption} employees`}
                         <span>
                           <MdOutlineKeyboardArrowDown />
                         </span>
                       </button>
+                      {showOptionsPro && (
+                        <div className={`${styles.select_options}`}>
+                          <div onClick={() => handleOptionChangePro('1-15')} className={styles.option_selected}>1-15 employees</div>
+                          <div onClick={() => handleOptionChangePro('16-30')} className={styles.option_selected}>16-30 employees</div>
+                          <div onClick={() => handleOptionChangePro('31-50')} className={styles.option_selected}>31-50 employees</div>
+                          <div onClick={() => handleOptionChangePro('51-100')} className={styles.option_selected}>51-100 employees</div>
+                        </div>
+                      )}
                     </div>
                     <div className={`${styles.select_option}`}>
-                      <p className={`${styles.annual}`}>
-                        Annual<span>SAVE $1,260</span>
+                      <p
+                        className={`${styles.annual} ${billingOption === 'annual' && styles.selected}`}
+                        onClick={() => handleBillingOptionChange('annual')}
+                      >
+                        Annual<span>{pro_savings}</span>
                       </p>
-                      <p className={`${styles.monthly}`}>Monthly</p>
+                      <p
+                        className={`${styles.monthly} ${billingOption === 'monthly' && styles.selected}`}
+                        onClick={() =>
+                          selectedOption !== '1-15' && handleBillingOptionChange('monthly')
+                        }
+                        style={{
+                          cursor: selectedOption === '1-15' ? 'not-allowed' : 'pointer',
+                        }}
+                      >
+                        Monthly
+                      </p>
                     </div>
                   </div>
                   <div className={`${styles.pricing_price}`}>
                     <div className={`${styles.pricing_currency}`}>
-                      <h2>$1000</h2>
+                      <h2>${pro_price}</h2>
                       <div className={`${styles.pricing_details}`}>
                         <p>USD</p>
                         <h6>per month</h6>
                       </div>
                     </div>
-                    <p className="text-abut">
-                      1-year commitment, pay $12,000 upfront
-                    </p>
+                    <p className="text-abu">{`1-year commitment, pay ${pro_upfront}`}</p>
                   </div>
                   <button type="button">Start 15-day trial</button>
                   <div className={`${styles.pricing_cardsDetail}`}>
@@ -211,6 +326,8 @@ const Pricing = () => {
                 recruiting agencies or sourcing platforms pricing.
               </p>
 
+
+              {/* Pricing Details */}
               <div className={`${styles.table_details}`}>
                 <button
                   id="button_compare"
