@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { Layout } from '@/components';
 import { IoIosArrowForward } from 'react-icons/io';
 
-import { fetchContentfulEntries } from '@/helper/contenfulHelper';
+import { fetchContentfulEntries } from '@/helper';
 
 // Swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -18,58 +18,14 @@ import CardAssessmentDefault from '../../components/CardAssessment/CardAssessmen
 
 import styles from './Products.module.scss';
 
-const testimonies = [
-  {
-    name: 'Ralph Edwards',
-    company: 'Cresco Labs',
-    quote:
-      'TesFounder has a full feature set. It is very reasonable from a price standpoint and extremely accurate. And so, we decided to go with TesFounder.',
-    src: '/assets/ralph-edwards.png',
-    date: '11/12/2023',
-  },
-  {
-    name: 'Theresa Webb',
-    company: 'User with Parkinson’s',
-    quote:
-      'I really like TesFounder. Using the keyboard shortcuts or the quick navigation bar makes it easy for me to read, access, use, or navigate a website.',
-    src: '/assets/theresa-webb.png',
-    date: '05/12/2023',
-  },
-  {
-    name: 'Cameron Williamson',
-    company: 'User, Talent Aquitition',
-    quote:
-      "When a website uses TesFounder, I can navigate using my keyboard. That reverses my whole experience. I'm relaxed because I can read, access, and buy what I need.",
-    src: '/assets/cameron-williamson.png',
-    date: '22/11/2023',
-  },
-  {
-    name: 'Kathryn Murphy',
-    company: 'Founder Wonder Wood',
-    quote:
-      "TesFounder was the simplest for us to implement, and it's really the easiest to use. Honestly, I wish that accessiBe was on every website everywhere.",
-    src: '/assets/kathryn-murphy.png',
-    date: '20/11/2023',
-  },
-  {
-    name: 'Bessie Cooper',
-    company: 'Talent Aquitition Specialist',
-    quote:
-      '“We evaluated many options, and for us, the integration and simple installation were magic. It makes all the difference.”',
-    src: '/assets/bessie-cooper.png',
-    date: '10/11/2023',
-  },
-  {
-    name: 'Leslie Alexander',
-    company: 'Founder, Incann',
-    quote:
-      "I started researching and was so excited to find accessiBe. It was the simplest and easiest to integrate. I'm so impressed. These people are geniuses!",
-    src: '/assets/leslie-alexander.png',
-    date: '5/11/2023',
-  },
-];
 
-const Products = () => {
+// const Products = () => {
+const Products = ({contentfulEntries}) => {
+  
+  const bodyTextValue = contentfulEntries.topBanner.fields.bodyText.content[0].content[0].value || '';
+  const imageUrl = contentfulEntries.topBanner.fields.image.fields.file.url;
+  const fullImageUrl = `https:${imageUrl}`
+
   return (
     <Layout pageTitle="Products">
       {/* Banner */}
@@ -78,27 +34,36 @@ const Products = () => {
           <div className="relative flex flex-col items-center sm:static lg:flex-row">
             <div className="mt-20 flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:px-[0px] md:py-[32px] md:text-left lg:mb-16 lg:mt-24 lg:flex-grow lg:items-start lg:pr-24 ">
               <h1 className="sm:heading-1 heading-2 mb-6 mt-0 ">
-                <span className="text-primary-500">TestFounder</span> works.
-                Resumes don't.
+              {contentfulEntries.topBanner.fields.headline
+                  .split(' ')
+                  .map((word, index) => (
+                    <span
+                      key={index}
+                      className={word === 'Easy' ? 'text-primary-500' : ''}
+                    >
+                      {word}{' '}
+                    </span>
+                  ))}
               </h1>
               <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center lg:text-start">
-                Our talent assessments screen and identify the best candidates
-                and make your hiring decisions faster, easier, and bias-free.
+                { bodyTextValue}
               </p>
               <div className="mb-6 flex justify-center">
-                <Link href="/signup">
+                <Link href={contentfulEntries.topBanner.fields.ctaUrl}>
                   <button className="btn-medium sm:btn-normal">
-                    Get Started
+                  {contentfulEntries.topBanner.fields.ctaText}
                   </button>
                 </Link>
+                <Link href={contentfulEntries.topBanner.fields.ctaUrl2}>
                 <button className="btn-line-medium sm:btn-line-normal ml-4">
-                  Watch Demo
+                {contentfulEntries.topBanner.fields.ctaText2}
                 </button>
+                </Link>
               </div>
             </div>
             <div className="relative flex w-full justify-center md:w-full lg:mt-20 lg:w-full lg:max-w-lg">
               <Image
-                src={images.HeroImageProduct}
+                src={fullImageUrl}
                 alt="Hero Image"
                 width={512}
                 height={638}
@@ -153,12 +118,14 @@ const Products = () => {
         </div>
       </section>
 
+      {/* Section Explanation 1 */}
       <section className="bg-[#F9F9F9] px-4 py-6 md:px-[50px] md:py-[40px]">
         <div className="container mx-auto">
+          {contentfulEntries.topSection.map((content) => (
           <div className="flex flex-col lg:flex-row">
             <div className="lg:mt-12 lg:w-1/2">
               <Image
-                src="/assets/hero-mail.png"
+                src={`https:${content.fields.image.fields.file.url}`}
                 alt="Hero Mail"
                 width={566}
                 height={357}
@@ -167,20 +134,19 @@ const Products = () => {
               />
             </div>
             <div className="flex flex-col justify-center lg:w-1/2">
-              <h1 className="heading-2 md:heading-1 mb-6">
-                2. Invite candidates your way.
+              <h1 key={content.fields.headline} className="heading-2 md:heading-1 mb-6">
+              {content.fields.headline}
               </h1>
-              <p className="caption-regular-1">
-                Connect with candidates by sending email invites directly from
-                TestFounder or straight from your ATS. Have a long list of
-                candidates? Easily send multiple invites with a single click. Or
-                have candidates sign up by sharing a direct link.
+              <p className={`caption-regular-1 ${styles.pre}`}>
+              {content.fields.bodyText.content[0].content[0].value}
               </p>
             </div>
           </div>
+          ))}
         </div>
       </section>
 
+      {/* Section Click 2 */}
       <section className="bg-[#F9F9F9] px-4 py-6 md:px-[50px] md:py-[40px] lg:pb-[98px] lg:pt-[60px]">
         <div className="container mx-auto">
           <h1 className="heading-2 md:heading-1 mb-6">
@@ -223,6 +189,7 @@ const Products = () => {
         </div>
       </section>
 
+      {/* Section Reason Business */}
       <section className="bg-[#D0F3FC26] px-8 py-6 md:px-[50px] md:py-[40px] lg:py-[60px]">
         <div className="container mx-auto">
           <h1 className="heading-2 md:heading-1 mb-6 text-start md:text-center">
@@ -393,13 +360,13 @@ const Products = () => {
               },
             }}
           >
-            {testimonies.map((testimonial, index) => (
+            {contentfulEntries.pageContent.map((testimonial, index) => (
               <SwiperSlide key={index}>
                 <div className="mt-10 flex w-full flex-col px-[14px] py-[12px] sm:mt-0 md:h-[367px] md:max-w-[85%] md:flex-row md:py-[32px] md:pl-[0px] lg:max-w-[85%] lg:py-[32px] lg:pl-[82px]">
                   <div className="flex flex-row">
                     <Image
-                      src={testimonial.src}
-                      alt="Testimonial Image"
+                      src={`https:${testimonial.fields.photo[0].fields.file.url}`}
+                      alt={testimonial.fields.photo[0].fields.title}
                       width={170}
                       height={303}
                       sizes="100vw"
@@ -409,18 +376,21 @@ const Products = () => {
                       <div className="flex flex-col">
                         <Image
                           src="/assets/quote.svg"
-                          alt="Hero Image"
+                          alt="Quote Image"
                           width={42}
                           height={42}
                           sizes="100vw"
                           className="z-50"
                         />
-                        <h3 className="heading-3 mt-0">{testimonial.name}</h3>
+                        <h3 className="heading-3 mt-0">{testimonial.fields.name}</h3>
                         <p className="caption-regular-3">
-                          {testimonial.company}
+                        {testimonial.fields.position}
                         </p>
                         <p className="caption-light-2 hidden md:block">
-                          “{testimonial.quote}”
+                          “{
+                          testimonial.fields.testimonialText.content[0]
+                            .content[0].value
+                        }”
                         </p>
                       </div>
                       <div className="hidden justify-between md:flex">
@@ -487,13 +457,16 @@ const Products = () => {
                           </svg>
                         </div>
                         <p className="caption-regular-3 text-neutral-100">
-                          {testimonial.date}
+                          {new Date(testimonial.sys.updatedAt).toLocaleDateString()}
                         </p>
                       </div>
                     </div>
                   </div>
                   <p className="caption-light-2 pt-[20px] md:hidden">
-                    “{testimonial.quote}
+                  “{
+                          testimonial.fields.testimonialText.content[0]
+                            .content[0].value
+                        }
                   </p>
                   <div className="mt-4 flex justify-between md:hidden">
                     <div className="flex">
@@ -559,7 +532,7 @@ const Products = () => {
                       </svg>
                     </div>
                     <p className="caption-regular-3 text-neutral-100">
-                      {testimonial.date}
+                      {new Date(testimonial.sys.updatedAt).toLocaleDateString()}
                     </p>
                   </div>
                 </div>
@@ -570,23 +543,22 @@ const Products = () => {
         </div>
       </div>
 
-      {/* Explanation 7 */}
+      {/* Section Bottom Banner*/}
       <div className="min-h-[366px] w-full space-y-6 bg-[#D0F3FC26] pb-[60px]">
         <div className="container mx-auto flex flex-col items-center justify-center space-y-6 px-4 py-6 text-center sm:px-16 sm:py-[60px]">
           <h1 className="heading-2 sm:heading-1">
-            Reinvent your hiring process now.
+          {contentfulEntries.extraSection[0].fields.headline}
           </h1>
           <p className="caption-regular-3 sm:caption-regular-1 text-center">
-            Start using TestFounder today, or talk to us about your hiring
-            challenges to discover how we can help.
+            { contentfulEntries.extraSection[0].fields.bodyText.content[0].content[0].value }
           </p>
           <div className="flex flex-row gap-4">
-            <Link href="/book-demo">
-              <button className="btn-line-medium">Free Demo</button>
+            <Link href={contentfulEntries.extraSection[0].fields.ctaUrl}>
+              <button className="btn-line-medium">{contentfulEntries.extraSection[0].fields.ctaText}</button>
             </Link>
-            <Link href="/signup">
+            <Link href={contentfulEntries.extraSection[0].fields.ctaUrl2}>
               <button className="btn-medium ">
-                Get Started{' '}
+              {contentfulEntries.extraSection[0].fields.ctaText2}
                 <span className="pl-2">
                   <IoIosArrowForward />
                 </span>
@@ -599,26 +571,26 @@ const Products = () => {
   );
 };
 
-// export async function getStaticProps() {
-//   const contentType = 'landingPage'; // Modify content type here
-//   const { items } = await fetchContentfulEntries(contentType);
+export async function getStaticProps() {
+  const contentType = 'landingPage'; // Modify content type here
+  const { items } = await fetchContentfulEntries(contentType);
 
-//   const entries = items.find(
-//     (entry) => entry.fields.internalName === 'Products',
-//   );
+  const entries = items.find(
+    (entry) => entry.fields.internalName === 'Products',
+  );
 
-//   // Check if the entry is found
-//   if (entries) {
-//     console.log('Found the homepage entry:', entries);
-//   } else {
-//     console.log('Homepage entry not found.');
-//   }
+  // Check if the entry is found
+  if (entries) {
+    console.log('Found the homepage entry:', entries);
+  } else {
+    console.log('Homepage entry not found.');
+  }
 
-//   return {
-//     props: {
-//       contentfulEntries: entries ? entries.fields : {}, // Modify key-value of props
-//     },
-//   };
-// }
+  return {
+    props: {
+      contentfulEntries: entries ? entries.fields : {}, // Modify key-value of props
+    },
+  };
+}
 
 export default Products;

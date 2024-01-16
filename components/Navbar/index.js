@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 
 import { images } from '../../constants';
-import { fetchContentfulEntries } from '@/helper/contenfulHelper';
+import { fetchContentfulEntries } from '@/helper';
 
 import { HiMenuAlt4, HiX } from 'react-icons/hi';
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
