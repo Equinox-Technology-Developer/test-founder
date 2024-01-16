@@ -7,7 +7,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css/navigation';
-// import { fetchContentfulEntries } from '@/helper/contenfulHelper';
+
+import { fetchContentfulEntries } from '@/helper';
 
 const slideData = [
   { src: '/assets/abbot.svg', alt: 'Abbot', width: 180, height: 80 },
@@ -27,7 +28,12 @@ const slideData = [
   { src: '/assets/foxnews.svg', alt: 'Fox News', width: 180, height: 80 },
 ];
 
-const About = ({ resources }) => {
+const About = ({ contentfulEntries }) => {
+  const bodyTextValue =
+    contentfulEntries.topBanner.fields.bodyText.content[0].content[0].value ||
+    '';
+
+  console.log(contentfulEntries);
   return (
     <>
       <Layout pageTitle="About">
@@ -39,47 +45,45 @@ const About = ({ resources }) => {
                 <div className="flex h-[424px] flex-col justify-center lg:justify-between">
                   <div className="flex flex-col">
                     <h1 className="sm:heading-1 heading-2 mb-6 mt-0 text-center lg:text-start">
-                      <span className="text-primary-500">TestFounder</span>{' '}
-                      Change Technology for Recruiter
+                      {contentfulEntries.topBanner.fields.headline
+                        .split(' ')
+                        .map((word, index) => (
+                          <span
+                            key={index}
+                            className={
+                              word === 'TestFounder' ? 'text-primary-500' : ''
+                            }
+                          >
+                            {word}{' '}
+                          </span>
+                        ))}
                     </h1>
                     <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center lg:text-start">
-                      Navigating the Future of Recruitment: A Deep Dive into the
-                      Impact of Assessment Technology on Talent Acquisition
+                      {bodyTextValue}
                     </p>
                   </div>
+
                   <div className="flex w-full gap-[10.64px] rounded-[10px] bg-shade-0 p-4 shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)]">
-                    <div className="flex flex-1 flex-col items-center gap-3">
-                      <Image
-                        src="/assets/employee.svg"
-                        width={48}
-                        height={48}
-                      />
-                      <p className="caption-bold-1">129+</p>
-                      <p className="caption-regular-3">Employee</p>
-                    </div>
-                    <div className="flex flex-1 flex-col items-center gap-3">
-                      <Image src="/assets/team.svg" width={48} height={48} />
-                      <p className="caption-bold-1">199</p>
-                      <p className="caption-regular-3">Partner</p>
-                    </div>
-                    <div className="flex flex-1 flex-col items-center gap-3">
-                      <Image
-                        src="/assets/user_load.svg"
-                        width={48}
-                        height={48}
-                      />
-                      <p className="caption-bold-1">199</p>
-                      <p className="caption-regular-3">Partner</p>
-                    </div>
-                    <div className="flex flex-1 flex-col items-center gap-3">
-                      <Image
-                        src="/assets/daily_load.svg"
-                        width={48}
-                        height={48}
-                      />
-                      <p className="caption-bold-1">199</p>
-                      <p className="caption-regular-3">Partner</p>
-                    </div>
+                    {contentfulEntries.pageContent
+                      .slice(0, 4)
+                      .map((data, index) => (
+                        <div
+                          key={index}
+                          className="flex flex-1 flex-col items-center gap-3"
+                        >
+                          <Image
+                            src={`https:${data.fields.image.fields.file.url}`}
+                            width={48}
+                            height={48}
+                          />
+                          <p className="caption-bold-1">
+                            {data.fields.headline}
+                          </p>
+                          <p className="caption-regular-3">
+                            {data.fields.bodyText.content[0].content[0].value}
+                          </p>
+                        </div>
+                      ))}
                   </div>
                 </div>
               </div>
@@ -100,30 +104,25 @@ const About = ({ resources }) => {
         {/* Explanation 1 */}
         <section className="flex h-fit items-center bg-[#F9F9F9] px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
           <div className="container mx-auto ">
-            <div className="flex flex-col-reverse items-center gap-6 lg:flex-row justify-between lg:py-[60px] w-full">
+            <div className="flex w-full flex-col-reverse items-center justify-between gap-6 lg:flex-row lg:py-[60px]">
               <div className="mb-16 w-full sm:w-1/2 md:mb-0 md:text-left ">
                 <Image
-                  src="/assets/smile-chart.png"
+                  src={`https:${contentfulEntries.topSection[0].fields.image.fields.file.url}`}
                   alt="Hero Image"
                   width={636}
                   height={476}
-                  // sizes="100vw"
-                  className="z-50 img"
+                  className="img z-50"
                 />
               </div>
               <div className="relative flex w-full flex-col items-center space-y-6 md:w-full lg:w-1/2 lg:items-start">
                 <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center lg:text-start">
-                  About TestFounder
+                  {contentfulEntries.topSection[0].fields.headline}
                 </h1>
                 <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
-                  In the ever-evolving landscape of talent acquisition,
-                  recruiters are embracing a game-changing tool: Assessment
-                  Technology. This innovative approach is reshaping traditional
-                  recruitment processes, providing invaluable insights into
-                  candidates' skills, aptitudes, and cultural fit. Join us as we
-                  explore the transformative power of assessment technology and
-                  how it is revolutionizing the way recruiters identify,
-                  evaluate, and select top-tier talent.
+                  {
+                    contentfulEntries.topSection[0].fields.bodyText.content[0]
+                      .content[0].value
+                  }
                 </p>
               </div>
             </div>
@@ -134,57 +133,29 @@ const About = ({ resources }) => {
         <section className="bg-[#F9F9F9] px-4 py-6 md:px-10 md:py-8 lg:px-0 lg:py-0">
           <div className="flex flex-col lg:py-20">
             <h2 className="md:heading-1 heading-2 text-center lg:mb-6">
-              Our Three Pillar of TestFounder
+              {contentfulEntries.topSection[1].fields.headline}
             </h2>
             <div className="flex flex-col justify-center lg:mt-10 lg:flex-row lg:gap-6">
-              <div className="flex max-w-full flex-col items-center lg:max-w-[421px]">
-                <Image
-                  src="/assets/time_efficiency.svg"
-                  alt="Hero Image"
-                  width={60}
-                  height={60}
-                  className="mb-4"
-                />
-                <div className="caption-semibold-2 text-center font-bold text-primary-500">
-                  Time Efficiency
+              {contentfulEntries.pageContent.slice(4, 7).map((data, index) => (
+                <div
+                  key={index}
+                  className="flex max-w-full flex-col items-center lg:max-w-[421px]"
+                >
+                  <Image
+                    src={`https:${data.fields.image.fields.file.url}`}
+                    alt="Hero Image"
+                    width={60}
+                    height={60}
+                    className="mb-4"
+                  />
+                  <div className="caption-semibold-2 text-center font-bold text-primary-500">
+                    {data.fields.headline}
+                  </div>
+                  <p className="caption-regular-3 text-center">
+                    {data.fields.bodyText.content[0].content[0].value}
+                  </p>
                 </div>
-                <p className="caption-regular-3 text-center">
-                  of organizations using talent assessment tests saw a reduction
-                  in mis-hires
-                </p>
-              </div>
-              <div className="flex max-w-full flex-col items-center lg:max-w-[421px]">
-                <Image
-                  src="/assets/detection-making.svg"
-                  alt="Hero Image"
-                  width={60}
-                  height={60}
-                  className="mb-4"
-                />
-                <div className="caption-semibold-2 text-center font-bold text-primary-500">
-                  Objective-Decition Making
-                </div>
-                <p className="caption-regular-3 text-center">
-                  of organizations using talent assessment tools reported a
-                  reduction in cost-to-hire
-                </p>
-              </div>
-              <div className="flex max-w-full flex-col items-center lg:max-w-[421px]">
-                <Image
-                  src="/assets/candidate-experience.svg"
-                  alt="Hero Image"
-                  width={60}
-                  height={60}
-                  className="mb-4"
-                />
-                <div className="caption-semibold-2 text-center font-bold text-primary-500">
-                  Enchanced Candidate Experience
-                </div>
-                <p className="caption-regular-3 text-center">
-                  of candidates said they prefer a hiring process that includes
-                  talent assessment tests
-                </p>
-              </div>
+              ))}
             </div>
           </div>
         </section>
@@ -241,89 +212,27 @@ const About = ({ resources }) => {
           <div className=" px-4 py-6 md:px-10 md:py-8 lg:px-0 lg:py-0">
             <div className="flex flex-col lg:py-20">
               <h2 className="heading-1 text-center lg:mb-6">
-                Meet our leaders
+                {contentfulEntries.topSection[2].fields.headline}
               </h2>
               <div className="flex flex-wrap justify-center gap-[26px]">
-                <div className="flex flex-col p-4">
-                  <Image
-                    src="/assets/brooklyn-simmons.png"
-                    width={276}
-                    height={154}
-                    className="mb-4"
-                  />
-                  <p className="caption-semibold-1">Brooklyn Simmons</p>
-                  <p className="caption-light-2">Founder, President</p>
-                </div>
-                <div className="flex flex-col p-4">
-                  <Image
-                    src="/assets/ronald-richards.png"
-                    width={276}
-                    height={154}
-                    className="mb-4"
-                  />
-                  <p className="caption-semibold-1">Ronald Richards</p>
-                  <p className="caption-light-2">Founder, CEO</p>
-                </div>
-                <div className="flex flex-col p-4">
-                  <Image
-                    src="/assets/floyd-miles.png"
-                    width={276}
-                    height={154}
-                    className="mb-4"
-                  />
-                  <p className="caption-semibold-1">Floyd Miles</p>
-                  <p className="caption-light-2">Chief Technology Officer</p>
-                </div>
-                <div className="flex flex-col p-4">
-                  <Image
-                    src="/assets/theresa-webb-leaders.png"
-                    width={276}
-                    height={154}
-                    className="mb-4"
-                  />
-                  <p className="caption-semibold-1">Theresa Webb</p>
-                  <p className="caption-light-2">Chief Financial Officer</p>
-                </div>
-                <div className="flex flex-col p-4">
-                  <Image
-                    src="/assets/marvin-mckinney.png"
-                    width={276}
-                    height={154}
-                    className="mb-4"
-                  />
-                  <p className="caption-semibold-1">Marvin McKinney</p>
-                  <p className="caption-light-2">Senior Product Designer</p>
-                </div>
-                <div className="flex flex-col p-4">
-                  <Image
-                    src="/assets/david-fernandes.png"
-                    width={276}
-                    height={154}
-                    className="mb-4"
-                  />
-                  <p className="caption-semibold-1">David Fernandes</p>
-                  <p className="caption-light-2">Fullstack Developer</p>
-                </div>
-                <div className="flex flex-col p-4">
-                  <Image
-                    src="/assets/annette-black.png"
-                    width={276}
-                    height={154}
-                    className="mb-4"
-                  />
-                  <p className="caption-semibold-1">Annette Black</p>
-                  <p className="caption-light-2">Head of Talent Aquisition</p>
-                </div>
-                <div className="flex flex-col p-4">
-                  <Image
-                    src="/assets/jane-cooper.png"
-                    width={276}
-                    height={154}
-                    className="mb-4"
-                  />
-                  <p className="caption-semibold-1">Jane Cooper</p>
-                  <p className="caption-light-2">Chief Legal Officer</p>
-                </div>
+                {contentfulEntries.pageContent
+                  .slice(7, 15)
+                  .map((data, index) => (
+                    <div key={index} className="flex flex-col p-4">
+                      <Image
+                        src={`https:${data.fields.image.fields.file.url}`}
+                        width={276}
+                        height={154}
+                        className="mb-4"
+                      />
+                      <p className="caption-semibold-1">
+                        {data.fields.headline}
+                      </p>
+                      <p className="caption-light-2">
+                        {data.fields.bodyText.content[0].content[0].value}
+                      </p>
+                    </div>
+                  ))}
               </div>
             </div>
           </div>
@@ -382,12 +291,13 @@ const About = ({ resources }) => {
             <div className="flex flex-col items-center gap-6 lg:flex-row lg:py-[60px]">
               <div className="relative flex w-full flex-col items-center space-y-6 md:w-full lg:w-1/2 lg:items-start">
                 <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center sm:text-start">
-                  Endless Discovey in Your Inbox
+                  {contentfulEntries.topSection[3].fields.headline}
                 </h1>
                 <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
-                  Join our mailing list to receive insider updates on our latest
-                  collections, invites to private events, and other personalized
-                  offerings.
+                  {
+                    contentfulEntries.topSection[3].fields.bodyText.content[0]
+                      .content[0].value
+                  }
                 </p>
                 <div className="relative w-[90%]">
                   <input
@@ -403,7 +313,7 @@ const About = ({ resources }) => {
               <div className="mb-16 flex w-full justify-center sm:w-1/2 md:mb-0 md:text-left">
                 <Image
                   src="/assets/assets-subscribe.png"
-                  alt="Hero Image"
+                  alt={`https:${contentfulEntries.topSection[3].fields.image.fields.file.url}`}
                   width={407}
                   height={399}
                   sizes="100vw"
@@ -418,31 +328,26 @@ const About = ({ resources }) => {
   );
 };
 
-// export async function getStaticProps() {
-//   const contentType = 'landingPage'; // Modify the content type here
-//   const propsKey = 'resources'; // Modify the props key here
-//   const catchKey = 'error'; // Modify the catch key here
-//   const indexToRead = 9; // Modify the index you want to read
+export async function getStaticProps() {
+  const contentType = 'landingPage'; // Modify content type here
+  const { items } = await fetchContentfulEntries(contentType);
 
-//   try {
-//     const dynamicData = await fetchContentfulEntries(
-//       contentType,
-//       propsKey,
-//       catchKey,
-//       indexToRead,
-//     );
+  const entries = items.find(
+    (entry) => entry.fields.internalName === 'About Us',
+  );
 
-//     return {
-//       props: dynamicData,
-//     };
-//   } catch (error) {
-//     console.error('Error in getStaticProps:', error);
-//     return {
-//       props: {
-//         [catchKey]: 'An unexpected error occurred.',
-//       },
-//     };
-//   }
-// }
+  // Check if the entry is found
+  if (entries) {
+    console.log('Found the homepage entry:', entries);
+  } else {
+    console.log('Homepage entry not found.');
+  }
+
+  return {
+    props: {
+      contentfulEntries: entries ? entries.fields : {}, // Modify key-value of props
+    },
+  };
+}
 
 export default About;
