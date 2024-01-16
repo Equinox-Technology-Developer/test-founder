@@ -1,19 +1,28 @@
-// /** @type {import('next').NextConfig} */
-// const nextConfig = {
-//   reactStrictMode: true,
-// };
-
-// module.exports = nextConfig;
-module.exports = {
-  reactStrictMode: true,
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  // reactStrictMode: true,
   images: {
-    domains: ["images.ctfassets.net"],
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "images.ctfassets.net",
+        protocol: 'https',
+        hostname: 'images.ctfassets.net',
+        pathname: '**',
       },
     ],
   },
-}
+};
+
+module.exports = nextConfig;
+// module.exports = {
+//   reactStrictMode: true,
+//   images: {
+//     remotePatterns: [
+//       {
+//         protocol: 'https',
+//         hostname: 'images.ctfassets.net',
+//         pathname: '**',
+//       },
+//     ],
+//   },
+// }
 
