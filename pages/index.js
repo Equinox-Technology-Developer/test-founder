@@ -1,16 +1,18 @@
 import Image from 'next/image';
-import Head from 'next/head';
 import Link from 'next/link';
 
 import { Layout } from '../components';
+import { fetchContentfulEntries } from '@/helper';
+
 import SwiperNavButton from '../components/SwiperNavButton';
 import SwiperTestimonialButton from '../components/SwiperTestimonialButton';
-// import { createClient } from 'contentful';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css/navigation';
-// import { fetchContentfulEntries } from '@/helper/contenfulHelper';
+
+import styles from '../styles/Home.module.scss'
 
 const slideData = [
   { src: '/assets/abbot.svg', alt: 'Abbot', width: 180, height: 80 },
@@ -30,73 +32,16 @@ const slideData = [
   { src: '/assets/foxnews.svg', alt: 'Fox News', width: 180, height: 80 },
 ];
 
-const testimonies = [
-  {
-    name: 'Ralph Edwards',
-    company: 'Cresco Labs',
-    quote:
-      'TesFounder has a full feature set. It is very reasonable from a price standpoint and extremely accurate. And so, we decided to go with TesFounder.',
-    src: '/assets/ralph-edwards.png',
-    date: '11/12/2023',
-  },
-  {
-    name: 'Theresa Webb',
-    company: 'User with Parkinson’s',
-    quote:
-      'I really like TesFounder. Using the keyboard shortcuts or the quick navigation bar makes it easy for me to read, access, use, or navigate a website.',
-    src: '/assets/theresa-webb.png',
-    date: '05/12/2023',
-  },
-  {
-    name: 'Cameron Williamson',
-    company: 'User, Talent Aquitition',
-    quote:
-      "When a website uses TesFounder, I can navigate using my keyboard. That reverses my whole experience. I'm relaxed because I can read, access, and buy what I need.",
-    src: '/assets/cameron-williamson.png',
-    date: '22/11/2023',
-  },
-  {
-    name: 'Kathryn Murphy',
-    company: 'Founder Wonder Wood',
-    quote:
-      "TesFounder was the simplest for us to implement, and it's really the easiest to use. Honestly, I wish that accessiBe was on every website everywhere.",
-    src: '/assets/kathryn-murphy.png',
-    date: '20/11/2023',
-  },
-  {
-    name: 'Bessie Cooper',
-    company: 'Talent Aquitition Specialist',
-    quote:
-      'We evaluated many options, and for us, the integration and simple installation were magic. It makes all the difference.',
-    src: '/assets/bessie-cooper.png',
-    date: '10/11/2023',
-  },
-  {
-    name: 'Leslie Alexander',
-    company: 'Founder, Incann',
-    quote:
-      "I started researching and was so excited to find accessiBe. It was the simplest and easiest to integrate. I'm so impressed. These people are geniuses!",
-    src: '/assets/leslie-alexander.png',
-    date: '5/11/2023',
-  },
-];
-
 // export default function Home({ homepages }) {
-export default function Home() {
+export default function Home ({contentfulEntries}) {
+  const bodyTextValue = contentfulEntries.topBanner.fields.bodyText.content[0].content[0].value || '';
+  const imageUrl = contentfulEntries.topBanner.fields.image.fields.file.url;
+  const fullImageUrl = `https:${imageUrl}`
+
+  console.log(contentfulEntries)
+
   return (
     <>
-      <Head>
-        <meta name="description" content="Test Founder" />
-        <meta
-          name="viewport"
-          content="initial-scale=1.0, width=device-width"
-          key="viewport"
-        />
-        <meta property="og:title" content="Test Founder" />
-        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-        <link rel="icon" href="/assets/favicon.ico" />
-      </Head>
-
       <Layout pageTitle="Homepage">
         {/* Banner */}
         <section className="bg-[#F9F9F9] bg-blur bg-right bg-no-repeat pt-0">
@@ -104,22 +49,29 @@ export default function Home() {
             <div className="relative flex flex-col items-center sm:static lg:flex-row">
               <div className="mb-0 mt-20 flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:px-[40px] md:py-[32px] md:text-left lg:mt-24 lg:flex-grow lg:items-start lg:pr-24">
                 <h1 className="sm:heading-1 heading-2 mb-6 mt-0 text-center lg:text-start">
-                  <span className="text-primary-500">TestFounder</span> works.
-                  Resumes don't.
+                {contentfulEntries.topBanner.fields.headline
+                  .split(' ')
+                  .map((word, index) => (
+                    <span
+                      key={index}
+                      className={word === 'TestFounder' ? 'text-primary-500' : ''}
+                    >
+                      {word}{' '}
+                    </span>
+                  ))}
                 </h1>
                 <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center lg:text-start">
-                  Our talent assessments screen and identify the best candidates
-                  and make your hiring decisions faster, easier, and bias-free.
+                { bodyTextValue}
                 </p>
                 <div className="mb-6 flex justify-center">
-                  <Link href="/signup">
+                  <Link href={contentfulEntries.topBanner.fields.ctaUrl}>
                     <button className="btn-medium sm:btn-normal">
-                      Try for free!
+                    {contentfulEntries.topBanner.fields.ctaText}
                     </button>
                   </Link>
-                  <Link href="/book-demo">
+                  <Link href={contentfulEntries.topBanner.fields.ctaUrl2}>
                     <button className="btn-line-medium sm:btn-line-normal ml-4">
-                      Talk to sales
+                    {contentfulEntries.topBanner.fields.ctaText2}
                     </button>
                   </Link>
                 </div>
@@ -159,12 +111,12 @@ export default function Home() {
               </div>
               <div className="flex w-full justify-center md:w-full lg:w-full lg:max-w-lg">
                 <Image
-                  src="/assets/hero-image.png"
+                  src={fullImageUrl}
                   alt="Hero Image"
                   width={559}
                   height={638}
                   sizes="100vw"
-                  className=" z-10 mt-20 flex h-auto w-[80%] md:w-[60%] lg:w-full"
+                  className=" z-10 mt-20 flex h-auto w-[80%] md:w-[60%] lg:w-full img"
                 />
               </div>
             </div>
@@ -209,40 +161,39 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Explanation 1 */}
+        {/* Explanation  */}
         <section className="z-50 flex h-fit items-center bg-[#F9F9F9] px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
-          <div className="container mx-auto ">
-            <div className="flex flex-col items-center gap-[50px] lg:flex-row">
+        <div className="container mx-auto ">
+          {contentfulEntries.topSection.map((explanation, index) => (
+            <div key={index} className={`flex flex-col items-center first:mt-24 lg:last:mb-20 lg:mb-8 mb-4 gap-[50px] justify-between lg:${explanation.fields.containerLayout ? 'flex-row' : 'flex-row-reverse'}`}>
               <div className="z-50 mb-1 sm:mb-16 md:mb-0 md:w-full md:text-left lg:flex-grow">
                 <Image
-                  src="/assets/explaination-banner.png"
+                  src={`https://${explanation.fields.image.fields.file.url}`}
                   alt="Hero Image"
                   width={616}
                   height={404}
+                  className={styles.img}
                   sizes="100vw"
                 />
               </div>
               <div className="relative z-50 flex w-full flex-col items-center space-y-6 md:w-full lg:w-full lg:items-start">
                 <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center lg:text-start">
-                  A barometer for job success.
+                 {explanation.fields.headline}
                 </h1>
-                <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
-                  Use our library of 401 scientifically validated tests.
-                </p>
-                <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
-                  Test candidates for job-specific skills like coding or digital
-                  marketing, as well as more general skills like critical
-                  thinking.
-                </p>
-                <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
-                  Our unique personality and value tests allow you to get to
-                  know your applicants as real people – not just pieces of
-                  paper.
-                </p>
-                <Link href="/test-library">
-                  <button className="btn-line-medium sm:btn-line-normal">
-                    See Tests
-                  </button>
+
+                {explanation.fields.bodyText.content.map((content, index) => (
+                  
+                  <p key={index} className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
+                    {content.content[0].value}
+                  </p>
+                ))}
+
+                <Link href={explanation.fields.ctaLink && explanation.fields.ctaText ? explanation.fields.ctaLink : "#"}>
+                  {explanation.fields.ctaLink && explanation.fields.ctaText && (
+                    <button className="btn-line-medium sm:btn-line-normal">
+                      {explanation.fields.ctaText}
+                    </button>
+                  )}
                 </Link>
               </div>
               <Image
@@ -254,166 +205,16 @@ export default function Home() {
                 className="absolute"
               />
             </div>
-          </div>
-        </section>
-
-        {/* Explanation 2 */}
-        <section className="flex h-fit items-center bg-[#F9F9F9] px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
-          <div className="container mx-auto">
-            <div className="flex flex-col-reverse items-center gap-[41px] md:flex-col-reverse lg:flex-row">
-              <div className="z-50 mb-1 flex flex-col items-center text-center sm:mb-16 md:mb-0 md:w-full md:items-start md:pr-0 md:text-left lg:w-1/2 lg:flex-grow lg:pr-0">
-                <h1 className="heading-2 sm:heading-1 mb-6 mt-0 text-center lg:text-start">
-                  Quality time for quality candidates.
-                </h1>
-                <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center lg:text-start">
-                  Boom. No more time wasted on screening resumes and
-                  pre-qualifying interviews.
-                </p>
-                <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center lg:text-start">
-                  We automatically grade and rank your candidates. In the time
-                  it takes to savor a cup of coffee, you can watch video
-                  responses to custom questions.
-                </p>
-                <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center lg:text-start">
-                  Our screening process automation lets you focus on the best
-                  people for the job.
-                </p>
-              </div>
-              <div className="flex w-full justify-start md:w-full lg:w-1/2">
-                <Image
-                  src="/assets/anim-conf.png"
-                  alt="Hero Image"
-                  width={624}
-                  height={449}
-                  sizes="100vw"
-                  className="z-50 img"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Explanation 3*/}
-        <section className="flex h-fit items-center bg-[#F9F9F9] px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
-          <div className="container mx-auto ">
-            <div className="flex flex-col items-center gap-[50px] lg:flex-row ">
-              <div className="mb-16 w-full sm:w-full md:mb-0 md:text-left lg:w-1/2">
-                <Image
-                  src="/assets/smart-man.png"
-                  alt="Hero Image"
-                  width={644}
-                  height={469}
-                  sizes="100vw"
-                  className="z-50 img"
-                />
-              </div>
-              <div className="relative flex w-full flex-col items-center space-y-6 md:w-full lg:w-1/2 lg:items-start">
-                <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center lg:text-start">
-                  Say goodbye to unconscious bias.
-                </h1>
-                <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
-                  Diverse teams perform better.
-                </p>
-                <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
-                  With TestFounder, you give all applicants an equal, unbiased
-                  opportunity to showcase themselves.
-                </p>
-                <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
-                  This ensures you get the best talent from all walks of life.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Explanation 4 */}
-        <section className="flex h-fit items-center bg-[#F9F9F9] px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
-          <div className="container mx-auto">
-            <div className="flex flex-col-reverse items-center gap-[41px] md:flex-col-reverse lg:flex-row">
-              <div className="z-50 mb-16 flex flex-col items-center text-center md:mb-0 md:w-full md:pr-0 md:text-left lg:w-1/2 lg:flex-grow lg:items-start lg:pr-0">
-                <h1 className="heading-2 sm:heading-1 mb-6 mt-0 text-center lg:text-start">
-                  Offer a positive candidate experience.
-                </h1>
-                <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center lg:text-start">
-                  Good candidates appreciate good screening tests.
-                </p>
-                <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center lg:text-start">
-                  Our professional, well-designed tests serve as an extension of
-                  your brand and personality.
-                </p>
-                <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center lg:text-start">
-                  Your applicants get the motivation and engagement they need to
-                  truly shine.
-                </p>
-              </div>
-              <div className="flex w-full justify-center md:w-full lg:w-1/2">
-                <Image
-                  src="/assets/global-people.png"
-                  alt="Hero Image"
-                  width={628}
-                  height={596}
-                  sizes="100vw"
-                  className="z-50 img"
-                />
-              </div>
-            </div>
-          </div>
-          <Image
-            src="/assets/bg_blur_3.png"
-            alt="Hero Image"
-            width={730}
-            height={565}
-            sizes="100vw"
-            className="absolute right-10"
-          />
-        </section>
-
-        {/* Explanation 5 */}
-        <section className="flex h-fit items-center bg-[#F9F9F9] px-4 py-6 sm:h-fit sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
-          <div className="container mx-auto ">
-            <div className="flex flex-col justify-between items-center gap-0 sm:gap-[21px] lg:flex-row">
-              <div className="z-50 mb-1 w-full sm:mb-16 md:mb-0 md:w-fit md:text-left">
-                <Image
-                  src="/assets/people-conection.png"
-                  alt="Hero Image"
-                  width={616}
-                  height={344}
-                  sizes="100vw"
-                  className="z-50 img"
-                />
-              </div>
-              <div className="relative z-50 flex w-full flex-col items-center space-y-6 md:w-full md:items-start lg:w-1/2">
-                <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center lg:text-start">
-                  Champion a data-driven HR culture.
-                </h1>
-                <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
-                  We rank your applicants according to test scores certified by
-                  our experts. This means your HR team can rely on good data to
-                  make important decisions – and not just their gut feeling.
-                </p>
-                <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
-                  With TestFounder, you’ll lead the shift to a more professional
-                  and data-focused HR culture in your company.
-                </p>
-              </div>
-              <Image
-                src="/assets/bg_blur_4.png"
-                alt="Hero Image"
-                width={730}
-                height={565}
-                sizes="100vw"
-                className="absolute pl-10"
-              />
-            </div>
-          </div>
-        </section>
+          ))}
+        </div>
+      </section>
 
         {/* Testimonials */}
-        <div className="w-full bg-[#F9F9F9] pb-[44px] sm:pb-[100px]">
+        <div className="w-full bg-[#F9F9F9] pb-[44px] sm:pb-[100px] lg:pt-[100px]">
           <div className="container mx-auto flex h-full items-center rounded-[20px] bg-white">
             <Swiper
               modules={[Autoplay]}
-              spaceBetween={20}
+              spaceBetween={40}
               autoplay={{
                 delay: 2500,
                 disableOnInteraction: false,
@@ -430,13 +231,13 @@ export default function Home() {
                 },
               }}
             >
-              {testimonies.map((testimonial, index) => (
+              {contentfulEntries.pageContent.map((testimonial, index) => (
                 <SwiperSlide key={index}>
                   <div className="mt-10 flex w-full flex-col px-[14px] py-[12px] sm:mt-0 md:h-[367px] md:max-w-[85%] md:flex-row md:py-[32px] md:pl-[0px] lg:max-w-[85%] lg:py-[32px] lg:pl-[82px]">
                     <div className="flex flex-row">
                       <Image
-                        src={testimonial.src}
-                        alt="Testimonial Image"
+                        src={`https:${testimonial.fields.photo[0].fields.file.url}`}
+                        alt={testimonial.fields.photo[0].fields.title}
                         width={170}
                         height={303}
                         sizes="100vw"
@@ -446,18 +247,21 @@ export default function Home() {
                         <div className="flex flex-col">
                           <Image
                             src="/assets/quote.svg"
-                            alt="Hero Image"
+                            alt="Quote Image"
                             width={42}
                             height={42}
                             sizes="100vw"
                             className="z-50"
                           />
-                          <h3 className="heading-3 mt-0">{testimonial.name}</h3>
+                          <h3 className="heading-3 mt-0">{testimonial.fields.name}</h3>
                           <p className="caption-regular-3">
-                            {testimonial.company}
+                          {testimonial.fields.position}
                           </p>
                           <p className="caption-light-2 hidden md:block">
-                            “{testimonial.quote}”
+                            “{
+                            testimonial.fields.testimonialText.content[0]
+                              .content[0].value
+                          }”
                           </p>
                         </div>
                         <div className="hidden justify-between md:flex">
@@ -524,13 +328,16 @@ export default function Home() {
                             </svg>
                           </div>
                           <p className="caption-regular-3 text-neutral-100">
-                            {testimonial.date}
+                            {new Date(testimonial.sys.updatedAt).toLocaleDateString()}
                           </p>
                         </div>
                       </div>
                     </div>
                     <p className="caption-light-2 pt-[20px] md:hidden">
-                      “{testimonial.quote}
+                    “{
+                            testimonial.fields.testimonialText.content[0]
+                              .content[0].value
+                          }
                     </p>
                     <div className="mt-4 flex justify-between md:hidden">
                       <div className="flex">
@@ -596,7 +403,7 @@ export default function Home() {
                         </svg>
                       </div>
                       <p className="caption-regular-3 text-neutral-100">
-                        {testimonial.date}
+                        {new Date(testimonial.sys.updatedAt).toLocaleDateString()}
                       </p>
                     </div>
                   </div>
@@ -607,58 +414,53 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Explanation 7 */}
+        {/* Banner Bottom */}
         <div className="min-h-[366px] w-full space-y-6 bg-[#D0F3FC26]">
-          <div className="container mx-auto flex flex-col items-center justify-center space-y-6 px-4 py-6 text-center md:px-[40px] md:py-[32px] lg:px-[62px] lg:py-[60px]">
+        {contentfulEntries.extraSection.map((content, index) => (
+          <div key={index} className="container mx-auto flex flex-col items-center justify-center space-y-6 px-4 py-6 text-center md:px-[40px] md:py-[32px] lg:px-[62px] lg:py-[60px]">
             <h1 className="heading-2 sm:heading-1">
-              Top talent is priceless. We make finding it affordable.
+              {content.fields.headline}
             </h1>
-            <p className="caption-regular-3 sm:caption-regular-1 text-center">
-              A time-consuming screening process costs you a lot. Painful
-              mis-hires cost you much, much more. With TestFounder, you avoid
-              all of this and see a huge return on investment every single year.
-            </p>
-            <p className="caption-regular-3 sm:caption-regular-1 text-center">
-              Start screening with us today on our free plan.
-            </p>
+            {content.fields.bodyText.content.map((content, index) => (
+              <p key={index} className="caption-regular-3 sm:caption-regular-1 text-center lg:text-center">
+                {content.content[0].value}
+              </p>
+            ))}
             <div className="flex flex-row gap-4">
-              <Link href="/book-demo">
-                <button className="btn-line-normal">Talk to us</button>
+              <Link href={content.fields.ctaUrl}>
+                <button className="btn-line-normal">{content.fields.ctaText}</button>
               </Link>
-              <Link href="/signup">
-                <button className="btn-line-normal">Sign Up Free</button>
+              <Link href={content.fields.ctaUrl2}>
+                <button className="btn-line-normal">{content.fields.ctaText2}</button>
               </Link>
             </div>
           </div>
-        </div>
+        ))}
+      </div>
+
       </Layout>
     </>
   );
 }
 
-// export async function getStaticProps() {
-//   const contentType = 'landingPage'; // Modify the content type here
-//   const propsKey = 'homepages'; // Modify the props key here
-//   const catchKey = 'error'; // Modify the catch key here
-//   const indexToRead = 11; // Modify the index you want to read
+export async function getStaticProps() {
+  const contentType = 'landingPage'; // Modify content type here
+  const { items } = await fetchContentfulEntries(contentType);
 
-//   try {
-//     const dynamicData = await fetchContentfulEntries(
-//       contentType,
-//       propsKey,
-//       catchKey,
-//       indexToRead,
-//     );
+  const entries = items.find(
+    (entry) => entry.fields.internalName === 'Homepage',
+  );
 
-//     return {
-//       props: dynamicData,
-//     };
-//   } catch (error) {
-//     console.error('Error in getStaticProps:', error);
-//     return {
-//       props: {
-//         [catchKey]: 'An unexpected error occurred.',
-//       },
-//     };
-//   }
-// }
+  // Check if the entry is found
+  if (entries) {
+    console.log('Found the homepage entry:', entries);
+  } else {
+    console.log('Homepage entry not found.');
+  }
+
+  return {
+    props: {
+      contentfulEntries: entries ? entries.fields : {}, // Modify key-value of props
+    },
+  };
+}
