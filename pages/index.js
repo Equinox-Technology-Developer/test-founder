@@ -38,6 +38,9 @@ export default function Home ({contentfulEntries}) {
   const imageUrl = contentfulEntries.topBanner.fields.image.fields.file.url;
   const fullImageUrl = `https:${imageUrl}`
 
+  const imageUrlTopSection = contentfulEntries.topSection[0].fields.image.fields.file.url;
+  const fullImageUrlTopSection = `https:${imageUrlTopSection}`
+
   console.log(contentfulEntries)
 
   return (
@@ -168,7 +171,7 @@ export default function Home ({contentfulEntries}) {
             <div key={index} className={`flex flex-col lg:flex-row items-center first:mt-24 lg:last:mb-20 lg:mb-8 mb-4 gap-[50px] justify-between ${explanation.fields.containerLayout ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
               <div className="z-50 mb-1 sm:mb-16 md:mb-0 md:w-full md:text-left lg:flex-grow">
                 <Image
-                  src={`https://${explanation.fields.image.fields.file.url}`}
+                  src={fullImageUrlTopSection}
                   alt="Hero Image"
                   width={616}
                   height={404}
