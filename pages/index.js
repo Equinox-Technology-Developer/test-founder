@@ -38,6 +38,9 @@ export default function Home ({contentfulEntries}) {
   const imageUrl = contentfulEntries.topBanner.fields.image.fields.file.url;
   const fullImageUrl = `https:${imageUrl}`
 
+  const imageUrlTopSection = contentfulEntries.topSection[0].fields.image.fields.file.url;
+  const fullImageUrlTopSection = `https:${imageUrlTopSection}`
+
   console.log(contentfulEntries)
 
   return (
@@ -165,10 +168,10 @@ export default function Home ({contentfulEntries}) {
         <section className="z-50 flex h-fit items-center bg-[#F9F9F9] px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
         <div className="container mx-auto ">
           {contentfulEntries.topSection.map((explanation, index) => (
-            <div key={index} className={`flex flex-col items-center first:mt-24 lg:last:mb-20 lg:mb-8 mb-4 gap-[50px] justify-between lg:${explanation.fields.containerLayout ? 'flex-row' : 'flex-row-reverse'}`}>
+            <div key={index} className={`flex flex-col lg:flex-row items-center first:mt-24 lg:last:mb-20 lg:mb-8 mb-4 gap-[50px] justify-between ${explanation.fields.containerLayout ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
               <div className="z-50 mb-1 sm:mb-16 md:mb-0 md:w-full md:text-left lg:flex-grow">
                 <Image
-                  src={`https://${explanation.fields.image.fields.file.url}`}
+                  src={fullImageUrlTopSection}
                   alt="Hero Image"
                   width={616}
                   height={404}
