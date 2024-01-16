@@ -11,6 +11,12 @@
   white-space: -ms-pre-wrap;
 }
 
+.img {
+  @media screen and (min-width: 999px) {
+    width: 100%;
+  }
+}
+
 p {
   .italic {
     font-weight: lighter;
@@ -26,7 +32,7 @@ p {
 
   @media screen and (min-width: 999px) {
     flex-direction: row;
-    padding: 150px 0 80px;
+    padding: 150px 0 0px;
   }
 }
 

@@ -1,11 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
-import { images } from '@/constants';
 import Link from 'next/link';
 
-import { Layout } from '@/components';
 import { IoIosArrowForward } from 'react-icons/io';
-
+import { Layout } from '@/components';
 import { fetchContentfulEntries } from '@/helper';
 
 // Swiper
@@ -18,10 +16,7 @@ import CardAssessmentDefault from '../../components/CardAssessment/CardAssessmen
 
 import styles from './Products.module.scss';
 
-
-// const Products = () => {
 const Products = ({contentfulEntries}) => {
-  
   const bodyTextValue = contentfulEntries.topBanner.fields.bodyText.content[0].content[0].value || '';
   const imageUrl = contentfulEntries.topBanner.fields.image.fields.file.url;
   const fullImageUrl = `https:${imageUrl}`
@@ -571,6 +566,8 @@ const Products = ({contentfulEntries}) => {
   );
 };
 
+export default Products;
+
 export async function getStaticProps() {
   const contentType = 'landingPage'; // Modify content type here
   const { items } = await fetchContentfulEntries(contentType);
@@ -592,5 +589,3 @@ export async function getStaticProps() {
     },
   };
 }
-
-export default Products;

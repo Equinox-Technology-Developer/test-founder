@@ -37,9 +37,7 @@ export default function Home ({contentfulEntries}) {
   const bodyTextValue = contentfulEntries.topBanner.fields.bodyText.content[0].content[0].value || '';
   const imageUrl = contentfulEntries.topBanner.fields.image.fields.file.url;
   const fullImageUrl = `https:${imageUrl}`
-
-  console.log(contentfulEntries)
-
+  
   return (
     <>
       <Layout pageTitle="Homepage">
@@ -207,7 +205,7 @@ export default function Home ({contentfulEntries}) {
             </div>
           ))}
         </div>
-      </section>
+        </section>
 
         {/* Testimonials */}
         <div className="w-full bg-[#F9F9F9] pb-[44px] sm:pb-[100px] lg:pt-[100px]">
@@ -436,8 +434,7 @@ export default function Home ({contentfulEntries}) {
             </div>
           </div>
         ))}
-      </div>
-
+        </div>
       </Layout>
     </>
   );
