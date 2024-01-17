@@ -14,6 +14,8 @@ const ProductScience = ({contentfulEntries}) => {
   const imageUrl = contentfulEntries.topBanner.fields.image.fields.file.url;
   const fullImageUrl = `https:${imageUrl}`
 
+  console.log(contentfulEntries)
+
   return (
     <>
       <Layout pageTitle="Product Science">
