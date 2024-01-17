@@ -5,7 +5,6 @@ import { FaStar } from "react-icons/fa";
 
 
 import { Layout } from '@/components';
-import { images } from '@/constants';
 import { fetchContentfulEntries } from '@/helper';
 
 import styles from './TestLibrary.module.scss';
