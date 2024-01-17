@@ -9,7 +9,7 @@ import styles from './Contact.module.scss';
 const Contact = ({}) => {
   return (
     <>
-      <Layout pageTitle="Book a Demo">
+      <Layout pageTitle="Book a Demo" showNavbarSubmit={true}>
         <section className="bg-[#F9F9F9] bg-blur bg-right bg-no-repeat pt-0">
           <div className="container mx-auto pb-20">
             {' '}
