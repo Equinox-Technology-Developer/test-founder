@@ -12,7 +12,7 @@ import 'swiper/css';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css/navigation';
 
-import styles from '../styles/Home.module.scss'
+import styles from '../styles/Home.module.scss';
 
 const slideData = [
   { src: '/assets/abbot.svg', alt: 'Abbot', width: 180, height: 80 },
@@ -33,11 +33,13 @@ const slideData = [
 ];
 
 // export default function Home({ homepages }) {
-export default function Home ({contentfulEntries}) {
-  const bodyTextValue = contentfulEntries.topBanner.fields.bodyText.content[0].content[0].value || '';
+export default function Home({ contentfulEntries }) {
+  const bodyTextValue =
+    contentfulEntries.topBanner.fields.bodyText.content[0].content[0].value ||
+    '';
   const imageUrl = contentfulEntries.topBanner.fields.image.fields.file.url;
-  const fullImageUrl = `https:${imageUrl}`
-  
+  const fullImageUrl = `https:${imageUrl}`;
+
   return (
     <>
       <Layout pageTitle="Homepage">
@@ -47,29 +49,31 @@ export default function Home ({contentfulEntries}) {
             <div className="relative flex flex-col items-center sm:static lg:flex-row">
               <div className="mb-0 mt-20 flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:px-[40px] md:py-[32px] md:text-left lg:mt-24 lg:flex-grow lg:items-start lg:pr-24">
                 <h1 className="sm:heading-1 heading-2 mb-6 mt-0 text-center lg:text-start">
-                {contentfulEntries.topBanner.fields.headline
-                  .split(' ')
-                  .map((word, index) => (
-                    <span
-                      key={index}
-                      className={word === 'TestFounder' ? 'text-primary-500' : ''}
-                    >
-                      {word}{' '}
-                    </span>
-                  ))}
+                  {contentfulEntries.topBanner.fields.headline
+                    .split(' ')
+                    .map((word, index) => (
+                      <span
+                        key={index}
+                        className={
+                          word === 'TestFounder' ? 'text-primary-500' : ''
+                        }
+                      >
+                        {word}{' '}
+                      </span>
+                    ))}
                 </h1>
                 <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center lg:text-start">
-                { bodyTextValue}
+                  {bodyTextValue}
                 </p>
                 <div className="mb-6 flex justify-center">
                   <Link href={contentfulEntries.topBanner.fields.ctaUrl}>
                     <button className="btn-medium sm:btn-normal">
-                    {contentfulEntries.topBanner.fields.ctaText}
+                      {contentfulEntries.topBanner.fields.ctaText}
                     </button>
                   </Link>
                   <Link href={contentfulEntries.topBanner.fields.ctaUrl2}>
                     <button className="btn-line-medium sm:btn-line-normal ml-4">
-                    {contentfulEntries.topBanner.fields.ctaText2}
+                      {contentfulEntries.topBanner.fields.ctaText2}
                     </button>
                   </Link>
                 </div>
@@ -114,7 +118,7 @@ export default function Home ({contentfulEntries}) {
                   width={559}
                   height={638}
                   sizes="100vw"
-                  className=" z-10 mt-20 flex h-auto w-[80%] md:w-[60%] lg:w-full img"
+                  className=" img z-10 mt-20 flex h-auto w-[80%] md:w-[60%] lg:w-full"
                 />
               </div>
             </div>
@@ -161,50 +165,66 @@ export default function Home ({contentfulEntries}) {
 
         {/* Explanation  */}
         <section className="z-50 flex h-fit items-center bg-[#F9F9F9] px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
-        <div className="container mx-auto ">
-          {contentfulEntries.topSection.map((explanation, index) => (
-            <div key={index} className={`flex flex-col lg:flex-row items-center first:mt-24 lg:last:mb-20 lg:mb-8 mb-4 gap-[50px] justify-between ${explanation.fields.containerLayout ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
-              <div className="z-50 mb-1 sm:mb-16 md:mb-0 md:w-full md:text-left lg:flex-grow">
+          <div className="container mx-auto ">
+            {contentfulEntries.topSection.map((explanation, index) => (
+              <div
+                key={index}
+                className={`mb-4 flex flex-col items-center justify-between gap-[50px] first:mt-24 lg:mb-8 lg:flex-row lg:last:mb-20 ${
+                  explanation.fields.containerLayout
+                    ? 'lg:flex-row'
+                    : 'lg:flex-row-reverse'
+                }`}
+              >
+                <div className="z-50 mb-1 sm:mb-16 md:mb-0 md:w-full md:text-left lg:flex-grow">
+                  <Image
+                    src={`https:${explanation.fields.image.fields.file.url}`}
+                    alt="Hero Image"
+                    width={616}
+                    height={404}
+                    className={styles.img}
+                    sizes="100vw"
+                  />
+                </div>
+                <div className="relative z-50 flex w-full flex-col items-center space-y-6 md:w-full lg:w-full lg:items-start">
+                  <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center lg:text-start">
+                    {explanation.fields.headline}
+                  </h1>
+
+                  {explanation.fields.bodyText.content.map((content, index) => (
+                    <p
+                      key={index}
+                      className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start"
+                    >
+                      {content.content[0].value}
+                    </p>
+                  ))}
+
+                  <Link
+                    href={
+                      explanation.fields.ctaLink && explanation.fields.ctaText
+                        ? explanation.fields.ctaLink
+                        : '#'
+                    }
+                  >
+                    {explanation.fields.ctaLink &&
+                      explanation.fields.ctaText && (
+                        <button className="btn-line-medium sm:btn-line-normal">
+                          {explanation.fields.ctaText}
+                        </button>
+                      )}
+                  </Link>
+                </div>
                 <Image
-                  src={`https:${explanation.fields.image.fields.file.url}`}
+                  src="/assets/bg_blur_2.png"
                   alt="Hero Image"
-                  width={616}
-                  height={404}
-                  className={styles.img}
+                  width={730}
+                  height={565}
                   sizes="100vw"
+                  className="absolute"
                 />
               </div>
-              <div className="relative z-50 flex w-full flex-col items-center space-y-6 md:w-full lg:w-full lg:items-start">
-                <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center lg:text-start">
-                 {explanation.fields.headline}
-                </h1>
-
-                {explanation.fields.bodyText.content.map((content, index) => (
-                  
-                  <p key={index} className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
-                    {content.content[0].value}
-                  </p>
-                ))}
-
-                <Link href={explanation.fields.ctaLink && explanation.fields.ctaText ? explanation.fields.ctaLink : "#"}>
-                  {explanation.fields.ctaLink && explanation.fields.ctaText && (
-                    <button className="btn-line-medium sm:btn-line-normal">
-                      {explanation.fields.ctaText}
-                    </button>
-                  )}
-                </Link>
-              </div>
-              <Image
-                src="/assets/bg_blur_2.png"
-                alt="Hero Image"
-                width={730}
-                height={565}
-                sizes="100vw"
-                className="absolute"
-              />
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
         </section>
 
         {/* Testimonials */}
@@ -251,15 +271,19 @@ export default function Home ({contentfulEntries}) {
                             sizes="100vw"
                             className="z-50"
                           />
-                          <h3 className="heading-3 mt-0">{testimonial.fields.name}</h3>
+                          <h3 className="heading-3 mt-0">
+                            {testimonial.fields.name}
+                          </h3>
                           <p className="caption-regular-3">
-                          {testimonial.fields.position}
+                            {testimonial.fields.position}
                           </p>
                           <p className="caption-light-2 hidden md:block">
-                            “{
-                            testimonial.fields.testimonialText.content[0]
-                              .content[0].value
-                          }”
+                            “
+                            {
+                              testimonial.fields.testimonialText.content[0]
+                                .content[0].value
+                            }
+                            ”
                           </p>
                         </div>
                         <div className="hidden justify-between md:flex">
@@ -326,16 +350,19 @@ export default function Home ({contentfulEntries}) {
                             </svg>
                           </div>
                           <p className="caption-regular-3 text-neutral-100">
-                            {new Date(testimonial.sys.updatedAt).toLocaleDateString()}
+                            {new Date(
+                              testimonial.sys.updatedAt,
+                            ).toLocaleDateString()}
                           </p>
                         </div>
                       </div>
                     </div>
                     <p className="caption-light-2 pt-[20px] md:hidden">
-                    “{
-                            testimonial.fields.testimonialText.content[0]
-                              .content[0].value
-                          }
+                      “
+                      {
+                        testimonial.fields.testimonialText.content[0].content[0]
+                          .value
+                      }
                     </p>
                     <div className="mt-4 flex justify-between md:hidden">
                       <div className="flex">
@@ -401,7 +428,9 @@ export default function Home ({contentfulEntries}) {
                         </svg>
                       </div>
                       <p className="caption-regular-3 text-neutral-100">
-                        {new Date(testimonial.sys.updatedAt).toLocaleDateString()}
+                        {new Date(
+                          testimonial.sys.updatedAt,
+                        ).toLocaleDateString()}
                       </p>
                     </div>
                   </div>
@@ -414,26 +443,36 @@ export default function Home ({contentfulEntries}) {
 
         {/* Banner Bottom */}
         <div className="min-h-[366px] w-full space-y-6 bg-[#D0F3FC26]">
-        {contentfulEntries.extraSection.map((content, index) => (
-          <div key={index} className="container mx-auto flex flex-col items-center justify-center space-y-6 px-4 py-6 text-center md:px-[40px] md:py-[32px] lg:px-[62px] lg:py-[60px]">
-            <h1 className="heading-2 sm:heading-1">
-              {content.fields.headline}
-            </h1>
-            {content.fields.bodyText.content.map((content, index) => (
-              <p key={index} className="caption-regular-3 sm:caption-regular-1 text-center lg:text-center">
-                {content.content[0].value}
-              </p>
-            ))}
-            <div className="flex flex-row gap-4">
-              <Link href={content.fields.ctaUrl}>
-                <button className="btn-line-normal">{content.fields.ctaText}</button>
-              </Link>
-              <Link href={content.fields.ctaUrl2}>
-                <button className="btn-line-normal">{content.fields.ctaText2}</button>
-              </Link>
+          {contentfulEntries.extraSection.map((content, index) => (
+            <div
+              key={index}
+              className="container mx-auto flex flex-col items-center justify-center space-y-6 px-4 py-6 text-center md:px-[40px] md:py-[32px] lg:px-[62px] lg:py-[60px]"
+            >
+              <h1 className="heading-2 sm:heading-1">
+                {content.fields.headline}
+              </h1>
+              {content.fields.bodyText.content.map((content, index) => (
+                <p
+                  key={index}
+                  className="caption-regular-3 sm:caption-regular-1 text-center lg:text-center"
+                >
+                  {content.content[0].value}
+                </p>
+              ))}
+              <div className="flex flex-row gap-4">
+                <Link href={content.fields.ctaUrl}>
+                  <button className="btn-line-normal">
+                    {content.fields.ctaText}
+                  </button>
+                </Link>
+                <Link href={content.fields.ctaUrl2}>
+                  <button className="btn-line-normal">
+                    {content.fields.ctaText2}
+                  </button>
+                </Link>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
         </div>
       </Layout>
     </>

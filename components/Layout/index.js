@@ -8,7 +8,7 @@ import { FaIntercom } from 'react-icons/fa';
 import styles from './Layout.module.scss';
 
 const Layout = (props) => {
-  const { children, pageTitle } = props;
+  const { children, pageTitle, showNavbarSubmit, showNavbarCandidate } = props;
   return (
     <>
       <Head>
@@ -17,7 +17,10 @@ const Layout = (props) => {
       </Head>
       <div>
         <TopNavbar />
-        <Navbar />
+        <Navbar
+          showNavbarSubmit={showNavbarSubmit}
+          showNavbarCandidate={showNavbarCandidate}
+        />
         <Link
           href="https://wa.me/6287725800047"
           className={styles.whatsapp_float}

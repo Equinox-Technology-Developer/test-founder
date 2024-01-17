@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 const CandidatesGuide = () => {
   return (
-    <Layout pageTitle="For Candidates">
+    <Layout pageTitle="For Candidates" showNavbarCandidate={true}>
       <section className="bg-[#F9F9F9] bg-blur bg-right bg-no-repeat pt-0">
         <div className="container mx-auto px-4 py-6 sm:min-h-[520px] md:px-10 md:py-8 lg:px-0 lg:py-0">
           <div className="relative flex flex-col items-center sm:static lg:flex-row lg:gap-[27px] lg:py-[80px]">
