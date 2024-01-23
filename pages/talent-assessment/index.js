@@ -4,10 +4,13 @@ import Link from 'next/link';
 
 import { Layout } from '@/components';
 import { images } from '@/constants';
+import { fetchContentfulEntries } from '@/helper';
 
 import styles from './TalentAssessment.module.scss';
 
-const index = () => {
+export default function TalentAssessment({ contentfulEntries }) {
+  console.log(contentfulEntries);
+
   return (
     <Layout pageTitle="Talent Assessment">
       {/* Banner */}
@@ -16,28 +19,30 @@ const index = () => {
           <div className="relative flex flex-col items-center sm:static lg:flex-row">
             <div className="mt-4 flex flex-col items-center px-4 py-6 text-center md:mb-0 md:w-full md:items-center md:px-[0px] md:py-[32px] md:text-left lg:mt-24 lg:flex-grow lg:items-start lg:pr-24">
               <h1 className="sm:heading-1 heading-2 mb-6 mt-20 ">
-                Talent assessment
+                {contentfulEntries.topBanner.fields.headline}
               </h1>
               <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center lg:text-start">
-                Find out what talent assessment is. Our articles give recruiters
-                and hiring managers key insights into candidate potential.
+                {
+                  contentfulEntries.topBanner.fields.bodyText.content[0]
+                    .content[0].value
+                }
               </p>
               <div className="mb-6 flex justify-center">
-                <Link href="/signup">
+                <Link href={contentfulEntries.topBanner.fields.ctaUrl}>
                   <button className="btn-medium sm:btn-normal">
-                    Try for free!
+                    {contentfulEntries.topBanner.fields.ctaText}
                   </button>
                 </Link>
-                <Link href="/book-demo">
+                <Link href={contentfulEntries.topBanner.fields.ctaUrl2}>
                   <button className="btn-line-medium sm:btn-line-normal ml-4">
-                    Get a demo
+                    {contentfulEntries.topBanner.fields.ctaText2}
                   </button>
                 </Link>
               </div>
             </div>
             <div className="relative flex w-full justify-center md:w-full lg:mt-20 lg:w-full lg:max-w-lg">
               <Image
-                src={images.HeroImageTestAssessment}
+                src={`https://${contentfulEntries.topBanner.fields.image.fields.file.url}`}
                 alt="Hero Image"
                 width={580}
                 height={494}
@@ -53,62 +58,23 @@ const index = () => {
       <section className={`${styles.section_grey}`}>
         <div className={`container mx-auto px-4 py-6`}>
           <div className={`${styles.content_wrapper}`}>
-            <h3 className={`heading-2 md:heading-1`}>Browse Topics</h3>
+            <h3 className={`heading-2 md:heading-1`}>
+              {contentfulEntries.topSection[0].fields.headline}
+            </h3>
             <div className={`${styles.topicsIcon_wrapper}`}>
-              <div className={`${styles.topic_single}`}>
-                <Image
-                  src="/assets/FAQ Icon_x40.png"
-                  width={60}
-                  height={60}
-                  alt="Icon Topics FAQ"
-                />
-                <p>What is talent assessment?</p>
-              </div>
-              <div className={`${styles.topic_single}`}>
-                <Image
-                  src="/assets/star_benefit.png"
-                  width={60}
-                  height={60}
-                  alt="Icon Topics FAQ"
-                />
-                <p>Benefits of talent assessments</p>
-              </div>
-              <div className={`${styles.topic_single}`}>
-                <Image
-                  src="/assets/tools_assessment.png"
-                  width={60}
-                  height={60}
-                  alt="Icon Topics FAQ"
-                />
-                <p>Talent assessment tools</p>
-              </div>
-              <div className={`${styles.topic_single}`}>
-                <Image
-                  src="/assets/tools_comparison.png"
-                  width={60}
-                  height={60}
-                  alt="Icon Topics FAQ"
-                />
-                <p>Talent assessment tools comparison</p>
-              </div>
-              <div className={`${styles.topic_single}`}>
-                <Image
-                  src="/assets/path_recruit.png"
-                  width={60}
-                  height={60}
-                  alt="Icon Topics FAQ"
-                />
-                <p>How to recruit talent</p>
-              </div>
-              <div className={`${styles.topic_single}`}>
-                <Image
-                  src="/assets/ask.png"
-                  width={60}
-                  height={60}
-                  alt="Icon Topics FAQ"
-                />
-                <p>Frequently asked questions</p>
-              </div>
+              {contentfulEntries.pageContent
+                .slice(1, 7)
+                .map((explanation, index) => (
+                  <div className={`${styles.topic_single}`} key={index}>
+                    <Image
+                      src={`https:${explanation.fields.image.fields.file.url}`}
+                      width={60}
+                      height={60}
+                      alt="Icon Browse FAQ"
+                    />
+                    <p>{explanation.fields.headline}</p>
+                  </div>
+                ))}
             </div>
           </div>
         </div>
@@ -119,42 +85,36 @@ const index = () => {
         <div className="container mx-auto">
           <div className="flex flex-col px-4 py-6 md:px-[40px] md:py-[32px] lg:px-16 lg:py-20">
             <h2 className="heading-2 md:heading-1 text-center lg:mb-6">
-              The impact of talent assessment
+              {contentfulEntries.topSection[12].fields.headline}
             </h2>
             <p className="caption-semibold-1 text-center">
-              Source:{' '}
+              {
+                contentfulEntries.topSection[12].fields.bodyText.content[0]
+                  .content[0].value
+              }{' '}
               <span className="text-sm font-light italic">
-                TestFounder’s State of Skills-based Hiring 2023 report
+                {
+                  contentfulEntries.topSection[12].fields.bodyText.content[0]
+                    .content[2].value
+                }
               </span>
             </p>
             <div className="flex flex-col justify-center lg:mt-10 lg:flex-row lg:gap-6">
-              <div className="flex max-w-full flex-col lg:max-w-[421px]">
-                <div className="text-center text-[54px] font-bold text-primary-500">
-                  92%
-                </div>
-                <p className="caption-regular-3 text-center">
-                  of organizations using talent assessment tests saw a reduction
-                  in mis-hires
-                </p>
-              </div>
-              <div className="flex max-w-full flex-col lg:max-w-[421px]">
-                <div className="text-center text-[54px] font-bold text-primary-500">
-                  89%
-                </div>
-                <p className="caption-regular-3 text-center">
-                  of organizations using talent assessment tools reported a
-                  reduction in cost-to-hire
-                </p>
-              </div>
-              <div className="flex max-w-full flex-col lg:max-w-[421px]">
-                <div className="text-center text-[54px] font-bold text-primary-500">
-                  54%
-                </div>
-                <p className="caption-regular-3 text-center">
-                  of candidates said they prefer a hiring process that includes
-                  talent assessment tests
-                </p>
-              </div>
+              {contentfulEntries.pageContent
+                .slice(7, 10)
+                .map((impact, index) => (
+                  <div
+                    className="flex max-w-full flex-col lg:max-w-[421px]"
+                    key={index}
+                  >
+                    <div className="text-center text-[54px] font-bold text-primary-500">
+                      {impact.fields.headline}
+                    </div>
+                    <p className="caption-regular-3 text-center">
+                      {impact.fields.bodyText.content[0].content[0].value}
+                    </p>
+                  </div>
+                ))}
             </div>
           </div>
         </div>
@@ -166,7 +126,7 @@ const index = () => {
           <div className="flex flex-col-reverse items-center gap-6 lg:flex-row lg:py-[60px]">
             <div className="mb-16 w-full sm:w-1/2 md:mb-0 md:text-left ">
               <Image
-                src="/assets/img-talent-1.png"
+                src={`https://${contentfulEntries.topSection[1].fields.image.fields.file.url}`}
                 alt="Hero Image"
                 width={517}
                 height={544}
@@ -175,23 +135,23 @@ const index = () => {
             </div>
             <div className="relative flex w-full flex-col items-center space-y-6 md:w-full lg:w-1/2 lg:items-start">
               <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center sm:text-start">
-                What is talent assessment?
+                {contentfulEntries.topSection[1].fields.internalName}
               </h1>
               <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
-                Unlock the power of talent assessment, which provides recruiters
-                and hiring managers with invaluable insights into candidate
-                potential.
+                {
+                  contentfulEntries.topSection[1].fields.bodyText.content[0]
+                    .content[0].value
+                }
               </p>
               <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
-                Explore the significance of evaluating skills, behavior, and
-                culture add, streamlining the hiring process for optimal talent
-                acquisition. Learn how to make data-driven decisions, ensuring
-                the right match between candidates and organizational goals for
-                sustained success.
+                {
+                  contentfulEntries.topSection[1].fields.bodyText.content[1]
+                    .content[0].value
+                }
               </p>
-              <Link href="/signup">
+              <Link href={contentfulEntries.topSection[1].fields.ctaLink}>
                 <button className="btn-line-normal-black">
-                  Try us for free now!
+                  {contentfulEntries.topSection[1].fields.ctaText}
                 </button>
               </Link>
             </div>
@@ -203,7 +163,7 @@ const index = () => {
       <section className={styles.blog_container}>
         <div className={`container m-10 mx-auto`}>
           <h1 className="heading-2 md:heading-1 text-center lg:text-start">
-            Read more
+            {contentfulEntries.topSection[2].fields.headline}
           </h1>
           <div className={`${styles.blog_wrapper}`}>
             <div className={styles.blog_single}>
@@ -311,38 +271,37 @@ const index = () => {
       {/* Explanation 2 */}
       <section className="flex h-fit items-center bg-white px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
         <div className="container mx-auto ">
-          <div className="flex flex-col justify-between items-center gap-6 lg:flex-row lg:py-[60px]">
+          <div className="flex flex-col items-center justify-between gap-6 lg:flex-row lg:py-[60px]">
             <div className="relative flex w-full flex-col items-center space-y-6 md:w-full lg:w-1/2 lg:items-start">
               <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center sm:text-start">
-                Benefits of talent assessments
+                {contentfulEntries.topSection[3].fields.headline}
               </h1>
               <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
-                How can talent assessments help your business grow? Explore our
-                talent assessment gateway to see the many benefits it offers for
-                recruiters and hiring managers.
+                {
+                  contentfulEntries.topSection[3].fields.bodyText.content[0]
+                    .content[0].value
+                }
               </p>
               <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
-                Gain a comprehensive understanding of how talent assessments
-                streamline the hiring process, ensuring optimal candidate
-                selection. Discover how these assessments drive informed
-                decisions, enhance employee retention, and cultivate a
-                high-performing workforce, ultimately boosting organizational
-                productivity and success.
+                {
+                  contentfulEntries.topSection[3].fields.bodyText.content[1]
+                    .content[0].value
+                }
               </p>
-              <Link href="/signup">
+              <Link href={contentfulEntries.topSection[3].fields.ctaLink}>
                 <button className="btn-line-normal-black">
-                  Try us for free now!
+                  {contentfulEntries.topSection[3].fields.ctaText}
                 </button>
               </Link>
             </div>
             <div className="mb-16 w-full sm:w-1/2 md:mb-0 md:text-left ">
               <Image
-                src="/assets/img-talent-2.png"
+                src={`https://${contentfulEntries.topSection[3].fields.image.fields.file.url}`}
                 alt="Hero Image"
                 width={645}
                 height={513}
                 sizes="100vw"
-                className='img'
+                className="img"
               />
             </div>
           </div>
@@ -353,7 +312,7 @@ const index = () => {
       <section className={styles.blog_container}>
         <div className={`container m-10 mx-auto`}>
           <h3 className="heading-2 md:heading-1 text-center lg:text-start">
-            Read more about the benefit
+            {contentfulEntries.topSection[4].fields.headline}
           </h3>
           <div className={`${styles.blog_wrapper}`}>
             <div className={styles.blog_single}>
@@ -464,33 +423,33 @@ const index = () => {
           <div className="flex flex-col-reverse items-center gap-6 lg:flex-row lg:py-[60px]">
             <div className="mb-16 w-full sm:w-1/2 md:mb-0 md:text-left ">
               <Image
-                src="/assets/img-talent-3.png"
+                src={`https://${contentfulEntries.topSection[5].fields.image.fields.file.url}`}
                 alt="Hero Image"
                 width={644}
                 height={551}
                 sizes="100vw"
-                className='img'
+                className="img"
               />
             </div>
             <div className="relative flex w-full flex-col items-center space-y-6 md:w-full lg:w-1/2 lg:items-start">
               <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center sm:text-start">
-                Talent assessment tools
+                {contentfulEntries.topSection[5].fields.headline}
               </h1>
               <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
-                Discover the diverse, effective ways to evaluate candidate
-                potential. Find out how cognitive tests, skills-based
-                evaluations, and behavioral assessments offer recruiters and
-                hiring managers invaluable insights for informed
-                decision-making.
+                {
+                  contentfulEntries.topSection[5].fields.bodyText.content[0]
+                    .content[0].value
+                }
               </p>
               <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
-                Uncover the power of tailored assessment strategies in
-                identifying top-tier talent aligned with your organizational
-                objectives and company culture.
+                {
+                  contentfulEntries.topSection[5].fields.bodyText.content[1]
+                    .content[0].value
+                }
               </p>
-              <Link href="/signup">
+              <Link href={contentfulEntries.topSection[5].fields.ctaLink}>
                 <button className="btn-line-normal-black">
-                  Try us for free now!
+                  {contentfulEntries.topSection[5].fields.ctaText}
                 </button>
               </Link>
             </div>
@@ -502,7 +461,7 @@ const index = () => {
       <section className={styles.blog_container}>
         <div className={`container m-10 mx-auto`}>
           <h1 className="heading-2 md:heading-1 text-center lg:text-start">
-            Read more about the different talent assessment tools...
+            {contentfulEntries.topSection[6].fields.headline}
           </h1>
           <div className={`${styles.blog_wrapper}`}>
             <div className={styles.blog_single}>
@@ -613,33 +572,33 @@ const index = () => {
           <div className="flex flex-col items-center gap-6 lg:flex-row lg:py-[60px]">
             <div className="relative flex w-full flex-col items-center space-y-6 md:w-full lg:w-1/2 lg:items-start">
               <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center lg:text-start">
-                Talent assessment tools comparison
+                {contentfulEntries.topSection[7].fields.headline}
               </h1>
               <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
-                Explore our talent assessment tools comparison in our
-                'TestFounder vs.' series. We'll break down the features and
-                pricing of different tools and help you understand their pros
-                and cons.
+                {
+                  contentfulEntries.topSection[7].fields.bodyText.content[0]
+                    .content[0].value
+                }
               </p>
               <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
-                Discover which one suits your recruitment needs best and makes
-                hiring top talent a breeze. Make informed decisions to enhance
-                your hiring process with our insights and comparisons.
+                {
+                  contentfulEntries.topSection[7].fields.bodyText.content[1]
+                    .content[0].value
+                }
               </p>
-              <Link href="/signup">
+              <Link href={contentfulEntries.topSection[7].fields.ctaLink}>
                 <button className="btn-line-normal-black">
-                  Try us for free now!
+                  {contentfulEntries.topSection[7].fields.ctaText}
                 </button>
               </Link>
             </div>
             <div className="mb-16 w-full sm:w-1/2 md:mb-0 md:text-left ">
               <Image
-                src="/assets/img-talent-4.png"
+                src={`https://${contentfulEntries.topSection[7].fields.image.fields.file.url}`}
                 alt="Hero Image"
                 width={643}
                 height={588}
                 sizes="100vw"
-                className='img'
               />
             </div>
           </div>
@@ -650,7 +609,7 @@ const index = () => {
       <section className={styles.blog_container}>
         <div className={`container m-10 mx-auto`}>
           <h1 className="heading-2 md:heading-1 text-center lg:text-start">
-            Talent Assessment tools comparison
+            {contentfulEntries.topSection[8].fields.headline}
           </h1>
           <div className={`${styles.blog_wrapper}`}>
             <div className={styles.blog_single}>
@@ -761,35 +720,32 @@ const index = () => {
           <div className="flex flex-col-reverse items-center gap-6 lg:flex-row lg:py-[60px]">
             <div className="mb-16 w-full sm:w-1/2 md:mb-0 md:text-left ">
               <Image
-                src="/assets/img-talent-5.png"
+                src={`https://${contentfulEntries.topSection[9].fields.image.fields.file.url}`}
                 alt="Hero Image"
                 width={537}
                 height={614}
                 sizes="100vw"
-                className='img'
               />
             </div>
             <div className="relative flex w-full flex-col items-center space-y-6 md:w-full lg:w-1/2 lg:items-start">
               <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center sm:text-start">
-                How to recruit talent
+                {contentfulEntries.topSection[9].fields.headline}
               </h1>
               <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
-                How and where do you find the best talent? Maximize your
-                recruitment success with our top blogs, which provide essential
-                insights for recruiters and hiring managers. Discover innovative
-                strategies to attract top-tier talent, how to take advantage of
-                comprehensive recruitment methods, and how to foster a diverse,
-                inclusive workforce.
+                {
+                  contentfulEntries.topSection[9].fields.bodyText.content[0]
+                    .content[0].value
+                }
               </p>
               <p className="caption-regular-3 sm:caption-regular-1 text-center lg:text-start">
-                Uncover the key to successful talent acquisition, from crafting
-                compelling job descriptions to implementing effective
-                interviewing techniques, to ensure a seamless recruitment
-                process.
+                {
+                  contentfulEntries.topSection[9].fields.bodyText.content[1]
+                    .content[0].value
+                }
               </p>
-              <Link href="/signup">
+              <Link href={contentfulEntries.topSection[9].fields.ctaLink}>
                 <button className="btn-line-normal-black">
-                  Try us for free now!
+                  {contentfulEntries.topSection[9].fields.ctaText}
                 </button>
               </Link>
             </div>
@@ -801,7 +757,7 @@ const index = () => {
       <section className={styles.blog_container}>
         <div className={`container m-10 mx-auto`}>
           <h1 className="heading-2 md:heading-1 text-center lg:text-start">
-            Read more about how to recruit the best talent
+            {contentfulEntries.topSection[10].fields.headline}
           </h1>
           <div className={`${styles.blog_wrapper}`}>
             <div className={styles.blog_single}>
@@ -910,77 +866,23 @@ const index = () => {
       <section className="py-6 lg:px-16 lg:py-[60px]">
         <div className="container mx-auto">
           <h1 className="md:heading-1 heading-2 text-center lg:mb-8 lg:text-start">
-            Talent Assessment FAQ
+            {contentfulEntries.topSection[11].fields.headline}
           </h1>
           <div className="flex flex-wrap justify-between gap-6 px-4 py-6 md:px-[40px] md:py-[32px] lg:px-0 lg:py-0">
-            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px]  border-[#CBCBCB] p-6 lg:w-[49%]">
-              <Image
-                src="/assets/faq_grey.svg"
-                width={46}
-                height={46}
-                alt="Icon Topics FAQ"
-              />
-              <p className="caption-semibold-1">
-                What are the three components for conducting a talent
-                assessment?
-              </p>
-            </div>
-            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px]  border-[#CBCBCB] p-6 lg:w-[49%]">
-              <Image
-                src="/assets/faq_grey.svg"
-                width={46}
-                height={46}
-                alt="Icon Topics FAQ"
-              />
-              <p className="caption-semibold-1">
-                How do I choose the right talent assessment for my needs?
-              </p>
-            </div>
-            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px]  border-[#CBCBCB] p-6 lg:w-[49%]">
-              <Image
-                src="/assets/faq_grey.svg"
-                width={46}
-                height={46}
-                alt="Icon Topics FAQ"
-              />
-              <p className="caption-semibold-1">
-                How can I ensure that my talent assessments are fair and
-                unbiased?
-              </p>
-            </div>
-            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px]  border-[#CBCBCB] p-6 lg:w-[49%]">
-              <Image
-                src="/assets/faq_grey.svg"
-                width={46}
-                height={46}
-                alt="Icon Topics FAQ"
-              />
-              <p className="caption-semibold-1">
-                How do I interpret the results of talent assessments?
-              </p>
-            </div>
-            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px]  border-[#CBCBCB] p-6 lg:w-[49%]">
-              <Image
-                src="/assets/faq_grey.svg"
-                width={46}
-                height={46}
-                alt="Icon Topics FAQ"
-              />
-              <p className="caption-semibold-1">
-                What are the best practices for using talent assessments in HR?
-              </p>
-            </div>
-            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px]  border-[#CBCBCB] p-6 lg:w-[49%]">
-              <Image
-                src="/assets/faq_grey.svg"
-                width={46}
-                height={46}
-                alt="Icon Topics FAQ"
-              />
-              <p className="caption-semibold-1">
-                What is the purpose of talent assessment?
-              </p>
-            </div>
+            {contentfulEntries.faq.map((faq, index) => (
+              <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px]  border-[#CBCBCB] p-6 lg:w-[49%]">
+                <Image
+                  src={`https:${faq.fields.icon.fields.file.url}`}
+                  width={46}
+                  height={46}
+                  alt="Icon Topics FAQ"
+                />
+                <p className="caption-semibold-1">
+                  {faq.fields.headline}
+                  {}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -989,22 +891,30 @@ const index = () => {
       <div className="min-h-[366px] w-full space-y-6 bg-primary-500">
         <div className="container mx-auto flex flex-col items-center justify-center space-y-6 px-4 py-6 text-center sm:px-0 sm:py-[60px]">
           <h1 className="heading-2 sm:heading-1 text-white">
-            Top talent is priceless. We make finding it affordable.
+            {contentfulEntries.extraSection[0].fields.headline}
           </h1>
           <p className="caption-regular-3 sm:caption-regular-1 text-center text-white">
-            A time-consuming screening process costs you a lot. Painful
-            mis-hires cost you much, much more. With TestFounder, you avoid all
-            of this and see a huge return on investment every single year.
+            {
+              contentfulEntries.extraSection[0].fields.bodyText.content[0]
+                .content[0].value
+            }
           </p>
           <p className="caption-regular-3 sm:caption-regular-1 text-center text-white">
-            Start screening with us today on our free plan.
+            {
+              contentfulEntries.extraSection[0].fields.bodyText.content[1]
+                .content[0].value
+            }
           </p>
           <div className="flex flex-row gap-4">
-            <Link href="/book-demo">
-              <button className="btn-line-medium-white">Book a demo</button>
+            <Link href={contentfulEntries.extraSection[0].fields.ctaUrl}>
+              <button className="btn-line-medium-white">
+                {contentfulEntries.extraSection[0].fields.ctaText}
+              </button>
             </Link>
-            <Link href="/signup">
-              <button className="btn-medium-white">Try us for free!</button>
+            <Link href={contentfulEntries.extraSection[0].fields.ctaUrl2}>
+              <button className="btn-medium-white">
+                {contentfulEntries.extraSection[0].fields.ctaText2}
+              </button>
             </Link>
           </div>
         </div>
@@ -1331,6 +1241,26 @@ const index = () => {
       </section>
     </Layout>
   );
-};
+}
 
-export default index;
+export async function getStaticProps() {
+  const contentType = 'landingPage'; // Modify content type here
+  const { items } = await fetchContentfulEntries(contentType);
+
+  const entries = items.find(
+    (entry) => entry.fields.internalName === 'Talent Assessment',
+  );
+
+  // Check if the entry is found
+  if (entries) {
+    console.log('Found the homepage entry:', entries);
+  } else {
+    console.log('Homepage entry not found.');
+  }
+
+  return {
+    props: {
+      contentfulEntries: entries ? entries.fields : {}, // Modify key-value of props
+    },
+  };
+}
