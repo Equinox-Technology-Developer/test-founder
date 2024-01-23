@@ -921,95 +921,20 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
             Skills-based hiring FAQ
           </h1>
           <div className="flex flex-wrap justify-between gap-6 px-4 py-6 md:px-[40px] md:py-[32px] lg:px-0 lg:py-0">
-            <div className="flex max-h-[104px]  w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]">
-              <Image
-                src="/assets/faq_grey.svg"
-                width={46}
-                height={46}
-                alt="Icon Topics FAQ"
-              />
-              <p className="caption-semibold-1">
-                Whats is skills-based hiring?
-              </p>
-            </div>
-            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]">
-              <Image
-                src="/assets/faq_grey.svg"
-                width={46}
-                height={46}
-                alt="Icon Topics FAQ"
-              />
-              <p className="caption-semibold-1">
-                How does skills-based hiring work?
-              </p>
-            </div>
-            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]">
-              <Image
-                src="/assets/faq_grey.svg"
-                width={46}
-                height={46}
-                alt="Icon Topics FAQ"
-              />
-              <p className="caption-semibold-1">
-                What are the benefits of skills-based hiring?
-              </p>
-            </div>
-            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]">
-              <Image
-                src="/assets/faq_grey.svg"
-                width={46}
-                height={46}
-                alt="Icon Topics FAQ"
-              />
-              <p className="caption-semibold-1">
-                How do you adopt skills-based hiring practices?
-              </p>
-            </div>
-            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]">
-              <Image
-                src="/assets/faq_grey.svg"
-                width={46}
-                height={46}
-                alt="Icon Topics FAQ"
-              />
-              <p className="caption-semibold-1">
-                What are the challenges of implementing skills-based hiring?
-              </p>
-            </div>
-            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]">
-              <Image
-                src="/assets/faq_grey.svg"
-                width={46}
-                height={46}
-                alt="Icon Topics FAQ"
-              />
-              <p className="caption-semibold-1">
-                What is a skills-based organization?
-              </p>
-            </div>
-            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]">
-              <Image
-                src="/assets/faq_grey.svg"
-                width={46}
-                height={46}
-                alt="Icon Topics FAQ"
-              />
-              <p className="caption-semibold-1">
-                How does skills-based hiring impact diversity, equity, and
-                inclusion (DE&I) effort?
-              </p>
-            </div>
-            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]">
-              <Image
-                src="/assets/faq_grey.svg"
-                width={46}
-                height={46}
-                alt="Icon Topics FAQ"
-              />
-              <p className="caption-semibold-1">
-                Does skills-based hiring impact gender equity?
-              </p>
-            </div>
+            {contentfulEntries.faq.map((faq, index) => (
+              <div
+                className="flex max-h-[104px]  w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]"
+                key={index}
+              >
+                <Image
+                  src={`https:${faq.fields.icon.fields.file.url}`}
+                  width={46}
+                  height={46}
+                  alt="Icon Topics FAQ"
+                />
+                <p className="caption-semibold-1">{faq.fields.headline}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
