@@ -70,7 +70,7 @@ export default function Blog({ contentfulEntries }) {
                   key={index}
                 >
                   <Image
-                    src={`https://${blog.fields.featuredImage.fields.file.url}`}
+                    src={`https:${blog.fields.featuredImage.fields.file.url}`}
                     alt="img-card-blog"
                     width={369}
                     height={226}
@@ -88,7 +88,7 @@ export default function Blog({ contentfulEntries }) {
                   </div>
                   <div className="flex flex-shrink-0 items-center">
                     <Image
-                      src={`https://${blog.fields.author.fields.image.fields.file.url}`}
+                      src={`https:${blog.fields.author.fields.image.fields.file.url}`}
                       alt="img-card-blog"
                       width={24}
                       height={24}
@@ -139,7 +139,7 @@ export default function Blog({ contentfulEntries }) {
               className={`relative flex w-full justify-center md:w-full lg:w-full lg:max-w-lg ${styles.banner_topContentImage}`}
             >
               <Image
-                src={`https://${BlogEntries.topSection[0].fields.image.fields.file.url}`}
+                src={`https:${BlogEntries.topSection[0].fields.image.fields.file.url}`}
                 alt="Hero Image"
                 width={617}
                 height={602}

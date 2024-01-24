@@ -42,7 +42,7 @@ export default function TalentAssessment({ contentfulEntries }) {
             </div>
             <div className="relative flex w-full justify-center md:w-full lg:mt-20 lg:w-full lg:max-w-lg">
               <Image
-                src={`https://${contentfulEntries.topBanner.fields.image.fields.file.url}`}
+                src={`https:${contentfulEntries.topBanner.fields.image.fields.file.url}`}
                 alt="Hero Image"
                 width={580}
                 height={494}
@@ -126,7 +126,7 @@ export default function TalentAssessment({ contentfulEntries }) {
           <div className="flex flex-col-reverse items-center gap-6 lg:flex-row lg:py-[60px]">
             <div className="mb-16 w-full sm:w-1/2 md:mb-0 md:text-left ">
               <Image
-                src={`https://${contentfulEntries.topSection[1].fields.image.fields.file.url}`}
+                src={`https:${contentfulEntries.topSection[1].fields.image.fields.file.url}`}
                 alt="Hero Image"
                 width={517}
                 height={544}
@@ -296,7 +296,7 @@ export default function TalentAssessment({ contentfulEntries }) {
             </div>
             <div className="mb-16 w-full sm:w-1/2 md:mb-0 md:text-left ">
               <Image
-                src={`https://${contentfulEntries.topSection[3].fields.image.fields.file.url}`}
+                src={`https:${contentfulEntries.topSection[3].fields.image.fields.file.url}`}
                 alt="Hero Image"
                 width={645}
                 height={513}
@@ -423,7 +423,7 @@ export default function TalentAssessment({ contentfulEntries }) {
           <div className="flex flex-col-reverse items-center gap-6 lg:flex-row lg:py-[60px]">
             <div className="mb-16 w-full sm:w-1/2 md:mb-0 md:text-left ">
               <Image
-                src={`https://${contentfulEntries.topSection[5].fields.image.fields.file.url}`}
+                src={`https:${contentfulEntries.topSection[5].fields.image.fields.file.url}`}
                 alt="Hero Image"
                 width={644}
                 height={551}
@@ -594,7 +594,7 @@ export default function TalentAssessment({ contentfulEntries }) {
             </div>
             <div className="mb-16 w-full sm:w-1/2 md:mb-0 md:text-left ">
               <Image
-                src={`https://${contentfulEntries.topSection[7].fields.image.fields.file.url}`}
+                src={`https:${contentfulEntries.topSection[7].fields.image.fields.file.url}`}
                 alt="Hero Image"
                 width={643}
                 height={588}
@@ -720,7 +720,7 @@ export default function TalentAssessment({ contentfulEntries }) {
           <div className="flex flex-col-reverse items-center gap-6 lg:flex-row lg:py-[60px]">
             <div className="mb-16 w-full sm:w-1/2 md:mb-0 md:text-left ">
               <Image
-                src={`https://${contentfulEntries.topSection[9].fields.image.fields.file.url}`}
+                src={`https:${contentfulEntries.topSection[9].fields.image.fields.file.url}`}
                 alt="Hero Image"
                 width={537}
                 height={614}

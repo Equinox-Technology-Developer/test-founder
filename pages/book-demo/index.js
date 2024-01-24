@@ -40,7 +40,7 @@ export default function BookDemo({ contentfulEntries }) {
                   {contentfulEntries.pageContent.map((logo, index) => (
                     <Image
                       key={index}
-                      src={`https://${logo.fields.image.fields.file.url}`}
+                      src={`https:${logo.fields.image.fields.file.url}`}
                       width="119"
                       height="80"
                       className="h-fit w-fit"
@@ -177,7 +177,7 @@ export default function BookDemo({ contentfulEntries }) {
               </div>
               <div className="mb-16 w-full sm:w-1/2 md:mb-0 md:text-left ">
                 <Image
-                  src={`https://${contentfulEntries.topSection[0].fields.image.fields.file.url}`}
+                  src={`https:${contentfulEntries.topSection[0].fields.image.fields.file.url}`}
                   alt="Hero Image"
                   width={462}
                   height={473}

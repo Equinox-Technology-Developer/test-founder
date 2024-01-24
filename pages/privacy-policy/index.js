@@ -129,25 +129,6 @@ const PrivacyPolicy = () => {
             Platform, please ensure that you have read and understood our
             Privacy Policy.
           </p>
-          <p className="md:caption-regular-2 caption-regular-3">
-            These Terms are a legally binding contract between You and
-            Testfounder. If you do not agree with these Terms, do not register
-            for a Testfounder account, or purchase or use Services. By using or
-            accessing the Services, or registering for a Testfounder account,
-            you agree to be bound by these Terms. If you use the Services on
-            behalf of an entity, you agree to these Terms for that entity and
-            represent and warrant to Testfounder that you have the authority to
-            bind that entity to these Terms, unless that entity has a separate
-            paid contract in effect with Testfounder, in which event the
-            separate paid contract governs your use of the Services.
-          </p>
-          <p className="md:caption-regular-2 caption-regular-3">
-            In these Terms, we refer collectively to these Terms, the Data
-            Processing Agreement and the applicable Service Level Agreement
-            (“SLA”), other instructions and policies (“Documentation”) available
-            on our website (“Website”) and applicable ordering documents (“Order
-            Form”, as deﬁned below) as the “Agreement.”
-          </p>
         </div>
         <div className="space-y-6">
           <h3 className="heading-3">
