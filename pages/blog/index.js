@@ -82,7 +82,9 @@ export default function Blog({ contentfulEntries }) {
                     <h3 className="caption-semibold-1 group-hover:underline">
                       {blog.fields.title}
                     </h3>
-                    <p className="caption-light-3">{blog.fields.excerpt}</p>
+                    <p className="caption-light-3 max-h-[84px] overflow-hidden">
+                      {blog.fields.excerpt}...
+                    </p>
                   </div>
                   <div className="flex flex-shrink-0 items-center">
                     <Image

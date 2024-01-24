@@ -1,8 +1,12 @@
 import { Layout } from '@/components';
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
-const BookDemo = ({}) => {
+import { fetchContentfulEntries } from '@/helper';
+
+export default function BookDemo({ contentfulEntries }) {
+  console.log(contentfulEntries);
   return (
     <>
       <Layout pageTitle="Book a Demo">
@@ -12,52 +16,37 @@ const BookDemo = ({}) => {
             <div className="flex w-full flex-col items-center justify-between lg:flex-row lg:px-0 lg:pb-[80px] lg:pt-[150px]">
               <div className="flex w-full max-w-[646px] flex-col items-start px-4 text-left">
                 <h1 className="sm:heading-1 heading-2 mb-6 mt-[70px] w-full text-center md:mt-[100px] lg:mt-0 lg:text-start">
-                  Objective hiring starts here. Book your demo now.
+                  {contentfulEntries.topBanner.fields.headline}
                 </h1>
                 <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center lg:text-start">
-                  Book a demo with a member of our team to understand if
-                  TestFounder is the right tool for your recruitment strategy,
-                  learn about our platform and features, and explore the
-                  available payment plans.
+                  {
+                    contentfulEntries.topBanner.fields.bodyText.content[0]
+                      .content[0].value
+                  }
                 </p>
                 <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center lg:text-start">
                   <span className="font-bold">
-                    TestFounder has helped more than 10,000 companies{' '}
+                    {
+                      contentfulEntries.topBanner.fields.bodyText.content[1]
+                        .content[0].value
+                    }{' '}
                   </span>{' '}
-                  streamline their hiring processes by reducing mis-hires and
-                  cutting costs.
+                  {
+                    contentfulEntries.topBanner.fields.bodyText.content[1]
+                      .content[1].value
+                  }
                 </p>
                 <div className="mb-6 flex flex-row flex-wrap items-center justify-center gap-4 md:mb-[60px] lg:mb-0 lg:flex-nowrap lg:justify-start">
-                  <Image
-                    src="/assets/abbot.svg"
-                    width="119"
-                    height="80"
-                    className="h-fit w-fit"
-                  />
-                  <Image
-                    src="/assets/barila.svg"
-                    width="119"
-                    height="80"
-                    className="h-fit w-fit"
-                  />
-                  <Image
-                    src="/assets/berkshire.svg"
-                    width="119"
-                    height="80"
-                    className="h-fit w-fit"
-                  />
-                  <Image
-                    src="/assets/bmw.svg"
-                    width="119"
-                    height="80"
-                    className="h-fit w-fit"
-                  />
-                  <Image
-                    src="/assets/british-airways.svg"
-                    width="119"
-                    height="80"
-                    className="h-fit w-fit"
-                  />
+                  {contentfulEntries.pageContent.map((logo, index) => (
+                    <Image
+                      key={index}
+                      src={`https://${logo.fields.image.fields.file.url}`}
+                      width="119"
+                      height="80"
+                      className="h-fit w-fit"
+                      alt="logo-company"
+                    />
+                  ))}
                 </div>
               </div>
               <div className="flex h-auto w-full justify-center px-4 md:w-full lg:min-h-[403px] lg:w-full lg:min-w-[609px] lg:max-w-lg lg:px-0">
@@ -172,18 +161,23 @@ const BookDemo = ({}) => {
             <div className="flex flex-col items-center gap-6 lg:flex-row lg:py-[60px]">
               <div className="relative flex w-full flex-col items-center space-y-6 md:w-full md:items-start lg:w-1/2">
                 <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center sm:text-start">
-                  74% of employers reduced cost-to-hire when they used
-                  skills-based hiring
+                  {contentfulEntries.topSection[0].fields.headline}
                 </h1>
                 <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
-                  Fill out the form above and let us show you how TestFounder
-                  can help improve your hiring.
+                  {
+                    contentfulEntries.topSection[0].fields.bodyText.content[0]
+                      .content[0].value
+                  }
                 </p>
-                <button className="btn-line-normal-black">Book a Demo</button>
+                <Link href={contentfulEntries.topSection[0].fields.ctaLink}>
+                  <button className="btn-line-normal-black">
+                    {contentfulEntries.topSection[0].fields.ctaText}
+                  </button>
+                </Link>
               </div>
               <div className="mb-16 w-full sm:w-1/2 md:mb-0 md:text-left ">
                 <Image
-                  src="/assets/book-a-demo.png"
+                  src={`https://${contentfulEntries.topSection[0].fields.image.fields.file.url}`}
                   alt="Hero Image"
                   width={462}
                   height={473}
@@ -197,6 +191,26 @@ const BookDemo = ({}) => {
       </Layout>
     </>
   );
-};
+}
 
-export default BookDemo;
+export async function getStaticProps() {
+  const contentType = 'landingPage'; // Modify content type here
+  const { items } = await fetchContentfulEntries(contentType);
+
+  const entries = items.find(
+    (entry) => entry.fields.internalName === 'Book Demo',
+  );
+
+  // Check if the entry is found
+  if (entries) {
+    console.log('Found the homepage entry:', entries);
+  } else {
+    console.log('Homepage entry not found.');
+  }
+
+  return {
+    props: {
+      contentfulEntries: entries ? entries.fields : {}, // Modify key-value of props
+    },
+  };
+}
