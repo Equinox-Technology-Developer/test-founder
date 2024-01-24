@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import { Analytics } from '@vercel/analytics/react';
 import { Open_Sans } from 'next/font/google';
 
 import '@/styles/globals.css';
