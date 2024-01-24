@@ -3,11 +3,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { Layout } from '@/components';
-import { images } from '@/constants';
+
+import { fetchContentfulEntries } from '@/helper';
 
 import styles from './Blog.module.scss';
 
-const Resources = () => {
+export default function Blog({ contentfulEntries }) {
+  console.log(contentfulEntries);
+
+  const BlogEntries = contentfulEntries.landingPage[0].fields;
   return (
     <Layout pageTitle="Blog">
       {/* Bottom Banner */}
@@ -15,11 +19,14 @@ const Resources = () => {
         <div className="container mx-auto px-4 py-8 md:px-[40px] md:py-[60px]">
           <div className={` ${styles.banner_blogContainer}`}>
             <div className={styles.banner_blogContentText}>
-              <h1 className="sm:heading-1 heading-2">TestFounder Blog!</h1>
+              <h1 className="sm:heading-1 heading-2">
+                {BlogEntries.topBanner.fields.headline}
+              </h1>
               <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center lg:text-start">
-                Hire smarter not harder. We bring you the best advice and guides
-                on talent assessments, skills-based hiring technology, and
-                remote work.
+                {
+                  BlogEntries.topBanner.fields.bodyText.content[0].content[0]
+                    .value
+                }
               </p>
               <div className="relative flex w-full xl:w-fit">
                 <input
@@ -56,292 +63,51 @@ const Resources = () => {
             <p>TestFounder</p>
           </div>
           <div className="flex flex-wrap justify-center gap-[43px]">
-            <div className="max-w-[401px] space-y-4 rounded-[20px] bg-white p-4 md:max-w-full lg:max-w-[401px]">
-              <Image
-                src="/assets/img-card-blog-1.png"
-                alt="img-card-blog"
-                width={369}
-                height={226}
-                sizes="100vw"
-                className="w-full rounded-[10px] object-cover"
-              />
-              <p className="caption-semibold-3">Hiring & Recruiting</p>
-              <div className="space-y-1">
-                <h3 className="caption-semibold-1">
-                  How to hire a procurement manager
-                </h3>
-                <p className="caption-light-3">
-                  When hiring a supply chain specialist – specifically a
-                  procurement manager – you want to ensure the candidate you’re
-                  selecting is up to the task.  Does your candidate kn...
-                </p>
-              </div>
-              <div className="flex flex-shrink-0 items-center">
-                <Image
-                  src="/assets/benjamin-walker.png"
-                  alt="img-card-blog"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="rounded-full object-cover"
-                />
-                <date className="caption-regular-4 ml-4">Desember 8, 2023</date>
-              </div>
-            </div>
-            <div className="max-w-[401px] space-y-4 rounded-[20px] bg-white p-4 md:max-w-full lg:max-w-[401px]">
-              <Image
-                src="/assets/img-card-blog-2.png"
-                alt="img-card-blog"
-                width={369}
-                height={226}
-                sizes="100vw"
-                className="w-full rounded-[10px] object-cover"
-              />
-              <p className="caption-semibold-3">Human Resources</p>
-              <div className="space-y-1">
-                <h3 className="caption-semibold-1">
-                  How to hire a Drupal developer
-                </h3>
-                <p className="caption-light-3">
-                  Drupal, an open-source content management system (CMS), is
-                  known for its flexibility and security, making it a top choice
-                  for building robust websites. The right Drupal...
-                </p>
-              </div>
-              <div className="flex flex-shrink-0 items-center">
-                <Image
-                  src="/assets/chase.png"
-                  alt="img-card-blog"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className=" rounded-full object-cover"
-                />
-                <date className="caption-regular-4 ml-4">Desember 8, 2023</date>
-              </div>
-            </div>
-            <div className="max-w-[401px] space-y-4 rounded-[20px] bg-white p-4 md:max-w-full lg:max-w-[401px]">
-              <Image
-                src="/assets/img-card-blog-3.png"
-                alt="img-card-blog"
-                width={369}
-                height={226}
-                sizes="100vw"
-                className="w-full rounded-[10px] object-cover"
-              />
-              <p className="caption-semibold-3">Hiring & Recruiting</p>
-              <div className="space-y-1">
-                <h3 className="caption-semibold-1">
-                  How to recruit collage students
-                </h3>
-                <p className="caption-light-3">
-                  Hiring college students can be a great way to bring in fresh
-                  talent at lower costs while giving students much-needed job
-                  experience.  Unfortunately, recruiters don’t always know how
-                  to best appeal to and interact with today’s...
-                </p>
-              </div>
-              <div className="flex flex-shrink-0 items-center">
-                <Image
-                  src="/assets/maxwell-redwood.png"
-                  alt="img-card-blog"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="rounded-full object-cover"
-                />
-                <date className="caption-regular-4 ml-4">Desember 8, 2023</date>
-              </div>
-            </div>
-            <div className="max-w-[401px] space-y-4 rounded-[20px] bg-white p-4 md:max-w-full lg:max-w-[401px]">
-              <Image
-                src="/assets/img-card-blog-4.png"
-                alt="img-card-blog"
-                width={369}
-                height={226}
-                sizes="100vw"
-                className="w-full rounded-[10px] object-cover"
-              />
-              <p className="caption-semibold-3">Science</p>
-              <div className="space-y-1">
-                <h3 className="caption-semibold-1">
-                  A brief introducing to classical test theory
-                </h3>
-                <p className="caption-light-3">
-                  Science series materials are brought to you by TestFounder’s
-                  Assessment Team: A group of IO psychology, data, and
-                  psychometric experts with a deep...
-                </p>
-              </div>
-              <div className="flex flex-shrink-0 items-center">
-                <Image
-                  src="/assets/christopher-griffin.png"
-                  alt="img-card-blog"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="rounded-full object-cover"
-                />
-                <date className="caption-regular-4 ml-4">Desember 8, 2023</date>
-              </div>
-            </div>
-            <div className="max-w-[401px] space-y-4 rounded-[20px] bg-white p-4 md:max-w-full lg:max-w-[401px]">
-              <Image
-                src="/assets/img-card-blog-5.png"
-                alt="img-card-blog"
-                width={369}
-                height={226}
-                sizes="100vw"
-                className="w-full rounded-[10px] object-cover"
-              />
-              <p className="caption-semibold-3">Science</p>
-              <div className="space-y-1">
-                <h3 className="caption-semibold-1">
-                  How to hire a Bootsrap developer
-                </h3>
-                <p className="caption-light-3">
-                  A skilled Bootstrap developer is crucial for the success of
-                  your web projects. Their expertise can elevate your online
-                  presence with responsive and user-friendly interfaces...
-                </p>
-              </div>
-              <div className="flex flex-shrink-0 items-center">
-                <Image
-                  src="/assets/dominic-carrington.png"
-                  alt="img-card-blog"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="rounded-full object-cover"
-                />
-                <date className="caption-regular-4 ml-4">Desember 8, 2023</date>
-              </div>
-            </div>
-            <div className="max-w-[401px] space-y-4 rounded-[20px] bg-white p-4 md:max-w-full lg:max-w-[401px]">
-              <Image
-                src="/assets/img-card-blog-6.png"
-                alt="img-card-blog"
-                width={369}
-                height={226}
-                sizes="100vw"
-                className="w-full rounded-[10px] object-cover"
-              />
-              <p className="caption-semibold-3">Science</p>
-              <div className="space-y-1">
-                <h3 className="caption-semibold-1">
-                  How to write a Django developer job description
-                </h3>
-                <p className="caption-light-3">
-                  rafting a compelling job description is an essential first
-                  step to attracting top-tier Django developers. But there’s...
-                </p>
-              </div>
-              <div className="flex flex-shrink-0 items-center">
-                <Image
-                  src="/assets/kanzaak.png"
-                  alt="img-card-blog"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="rounded-full object-cover"
-                />
-                <date className="caption-regular-4 ml-4">Desember 8, 2023</date>
-              </div>
-            </div>
-            <div className="max-w-[401px] space-y-4 rounded-[20px] bg-white p-4 md:max-w-full lg:max-w-[401px]">
-              <Image
-                src="/assets/img-card-blog-7.png"
-                alt="img-card-blog"
-                width={369}
-                height={226}
-                sizes="100vw"
-                className="w-full rounded-[10px] object-cover"
-              />
-              <p className="caption-semibold-3">Talent Assessment</p>
-              <div className="space-y-1">
-                <h3 className="caption-semibold-1">
-                  How to hire a top-performing IT Team
-                </h3>
-                <p className="caption-light-3">
-                  A dedicated IT team to keep your systems up and running around
-                  the clock has become essential for every business, regardless
-                  of size. Even a few hours off the grid can spell..
-                </p>
-              </div>
-              <div className="flex flex-shrink-0 items-center">
-                <Image
-                  src="/assets/olivia-abigail.png"
-                  alt="img-card-blog"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="rounded-full object-cover"
-                />
-                <date className="caption-regular-4 ml-4">Desember 8, 2023</date>
-              </div>
-            </div>
-            <div className="max-w-[401px] space-y-4 rounded-[20px] bg-white p-4 md:max-w-full lg:max-w-[401px]">
-              <Image
-                src="/assets/img-card-blog-8.png"
-                alt="img-card-blog"
-                width={369}
-                height={226}
-                sizes="100vw"
-                className="w-full rounded-[10px] object-cover"
-              />
-              <p className="caption-semibold-3">Hiring & Recruiting</p>
-              <div className="space-y-1">
-                <h3 className="caption-semibold-1">
-                  How to hire a B2B salesperson
-                </h3>
-                <p className="caption-light-3">
-                  Skilled auditors are crucial in examining a company's
-                  financial records, ensuring everything aligns with
-                  regulations, and maintaining financial transparency...
-                </p>
-              </div>
-              <div className="flex flex-shrink-0 items-center">
-                <Image
-                  src="/assets/kylian-pandhita.png"
-                  alt="img-card-blog"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="rounded-full object-cover"
-                />
-                <date className="caption-regular-4 ml-4">Desember 8, 2023</date>
-              </div>
-            </div>
-            <div className="max-w-[401px] space-y-4 rounded-[20px] bg-white p-4 md:max-w-full lg:max-w-[401px]">
-              <Image
-                src="/assets/img-card-blog-9.png"
-                alt="img-card-blog"
-                width={369}
-                height={226}
-                sizes="100vw"
-                className="w-full rounded-[10px] object-cover"
-              />
-              <p className="caption-semibold-3">Hiring & Recruiting</p>
-              <div className="space-y-1">
-                <h3 className="caption-semibold-1">How to hire an auditor</h3>
-                <p className="caption-light-3">
-                  Skilled auditors are crucial in examining a company's
-                  financial records, ensuring everything aligns with
-                  regulations, and maintaining financial transparency. How...
-                </p>
-              </div>
-              <div className="flex flex-shrink-0 items-center">
-                <Image
-                  src="/assets/maxwell-redwood.png"
-                  alt="img-card-blog"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="rounded-full object-cover"
-                />
-                <date className="caption-regular-4 ml-4">Desember 8, 2023</date>
-              </div>
-            </div>
+            {contentfulEntries.blogPost.map((blog, index) => (
+              <Link href={`/blog/${blog.fields.slug}`} className="text-inherit">
+                <div
+                  className="group max-w-[401px] space-y-4 rounded-[20px] bg-white p-4 hover:bg-white/80 md:max-w-full lg:max-w-[401px]"
+                  key={index}
+                >
+                  <Image
+                    src={`https://${blog.fields.featuredImage.fields.file.url}`}
+                    alt="img-card-blog"
+                    width={369}
+                    height={226}
+                    sizes="100vw"
+                    className="w-full rounded-[10px] object-cover"
+                  />
+                  <p className="caption-semibold-3">{blog.fields.category}</p>
+                  <div className="space-y-1">
+                    <h3 className="caption-semibold-1 group-hover:underline">
+                      {blog.fields.title}
+                    </h3>
+                    <p className="caption-light-3 max-h-[84px] overflow-hidden">
+                      {blog.fields.excerpt}...
+                    </p>
+                  </div>
+                  <div className="flex flex-shrink-0 items-center">
+                    <Image
+                      src={`https://${blog.fields.author.fields.image.fields.file.url}`}
+                      alt="img-card-blog"
+                      width={24}
+                      height={24}
+                      sizes="100vw"
+                      className="rounded-full object-cover"
+                    />
+                    <date className="caption-regular-4 ml-4">
+                      {new Date(
+                        blog.fields.author.fields.image.sys.createdAt,
+                      ).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                      })}
+                    </date>
+                  </div>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </div>
@@ -353,16 +119,18 @@ const Resources = () => {
           <div className={` ${styles.banner_topContent}`}>
             <div className={styles.banner_topContentText}>
               <h1 className="sm:heading-1 heading-2 text-center lg:text-start">
-                Hire the best candidates with TestFounder!
+                {BlogEntries.topSection[0].fields.headline}
               </h1>
               <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-6 text-center lg:text-start">
-                Create talent assessments in minutes to screen candidates, save
-                time, and hire the best talent.{' '}
+                {
+                  BlogEntries.topSection[0].fields.bodyText.content[0]
+                    .content[0].value
+                }{' '}
               </p>
               <div className="mb-6 flex w-full justify-center lg:w-fit">
                 <Link href="/signup">
                   <button className="btn-line-medium sm:btn-line-normal">
-                    Try for free!
+                    {BlogEntries.topSection[0].fields.ctaText}
                   </button>
                 </Link>
               </div>
@@ -371,7 +139,7 @@ const Resources = () => {
               className={`relative flex w-full justify-center md:w-full lg:w-full lg:max-w-lg ${styles.banner_topContentImage}`}
             >
               <Image
-                src={images.HeroImageProduct}
+                src={`https://${BlogEntries.topSection[0].fields.image.fields.file.url}`}
                 alt="Hero Image"
                 width={617}
                 height={602}
@@ -384,6 +152,47 @@ const Resources = () => {
       </section>
     </Layout>
   );
-};
+}
 
-export default Resources;
+export async function getStaticProps() {
+  // Modify content types here
+  const contentTypes = ['landingPage', 'blogPost'];
+
+  // Specify internalName for landingPage entries
+  const landingPageInternalName = 'Blog';
+
+  // Fetch entries for landingPage content type with specified internalName
+  const entries = {};
+  for (const contentType of contentTypes) {
+    let fetchedEntries;
+    if (contentType === 'landingPage') {
+      const { items } = await fetchContentfulEntries(contentType);
+      // Find the entry with the specified internalName
+      const specificEntry = items.find(
+        (entry) => entry.fields.internalName === landingPageInternalName,
+      );
+      fetchedEntries = specificEntry ? [specificEntry] : [];
+    } else {
+      // Fetch all entries for other content types
+      const { items } = await fetchContentfulEntries(contentType);
+      fetchedEntries = items;
+    }
+
+    entries[contentType] = fetchedEntries;
+  }
+
+  // Check if the entries are found
+  for (const contentType of contentTypes) {
+    if (entries[contentType]) {
+      console.log(`Found ${contentType} entries:`, entries[contentType]);
+    } else {
+      console.log(`${contentType} entries not found.`);
+    }
+  }
+
+  return {
+    props: {
+      contentfulEntries: entries,
+    },
+  };
+}

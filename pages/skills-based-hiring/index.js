@@ -1,13 +1,15 @@
 import React from 'react';
 import Image from 'next/image';
-import { FaStar } from "react-icons/fa";
+import { FaStar } from 'react-icons/fa';
 
 import { Layout } from '@/components';
 import { images } from '@/constants';
+import { fetchContentfulEntries } from '@/helper';
 
 import styles from './SkillsBasedHiring.module.scss';
 
-const index = () => {
+export default function SkillsBasedHiring({ contentfulEntries }) {
+  console.log(contentfulEntries);
   return (
     <Layout pageTitle="Skills Based Hiring - Blog">
       {/* Banner */}
@@ -16,42 +18,48 @@ const index = () => {
           <div className="relative flex flex-col items-center px-4 py-6 sm:static md:px-[40px] md:py-[32px] lg:flex-row lg:px-0 lg:py-0">
             <div className="mb-16 mt-4 flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:px-[0px] md:py-[32px] md:text-left lg:mt-24 lg:flex-grow lg:items-start lg:pr-24">
               <h1 className="sm:heading-1 heading-2 mb-6 mt-20 ">
-                Skills-based hiring
+                {contentfulEntries.topBanner.fields.headline}
               </h1>
               <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center lg:text-start">
-                What is skills-based hiring? Why is it on the rise, and what are
-                the best practices for adopting it in your organization? Here’s
-                everything you need to know about this revolutionary new
-                approach to recruitment.
+                {
+                  contentfulEntries.topBanner.fields.bodyText.content[0]
+                    .content[0].value
+                }
               </p>
               <p className="caption-semibold-3 sm:caption-semibold-1 mb-6 mt-0 text-center lg:text-start">
-                New for October 2023: The world's only report on the State of
-                Skills-Based Hiring. Out now!{' '}
+                {
+                  contentfulEntries.topBanner.fields.bodyText.content[1]
+                    .content[0].value
+                }
               </p>
               <div className="mb-6 flex justify-center">
                 <button className="btn-medium sm:btn-normal">
-                  Explore Our Report
+                  {contentfulEntries.topBanner.fields.ctaText}
                 </button>
               </div>
-              <div className='flex items-center gap-2 '>
-                  <div>
-                    <Image src="/assets/test-library-banner_people.png" width={140} height={44} />
-                  </div>
-                  <div >
-                    <div className='flex text-star'>
-                      <FaStar className='svg-star' />
-                      <FaStar className='svg-star' />
-                      <FaStar className='svg-star' />
-                      <FaStar className='svg-star' />
-                      <FaStar className='svg-star' />
-                    </div>
-                    <p>Used by 500K+ recruiters </p>
-                  </div>
+              <div className="flex items-center gap-2 ">
+                <div>
+                  <Image
+                    src="/assets/test-library-banner_people.png"
+                    width={140}
+                    height={44}
+                  />
                 </div>
+                <div>
+                  <div className="flex text-star">
+                    <FaStar className="svg-star" />
+                    <FaStar className="svg-star" />
+                    <FaStar className="svg-star" />
+                    <FaStar className="svg-star" />
+                    <FaStar className="svg-star" />
+                  </div>
+                  <p>{contentfulEntries.pageContent[0].fields.headline}</p>
+                </div>
+              </div>
             </div>
             <div className="relative flex w-full justify-center md:w-full lg:mt-20 lg:w-full lg:max-w-lg">
               <Image
-                src={images.HeroImageSkillsBasedTraining}
+                src={`https:${contentfulEntries.topBanner.fields.image.fields.file.url}`}
                 alt="Hero Image"
                 width={575}
                 height={467}
@@ -67,62 +75,23 @@ const index = () => {
       <section className={`${styles.section}`}>
         <div className={`container mx-auto`}>
           <div className={`${styles.content_wrapper}`}>
-            <h3 className={`heading-2 md:heading-1`}>Browse Topics</h3>
+            <h3 className={`heading-2 md:heading-1`}>
+              {contentfulEntries.topSection[0].fields.headline}
+            </h3>
             <div className={`${styles.topicsIcon_wrapper}`}>
-              <div className={`${styles.topic_single}`}>
-                <Image
-                  src="/assets/FAQ Icon_x40.png"
-                  width={60}
-                  height={60}
-                  alt="Icon Topics FAQ"
-                />
-                <p>Understanding skills-based hiring</p>
-              </div>
-              <div className={`${styles.topic_single}`}>
-                <Image
-                  src="/assets/Star 3_x40.png"
-                  width={60}
-                  height={60}
-                  alt="Icon Topics FAQ"
-                />
-                <p>Benefits of skills-based hiring</p>
-              </div>
-              <div className={`${styles.topic_single}`}>
-                <Image
-                  src="/assets/global.png"
-                  width={60}
-                  height={60}
-                  alt="Icon Topics FAQ"
-                />
-                <p>Skills-based hiring practices</p>
-              </div>
-              <div className={`${styles.topic_single}`}>
-                <Image
-                  src="/assets/path.png"
-                  width={60}
-                  height={60}
-                  alt="Icon Topics FAQ"
-                />
-                <p>Implementing skills-based hiring</p>
-              </div>
-              <div className={`${styles.topic_single}`}>
-                <Image
-                  src="/assets/key.png"
-                  width={60}
-                  height={60}
-                  alt="Icon Topics FAQ"
-                />
-                <p>Skills-based hiring resources</p>
-              </div>
-              <div className={`${styles.topic_single}`}>
-                <Image
-                  src="/assets/ask.png"
-                  width={60}
-                  height={60}
-                  alt="Icon Topics FAQ"
-                />
-                <p>Frequently asked questions</p>
-              </div>
+              {contentfulEntries.pageContent
+                .slice(1, 7)
+                .map((explanation, index) => (
+                  <div className={`${styles.topic_single}`} key={index}>
+                    <Image
+                      src={`https:${explanation.fields.image.fields.file.url}`}
+                      width={60}
+                      height={60}
+                      alt="Icon Browse FAQ"
+                    />
+                    <p>{explanation.fields.headline}</p>
+                  </div>
+                ))}
             </div>
           </div>
         </div>
@@ -132,29 +101,57 @@ const index = () => {
       <section className={`${styles.section_grey}`}>
         <div className={`container mx-auto`}>
           <div className={`${styles.content_wrapper}`}>
-            <h2>Skills-based hiring is the best way to recruit</h2>
+            <h2>{contentfulEntries.topSection[1].fields.headline}</h2>
             <p className={`${styles.sub_heading}`}>
-              Our data shows extraordinary outcomes for employers and candidates
+              {
+                contentfulEntries.topSection[1].fields.bodyText.content[0]
+                  .content[0].value
+              }
             </p>
             <div className={`${styles.topicsIcon_wrapper}`}>
               <div className={`${styles.topic_single}`}>
-                <p className={`${styles.color_text} ${styles.color88}`}>88%</p>
-                <p>of employers say skills-based hiring reduces mis-hires</p>
-              </div>
-              <div className={`${styles.topic_single}`}>
-                <p className={`${styles.color_text} ${styles.color86}`}>86%</p>
+                <p className={`${styles.color_text} ${styles.color88}`}>
+                  {contentfulEntries.pageContent[7].fields.headline}
+                </p>
                 <p>
-                  of employees say skills-based hiring can help them land their
-                  dream job
+                  {
+                    contentfulEntries.pageContent[7].fields.bodyText.content[0]
+                      .content[0].value
+                  }
                 </p>
               </div>
               <div className={`${styles.topic_single}`}>
-                <p className={`${styles.color_text} ${styles.color82}`}>82%</p>
-                <p>of companies report a reduction in total cost-of-hire</p>
+                <p className={`${styles.color_text} ${styles.color86}`}>
+                  {contentfulEntries.pageContent[8].fields.headline}
+                </p>
+                <p>
+                  {
+                    contentfulEntries.pageContent[8].fields.bodyText.content[0]
+                      .content[0].value
+                  }
+                </p>
               </div>
               <div className={`${styles.topic_single}`}>
-                <p className={`${styles.color_text} ${styles.color76}`}>76%</p>
-                <p>of skills-based hires are happy in their role</p>
+                <p className={`${styles.color_text} ${styles.color82}`}>
+                  {contentfulEntries.pageContent[9].fields.headline}
+                </p>
+                <p>
+                  {
+                    contentfulEntries.pageContent[9].fields.bodyText.content[0]
+                      .content[0].value
+                  }
+                </p>
+              </div>
+              <div className={`${styles.topic_single}`}>
+                <p className={`${styles.color_text} ${styles.color76}`}>
+                  {contentfulEntries.pageContent[10].fields.headline}
+                </p>
+                <p>
+                  {
+                    contentfulEntries.pageContent[10].fields.bodyText.content[0]
+                      .content[0].value
+                  }
+                </p>
               </div>
             </div>
           </div>
@@ -167,40 +164,46 @@ const index = () => {
           <div className="relative flex flex-col-reverse items-center px-4 py-6 sm:static md:px-[40px] md:py-[32px] lg:flex-row lg:px-0 lg:py-0">
             <div className="mb-16 mt-4 flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:px-[0px] md:py-[32px] md:text-left lg:mt-24 lg:flex-grow lg:items-start lg:pr-24">
               <h1 className="sm:heading-1 heading-2 mb-6 text-shade-0">
-                The state of skills-based hiring in 2023
+                {contentfulEntries.topSection[2].fields.headline}
               </h1>
               <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center text-shade-0 lg:text-start">
-                Recruitment is changing fast. Over the past year we’ve seen the
-                red-hot candidate market give way to recessionary fears, and the
-                rise of AI-based tools that promise a brand-new world of work.
-                As businesses reshape their workforces to deal with these
-                challenges,{' '}
+                {
+                  contentfulEntries.topSection[2].fields.bodyText.content[0]
+                    .content[0].value
+                }
                 <span className="caption-bold-3 sm:caption-bold-1">
-                  skills-based hiring has emerged as the preferred tool to find
-                  and secure talent
+                  {
+                    contentfulEntries.topSection[2].fields.bodyText.content[0]
+                      .content[1].value
+                  }
                 </span>
                 .
               </p>
               <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center text-shade-0 lg:text-start">
-                In{' '}
+                {
+                  contentfulEntries.topSection[2].fields.bodyText.content[1]
+                    .content[0].value
+                }
                 <span className="caption-bold-3 sm:caption-bold-1">
-                  the world's only annual report on skills-based hiring
+                  {
+                    contentfulEntries.topSection[2].fields.bodyText.content[1]
+                      .content[1].value
+                  }
                 </span>
-                , we deep dive into the revolutionary recruitment trend to find
-                out how employers are leveraging this approach, how it’s
-                affecting candidate experience in the current job market, and
-                what the adoption of skills-based hiring practices means for
-                diversity efforts across organizations.
+                {
+                  contentfulEntries.topSection[2].fields.bodyText.content[1]
+                    .content[2].value
+                }
               </p>
               <div className="mb-6 flex justify-center">
                 <button className="btn-line-medium-white">
-                  Explore the report
+                  {contentfulEntries.topSection[2].fields.ctaText}
                 </button>
               </div>
             </div>
             <div className="relative flex w-full justify-center md:w-full lg:w-full lg:max-w-lg">
               <Image
-                src={images.iPad}
+                src={`https:${contentfulEntries.topSection[2].fields.image.fields.file.url}`}
                 alt="Hero Image"
                 width={512}
                 height={638}
@@ -218,7 +221,7 @@ const index = () => {
           <div className="flex flex-col items-center gap-6 lg:flex-row lg:py-[60px]">
             <div className="mb-16 w-full sm:w-1/2 md:mb-0 md:text-left ">
               <Image
-                src="/assets/portrait-smiling.png"
+                src={`https:${contentfulEntries.topSection[3].fields.image.fields.file.url}`}
                 alt="Hero Image"
                 width={557}
                 height={508}
@@ -228,16 +231,13 @@ const index = () => {
             </div>
             <div className="relative flex w-full flex-col items-center space-y-6 md:w-full md:items-start lg:w-1/2">
               <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center sm:text-start">
-                What is skills-based hiring?
+                {contentfulEntries.topSection[3].fields.headline}
               </h1>
               <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
-                Looking to make faster, more accurate, and higher quality
-                recruitment decisions? At a time when great talent comes at a
-                significant premium employers are realizing that they need tools
-                to assess candidates’ skills more quickly and reliably. Enter
-                skills-based hiring. Read on to find out how this new approach
-                to recruitment is driving managers to ditch resumes and expand
-                their applicant pools.
+                {
+                  contentfulEntries.topSection[3].fields.bodyText.content[0]
+                    .content[0].value
+                }
               </p>
             </div>
           </div>
@@ -247,7 +247,9 @@ const index = () => {
       {/* Blog Grid 1 */}
       <section className={styles.blog_container}>
         <div className={`container m-10 mx-auto`}>
-          <h1 className="text-center lg:text-start">Read more</h1>
+          <h1 className="text-center lg:text-start">
+            {contentfulEntries.topSection[4].fields.headline}
+          </h1>
           <div className={`${styles.blog_wrapper}`}>
             <div className={styles.blog_single}>
               <Image
@@ -355,27 +357,36 @@ const index = () => {
       {/* Explanation 2 */}
       <section className="flex h-fit items-center bg-white px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
         <div className="container mx-auto ">
-          <div className="flex flex-col justify-between items-center gap-6 lg:flex-row lg:py-[60px]">
+          <div className="flex flex-col items-center justify-between gap-6 lg:flex-row lg:py-[60px]">
             <div className="relative flex w-full flex-col items-center space-y-6 md:w-full md:items-start lg:w-1/2">
               <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center sm:text-start">
-                Why skills-based hiring?
+                {contentfulEntries.topSection[5].fields.headline}
               </h1>
               <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
-                Our data shows that 76% of employers are ready to make the
-                switch to skills-based hiring. Find out{' '}
-                <span className="font-bold italic">why</span> skills-based
-                hiring is on the rise and the wide-ranging benefits it can bring
-                to your business.
+                {
+                  contentfulEntries.topSection[5].fields.bodyText.content[0]
+                    .content[0].value
+                }
+                <span className="font-bold italic">
+                  {
+                    contentfulEntries.topSection[5].fields.bodyText.content[0]
+                      .content[1].value
+                  }
+                </span>{' '}
+                {
+                  contentfulEntries.topSection[5].fields.bodyText.content[0]
+                    .content[2].value
+                }
               </p>
             </div>
             <div className="mb-16 w-full sm:w-fit md:mb-0 md:text-left">
               <Image
-                src="/assets/img-why-skill-based-hiring.png"
+                src={`https:${contentfulEntries.topSection[5].fields.image.fields.file.url}`}
                 alt="Hero Image"
                 width={575}
                 height={449}
                 sizes="100vw"
-                className="z-50 img"
+                className="img z-50"
               />
             </div>
           </div>
@@ -385,7 +396,7 @@ const index = () => {
       {/* Blog Grid 2 */}
       <section className={styles.blog_container}>
         <div className={`container m-10 mx-auto`}>
-          <h1>Learn more</h1>
+          <h1>{contentfulEntries.topSection[6].fields.headline}</h1>
           <div className={`${styles.blog_wrapper}`}>
             <div className={styles.blog_single}>
               <Image
@@ -489,27 +500,23 @@ const index = () => {
           <div className="flex flex-col-reverse items-center justify-between gap-6 lg:flex-row lg:py-[60px]">
             <div className="mb-16 w-full sm:w-1/2 md:mb-0 md:text-left ">
               <Image
-                src="/assets/img-who-using-skill-based.png"
+                src={`https:${contentfulEntries.topSection[7].fields.image.fields.file.url}`}
                 alt="Hero Image"
                 width={524}
                 height={375}
                 sizes="100vw"
-                className="z-50 img"
+                className="img z-50"
               />
             </div>
             <div className="relative flex w-full flex-col items-center space-y-6 md:w-full md:items-start lg:w-1/2">
               <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center sm:text-start">
-                Who is using skills-based hiring?
+                {contentfulEntries.topSection[7].fields.headline}
               </h1>
               <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
-                Skills-based hiring has quickly become a global trend helping
-                reshape recruitment practices across many regions and
-                industries. From the United States to Singapore, recruiters are
-                embracing skills-based hiring to attract and keep top global
-                talent. Reasons for its popularity differ across regions. Some
-                use it to streamline high-volume hiring, while others are using
-                it build fairer, more diverse teams. Read on to find out who is
-                using skills-based hiring and how they will benefit.
+                {
+                  contentfulEntries.topSection[7].fields.bodyText.content[0]
+                    .content[0].value
+                }
               </p>
             </div>
           </div>
@@ -519,7 +526,7 @@ const index = () => {
       {/* Blog Grid 3 */}
       <section className={styles.blog_container}>
         <div className={`container m-10 mx-auto`}>
-          <h1>By Region</h1>
+          <h1>{contentfulEntries.topSection[8].fields.headline}</h1>
           <div className={`${styles.blog_wrapper}`}>
             <div className={styles.blog_single}>
               <Image
@@ -571,7 +578,7 @@ const index = () => {
               </p>
             </div>
           </div>
-          <h1>By Role</h1>
+          <h1>{contentfulEntries.topSection[9].fields.headline}</h1>
           <div className={`${styles.blog_wrapper}`}>
             <div className={styles.blog_single}>
               <Image
@@ -622,7 +629,7 @@ const index = () => {
               </p>
             </div>
           </div>
-          <h1>By Industry</h1>
+          <h1>{contentfulEntries.topSection[10].fields.headline}</h1>
           <div className={`${styles.blog_wrapper}`}>
             <div className={styles.blog_single}>
               <Image
@@ -681,27 +688,26 @@ const index = () => {
       {/* Explanation 4 */}
       <section className="flex h-fit items-center bg-white px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
         <div className="container mx-auto ">
-          <div className="flex flex-col justify-between items-center gap-6 lg:flex-row lg:py-[60px]">
+          <div className="flex flex-col items-center justify-between gap-6 lg:flex-row lg:py-[60px]">
             <div className="relative flex w-full flex-col items-center space-y-6 md:w-full md:items-start lg:w-1/2">
               <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center sm:text-start">
-                How to implement skills-based hiring
+                {contentfulEntries.topSection[11].fields.headline}
               </h1>
               <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
-                Skills-based hiring is a broad hiring approach that covers
-                everything from job descriptions and talent assessments, to
-                structured interviews and work samples. Find out how to
-                implement skills-based hiring for your organization in the best
-                possible way.
+                {
+                  contentfulEntries.topSection[11].fields.bodyText.content[0]
+                    .content[0].value
+                }
               </p>
             </div>
             <div className="mb-16 w-full sm:w-fit md:mb-0 md:text-left ">
               <Image
-                src="/assets/img-implement-skill-based-hiring.png"
+                src={`https:${contentfulEntries.topSection[11].fields.image.fields.file.url}`}
                 alt="Hero Image"
                 width={485}
                 height={509}
                 sizes="100vw"
-                className="z-50 img"
+                className="img z-50"
               />
             </div>
           </div>
@@ -711,7 +717,7 @@ const index = () => {
       {/* Blog Grid 4 */}
       <section className={styles.blog_container}>
         <div className={`container m-10 mx-auto`}>
-          <h1>Read more</h1>
+          <h1>{contentfulEntries.topSection[4].fields.headline}</h1>
           <div className={`${styles.blog_wrapper}`}>
             <div className={styles.blog_single}>
               <Image
@@ -818,28 +824,26 @@ const index = () => {
       {/* Explanation 5 */}
       <section className="flex h-fit items-center bg-white px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
         <div className="container mx-auto ">
-          <div className="flex flex-col-reverse items-center gap-6 justify-between lg:flex-row lg:py-[60px]">
+          <div className="flex flex-col-reverse items-center justify-between gap-6 lg:flex-row lg:py-[60px]">
             <div className="mb-16 flex h-full w-full content-stretch justify-center sm:w-1/2 md:mb-0 md:text-left">
               <Image
-                src={images.HeroImageSkillsBasedTraining}
+                src={`https:${contentfulEntries.topSection[12].fields.image.fields.file.url}`}
                 alt="Hero Image"
                 width={575}
                 height={467}
                 sizes="100vw"
-                className="flex h-auto object-cover img"
+                className="img flex h-auto object-cover"
               />
             </div>
             <div className="relative flex w-full flex-col items-center space-y-6 md:w-full md:items-start lg:w-1/2">
               <h1 className="heading-2 md:heading-1 mb-0 mt-0 text-center sm:text-start">
-                Skills-based hiring resources
+                {contentfulEntries.topSection[12].fields.headline}
               </h1>
               <p className="caption-regular-3 md:caption-regular-1 text-center sm:text-start">
-                Skills-based hiring is a growing trend that shows no signs of
-                abating, with 53.4% of respondents believing it will be the
-                dominant hiring method in the future. Stay ahead of the curve by
-                reading all the insights from our annual report, and explore our
-                range of resources to help you make better skills-based hiring
-                decisions.
+                {
+                  contentfulEntries.topSection[12].fields.bodyText.content[0]
+                    .content[0].value
+                }
               </p>
             </div>
           </div>
@@ -852,7 +856,7 @@ const index = () => {
           <div className="flex flex-col-reverse items-center gap-6 lg:flex-row lg:py-[60px]">
             <div className="mb-16 flex w-full justify-center md:mb-0 md:text-left lg:w-1/2">
               <Image
-                src={images.iPad}
+                src={`https:${contentfulEntries.topSection[13].fields.image.fields.file.url}`}
                 alt="Hero Image"
                 width={644}
                 height={530}
@@ -862,12 +866,17 @@ const index = () => {
             </div>
             <div className="relative flex w-full flex-col items-center space-y-6 md:w-full lg:w-1/2 lg:items-start">
               <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center sm:text-start">
-                Report
+                {contentfulEntries.topSection[13].fields.headline}
               </h1>
               <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
-                TestFounder's annual report: The State of Skills Based Hiring
+                {
+                  contentfulEntries.topSection[13].fields.bodyText.content[0]
+                    .content[0].value
+                }
               </p>
-              <button className="btn-line-normal-black">Read Now</button>
+              <button className="btn-line-normal-black">
+                {contentfulEntries.topSection[13].fields.ctaText}
+              </button>
             </div>
           </div>
         </div>
@@ -879,7 +888,7 @@ const index = () => {
           <div className="flex flex-col-reverse items-center gap-6 lg:flex-row lg:py-[60px]">
             <div className="mb-16 w-full sm:w-1/2 md:mb-0 md:text-left ">
               <Image
-                src="/assets/science-series.png"
+                src={`https:${contentfulEntries.topSection[14].fields.image.fields.file.url}`}
                 alt="Hero Image"
                 width={533}
                 height={473}
@@ -889,13 +898,17 @@ const index = () => {
             </div>
             <div className="relative flex w-full flex-col items-center space-y-6 md:w-full lg:w-1/2 lg:items-start">
               <h1 className="heading-2 sm:heading-1 mb-0 mt-0 text-center sm:text-start">
-                Science series
+                {contentfulEntries.topSection[14].fields.headline}
               </h1>
               <p className="caption-regular-3 sm:caption-regular-1 text-center sm:text-start">
-                Explore our science series to learn more about the science
-                behind skills-based hiring
+                {
+                  contentfulEntries.topSection[14].fields.bodyText.content[0]
+                    .content[0].value
+                }
               </p>
-              <button className="btn-line-normal-black">Read Now</button>
+              <button className="btn-line-normal-black">
+                {contentfulEntries.topSection[14].fields.ctaText}
+              </button>
             </div>
           </div>
         </div>
@@ -908,95 +921,20 @@ const index = () => {
             Skills-based hiring FAQ
           </h1>
           <div className="flex flex-wrap justify-between gap-6 px-4 py-6 md:px-[40px] md:py-[32px] lg:px-0 lg:py-0">
-            <div className="flex max-h-[104px]  w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]">
-              <Image
-                src="/assets/faq_grey.svg"
-                width={46}
-                height={46}
-                alt="Icon Topics FAQ"
-              />
-              <p className="caption-semibold-1">
-                Whats is skills-based hiring?
-              </p>
-            </div>
-            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]">
-              <Image
-                src="/assets/faq_grey.svg"
-                width={46}
-                height={46}
-                alt="Icon Topics FAQ"
-              />
-              <p className="caption-semibold-1">
-                How does skills-based hiring work?
-              </p>
-            </div>
-            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]">
-              <Image
-                src="/assets/faq_grey.svg"
-                width={46}
-                height={46}
-                alt="Icon Topics FAQ"
-              />
-              <p className="caption-semibold-1">
-                What are the benefits of skills-based hiring?
-              </p>
-            </div>
-            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]">
-              <Image
-                src="/assets/faq_grey.svg"
-                width={46}
-                height={46}
-                alt="Icon Topics FAQ"
-              />
-              <p className="caption-semibold-1">
-                How do you adopt skills-based hiring practices?
-              </p>
-            </div>
-            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]">
-              <Image
-                src="/assets/faq_grey.svg"
-                width={46}
-                height={46}
-                alt="Icon Topics FAQ"
-              />
-              <p className="caption-semibold-1">
-                What are the challenges of implementing skills-based hiring?
-              </p>
-            </div>
-            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]">
-              <Image
-                src="/assets/faq_grey.svg"
-                width={46}
-                height={46}
-                alt="Icon Topics FAQ"
-              />
-              <p className="caption-semibold-1">
-                What is a skills-based organization?
-              </p>
-            </div>
-            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]">
-              <Image
-                src="/assets/faq_grey.svg"
-                width={46}
-                height={46}
-                alt="Icon Topics FAQ"
-              />
-              <p className="caption-semibold-1">
-                How does skills-based hiring impact diversity, equity, and
-                inclusion (DE&I) effort?
-              </p>
-            </div>
-            <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]">
-              <Image
-                src="/assets/faq_grey.svg"
-                width={46}
-                height={46}
-                alt="Icon Topics FAQ"
-              />
-              <p className="caption-semibold-1">
-                Does skills-based hiring impact gender equity?
-              </p>
-            </div>
+            {contentfulEntries.faq.map((faq, index) => (
+              <div
+                className="flex max-h-[104px]  w-full items-center gap-3 rounded-[10px] border-[0.5px] border-[#CBCBCB] p-6 lg:w-[49%]"
+                key={index}
+              >
+                <Image
+                  src={`https:${faq.fields.icon.fields.file.url}`}
+                  width={46}
+                  height={46}
+                  alt="Icon Topics FAQ"
+                />
+                <p className="caption-semibold-1">{faq.fields.headline}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -1322,6 +1260,26 @@ const index = () => {
       </section>
     </Layout>
   );
-};
+}
 
-export default index;
+export async function getStaticProps() {
+  const contentType = 'landingPage'; // Modify content type here
+  const { items } = await fetchContentfulEntries(contentType);
+
+  const entries = items.find(
+    (entry) => entry.fields.internalName === 'Skill-based hiring',
+  );
+
+  // Check if the entry is found
+  if (entries) {
+    console.log('Found the homepage entry:', entries);
+  } else {
+    console.log('Homepage entry not found.');
+  }
+
+  return {
+    props: {
+      contentfulEntries: entries ? entries.fields : {}, // Modify key-value of props
+    },
+  };
+}

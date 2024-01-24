@@ -1,15 +1,23 @@
 import React from 'react';
 import Image from 'next/image';
 
-const CardAssessmentDefault = ({ title, paragraph, paragraph_2, icon_url }) => {
+const CardAssessmentDefault = ({
+  title,
+  paragraph,
+  paragraph_2,
+  icon_url,
+  isActive,
+  onClick,
+}) => {
   const hasParagraphs = paragraph || paragraph_2;
 
   return (
     <>
       <div
+        onClick={onClick}
         className={`flex w-full max-w-[580px] items-start ${
           !hasParagraphs && 'items-center'
-        } p-3 active:shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)] `}
+        } p-3 ${isActive ? 'shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)]' : ''}`}
       >
         {icon_url && (
           <div className="flex flex-shrink-0 items-center">
