@@ -12,7 +12,6 @@ const openSans = Open_Sans({
 export default function App({ Component, pageProps }) {
   return (
     <main className={openSans.className}>
-      
       <Head>
         <meta name="description" content="Test Founder" />
         <meta
@@ -22,10 +21,11 @@ export default function App({ Component, pageProps }) {
         />
         <meta property="og:title" content="Test Founder" />
         <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="google-site-verification" content="h_Vgb8BndmNa_Jn43uDPKrvlqioQbhRJnXPwo1eHW24" />
         <link rel="icon" href="/assets/favicon.ico" />
       </Head>
-
-      <Component {...pageProps} />
+      
+      <Component {...pageProps} />    
     </main>
   );
 }
