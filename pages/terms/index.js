@@ -4,7 +4,7 @@ import { Layout } from '@/components';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import { fetchContentfulEntries } from '@/helper';
+import { fetchContentfulEntries } from '@/helper/accessContentful';
 
 export default function Terms({ contentfulEntries }) {
   const router = useRouter();

@@ -8,7 +8,7 @@ import 'swiper/css';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css/navigation';
 
-import { fetchContentfulEntries } from '@/helper';
+import { fetchContentfulEntries } from '@/helper/accessContentful';
 
 const slideData = [
   { src: '/assets/abbot.svg', alt: 'Abbot', width: 180, height: 80 },

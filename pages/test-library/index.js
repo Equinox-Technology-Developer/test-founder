@@ -1,20 +1,21 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaStar } from "react-icons/fa";
-
+import { FaStar } from 'react-icons/fa';
 
 import { Layout } from '@/components';
-import { fetchContentfulEntries } from '@/helper';
+import { fetchContentfulEntries } from '@/helper/accessContentful';
 
 import styles from './TestLibrary.module.scss';
 
-const testLibrary = ({contentfulEntries}) => {
-  const bodyTextValue = contentfulEntries.topBanner.fields.bodyText.content[0].content[0].value || '';
+const testLibrary = ({ contentfulEntries }) => {
+  const bodyTextValue =
+    contentfulEntries.topBanner.fields.bodyText.content[0].content[0].value ||
+    '';
   const imageUrl = contentfulEntries.topBanner.fields.image.fields.file.url;
-  const fullImageUrl = `https:${imageUrl}`
+  const fullImageUrl = `https:${imageUrl}`;
 
-  console.log(contentfulEntries)
+  console.log(contentfulEntries);
   return (
     <>
       <Layout pageTitle="Test Library">
@@ -24,16 +25,18 @@ const testLibrary = ({contentfulEntries}) => {
             <div className={`gap-5 ${styles.banner_topContent}`}>
               <div className={`${styles.banner_topContentText}`}>
                 <h1 className="sm:heading-1 heading-2 text-center lg:text-start">
-                {contentfulEntries.topBanner.fields.headline
+                  {contentfulEntries.topBanner.fields.headline
                     .split(' ')
                     .map((word, index) => (
                       <span
                         key={index}
-                        className={word === 'Skills-based' ? 'text-primary-500' : ''}
+                        className={
+                          word === 'Skills-based' ? 'text-primary-500' : ''
+                        }
                       >
                         {word}{' '}
                       </span>
-                  ))}
+                    ))}
                 </h1>
                 <p className="caption-regular-3 sm:caption-regular-1 mb-4 mt-4 text-center md:mb-6 md:mt-6 lg:text-start">
                   {bodyTextValue}
@@ -41,26 +44,30 @@ const testLibrary = ({contentfulEntries}) => {
                 <div className="mb-6 flex w-full justify-center lg:justify-start">
                   <Link href={contentfulEntries.topBanner.fields.ctaUrl}>
                     <button className="btn-medium sm:btn-normal">
-                    {contentfulEntries.topBanner.fields.ctaText}
+                      {contentfulEntries.topBanner.fields.ctaText}
                     </button>
                   </Link>
                   <Link href={contentfulEntries.topBanner.fields.ctaUrl2}>
                     <button className="btn-line-medium sm:btn-line-normal ml-4">
-                    {contentfulEntries.topBanner.fields.ctaText2}
+                      {contentfulEntries.topBanner.fields.ctaText2}
                     </button>
                   </Link>
                 </div>
-                <div className='flex items-center gap-2 '>
+                <div className="flex items-center gap-2 ">
                   <div>
-                    <Image src="/assets/test-library-banner_people.png" width={140} height={44} />
+                    <Image
+                      src="/assets/test-library-banner_people.png"
+                      width={140}
+                      height={44}
+                    />
                   </div>
-                  <div >
-                    <div className='flex text-star'>
-                      <FaStar className='svg-star' />
-                      <FaStar className='svg-star' />
-                      <FaStar className='svg-star' />
-                      <FaStar className='svg-star' />
-                      <FaStar className='svg-star' />
+                  <div>
+                    <div className="flex text-star">
+                      <FaStar className="svg-star" />
+                      <FaStar className="svg-star" />
+                      <FaStar className="svg-star" />
+                      <FaStar className="svg-star" />
+                      <FaStar className="svg-star" />
                     </div>
                     <p>Used by 500K+ recruiters </p>
                   </div>

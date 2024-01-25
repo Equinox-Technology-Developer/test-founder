@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import { Layout } from '@/components';
 
-import { fetchContentfulEntries } from '@/helper';
+import { fetchContentfulEntries } from '@/helper/accessContentful';
 
 import styles from './Blog.module.scss';
 
@@ -161,15 +161,16 @@ export async function getStaticProps() {
   // Specify internalName for landingPage entries
   const landingPageInternalName = 'Blog';
 
-  // Fetch entries for landingPage content type with specified internalName
+  // Fetch entries for each content type
   const entries = {};
   for (const contentType of contentTypes) {
     let fetchedEntries;
+
     if (contentType === 'landingPage') {
       const { items } = await fetchContentfulEntries(contentType);
       // Find the entry with the specified internalName
       const specificEntry = items.find(
-        (entry) => entry.fields.internalName === landingPageInternalName,
+        (entry) => entry.fields.internalName === landingPageInternalName
       );
       fetchedEntries = specificEntry ? [specificEntry] : [];
     } else {
