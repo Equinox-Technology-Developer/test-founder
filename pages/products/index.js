@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import { IoIosArrowForward } from 'react-icons/io';
 import { Layout } from '@/components';
-import { fetchContentfulEntries } from '@/helper';
+import { fetchContentfulEntries } from '@/helper/accessContentful';
 
 // Swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -16,8 +16,10 @@ import CardAssessmentDefault from '../../components/CardAssessment/CardAssessmen
 
 import styles from './Products.module.scss';
 
-const Products = ({contentfulEntries}) => {
-  const bodyTextValue = contentfulEntries.topBanner.fields.bodyText.content[0].content[0].value || '';
+const Products = ({ contentfulEntries }) => {
+  const bodyTextValue =
+    contentfulEntries.topBanner.fields.bodyText.content[0].content[0].value ||
+    '';
   const imageUrl = contentfulEntries.topBanner.fields.image.fields.file.url;
   const fullImageUrl = `https:${imageUrl}`;
 

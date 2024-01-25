@@ -4,7 +4,7 @@ import { FaStar } from 'react-icons/fa';
 
 import { Layout } from '@/components';
 import { images } from '@/constants';
-import { fetchContentfulEntries } from '@/helper';
+import { fetchContentfulEntries } from '@/helper/accessContentful';
 
 import styles from './SkillsBasedHiring.module.scss';
 
