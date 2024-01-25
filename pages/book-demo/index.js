@@ -1,8 +1,8 @@
-import { Layout } from '@/components';
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { Layout } from '@/components';
 import { fetchContentfulEntries } from '@/helper/accessContentful';
 
 export default function BookDemo({ contentfulEntries }) {
