@@ -4,9 +4,10 @@ import { Layout } from '@/components';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { IoCheckmark } from 'react-icons/io5';
-const PrivacyPolicy = () => {
+import { fetchContentfulEntries } from '@/helper';
+export default function PrivacyPolicy({ contentfulEntries }) {
   const router = useRouter();
-
+  console.log(contentfulEntries);
   return (
     <Layout pageTitle="Terms of use">
       <main className="container mx-auto px-4 py-[120px] md:px-[40px] md:py-[130px] lg:px-16 lg:py-[140px]">
@@ -102,459 +103,445 @@ const PrivacyPolicy = () => {
             </ul>
           </nav>
         </div>
-        <h1 className="md:heading-1 heading-2">Testfounder Privacy policy</h1>
+        <h1 className="md:heading-1 heading-2">
+          {contentfulEntries.pageContent[0].fields.headline}
+        </h1>
         <div className="my-6 space-y-4">
-          <p className="md:caption-regular-2 caption-regular-3">
-            Updated December 2022
-          </p>
-          <p className="md:caption-regular-2 caption-regular-3">
-            Testfounder B.V., a Dutch limited liability company registered with
-            the Trade Register of the Chamber of Commerce under no. 77597249
-            (“Testfounder”, “we,” “us” or “our”) is committed to protecting and
-            respecting your privacy. This privacy policy (“Privacy Policy”)
-            explains how we collect, use, share and protect data that identifies
-            or is associated with you (“personal data”) in relation to our
-            website www.testfounder.com including the services offered on such
-            website (the “Platform”), and your choices about the collection and
-            use of your information.Testfounder operates an employee and
-            applicant (“Candidates”) testing platform that allows employers and
-            customers (“customers”) to instruct Candidates to take aptitude,
-            personality and skills tests through the Platform. Our Privacy
-            Policy applies to all visitors, users, and others who access the
-            Platform (“Users”). In order to use our testing platform Testfounder
-            needs to process certain personal data of its Users. This Privacy
-            Policy applies to all acts of processing of personal data where
-            Testfounder acts as a controller in the sense of the General Data
-            Protection Regulation (“GDPR”). Before accessing or using the
-            Platform, please ensure that you have read and understood our
-            Privacy Policy.
-          </p>
+          {contentfulEntries.pageContent[0].fields.bodyText.content.map(
+            (data, index) => (
+              <p className="md:caption-regular-2 caption-regular-3" key={index}>
+                {data.content[0].value}
+              </p>
+            ),
+          )}
         </div>
         <div className="space-y-6">
           <h3 className="heading-3">
-            1. What kind of information do we collect?
+            {contentfulEntries.pageContent[1].fields.headline}
           </h3>
           <p className="md:caption-bold-2 caption-bold-3">
-            Information we collect when you use our platform
+            {
+              contentfulEntries.pageContent[1].fields.bodyText.content[0]
+                .content[0].value
+            }
           </p>
         </div>
         <div className="my-6 space-y-4">
           <p className="md:caption-regular-2 caption-regular-3">
-            Please find below the types of personal data we may require from you
-            and which we process in order to provide our services on the
-            Platform:
+            {
+              contentfulEntries.pageContent[1].fields.bodyText.content[1]
+                .content[0].value
+            }
           </p>
         </div>
         <table className="mb-10 w-full">
           <tbody>
             <tr>
-              <th className="text-start">Company</th>
-              <th className="text-center">Contact</th>
-              <th className="text-center">Country</th>
+              {contentfulEntries.pageContent[1].fields.bodyText.content[2].content[0].content.map(
+                (data, index) => (
+                  <th
+                    className={index === 0 ? 'text-start' : 'text-center'}
+                    key={index}
+                  >
+                    {data.content[0].content[0].value}
+                  </th>
+                ),
+              )}
             </tr>
             <tr>
-              <td className="caption-bold-3">Personal Data</td>
-            </tr>
-            <tr>
-              <td className="caption-regular-3">full name</td>
-              <td align="center">
-                <IoCheckmark />
-              </td>
-              <td align="center">
-                <IoCheckmark />
+              <td className="caption-bold-3">
+                {
+                  contentfulEntries.pageContent[1].fields.bodyText.content[2]
+                    .content[1].content[0].content[0].content[0].value
+                }
               </td>
             </tr>
-            <tr>
-              <td className="caption-regular-3">gender</td>
-              <td align="center">
-                <IoCheckmark />
-              </td>
-              <td align="center">
-                <IoCheckmark />
-              </td>
-            </tr>
-            <tr>
-              <td className="caption-regular-3">
-                address, postal, code, city, state
-              </td>
-              <td align="center">
-                <IoCheckmark />
-              </td>
-              <td align="center">
-                <IoCheckmark />
-              </td>
-            </tr>
-            <tr>
-              <td className="caption-regular-3">e-mail address</td>
-              <td align="center">
-                <IoCheckmark />
-              </td>
-              <td align="center">
-                <IoCheckmark />
-              </td>
-            </tr>
-            <tr>
-              <td className="caption-regular-3">date of birth</td>
-              <td align="center">
-                <IoCheckmark />
-              </td>
-              <td align="center">
-                <IoCheckmark />
-              </td>
-            </tr>
-            <tr>
-              <td className="caption-regular-3">
-                your username and password when you register for an account
-              </td>
-              <td align="center">
-                <IoCheckmark />
-              </td>
-              <td align="center">
-                <IoCheckmark />
-              </td>
-            </tr>
-            <tr>
-              <td className="caption-regular-3">video recording</td>
-              <td align="center">
-                <IoCheckmark />
-              </td>
-              <td align="center">
-                <IoCheckmark />
-              </td>
-            </tr>
-            <tr>
-              <td className="caption-regular-3">demographic data (optional)</td>
-              <td align="center">
-                <IoCheckmark />
-              </td>
-              <td align="center">
-                <IoCheckmark />
-              </td>
-            </tr>
-            <tr>
-              <td className="caption-regular-3">IP address</td>
-              <td align="center">
-                <IoCheckmark />
-              </td>
-              <td align="center">
-                <IoCheckmark />
-              </td>
-            </tr>
-            <tr>
-              <td className="caption-regular-3">
-                career-related information (e.g. education, job history)
-              </td>
-              <td align="center">
-                <IoCheckmark />
-              </td>
-              <td align="center">
-                <IoCheckmark />
-              </td>
-            </tr>
-            <tr>
-              <td className="caption-regular-3">
-                the answers you give to test questions
-              </td>
-              <td align="center">
-                <IoCheckmark />
-              </td>
-              <td align="center">
-                <IoCheckmark />
-              </td>
-            </tr>
-            <tr>
-              <td className="caption-regular-3">
-                communications between you and us
-              </td>
-              <td align="center">
-                <IoCheckmark />
-              </td>
-              <td align="center">
-                <IoCheckmark />
-              </td>
-            </tr>
-            <tr>
-              <td className="caption-regular-3">subscriptions/preferences</td>
-              <td align="center">
-                <IoCheckmark />
-              </td>
-              <td align="center">
-                <IoCheckmark />
-              </td>
-            </tr>
+            {contentfulEntries.pageContent[1].fields.bodyText.content[2].content.map(
+              (data, index) => (
+                <tr key={index}>
+                  <td className="caption-regular-3">
+                    {data.content[0].content[0].content[0].value}
+                  </td>
+                  <td align="center">
+                    <IoCheckmark />
+                  </td>
+                  <td align="center">
+                    <IoCheckmark />
+                  </td>
+                </tr>
+              ),
+            )}
           </tbody>
         </table>
         <h3 className="heading-3">
-          2. For what purposes do we use your personal data?
+          {contentfulEntries.pageContent[2].fields.headline}
         </h3>
         <div className="my-6 space-y-4">
           <p className="md:caption-regular-2 caption-regular-3">
-            We use your personal data to help us provide and support (the
-            services on) our Platform. Here is how:
+            {
+              contentfulEntries.pageContent[2].fields.bodyText.content[0]
+                .content[0].value
+            }
           </p>
           <ol type="1" className="list-inside list-decimal space-y-3">
             <li className="md:caption-bold-2 caption-bold-3">
-              Service provision:
+              {
+                contentfulEntries.pageContent[2].fields.bodyText.content[1]
+                  .content[0].value
+              }
             </li>
             <p className="md:caption-regular-2 caption-regular-3">
-              we use the information to carry out and administer the tests you
-              book or take;
-            </p>
-            <li className="md:caption-bold-2 caption-bold-3">Communication:</li>
-            <p className="md:caption-regular-2 caption-regular-3">
-              sending emails, newsletters, and other messages to keep you
-              informed of the Platform. You may opt out of receiving any, or
-              all, of these communications from us by following the unsubscribe
-              link. We also use the personal data to deal with inquiries and
-              complaints made by you relating to the Platform and to address
-              your questions, issues, and concerns;
+              {
+                contentfulEntries.pageContent[2].fields.bodyText.content[2]
+                  .content[0].value
+              }
             </p>
             <li className="md:caption-bold-2 caption-bold-3">
-              Website monitoring:
+              {
+                contentfulEntries.pageContent[2].fields.bodyText.content[3]
+                  .content[0].value
+              }
             </li>
             <p className="md:caption-regular-2 caption-regular-3">
-              to check the Platform and our other technology services are being
-              used appropriately and to optimize their functionality;
+              {
+                contentfulEntries.pageContent[2].fields.bodyText.content[4]
+                  .content[0].value
+              }
             </p>
             <li className="md:caption-bold-2 caption-bold-3">
-              Platform optimization:
+              {
+                contentfulEntries.pageContent[2].fields.bodyText.content[5]
+                  .content[0].value
+              }
             </li>
             <p className="md:caption-regular-2 caption-regular-3">
-              improve, test, and monitor the effectiveness of our Platform and
-              diagnose or fix technology problems;
+              {
+                contentfulEntries.pageContent[2].fields.bodyText.content[6]
+                  .content[0].value
+              }
             </p>
             <li className="md:caption-bold-2 caption-bold-3">
-              Managing suppliers:
+              {
+                contentfulEntries.pageContent[2].fields.bodyText.content[7]
+                  .content[0].value
+              }
             </li>
             <p className="md:caption-regular-2 caption-regular-3">
-              who deliver services to us;
+              {
+                contentfulEntries.pageContent[2].fields.bodyText.content[8]
+                  .content[0].value
+              }
             </p>
-            <li className="md:caption-bold-2 caption-bold-3">Statistics:</li>
+            <li className="md:caption-bold-2 caption-bold-3">
+              {
+                contentfulEntries.pageContent[2].fields.bodyText.content[9]
+                  .content[0].value
+              }
+            </li>
             <p className="md:caption-regular-2 caption-regular-3">
-              to help you efficiently access your information after you sign in
-              and to remember information so you will not have to re-enter it
-              during your visit or the next time you visit the Platform;
+              {
+                contentfulEntries.pageContent[2].fields.bodyText.content[10]
+                  .content[0].value
+              }
             </p>
-            <li className="md:caption-bold-2 caption-bold-3">Development:</li>
+            <li className="md:caption-bold-2 caption-bold-3">
+              {
+                contentfulEntries.pageContent[2].fields.bodyText.content[11]
+                  .content[0].value
+              }
+            </li>
             <p className="md:caption-regular-2 caption-regular-3">
-              develop and test new products and features.
+              {
+                contentfulEntries.pageContent[2].fields.bodyText.content[12]
+                  .content[0].value
+              }
             </p>
-            <li className="md:caption-bold-2 caption-bold-3">Benchmarks:</li>
+            <li className="md:caption-bold-2 caption-bold-3">
+              {
+                contentfulEntries.pageContent[2].fields.bodyText.content[13]
+                  .content[0].value
+              }
+            </li>
             <p className="md:caption-regular-2 caption-regular-3">
-              use aggregated and anonymized test scores and aggregated
-              demographics to provide benchmarks to our customers and improve
-              our services.
+              {
+                contentfulEntries.pageContent[2].fields.bodyText.content[14]
+                  .content[0].value
+              }
+            </p>
+            <li className="md:caption-bold-2 caption-bold-3">
+              {
+                contentfulEntries.pageContent[2].fields.bodyText.content[15]
+                  .content[0].value
+              }
+            </li>
+            <p className="md:caption-regular-2 caption-regular-3">
+              {
+                contentfulEntries.pageContent[2].fields.bodyText.content[16]
+                  .content[0].value
+              }
             </p>
             <p className="md:caption-regular-2 caption-regular-3">
-              We only process your personal data for the above purposes and
-              ensure that it is only available to those who have a legitimate
-              need to know and would require access to it.
+              {
+                contentfulEntries.pageContent[2].fields.bodyText.content[17]
+                  .content[0].value
+              }
             </p>
           </ol>
         </div>
         <h3 className="heading-3">
-          3. Our legal grounds for using your personal data
+          {contentfulEntries.pageContent[3].fields.headline}
         </h3>
         <div className="my-6 space-y-4">
           <p className="md:caption-regular-2 caption-regular-3">
-            We will process your personal data for a number of reasons:
+            {
+              contentfulEntries.pageContent[3].fields.bodyText.content[0]
+                .content[0].value
+            }
           </p>
         </div>
         <ol type="1" className="mb-6 list-inside list-disc space-y-3">
           <li className="md:caption-regular-2 caption-regular-3">
-            You have given us consent; Where we are processing personal data
-            with your consent, you can withdraw your consent at any time,
-            without affecting the lawfulness of processing based on consent
-            before its withdrawal;
+            {
+              contentfulEntries.pageContent[3].fields.bodyText.content[1]
+                .content[0].value
+            }
           </li>
           <li className="md:caption-regular-2 caption-regular-3">
-            We require to process personal data for the performance of the
-            contractual relationship with you;
+            {
+              contentfulEntries.pageContent[3].fields.bodyText.content[2]
+                .content[0].value
+            }
           </li>
           <li className="md:caption-regular-2 caption-regular-3">
-            We need to process personal data to comply with the legal
-            obligations we are subject to in The Netherlands or in other
-            jurisdictions, which include such obligations as accessing,
-            preserving and sharing your personal data in response to a legal
-            request such as a search warrant, court order, or subpoena;
+            {
+              contentfulEntries.pageContent[3].fields.bodyText.content[3]
+                .content[0].value
+            }
           </li>
           <li className="md:caption-regular-2 caption-regular-3">
-            processing is necessary for our legitimate business interests. Our
-            legitimate interests are:
+            {
+              contentfulEntries.pageContent[3].fields.bodyText.content[4]
+                .content[0].value
+            }
             <ol className="list-inside list-disc space-y-3 pl-5">
               <li>
-                managing our business and relationship with you or your company
-                or organization;
+                {
+                  contentfulEntries.pageContent[3].fields.bodyText.content[5]
+                    .content[0].value
+                }
               </li>
               <li>
-                understanding and responding to inquiries and User feedback;
-              </li>
-              <li>understanding how our Users use the Platform;</li>
-              <li>
-                identifying what our Users want and developing our relationship
-                with you, your company or organization;
-              </li>
-              <li>improving our Platform and offerings;</li>
-              <li>managing our supply chain;</li>
-              <li>developing relationships with business partners;</li>
-              <li>
-                sharing data in connection with acquisitions and transfers of
-                our business;
+                {
+                  contentfulEntries.pageContent[3].fields.bodyText.content[6]
+                    .content[0].value
+                }
               </li>
               <li>
-                If we have a good faith belief it is necessary to (i) detect,
-                prevent and address fraud and other illegal activity and (ii) to
-                protect ourselves, you, and others, including as part of
-                investigations.
+                {
+                  contentfulEntries.pageContent[3].fields.bodyText.content[7]
+                    .content[0].value
+                }
+              </li>
+              <li>
+                {
+                  contentfulEntries.pageContent[3].fields.bodyText.content[8]
+                    .content[0].value
+                }
+              </li>
+              <li>
+                {
+                  contentfulEntries.pageContent[3].fields.bodyText.content[9]
+                    .content[0].value
+                }
+              </li>
+              <li>
+                {
+                  contentfulEntries.pageContent[3].fields.bodyText.content[10]
+                    .content[0].value
+                }
+              </li>
+              <li>
+                {
+                  contentfulEntries.pageContent[3].fields.bodyText.content[11]
+                    .content[0].value
+                }
+              </li>
+              <li>
+                {
+                  contentfulEntries.pageContent[3].fields.bodyText.content[12]
+                    .content[0].value
+                }
+              </li>
+              <li>
+                {
+                  contentfulEntries.pageContent[3].fields.bodyText.content[13]
+                    .content[0].value
+                }
               </li>
             </ol>
           </li>
         </ol>
         <h3 className="heading-3">
-          4. With whom do we share your personal data?
+          {contentfulEntries.pageContent[4].fields.headline}
         </h3>
         <div className="my-6 space-y-4">
           <p className="md:caption-regular-2 caption-regular-3">
-            Other than with our sub-processors, we share your information with
-            the following parties:
+            {
+              contentfulEntries.pageContent[4].fields.bodyText.content[0]
+                .content[0].value
+            }
           </p>
         </div>
         <ol type="1" className="mb-6 list-inside list-decimal space-y-4">
-          <li className="md:caption-bold-2 caption-bold-3">Customers:</li>
+          <li className="md:caption-bold-2 caption-bold-3">
+            {
+              contentfulEntries.pageContent[4].fields.bodyText.content[1]
+                .content[0].value
+            }
+          </li>
           <p className="md:caption-regular-2 caption-regular-3">
-            With our (prospective) customers we share information of Candidates
-            in case customers administered tests to them or in case candidates
-            agree to share test results with specific customers.
+            {
+              contentfulEntries.pageContent[4].fields.bodyText.content[2]
+                .content[0].value
+            }
           </p>
-          <li className="md:caption-bold-2 caption-bold-3">Test authors:</li>
+          <li className="md:caption-bold-2 caption-bold-3">
+            {
+              contentfulEntries.pageContent[4].fields.bodyText.content[3]
+                .content[0].value
+            }
+          </li>
           <p className="md:caption-regular-2 caption-regular-3">
-            We share aggregated candidate test feedback to subject matter
-            experts who have developed tests for product improvement.
+            {
+              contentfulEntries.pageContent[4].fields.bodyText.content[4]
+                .content[0].value
+            }
           </p>
-          <li className="md:caption-bold-2 caption-bold-3">Suppliers:</li>
+          <li className="md:caption-bold-2 caption-bold-3">
+            {
+              contentfulEntries.pageContent[4].fields.bodyText.content[5]
+                .content[0].value
+            }
+          </li>
           <p className="md:caption-regular-2 caption-regular-3">
-            Who support our business including IT and communication suppliers,
-            outsourced business support, business intelligence, marketing, and
-            advertising agencies, and back-up vendors. Our suppliers have to
-            meet minimum standards regarding information security and they will
-            only be provided data in line with their function.
+            {
+              contentfulEntries.pageContent[4].fields.bodyText.content[6]
+                .content[0].value
+            }
           </p>
         </ol>
-        <h3 className="heading-3">5. Safety and security</h3>
+        <h3 className="heading-3">
+          {' '}
+          {contentfulEntries.pageContent[5].fields.headline}
+        </h3>
         <div className="my-6 space-y-4">
           <p className="md:caption-regular-2 caption-regular-3">
-            Testfounder has taken appropriate technical and organizational
-            measures by using the latest technologies to protect your personal
-            data against loss or unlawful processing. We keep on improving our
-            safeguards to help keep the information collected through the
-            Platform secure and take steps to verify your identity before
-            granting you access to your account. In addition, we use
-            state-of-art encryption technologies. It will also be good to know
-            that we are SOC2 type 2 certified. We request you to also do your
-            part to help us. You are responsible for maintaining the secrecy of
-            your unique password and account information, and for controlling
-            access to emails between you and us, at all times. We are not
-            responsible for the functionality, privacy, or security measures of
-            any other organization.
+            {
+              contentfulEntries.pageContent[5].fields.bodyText.content[0]
+                .content[0].value
+            }
           </p>
         </div>
-        <h3 className="heading-3">6. Your Rights</h3>
+        <h3 className="heading-3">
+          {contentfulEntries.pageContent[6].fields.headline}
+        </h3>
         <div className="my-6 space-y-4">
           <p className="md:caption-regular-2 caption-regular-3">
-            In accordance with the GDPR you have the following rights in respect
-            of your personal data that we hold:
+            {
+              contentfulEntries.pageContent[6].fields.bodyText.content[0]
+                .content[0].value
+            }
           </p>
           <h3 className="heading-3">
-            7. Third-party applications, websites, and services
+            {contentfulEntries.pageContent[7].fields.headline}
           </h3>
           <div className="my-6 space-y-4">
             <p className="md:caption-regular-2 caption-regular-3">
-              We are not responsible for the practices employed by any
-              applications, websites, or services linked to or from our
-              Platform, including the information or content contained within
-              them. Please remember that when you use a link to go from our
-              Platform to another application, website, or service, the Privacy
-              Policy does not apply to those third-party applications, websites,
-              or services. Your browsing and interaction on any third-party
-              application, website, or service, including those with a link on
-              our Platforms, are subject to that third party’s rules and
-              policies. In addition, please be informed that we are not
-              responsible and do not have control over any third parties you
-              authorize to access your account. If you are using a third-party
-              app, website, or service and you allow them to access your account
-              you do so at your own risk.
+              {
+                contentfulEntries.pageContent[7].fields.bodyText.content[0]
+                  .content[0].value
+              }
             </p>
           </div>
-          <h3 className="heading-3">8. How long do we keep your data?</h3>
+          <h3 className="heading-3">
+            {contentfulEntries.pageContent[8].fields.headline}
+          </h3>
           <div className="my-6 space-y-4">
             <p className="md:caption-regular-2 caption-regular-3">
-              We generally keep your information only as long as needed to
-              provide the services on our Platform. We will retain your
-              information as necessary to comply with legal, accounting, or
-              regulatory requirements. The retention period for candidate data
-              that is available to customers (e.g. name, email address, and test
-              scores) is 2 years. Webcam pictures taken as an anti-cheating
-              measure are retained for 6 months. Video recordings of candidates
-              answering custom questions are retained for 2 years. Information
-              we receive about you may be accessed, processed, and retained for
-              an extended period of time when it is the subject of a legal
-              request or obligation, governmental investigation, or
-              investigations concerning possible violations of our terms or
-              policies, or otherwise to prevent harm.
+              {
+                contentfulEntries.pageContent[8].fields.bodyText.content[0]
+                  .content[0].value
+              }
             </p>
           </div>
-          <h3 className="heading-3">9. Where will your information be held?</h3>
+          <h3 className="heading-3">
+            {contentfulEntries.pageContent[9].fields.headline}
+          </h3>
           <div className="my-6 space-y-4">
             <p className="md:caption-regular-2 caption-regular-3">
-              Your information will be held on servers in the European Economic
-              Area. We will take steps to protect your information in line with
-              locally applicable data protection requirements. Your information
-              may be transferred to and maintained on computers located outside
-              of your country, where the data protection laws may differ from
-              those in your jurisdiction. Where we transfer your personal data
-              to a country that does not have an adequate level of data
-              protection safeguards, rest assured that we have implemented the
-              required supplementary security safeguards. If you are located
-              outside the European Economic Area and choose to provide
-              information to us, please note that we transfer the information to
-              the European Economic Area.
+              {
+                contentfulEntries.pageContent[9].fields.bodyText.content[0]
+                  .content[0].value
+              }
             </p>
           </div>
-          <h3 className="heading-3">10. Children</h3>
+          <h3 className="heading-3">
+            {contentfulEntries.pageContent[10].fields.headline}
+          </h3>
           <div className="my-6 space-y-4">
             <p className="md:caption-regular-2 caption-regular-3">
-              Our Platform does not seek to address anyone under the age of 16
-              (“Children”). We do not knowingly collect personal data from
-              children under 16. We conduct our verification tests with the aim
-              of also establishing we are not dealing with Children. If you are
-              a parent or guardian and you are aware that your Children have
-              provided us with personal data, please contact us. If we become
-              aware that we have collected personal data from a child under age
-              16 without verification of parental consent, we take steps to
-              remove that information from our servers.
+              {
+                contentfulEntries.pageContent[10].fields.bodyText.content[0]
+                  .content[0].value
+              }
             </p>
           </div>
-          <h3 className="heading-3">11. Changes to this Policy</h3>
+          <h3 className="heading-3">
+            {contentfulEntries.pageContent[11].fields.headline}
+          </h3>
           <div className="my-6 space-y-4">
             <p className="md:caption-regular-2 caption-regular-3">
-              We may modify or update our Privacy Policy from time to time. We
-              will notify you of any changes by posting the new Privacy Policy
-              on this page. You are advised to review this Privacy Policy
-              periodically for any changes. Changes to this Privacy Policy are
-              effective when they are posted on this page.
+              {
+                contentfulEntries.pageContent[11].fields.bodyText.content[0]
+                  .content[0].value
+              }
             </p>
           </div>
-          <h3 className="heading-3">12. How to contact us</h3>
+          <h3 className="heading-3">
+            {contentfulEntries.pageContent[12].fields.headline}
+          </h3>
           <div className="my-6 space-y-4">
             <p className="md:caption-regular-2 caption-regular-3">
-              If you have any questions about this Privacy Policy, please
-              contact us.
+              {
+                contentfulEntries.pageContent[12].fields.bodyText.content[0]
+                  .content[0].value
+              }
             </p>
           </div>
         </div>
       </main>
     </Layout>
   );
-};
+}
 
-export default PrivacyPolicy;
+export async function getStaticProps() {
+  const contentType = 'landingPage'; // Modify content type here
+  const { items } = await fetchContentfulEntries(contentType);
+
+  const entries = items.find(
+    (entry) => entry.fields.internalName === 'Privacy Policy',
+  );
+
+  // Check if the entry is found
+  if (entries) {
+    console.log('Found the homepage entry:', entries);
+  } else {
+    console.log('Homepage entry not found.');
+  }
+
+  return {
+    props: {
+      contentfulEntries: entries ? entries.fields : {}, // Modify key-value of props
+    },
+  };
+}
