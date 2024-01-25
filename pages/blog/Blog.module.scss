@@ -1,5 +1,7 @@
 @import 'styles/color';
 
+// ==================BLOG==================
+
 .banner_topContent {
   display: flex;
   align-items: center;
@@ -185,5 +187,13 @@
     @media screen and (min-width: 999px) {
       margin-top: 0;
     }
+  }
+}
+
+// ==================BLOG POST==================
+.blogPost {
+  @media screen and (min-width: 1240px) {
+    min-width: 921px;
+    max-width: 921px;
   }
 }
