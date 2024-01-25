@@ -4,7 +4,8 @@ import { Layout } from '@/components';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { IoCheckmark } from 'react-icons/io5';
-import { fetchContentfulEntries } from '@/helper';
+import { fetchContentfulEntries } from '@/helper/accessContentful';
+
 export default function PrivacyPolicy({ contentfulEntries }) {
   const router = useRouter();
   console.log(contentfulEntries);
