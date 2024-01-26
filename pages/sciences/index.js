@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { Layout } from '@/components';
-import { fetchContentfulEntries } from '@/helper/accessContentful';
+import { fetchContentfulEntries } from '@/lib/contentful/client';
 import { IoIosArrowForward } from 'react-icons/io';
 import { FaStar } from 'react-icons/fa';
 

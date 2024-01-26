@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import { Layout } from '@/components';
 import { images } from '@/constants';
-import { fetchContentfulEntries } from '@/helper/accessContentful';
+import { fetchContentfulEntries } from '@/lib/contentful/client';
 
 import styles from './TalentAssessment.module.scss';
 
