@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import { MdChevronRight } from 'react-icons/md';
 import { Layout } from '@/components';
-import { fetchContentfulEntries } from '@/helper/accessContentful';
+import { fetchContentfulEntries } from '@/lib/contentful/client';
 
 import styles from './CaseStudies.module.scss';
 

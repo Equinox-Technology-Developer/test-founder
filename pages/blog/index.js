@@ -1,14 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { Layout } from '@/components';
-import { fetchContentfulEntries } from '@/helper/accessContentful';
+import { fetchContentfulEntries } from '@/lib/contentful/client';
 
 import styles from './Blog.module.scss';
 
 export default function Blog({ contentfulEntries }) {
-  console.log(contentfulEntries);
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 6;
+
+  // Extracting unique categories from contentfulEntries.blogPost
+  const categories = [
+    ...new Set(contentfulEntries.blogPost.map((post) => post.fields.category)),
+  ];
+
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+    setCurrentPage(1);
+  };
+
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+    setCurrentPage(1);
+  };
+
+  const filteredPosts = contentfulEntries.blogPost.filter(
+    (post) =>
+      (selectedCategory === 'All' ||
+        post.fields.category === selectedCategory) &&
+      post.fields.title.toLowerCase().includes(searchTerm.toLowerCase()),
+  );
+
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
 
   const BlogEntries = contentfulEntries.landingPage[0].fields;
   return (
@@ -31,6 +61,8 @@ export default function Blog({ contentfulEntries }) {
                 <input
                   type="text"
                   className="w-full rounded-[30px] bg-white px-4 py-[10px] shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)] placeholder:text-base placeholder:text-[#CBCBCB]  xl:w-[600px]"
+                  value={searchTerm}
+                  onChange={handleSearchChange}
                   placeholder="Search anything here"
                 />
                 <Image
@@ -53,59 +85,84 @@ export default function Blog({ contentfulEntries }) {
           className={`container mx-auto md:px-[40px] md:py-8 lg:px-[64px] lg:py-[60px]`}
         >
           <div className={styles.blog_categoriesHeader}>
-            <p className={styles.active}>All</p>
-            <p>Hiring</p>
-            <p>Human Resources</p>
-            <p>Science</p>
-            <p>Skills-based Hiring</p>
-            <p>Talent Assessment</p>
-            <p>TestFounder</p>
+            {['All', ...categories].map((category) => (
+              <p
+                key={category}
+                className={selectedCategory === category ? 'active' : ''}
+                onClick={() => handleCategoryClick(category)}
+              >
+                {category}
+              </p>
+            ))}
           </div>
+          {/* Display filtered blog posts */}
           <div className="flex flex-wrap justify-center gap-[43px]">
-            {contentfulEntries.blogPost.map((blog, index) => (
-              <Link href={`/blog/${blog.fields.slug}`} className="text-inherit">
-                <div
-                  className="group max-w-[401px] space-y-4 rounded-[20px] bg-white p-4 hover:bg-white/80 md:max-w-full lg:max-w-[401px]"
-                  key={index}
-                >
-                  <Image
-                    src={`https:${blog.fields.featuredImage.fields.file.url}`}
-                    alt="img-card-blog"
-                    width={369}
-                    height={226}
-                    sizes="100vw"
-                    className="w-full rounded-[10px] object-cover"
-                  />
-                  <p className="caption-semibold-3">{blog.fields.category}</p>
-                  <div className="space-y-1">
-                    <h3 className="caption-semibold-1 group-hover:underline">
-                      {blog.fields.title}
-                    </h3>
-                    <p className="caption-light-3 max-h-[84px] overflow-hidden">
-                      {blog.fields.excerpt}...
-                    </p>
-                  </div>
-                  <div className="flex flex-shrink-0 items-center">
+            {currentPosts.map((blog, index) => (
+              <Link
+                href={`/blog/${blog.fields.slug}`}
+                className="text-inherit"
+                key={index}
+              >
+                <div className="group max-w-[401px] space-y-4 rounded-[20px] bg-white p-4 hover:bg-white/80 md:max-w-full lg:max-w-[401px]">
+                  <div className="group max-w-[401px] space-y-4 rounded-[20px] bg-white p-4 hover:bg-white/80 md:max-w-full lg:max-w-[401px]">
                     <Image
-                      src={`https:${blog.fields.author.fields.image.fields.file.url}`}
+                      src={`https:${blog.fields.featuredImage.fields.file.url}`}
                       alt="img-card-blog"
-                      width={24}
-                      height={24}
+                      width={369}
+                      height={226}
                       sizes="100vw"
-                      className="rounded-full object-cover"
+                      className="w-full rounded-[10px] object-cover"
                     />
-                    <date className="caption-regular-4 ml-4">
-                      {new Date(
-                        blog.fields.author.fields.image.sys.createdAt,
-                      ).toLocaleDateString('en-US', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric',
-                      })}
-                    </date>
+                    <p className="caption-semibold-3">{blog.fields.category}</p>
+                    <div className="space-y-1">
+                      <h3 className="caption-semibold-1 group-hover:underline">
+                        {blog.fields.title}
+                      </h3>
+                      <p className="caption-light-3 max-h-[84px] overflow-hidden">
+                        {blog.fields.excerpt}...
+                      </p>
+                    </div>
+                    <div className="flex flex-shrink-0 items-center">
+                      <Image
+                        src={`https:${blog.fields.author.fields.image.fields.file.url}`}
+                        alt="img-card-blog"
+                        width={24}
+                        height={24}
+                        sizes="100vw"
+                        className="rounded-full object-cover"
+                      />
+                      <date className="caption-regular-4 ml-4">
+                        {new Date(
+                          blog.fields.author.fields.image.sys.createdAt,
+                        ).toLocaleDateString('en-US', {
+                          year: 'numeric',
+                          month: 'long',
+                          day: 'numeric',
+                        })}
+                      </date>
+                    </div>
                   </div>
                 </div>
               </Link>
+            ))}
+          </div>
+
+          {/* Pagination buttons */}
+          <div className="mt-4 flex justify-center">
+            {Array.from({
+              length: Math.ceil(filteredPosts.length / postsPerPage),
+            }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentPage(index + 1)}
+                className={`mx-1 rounded-full px-4 py-2 ${
+                  currentPage === index + 1
+                    ? 'bg-gray-500 text-white'
+                    : 'bg-gray-200 text-gray-800'
+                }`}
+              >
+                {index + 1}
+              </button>
             ))}
           </div>
         </div>
@@ -169,7 +226,7 @@ export async function getStaticProps() {
       const { items } = await fetchContentfulEntries(contentType);
       // Find the entry with the specified internalName
       const specificEntry = items.find(
-        (entry) => entry.fields.internalName === landingPageInternalName
+        (entry) => entry.fields.internalName === landingPageInternalName,
       );
       fetchedEntries = specificEntry ? [specificEntry] : [];
     } else {

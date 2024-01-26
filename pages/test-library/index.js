@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { FaStar } from 'react-icons/fa';
 
 import { Layout } from '@/components';
-import { fetchContentfulEntries } from '@/helper/accessContentful';
+import { fetchContentfulEntries } from '@/lib/contentful/client';
 
 import styles from './TestLibrary.module.scss';
 

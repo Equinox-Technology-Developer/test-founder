@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import { IoIosArrowForward } from 'react-icons/io';
 import { Layout } from '@/components';
-import { fetchContentfulEntries } from '@/helper/accessContentful';
+import { fetchContentfulEntries } from '@/lib/contentful/client';
 
 // Swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
