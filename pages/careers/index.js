@@ -1,11 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { Layout } from '@/components';
 import CardAssessmentDefault from '../../components/CardAssessment/CardAssessmentDefault';
+import { fetchContentfulEntries } from '@/lib/contentful/client';
 
-const Careers = () => {
+export default function Careers({ contentfulEntries }) {
+  console.log(contentfulEntries);
+
+  const [activeCardCareers, setActiveCardCareers] = useState('cardCareers1');
+
+  const handleCardCareersClick = (cardId) => {
+    setActiveCardCareers(cardId);
+  };
   return (
     <Layout pageTitle="Talent Assessment">
       {/* Banner */}
@@ -14,21 +22,23 @@ const Careers = () => {
           <div className="relative flex flex-col items-center sm:static lg:flex-row">
             <div className="flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:text-left lg:w-1/2 lg:flex-grow lg:items-start ">
               <h1 className="sm:heading-1 heading-2 mb-6 mt-20 ">
-                Join us. From anywhere.
+                {contentfulEntries.topBanner.fields.headline}
               </h1>
               <p className="caption-regular-3 md:caption-regular-1 mb-6 mt-0 text-center lg:text-start">
-                At Testfounder, we’re building a global team of amazing people
-                who want to change the way companies hire. If you’re curious,
-                ambitious, and ready to grow your career with us, we’d love to
-                meet you!
+                {
+                  contentfulEntries.topBanner.fields.bodyText.content[0]
+                    .content[0].value
+                }
               </p>
-              <Link href="#">
-                <button className="btn-line-normal-black">See jobs</button>
+              <Link href={contentfulEntries.topBanner.fields.ctaUrl}>
+                <button className="btn-line-normal-black">
+                  {contentfulEntries.topBanner.fields.ctaText}
+                </button>
               </Link>
             </div>
             <div className="relative flex w-full justify-center md:w-full lg:mt-20 lg:w-1/2">
               <Image
-                src="/assets/hero-image-careers.png"
+                src={`https:${contentfulEntries.topBanner.fields.image.fields.file.url}`}
                 alt="Hero Image"
                 width={635}
                 height={524}
@@ -44,10 +54,10 @@ const Careers = () => {
         <div className="container mx-auto px-4 py-6 md:px-[40px] md:py-[32px] lg:px-0 lg:py-[60px]">
           <div className="flex flex-col items-center">
             <h2 className="md:heading-1 heading-2 mb-[40px] text-center">
-              We have 154 team members working in 43 countries
+              {contentfulEntries.topSection[0].fields.headline}
             </h2>
             <Image
-              src="/assets/map-world.png"
+              src={`https:${contentfulEntries.topSection[0].fields.image.fields.file.url}`}
               alt="Hero Image"
               width={1105}
               height={541}
@@ -61,45 +71,93 @@ const Careers = () => {
       <section className="bg-grayscale-100">
         <div className="container mx-auto px-4 py-6 md:px-[40px] md:py-[32px] lg:px-0 lg:py-[60px]">
           <h2 className="md:heading-1 heading-2 mb-[24px] text-center lg:text-start">
-            Become a part of something big
+            {contentfulEntries.topSection[1].fields.headline}
           </h2>
           <div className="flex flex-col lg:flex-row">
             <div className="lg:w-1/2">
               <CardAssessmentDefault
-                title="Make work that matters"
-                paragraph="At Testfounder, your skills and talent will help thousands of people find their dream jobs every day. You'll also help change the way companies hire in a new (and more equal) era for top talent worldwide."
+                id="cardCareers1"
+                title={contentfulEntries.pageContent[0].fields.headline}
+                paragraph={
+                  contentfulEntries.pageContent[0].fields.bodyText.content[0]
+                    .content[0].value
+                }
+                isActive={activeCardCareers === 'cardCareers1'}
+                onClick={() => handleCardCareersClick('cardCareers1')}
+                icon_url={
+                  activeCardCareers === 'cardCareers1'
+                    ? ''
+                    : '/assets/icon-plus-product.svg'
+                }
               />
               <CardAssessmentDefault
-                title="Find freedom (and an awesome team!)"
-                paragraph="Connect, meet, and bond with colleagues from all over the world. With our 100% remote structure, you'll have the support, freedom, and trust you deserve to truly grow and succeed."
-                icon_url={'/assets/icon-plus-product.svg'}
+                id="cardCareers2"
+                title={contentfulEntries.pageContent[1].fields.headline}
+                paragraph={
+                  contentfulEntries.pageContent[1].fields.bodyText.content[0]
+                    .content[0].value
+                }
+                isActive={activeCardCareers === 'cardCareers2'}
+                onClick={() => handleCardCareersClick('cardCareers2')}
+                icon_url={
+                  activeCardCareers === 'cardCareers2'
+                    ? ''
+                    : '/assets/icon-plus-product.svg'
+                }
               />
               <CardAssessmentDefault
-                title="Be there at the beginning"
-                paragraph="Testfounder has become a globally recognized startup by top investors. We’re in the spotlight and growing rapidly. And our customers happen to love us too, with plenty of glowing reviews.When you join Testfounder, you'll have a chance to shape our company and culture—and grow as fast as us!"
-                icon_url={'/assets/icon-plus-product.svg'}
+                id="cardCareers3"
+                title={contentfulEntries.pageContent[2].fields.headline}
+                paragraph={
+                  contentfulEntries.pageContent[2].fields.bodyText.content[0]
+                    .content[0].value
+                }
+                isActive={activeCardCareers === 'cardCareers3'}
+                onClick={() => handleCardCareersClick('cardCareers3')}
+                icon_url={
+                  activeCardCareers === 'cardCareers3'
+                    ? ''
+                    : '/assets/icon-plus-product.svg'
+                }
               />
             </div>
             <div className="hidden items-center justify-end lg:flex lg:w-1/2">
               <div className="flex flex-col p-4">
                 <Image
-                  src="/assets/floyd-miles.png"
+                  src={`https:${contentfulEntries.pageContent[3].fields.image.fields.file.url}`}
                   width={276}
                   height={154}
                   className="mb-4"
+                  alt="floyd miles"
                 />
-                <p className="caption-semibold-1">Floyd Miles</p>
-                <p className="caption-light-2">Chief Technology Officer</p>
+                <p className="caption-semibold-1">
+                  {contentfulEntries.pageContent[3].fields.headline}
+                </p>
+                <p className="caption-light-2">
+                  {
+                    contentfulEntries.pageContent[3].fields.bodyText.content[0]
+                      .content[0].value
+                  }
+                </p>
               </div>
               <div className="flex flex-col p-4">
                 <Image
-                  src="/assets/theresa-webb-leaders.png"
+                  src={`https:${contentfulEntries.pageContent[4].fields.image.fields.file.url}`}
                   width={276}
                   height={154}
                   className="mb-4"
+                  alt="theresa webb"
                 />
-                <p className="caption-semibold-1">Theresa Webb</p>
-                <p className="caption-light-2">Chief Financial Officer</p>
+                <p className="caption-semibold-1">
+                  {contentfulEntries.pageContent[4].fields.headline}
+                </p>
+                <p className="caption-light-2">
+                  {
+                    contentfulEntries.pageContent[4].fields.bodyText.content[0]
+                      .content[0].value
+                  }
+                  r
+                </p>
               </div>
             </div>
           </div>
@@ -109,54 +167,79 @@ const Careers = () => {
       <section className="bg-grayscale-100">
         <div className="container mx-auto px-4 py-6 md:px-[40px] md:py-[32px] lg:px-0 lg:py-[60px]">
           <h2 className="md:heading-1 heading-2 mb-[24px] text-center lg:text-start">
-            What we value
+            {contentfulEntries.topSection[2].fields.headline}
           </h2>
           <div className="flex flex-col lg:flex-row">
             <div className="lg:w-1/2">
               <CardAssessmentDefault
-                title="Putting Talent first"
+                title={contentfulEntries.pageContent[5].fields.headline}
                 icon_url={'/assets/icon-star-2.svg'}
               />
               <CardAssessmentDefault
-                title="Being Bold"
+                title={contentfulEntries.pageContent[6].fields.headline}
                 icon_url={'/assets/icon-plus-product.svg'}
               />
               <CardAssessmentDefault
-                title="Taking ownership"
+                title={contentfulEntries.pageContent[7].fields.headline}
                 icon_url={'/assets/icon-plus-product.svg'}
               />
               <CardAssessmentDefault
-                title="Executing with pride"
+                title={contentfulEntries.pageContent[8].fields.headline}
                 icon_url={'/assets/icon-plus-product.svg'}
               />
               <CardAssessmentDefault
-                title="Support each other"
+                title={contentfulEntries.pageContent[9].fields.headline}
                 icon_url={'/assets/icon-plus-product.svg'}
               />
               <CardAssessmentDefault
-                title="Acting with integrity"
+                title={contentfulEntries.pageContent[10].fields.headline}
                 icon_url={'/assets/icon-plus-product.svg'}
               />
             </div>
             <div className="hidden items-center justify-end lg:flex lg:w-1/2">
               <div className="flex flex-col p-4">
                 <p className="caption-regular-2 mb-[20px]">
-                  <span className="caption-semibold-2">What this means:</span>{' '}
-                  We recognize that taking an assessment is a high-stakes
-                  experience that can lead to a dream job. To level the playing
-                  field for all global talent, all candidates should get a fair
-                  chance.
+                  <span className="caption-semibold-2">
+                    {
+                      contentfulEntries.pageContent[11].fields.bodyText
+                        .content[0].content[0].value
+                    }
+                  </span>{' '}
+                  {
+                    contentfulEntries.pageContent[11].fields.bodyText.content[0]
+                      .content[1].value
+                  }
                 </p>
-                <p className="caption-semibold-2">How can I apply this?</p>
+                <p className="caption-semibold-2">
+                  {
+                    contentfulEntries.pageContent[11].fields.bodyText.content[1]
+                      .content[0].value
+                  }
+                </p>
                 <ul className="caption-regular-2 list-inside list-disc">
-                  <li>Prioritize the needs of candidates, always.</li>
-                  <li>Treat candidates with respect and empathy.</li>
                   <li>
-                    Help customers apply best practices in assessing candidates.
+                    {
+                      contentfulEntries.pageContent[11].fields.bodyText
+                        .content[2].content[0].content[0].content[0].value
+                    }
                   </li>
                   <li>
-                    Safeguard the integrity and confidential nature of test
-                    results.
+                    {
+                      contentfulEntries.pageContent[11].fields.bodyText
+                        .content[2].content[1].content[0].content[0].value
+                    }
+                  </li>
+                  <li>
+                    {
+                      contentfulEntries.pageContent[11].fields.bodyText
+                        .content[2].content[2].content[0].content[0].value
+                    }
+                  </li>
+                  <li>
+                    {
+                      contentfulEntries.pageContent[11].fields.bodyText
+                        .content[2].content[3].content[0].content[0].value
+                    }
                   </li>
                 </ul>
               </div>
@@ -168,7 +251,7 @@ const Careers = () => {
       <section className="bg-grayscale-100">
         <div className="container mx-auto px-4 py-6 md:px-[40px] md:py-[32px] lg:px-0 lg:py-[60px]">
           <h2 className="md:heading-1 heading-2 mb-[32px] text-center lg:text-start">
-            Job openings
+            {contentfulEntries.topSection[3].fields.headline}
           </h2>
           <div className="mb-[32px] flex flex-col lg:flex-row">
             <div className="flex w-full flex-col gap-6 lg:flex-row">
@@ -212,7 +295,7 @@ const Careers = () => {
             <div className="flex w-full flex-col gap-6 lg:flex-row">
               <div className="relative flex w-full flex-col gap-3 bg-white p-6 lg:w-[33%]">
                 <h3 className="md:caption-semibold-1 caption-bold-3">
-                  VP of Sales
+                  {contentfulEntries.pageContent[12].fields.headline}
                 </h3>
                 <div className="flex gap-3">
                   <Image
@@ -223,7 +306,12 @@ const Careers = () => {
                     sizes="100vw"
                     className="flex h-auto"
                   />
-                  <p className="caption-regular-3">Sales</p>
+                  <p className="caption-regular-3">
+                    {
+                      contentfulEntries.pageContent[12].fields.bodyText
+                        .content[0].content[0].value
+                    }
+                  </p>
                 </div>
                 <div className="flex gap-3">
                   <Image
@@ -234,7 +322,12 @@ const Careers = () => {
                     sizes="100vw"
                     className="flex h-auto"
                   />
-                  <p className="caption-regular-3">100% Remote</p>
+                  <p className="caption-regular-3">
+                    {
+                      contentfulEntries.pageContent[12].fields.bodyText
+                        .content[1].content[0].value
+                    }
+                  </p>
                 </div>
                 <button className="btn-line-normal-black flex self-end">
                   More Details
@@ -242,7 +335,7 @@ const Careers = () => {
               </div>
               <div className="relative flex w-full flex-col gap-3 bg-white p-6 lg:w-[33%]">
                 <h3 className="md:caption-semibold-1 caption-bold-3">
-                  Designer
+                  {contentfulEntries.pageContent[13].fields.headline}
                 </h3>
                 <div className="flex gap-3">
                   <Image
@@ -253,7 +346,12 @@ const Careers = () => {
                     sizes="100vw"
                     className="flex h-auto"
                   />
-                  <p className="caption-regular-3">Marketing</p>
+                  <p className="caption-regular-3">
+                    {
+                      contentfulEntries.pageContent[13].fields.bodyText
+                        .content[0].content[0].value
+                    }
+                  </p>
                 </div>
                 <div className="flex gap-3">
                   <Image
@@ -264,7 +362,12 @@ const Careers = () => {
                     sizes="100vw"
                     className="flex h-auto"
                   />
-                  <p className="caption-regular-3">100% Remote</p>
+                  <p className="caption-regular-3">
+                    {
+                      contentfulEntries.pageContent[13].fields.bodyText
+                        .content[1].content[0].value
+                    }
+                  </p>
                 </div>
                 <button className="btn-line-normal-black flex self-end">
                   More Details
@@ -272,7 +375,7 @@ const Careers = () => {
               </div>
               <div className="relative flex w-full flex-col gap-3 bg-white p-6 lg:w-[33%]">
                 <h3 className="md:caption-semibold-1 caption-bold-3">
-                  Senior Quality Engineer
+                  {contentfulEntries.pageContent[14].fields.headline}
                 </h3>
                 <div className="flex gap-3">
                   <Image
@@ -283,7 +386,12 @@ const Careers = () => {
                     sizes="100vw"
                     className="flex h-auto"
                   />
-                  <p className="caption-regular-3">Sales</p>
+                  <p className="caption-regular-3">
+                    {
+                      contentfulEntries.pageContent[14].fields.bodyText
+                        .content[0].content[0].value
+                    }
+                  </p>
                 </div>
                 <div className="flex gap-3">
                   <Image
@@ -294,7 +402,12 @@ const Careers = () => {
                     sizes="100vw"
                     className="flex h-auto"
                   />
-                  <p className="caption-regular-3">100% Remote</p>
+                  <p className="caption-regular-3">
+                    {
+                      contentfulEntries.pageContent[14].fields.bodyText
+                        .content[1].content[0].value
+                    }
+                  </p>
                 </div>
                 <button className="btn-line-normal-black flex self-end">
                   More Details
@@ -306,6 +419,26 @@ const Careers = () => {
       </section>
     </Layout>
   );
-};
+}
 
-export default Careers;
+export async function getStaticProps() {
+  const contentType = 'landingPage'; // Modify content type here
+  const { items } = await fetchContentfulEntries(contentType);
+
+  const entries = items.find(
+    (entry) => entry.fields.internalName === 'Careers',
+  );
+
+  // Check if the entry is found
+  if (entries) {
+    console.log('Found the homepage entry:', entries);
+  } else {
+    console.log('Homepage entry not found.');
+  }
+
+  return {
+    props: {
+      contentfulEntries: entries ? entries.fields : {}, // Modify key-value of props
+    },
+  };
+}

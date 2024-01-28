@@ -88,7 +88,7 @@ const About = ({ contentfulEntries }) => {
               </div>
               <div className="flex w-full justify-center md:w-full lg:w-1/2">
                 <Image
-                  src="/assets/hero-about.png"
+                  src={`https:${contentfulEntries.topBanner.fields.image.fields.file.url}`}
                   alt="Hero About"
                   width={644}
                   height={424}
@@ -165,7 +165,7 @@ const About = ({ contentfulEntries }) => {
             <h2 className="heading-1 text-center md:mb-[10px] lg:mb-6">
               Our Partner
             </h2>
-            <div className="flex justify-center lg:mt-10 lg:gap-6">
+            <div className="container mx-auto flex justify-center lg:mt-10 lg:gap-6">
               <Swiper
                 modules={[Autoplay]}
                 spaceBetween={40}
@@ -208,12 +208,12 @@ const About = ({ contentfulEntries }) => {
 
         {/* Our Leaders */}
         <section className="h-full w-full bg-grayscale-200">
-          <div className=" px-4 py-6 md:px-10 md:py-8 lg:px-0 lg:py-0">
+          <div className="container mx-auto px-4 py-6 md:px-10 md:py-8 lg:px-0 lg:py-0">
             <div className="flex flex-col lg:py-20">
               <h2 className="heading-1 text-center lg:mb-6">
                 {contentfulEntries.topSection[2].fields.headline}
               </h2>
-              <div className="flex flex-wrap justify-center gap-[26px]">
+              <div className="grid grid-cols-1 justify-items-center gap-[26px] md:grid-cols-2 lg:grid-cols-4">
                 {contentfulEntries.pageContent
                   .slice(7, 15)
                   .map((data, index) => (
