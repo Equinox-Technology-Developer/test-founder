@@ -9,7 +9,6 @@ import { fetchContentfulEntries } from '@/lib/contentful/client';
 import styles from './TalentAssessment.module.scss';
 
 export default function TalentAssessment({ contentfulEntries }) {
-  console.log(contentfulEntries);
 
   return (
     <Layout pageTitle="Talent Assessment">
@@ -1244,23 +1243,20 @@ export default function TalentAssessment({ contentfulEntries }) {
 }
 
 export async function getStaticProps() {
-  const contentType = 'landingPage'; // Modify content type here
-  const { items } = await fetchContentfulEntries(contentType);
+  const contentfulEntries = await fetchContentfulEntries('landingPage');
+  console.log(contentfulEntries);
 
-  const entries = items.find(
-    (entry) => entry.fields.internalName === 'Talent Assessment',
-  );
-
-  // Check if the entry is found
-  if (entries) {
-    console.log('Found the homepage entry:', entries);
-  } else {
-    console.log('Homepage entry not found.');
-  }
+  // Check if contentfulEntries is an array before filtering
+  const filteredEntries = Array.isArray(contentfulEntries.items)
+    ? contentfulEntries.items.find(entry => {
+        console.log(entry.fields.internalName);
+        return entry.fields.internalName === 'Talent Assessment';
+      }).fields // Return only the .fields property
+    : {};
 
   return {
     props: {
-      contentfulEntries: entries ? entries.fields : {}, // Modify key-value of props
+      contentfulEntries: filteredEntries,
     },
   };
 }
