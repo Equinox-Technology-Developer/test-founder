@@ -8,7 +8,6 @@ import { fetchContentfulEntries } from '@/lib/contentful/client';
 
 export default function PrivacyPolicy({ contentfulEntries }) {
   const router = useRouter();
-  console.log(contentfulEntries);
   return (
     <Layout pageTitle="Terms of use">
       <main className="container mx-auto px-4 py-[120px] md:px-[40px] md:py-[130px] lg:px-16 lg:py-[140px]">
@@ -526,23 +525,20 @@ export default function PrivacyPolicy({ contentfulEntries }) {
 }
 
 export async function getStaticProps() {
-  const contentType = 'landingPage'; // Modify content type here
-  const { items } = await fetchContentfulEntries(contentType);
+  const contentfulEntries = await fetchContentfulEntries('landingPage');
+  console.log(contentfulEntries);
 
-  const entries = items.find(
-    (entry) => entry.fields.internalName === 'Privacy Policy',
-  );
-
-  // Check if the entry is found
-  if (entries) {
-    console.log('Found the homepage entry:', entries);
-  } else {
-    console.log('Homepage entry not found.');
-  }
+  // Check if contentfulEntries is an array before filtering
+  const filteredEntries = Array.isArray(contentfulEntries.items)
+    ? contentfulEntries.items.find(entry => {
+        console.log(entry.fields.internalName);
+        return entry.fields.internalName === 'Privacy Policy';
+      }).fields // Return only the .fields property
+    : {};
 
   return {
     props: {
-      contentfulEntries: entries ? entries.fields : {}, // Modify key-value of props
+      contentfulEntries: filteredEntries,
     },
   };
 }

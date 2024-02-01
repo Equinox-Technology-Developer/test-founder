@@ -653,23 +653,20 @@ const Products = ({ contentfulEntries }) => {
 export default Products;
 
 export async function getStaticProps() {
-  const contentType = 'landingPage'; // Modify content type here
-  const { items } = await fetchContentfulEntries(contentType);
+  const contentfulEntries = await fetchContentfulEntries('landingPage');
+  console.log(contentfulEntries);
 
-  const entries = items.find(
-    (entry) => entry.fields.internalName === 'Products',
-  );
-
-  // Check if the entry is found
-  if (entries) {
-    console.log('Found the homepage entry:', entries);
-  } else {
-    console.log('Homepage entry not found.');
-  }
+  // Check if contentfulEntries is an array before filtering
+  const filteredEntries = Array.isArray(contentfulEntries.items)
+    ? contentfulEntries.items.find(entry => {
+        console.log(entry.fields.internalName);
+        return entry.fields.internalName === 'Products';
+      }).fields // Return only the .fields property
+    : {};
 
   return {
     props: {
-      contentfulEntries: entries ? entries.fields : {}, // Modify key-value of props
+      contentfulEntries: filteredEntries,
     },
   };
 }

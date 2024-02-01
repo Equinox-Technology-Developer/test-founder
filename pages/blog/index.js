@@ -14,10 +14,7 @@ export default function Blog({ contentfulEntries }) {
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 6;
 
-  // Extracting unique categories from contentfulEntries.blogPost
-  const categories = [
-    ...new Set(contentfulEntries.blogPost.map((post) => post.fields.category)),
-  ];
+  const categories = [...new Set(contentfulEntries.blogPost.map((post) => post.fields.category))];
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
@@ -31,9 +28,8 @@ export default function Blog({ contentfulEntries }) {
 
   const filteredPosts = contentfulEntries.blogPost.filter(
     (post) =>
-      (selectedCategory === 'All' ||
-        post.fields.category === selectedCategory) &&
-      post.fields.title.toLowerCase().includes(searchTerm.toLowerCase()),
+      (selectedCategory === 'All' || post.fields.category === selectedCategory) &&
+      post.fields.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const indexOfLastPost = currentPage * postsPerPage;
@@ -211,26 +207,18 @@ export default function Blog({ contentfulEntries }) {
 }
 
 export async function getStaticProps() {
-  // Modify content types here
   const contentTypes = ['landingPage', 'blogPost'];
-
-  // Specify internalName for landingPage entries
   const landingPageInternalName = 'Blog';
-
-  // Fetch entries for each content type
   const entries = {};
+
   for (const contentType of contentTypes) {
     let fetchedEntries;
 
     if (contentType === 'landingPage') {
       const { items } = await fetchContentfulEntries(contentType);
-      // Find the entry with the specified internalName
-      const specificEntry = items.find(
-        (entry) => entry.fields.internalName === landingPageInternalName,
-      );
+      const specificEntry = items.find((entry) => entry.fields.internalName === landingPageInternalName);
       fetchedEntries = specificEntry ? [specificEntry] : [];
     } else {
-      // Fetch all entries for other content types
       const { items } = await fetchContentfulEntries(contentType);
       fetchedEntries = items;
     }
@@ -238,14 +226,13 @@ export async function getStaticProps() {
     entries[contentType] = fetchedEntries;
   }
 
-  // Check if the entries are found
-  for (const contentType of contentTypes) {
+  Object.keys(entries).forEach(contentType => {
     if (entries[contentType]) {
       console.log(`Found ${contentType} entries:`, entries[contentType]);
     } else {
       console.log(`${contentType} entries not found.`);
     }
-  }
+  });
 
   return {
     props: {
