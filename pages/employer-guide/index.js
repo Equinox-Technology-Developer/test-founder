@@ -2,539 +2,232 @@ import React from 'react';
 
 import { Layout } from '@/components';
 import Image from 'next/image';
+import { fetchContentfulEntries } from '@/lib/contentful/client';
 
-const EmployerGuide = () => {
+export default function EmployerGuide({ contentfulEntries }) {
+  console.log(contentfulEntries);
   return (
     <Layout pageTitle="Employer Guide">
       <section className="bg-[#F9F9F9]">
         <div className="container mx-auto mb-[80px] mt-[92px] px-4 py-6 md:px-10 md:py-8 lg:px-0 lg:py-0">
           <div className="mb-[24px] pt-[8px] md:mb-[40px] md:pt-0 lg:pt-[80px]">
             <h1 className="heading-2 md:heading-2 mb-4 md:mb-6">
-              Company guides
+              {contentfulEntries.topBanner.fields.headline}
             </h1>
             <p className="caption-regular-3 md:caption-regular-1">
-              Testfounder platform from the employer's side
+              {
+                contentfulEntries.topBanner.fields.bodyText.content[0]
+                  .content[0].value
+              }
             </p>
           </div>
           <div className="flex flex-col flex-wrap gap-4 md:gap-6 lg:flex-row">
             <div className="flex w-full flex-col gap-4 rounded-[20px] bg-white px-6 pb-10 pt-6 shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)] md:gap-6 lg:min-h-[416px] lg:w-[calc(50%-12px)]">
-              <h2 className="heading-3 md:heading-2 ">Getting started</h2>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  Upcoming changes to Testfounder’s free plan and free features
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  Creating an account
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  FAQs and troubleshooting for customers
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
+              <h2 className="heading-3 md:heading-2 ">
+                {contentfulEntries.pageContent[0].fields.headline}
+              </h2>
+              {contentfulEntries.faq.slice(0, 3).map((faq, index) => (
+                <div
+                  className="flex flex-row items-center justify-between"
+                  key={index}
+                >
+                  <p className="caption-regular-2 md:caption-regular-1">
+                    {faq.fields.headline}
+                  </p>
+                  <Image
+                    src="/assets/icon_next.svg"
+                    alt="Hero Image"
+                    width={24}
+                    height={24}
+                    sizes="100vw"
+                    className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
+                  />
+                </div>
+              ))}
             </div>
             <div className="flex w-full flex-col gap-4 rounded-[20px] bg-white px-6 pb-10 pt-6 shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)] md:gap-6 lg:min-h-[416px] lg:w-[calc(50%-12px)]">
               <h2 className="heading-3 md:heading-2">
-                Creating and managing assessments
+                {contentfulEntries.pageContent[1].fields.headline}
               </h2>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  Accommodations for candidates with extra requirementst
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  Advanced assessment options
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  Candidate communications through Testfounder
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  Guide to creating an assessment
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  Manage access to assessments
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  Managing candidates
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
-            </div>
-            <div className="flex w-full flex-col gap-4 rounded-[20px] bg-white px-6 pb-10 pt-6 shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)] md:gap-6 lg:min-h-[416px] lg:w-[calc(50%-12px)]">
-              <h2 className="heading-3 md:heading-2">Details test guides</h2>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  Using the Motivation test
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  Using the culture add test
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  Comprehensive guide to test
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
+              {contentfulEntries.faq.slice(3, 9).map((faq, index) => (
+                <div
+                  className="flex flex-row items-center justify-between"
+                  key={index}
+                >
+                  <p className="caption-regular-2 md:caption-regular-1">
+                    {faq.fields.headline}
+                  </p>
+                  <Image
+                    src="/assets/icon_next.svg"
+                    alt="Hero Image"
+                    width={24}
+                    height={24}
+                    sizes="100vw"
+                    className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
+                  />
+                </div>
+              ))}
             </div>
             <div className="flex w-full flex-col gap-4 rounded-[20px] bg-white px-6 pb-10 pt-6 shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)] md:gap-6 lg:min-h-[416px] lg:w-[calc(50%-12px)]">
               <h2 className="heading-3 md:heading-2">
-                Creating your own tests
+                {contentfulEntries.pageContent[2].fields.headline}
               </h2>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  Choosing a question type for your own tests
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  Developing an effective screening test
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  Writting situational judgment questions
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  Formatting test questions
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  Comprehensive guide to test
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
-            </div>
-            <div className="flex w-full flex-col gap-4 rounded-[20px] bg-white px-6 pb-10 pt-6 shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)] md:gap-6 lg:min-h-[416px] lg:w-[calc(50%-12px)]">
-              <h2 className="heading-3 md:heading-2">Analyzing results</h2>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  Downloading and sharing results
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  Guide to analyzing results
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  Interpreting personality tests
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  Interpreting typing test results
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  Scorilng benchmark
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
+              {contentfulEntries.faq.slice(9, 12).map((faq, index) => (
+                <div
+                  className="flex flex-row items-center justify-between"
+                  key={index}
+                >
+                  <p className="caption-regular-2 md:caption-regular-1">
+                    {faq.fields.headline}
+                  </p>
+                  <Image
+                    src="/assets/icon_next.svg"
+                    alt="Hero Image"
+                    width={24}
+                    height={24}
+                    sizes="100vw"
+                    className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
+                  />
+                </div>
+              ))}
             </div>
             <div className="flex w-full flex-col gap-4 rounded-[20px] bg-white px-6 pb-10 pt-6 shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)] md:gap-6 lg:min-h-[416px] lg:w-[calc(50%-12px)]">
               <h2 className="heading-3 md:heading-2">
-                Account management and billing
+                {contentfulEntries.pageContent[3].fields.headline}
               </h2>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  Introducing to our Starter and Pro plans
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  Subscribe to, change, or cancel a plant
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  Email notifications
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  Account settings
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  Legacy plans
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  Managing your team
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
-            </div>
-            <div className="flex w-full flex-col gap-4 rounded-[20px] bg-white px-6 pb-10 pt-6 shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)] md:gap-6 lg:min-h-[416px] lg:w-[calc(50%-12px)]">
-              <h2 className="heading-3 md:heading-2">Integrations and API</h2>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  BambooHR integration
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  Breezy integration
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  Buk integration
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  Bullhorn integration
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  Freshteam integration
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  Greenhouse integration
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
+              {contentfulEntries.faq.slice(12, 17).map((faq, index) => (
+                <div
+                  className="flex flex-row items-center justify-between"
+                  key={index}
+                >
+                  <p className="caption-regular-2 md:caption-regular-1">
+                    {faq.fields.headline}
+                  </p>
+                  <Image
+                    src="/assets/icon_next.svg"
+                    alt="Hero Image"
+                    width={24}
+                    height={24}
+                    sizes="100vw"
+                    className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
+                  />
+                </div>
+              ))}
             </div>
             <div className="flex w-full flex-col gap-4 rounded-[20px] bg-white px-6 pb-10 pt-6 shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)] md:gap-6 lg:min-h-[416px] lg:w-[calc(50%-12px)]">
               <h2 className="heading-3 md:heading-2">
-                Roadmap and release notes
+                {contentfulEntries.pageContent[4].fields.headline}
               </h2>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  Notes on our past realises
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  Notes on our recent release
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
-              <div className="flex flex-row items-center justify-between">
-                <p className="caption-regular-2 md:caption-regular-1">
-                  Product roadmap
-                </p>
-                <Image
-                  src="/assets/icon_next.svg"
-                  alt="Hero Image"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
-                />
-              </div>
+              {contentfulEntries.faq.slice(17, 22).map((faq, index) => (
+                <div
+                  className="flex flex-row items-center justify-between"
+                  key={index}
+                >
+                  <p className="caption-regular-2 md:caption-regular-1">
+                    {faq.fields.headline}
+                  </p>
+                  <Image
+                    src="/assets/icon_next.svg"
+                    alt="Hero Image"
+                    width={24}
+                    height={24}
+                    sizes="100vw"
+                    className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="flex w-full flex-col gap-4 rounded-[20px] bg-white px-6 pb-10 pt-6 shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)] md:gap-6 lg:min-h-[416px] lg:w-[calc(50%-12px)]">
+              <h2 className="heading-3 md:heading-2">
+                {contentfulEntries.pageContent[5].fields.headline}
+              </h2>
+              {contentfulEntries.faq.slice(22, 28).map((faq, index) => (
+                <div
+                  className="flex flex-row items-center justify-between"
+                  key={index}
+                >
+                  <p className="caption-regular-2 md:caption-regular-1">
+                    {faq.fields.headline}
+                  </p>
+                  <Image
+                    src="/assets/icon_next.svg"
+                    alt="Hero Image"
+                    width={24}
+                    height={24}
+                    sizes="100vw"
+                    className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="flex w-full flex-col gap-4 rounded-[20px] bg-white px-6 pb-10 pt-6 shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)] md:gap-6 lg:min-h-[416px] lg:w-[calc(50%-12px)]">
+              <h2 className="heading-3 md:heading-2">
+                {contentfulEntries.pageContent[6].fields.headline}
+              </h2>
+              {contentfulEntries.faq.slice(28, 34).map((faq, index) => (
+                <div
+                  className="flex flex-row items-center justify-between"
+                  key={index}
+                >
+                  <p className="caption-regular-2 md:caption-regular-1">
+                    {faq.fields.headline}
+                  </p>
+                  <Image
+                    src="/assets/icon_next.svg"
+                    alt="Hero Image"
+                    width={24}
+                    height={24}
+                    sizes="100vw"
+                    className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
+                  />
+                </div>
+              ))}
+            </div>
+            <div className="flex w-full flex-col gap-4 rounded-[20px] bg-white px-6 pb-10 pt-6 shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)] md:gap-6 lg:min-h-[416px] lg:w-[calc(50%-12px)]">
+              <h2 className="heading-3 md:heading-2">
+                {contentfulEntries.pageContent[7].fields.headline}
+              </h2>
+              {contentfulEntries.faq.slice(34, 37).map((faq, index) => (
+                <div
+                  className="flex flex-row items-center justify-between"
+                  key={index}
+                >
+                  <p className="caption-regular-2 md:caption-regular-1">
+                    {faq.fields.headline}
+                  </p>
+                  <Image
+                    src="/assets/icon_next.svg"
+                    alt="Hero Image"
+                    width={24}
+                    height={24}
+                    sizes="100vw"
+                    className="z-10 flex h-[20px] w-[20px] md:h-fit md:w-fit lg:h-fit lg:w-fit"
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
     </Layout>
   );
-};
+}
 
-export default EmployerGuide;
+export async function getStaticProps() {
+  const contentfulEntries = await fetchContentfulEntries('landingPage');
+  console.log(contentfulEntries);
+
+  // Check if contentfulEntries is an array before filtering
+  const filteredEntries = Array.isArray(contentfulEntries.items)
+    ? contentfulEntries.items.find((entry) => {
+        console.log(entry.fields.internalName);
+        return entry.fields.internalName === 'Employer Guide';
+      }).fields // Return only the .fields property
+    : {};
+
+  return {
+    props: {
+      contentfulEntries: filteredEntries,
+    },
+  };
+}
