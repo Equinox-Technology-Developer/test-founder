@@ -6,7 +6,6 @@ import { Layout } from '@/components';
 import { fetchContentfulEntries } from '@/lib/contentful/client';
 
 export default function BookDemo({ contentfulEntries }) {
-  console.log(contentfulEntries);
   return (
     <>
       <Layout pageTitle="Book a Demo">
@@ -195,11 +194,10 @@ export default function BookDemo({ contentfulEntries }) {
 
 export async function getStaticProps() {
   const contentfulEntries = await fetchContentfulEntries('landingPage');
-  console.log(contentfulEntries);
 
   // Check if contentfulEntries is an array before filtering
   const filteredEntries = Array.isArray(contentfulEntries.items)
-    ? contentfulEntries.items.find(entry => {
+    ? contentfulEntries.items.find((entry) => {
         console.log(entry.fields.internalName);
         return entry.fields.internalName === 'Book Demo';
       }).fields // Return only the .fields property

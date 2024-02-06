@@ -10,6 +10,7 @@
   left: 0;
   background-color: transparent;
   width: 100%;
+  z-index: 999;
 
   @media (max-width: 640px) {
     padding-top: 0;

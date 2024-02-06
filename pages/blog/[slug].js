@@ -68,6 +68,7 @@ export default function Post({ post, latestPosts, relatedPosts }) {
                         articleItem.author.fields.image.fields.file.details
                           .image.height
                       }
+                      className="max-h-[24px] max-w-[24px] rounded-full object-cover"
                     />
                     <p>{articleItem.author.fields.name}</p>
                     <date className="caption-regular-4 ml-4">

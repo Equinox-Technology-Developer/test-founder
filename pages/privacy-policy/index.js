@@ -526,11 +526,10 @@ export default function PrivacyPolicy({ contentfulEntries }) {
 
 export async function getStaticProps() {
   const contentfulEntries = await fetchContentfulEntries('landingPage');
-  console.log(contentfulEntries);
 
   // Check if contentfulEntries is an array before filtering
   const filteredEntries = Array.isArray(contentfulEntries.items)
-    ? contentfulEntries.items.find(entry => {
+    ? contentfulEntries.items.find((entry) => {
         console.log(entry.fields.internalName);
         return entry.fields.internalName === 'Privacy Policy';
       }).fields // Return only the .fields property

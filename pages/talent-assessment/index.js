@@ -9,7 +9,6 @@ import { fetchContentfulEntries } from '@/lib/contentful/client';
 import styles from './TalentAssessment.module.scss';
 
 export default function TalentAssessment({ contentfulEntries }) {
-
   return (
     <Layout pageTitle="Talent Assessment">
       {/* Banner */}
@@ -869,7 +868,10 @@ export default function TalentAssessment({ contentfulEntries }) {
           </h1>
           <div className="flex flex-wrap justify-between gap-6 px-4 py-6 md:px-[40px] md:py-[32px] lg:px-0 lg:py-0">
             {contentfulEntries.faq.map((faq, index) => (
-              <div className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px]  border-[#CBCBCB] p-6 lg:w-[49%]">
+              <div
+                className="flex max-h-[104px] w-full items-center gap-3 rounded-[10px] border-[0.5px]  border-[#CBCBCB] p-6 lg:w-[49%]"
+                key={index}
+              >
                 <Image
                   src={`https:${faq.fields.icon.fields.file.url}`}
                   width={46}
@@ -1248,7 +1250,7 @@ export async function getStaticProps() {
 
   // Check if contentfulEntries is an array before filtering
   const filteredEntries = Array.isArray(contentfulEntries.items)
-    ? contentfulEntries.items.find(entry => {
+    ? contentfulEntries.items.find((entry) => {
         console.log(entry.fields.internalName);
         return entry.fields.internalName === 'Talent Assessment';
       }).fields // Return only the .fields property

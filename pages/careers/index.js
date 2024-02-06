@@ -7,8 +7,6 @@ import CardAssessmentDefault from '../../components/CardAssessment/CardAssessmen
 import { fetchContentfulEntries } from '@/lib/contentful/client';
 
 export default function Careers({ contentfulEntries }) {
-  console.log(contentfulEntries);
-
   const [activeCardCareers, setActiveCardCareers] = useState('cardCareers1');
 
   const handleCardCareersClick = (cardId) => {

@@ -32,7 +32,6 @@ const About = ({ contentfulEntries }) => {
     contentfulEntries.topBanner.fields.bodyText.content[0].content[0].value ||
     '';
 
-  console.log(contentfulEntries);
   return (
     <>
       <Layout pageTitle="About">
@@ -74,6 +73,7 @@ const About = ({ contentfulEntries }) => {
                             src={`https:${data.fields.image.fields.file.url}`}
                             width={48}
                             height={48}
+                            alt="About Us Icon"
                           />
                           <p className="caption-bold-1">
                             {data.fields.headline}
@@ -223,6 +223,7 @@ const About = ({ contentfulEntries }) => {
                         width={276}
                         height={154}
                         className="mb-4"
+                        alt="Leaders Image"
                       />
                       <p className="caption-semibold-1">
                         {data.fields.headline}
@@ -329,11 +330,10 @@ const About = ({ contentfulEntries }) => {
 
 export async function getStaticProps() {
   const contentfulEntries = await fetchContentfulEntries('landingPage');
-  console.log(contentfulEntries);
 
   // Check if contentfulEntries is an array before filtering
   const filteredEntries = Array.isArray(contentfulEntries.items)
-    ? contentfulEntries.items.find(entry => {
+    ? contentfulEntries.items.find((entry) => {
         console.log(entry.fields.internalName);
         return entry.fields.internalName === 'About Us';
       }).fields // Return only the .fields property

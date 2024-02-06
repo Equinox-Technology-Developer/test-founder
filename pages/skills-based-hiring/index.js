@@ -42,6 +42,7 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                     src="/assets/test-library-banner_people.png"
                     width={140}
                     height={44}
+                    alt="Test Library People"
                   />
                 </div>
                 <div>
@@ -63,7 +64,7 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 width={575}
                 height={467}
                 sizes="100vw"
-                className="z-10 flex h-auto w-[80%] md:w-[60%] lg:w-full"
+                className="flex h-auto w-[80%] md:w-[60%] lg:w-full"
               />
             </div>
           </div>
@@ -1267,7 +1268,7 @@ export async function getStaticProps() {
 
   // Check if contentfulEntries is an array before filtering
   const filteredEntries = Array.isArray(contentfulEntries.items)
-    ? contentfulEntries.items.find(entry => {
+    ? contentfulEntries.items.find((entry) => {
         console.log(entry.fields.internalName);
         return entry.fields.internalName === 'Skill-based hiring';
       }).fields // Return only the .fields property
