@@ -5,8 +5,9 @@ import Image from 'next/image';
 import Dropzone from '@/components/Dropzone';
 
 import styles from './Contact.module.scss';
-
-const Contact = ({}) => {
+import { fetchContentfulEntries } from '@/lib/contentful/client';
+export default function Contact({ contentfulEntries }) {
+  console.log(contentfulEntries);
   return (
     <>
       <Layout pageTitle="Book a Demo" showNavbarSubmit={true}>
@@ -19,7 +20,9 @@ const Contact = ({}) => {
               >
                 <form className="h-full w-full rounded-[20px] bg-shade-0 px-[24px] py-[32px] shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)] md:w-[580px]">
                   <div className="flex flex-col gap-6">
-                    <h1 className="md:heading-1 heading-2">Submit a request</h1>
+                    <h1 className="md:heading-1 heading-2">
+                      {contentfulEntries.topBanner.fields.internalName}
+                    </h1>
                     <div className="flex flex-col">
                       <label className="caption-regular-4 text-shade-100">
                         Your email address
@@ -89,7 +92,7 @@ const Contact = ({}) => {
               <div className={styles.banner_topContentText}>
                 <div className="flex flex-row items-center gap-4">
                   <Image
-                    src="/assets/hero-contact.png"
+                    src={`https:${contentfulEntries.topBanner.fields.image.fields.file.url}`}
                     alt="Hero Image"
                     width={343}
                     height={525}
@@ -103,6 +106,23 @@ const Contact = ({}) => {
       </Layout>
     </>
   );
-};
+}
 
-export default Contact;
+export async function getStaticProps() {
+  const contentfulEntries = await fetchContentfulEntries('landingPage');
+  console.log(contentfulEntries);
+
+  // Check if contentfulEntries is an array before filtering
+  const filteredEntries = Array.isArray(contentfulEntries.items)
+    ? contentfulEntries.items.find((entry) => {
+        console.log(entry.fields.internalName);
+        return entry.fields.internalName === 'Contact';
+      }).fields // Return only the .fields property
+    : {};
+
+  return {
+    props: {
+      contentfulEntries: filteredEntries,
+    },
+  };
+}
