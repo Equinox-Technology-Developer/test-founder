@@ -199,12 +199,12 @@ const Navbar = (props) => {
           ) : (
             <div className="mobile-hidden tab-hidden flex items-center justify-center">
               <Link href="/book-demo">
-                <button className="2xl:btn-line-normal lg:btn-line-medium btn-line-medium">
+                <button className="btn-line-normal lg:btn-line-medium btn-line-medium">
                   Book a Demo
                 </button>
               </Link>
               <Link href="/signup">
-                <button className="2xl:btn-normal lg:btn-medium btn-medium ml-4">
+                <button className="btn-normal lg:btn-medium btn-medium ml-4">
                   Try for free!
                 </button>
               </Link>
@@ -286,22 +286,22 @@ const Navbar = (props) => {
                   whileInView={{ x: [300, 0, 0] }}
                   transition={{ duration: 0.85, ease: 'easeOut' }}
                 >
-                  <HiX onClick={() => setToogle(false)} />
+                  <HiX
+                    onClick={() => setToogle(false)}
+                    className="cursor-pointer"
+                  />
+                  <Link href="/">
+                    <Image
+                      src={images.logo_desktop}
+                      width={120}
+                      height={50}
+                      alt="logo"
+                      priority
+                      className="absolute left-0 top-0 p-4"
+                    />
+                  </Link>
                   <ul className={styles.app__navbarLinks}>
-                    <li>
-                      <Link
-                        href="/"
-                        className={
-                          router.pathname == '/'
-                            ? styles.active
-                            : styles.nonActive
-                        }
-                      >
-                        {' '}
-                        Home
-                      </Link>
-                    </li>
-                    <li>
+                    <li className="w-full">
                       <Link
                         href="/products"
                         className={
@@ -313,7 +313,46 @@ const Navbar = (props) => {
                         Products
                       </Link>
                     </li>
-                    <li>
+                    <li className="w-full pl-4">
+                      <Link
+                        href="/products"
+                        className={
+                          router.pathname == '/products'
+                            ? styles.active
+                            : styles.nonActive
+                        }
+                      >
+                        {' '}
+                        Products
+                      </Link>
+                    </li>
+                    <li className="w-full pl-4">
+                      <Link
+                        href="/sciences"
+                        className={
+                          router.pathname == '/sciences'
+                            ? styles.active
+                            : styles.nonActive
+                        }
+                      >
+                        {' '}
+                        Sciences
+                      </Link>
+                    </li>
+                    <li className="w-full pl-4">
+                      <Link
+                        href="/test-library"
+                        className={
+                          router.pathname == '/test-library'
+                            ? styles.active
+                            : styles.nonActive
+                        }
+                      >
+                        {' '}
+                        Test Library
+                      </Link>
+                    </li>
+                    <li className="w-full">
                       <Link
                         href="/pricing"
                         className={
@@ -335,6 +374,58 @@ const Navbar = (props) => {
                         }
                       >
                         Resources
+                      </Link>
+                    </li>
+                    <li className="w-full pl-4">
+                      <Link
+                        href="/case-studies"
+                        className={
+                          router.pathname == '/case-studies'
+                            ? styles.active
+                            : styles.nonActive
+                        }
+                      >
+                        {' '}
+                        Case Studies
+                      </Link>
+                    </li>
+                    <li className="w-full pl-4">
+                      <Link
+                        href="/skills-based-hiring"
+                        className={
+                          router.pathname == '/skills-based-hiring'
+                            ? styles.active
+                            : styles.nonActive
+                        }
+                      >
+                        {' '}
+                        Skill-based hiring
+                      </Link>
+                    </li>
+                    <li className="w-full pl-4">
+                      <Link
+                        href="/talent-assessment"
+                        className={
+                          router.pathname == '/talent-assessment'
+                            ? styles.active
+                            : styles.nonActive
+                        }
+                      >
+                        {' '}
+                        Talent Assessment
+                      </Link>
+                    </li>
+                    <li className="w-full pl-4">
+                      <Link
+                        href="/blog"
+                        className={
+                          router.pathname == '/blog'
+                            ? styles.active
+                            : styles.nonActive
+                        }
+                      >
+                        {' '}
+                        Blog
                       </Link>
                     </li>
                   </ul>
