@@ -126,6 +126,7 @@ export default function Home({ contentfulEntries }) {
               <Swiper
                 modules={[Autoplay]}
                 spaceBetween={40}
+                loop={true}
                 autoplay={{
                   delay: 2500,
                   disableOnInteraction: false,
@@ -153,7 +154,7 @@ export default function Home({ contentfulEntries }) {
                       width={slide.width}
                       height={slide.height}
                       sizes="100vw"
-                      className="ml-0 max-h-[80px] w-full max-w-[180px] pl-0 pr-0 xl:pl-14 xl:pr-5 2xl:ml-14 2xl:pr-5"
+                      className="ml-0 max-h-[80px] w-full  pl-0 pr-0 xl:pl-14 xl:pr-5 2xl:ml-14 2xl:pr-5"
                     />
                   </SwiperSlide>
                 ))}

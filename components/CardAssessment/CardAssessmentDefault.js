@@ -15,7 +15,7 @@ const CardAssessmentDefault = ({
     <>
       <div
         onClick={onClick}
-        className={`flex w-full max-w-[580px] items-start ${
+        className={` cursor-pointer flex w-full max-w-[580px] items-start ${
           !hasParagraphs && 'items-center'
         } p-3 ${isActive ? 'shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)]' : ''}`}
       >
