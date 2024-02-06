@@ -58,6 +58,7 @@ const testLibrary = ({ contentfulEntries }) => {
                       src="/assets/test-library-banner_people.png"
                       width={140}
                       height={44}
+                      alt="test-library-banner_people"
                     />
                   </div>
                   <div>

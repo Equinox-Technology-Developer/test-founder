@@ -8,7 +8,6 @@ import { fetchContentfulEntries } from '@/lib/contentful/client';
 
 export default function Terms({ contentfulEntries }) {
   const router = useRouter();
-  console.log(contentfulEntries);
   return (
     <Layout pageTitle="Terms of use">
       <main className="container mx-auto px-4 py-[120px] md:px-[40px] md:py-[130px] lg:px-16 lg:py-[140px]">

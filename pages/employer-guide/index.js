@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { fetchContentfulEntries } from '@/lib/contentful/client';
 
 export default function EmployerGuide({ contentfulEntries }) {
-  console.log(contentfulEntries);
   return (
     <Layout pageTitle="Employer Guide">
       <section className="bg-[#F9F9F9]">
@@ -215,7 +214,6 @@ export default function EmployerGuide({ contentfulEntries }) {
 
 export async function getStaticProps() {
   const contentfulEntries = await fetchContentfulEntries('landingPage');
-  console.log(contentfulEntries);
 
   // Check if contentfulEntries is an array before filtering
   const filteredEntries = Array.isArray(contentfulEntries.items)

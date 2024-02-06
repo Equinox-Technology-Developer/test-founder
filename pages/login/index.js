@@ -92,7 +92,12 @@ const Login = ({}) => {
           <h1 className="text-center text-[60px] font-bold leading-[60px] tracking-[1%] text-shade-0">
             Is this the end of the resume
           </h1>
-          <Image src="/assets/lamp-login.png" width="274" height="310" />
+          <Image
+            src="/assets/lamp-login.png"
+            width="274"
+            height="310"
+            alt="lamp login"
+          />
           <p className="heading-3 text-center text-shade-0">
             Discover more insights in our new report on the State of
             Skills-Based Hiring 2023

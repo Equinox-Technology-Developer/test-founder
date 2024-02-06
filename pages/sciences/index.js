@@ -54,6 +54,7 @@ const ProductScience = ({ contentfulEntries }) => {
                         src="/assets/test-library-banner_people.png"
                         width={140}
                         height={44}
+                        alt="Test Library Banner People"
                       />
                     </div>
                     <div>
@@ -280,7 +281,6 @@ export default ProductScience;
 
 export async function getStaticProps() {
   const contentfulEntries = await fetchContentfulEntries('landingPage');
-  console.log(contentfulEntries);
 
   // Check if contentfulEntries is an array before filtering
   const filteredEntries = Array.isArray(contentfulEntries.items)

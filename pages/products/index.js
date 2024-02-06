@@ -156,8 +156,8 @@ const Products = ({ contentfulEntries }) => {
       {/* Section Explanation 1 */}
       <section className="bg-[#F9F9F9] px-4 py-6 md:px-[50px] md:py-[40px]">
         <div className="container mx-auto">
-          {contentfulEntries.topSection.map((content) => (
-            <div className="flex flex-col lg:flex-row">
+          {contentfulEntries.topSection.map((content, index) => (
+            <div className="flex flex-col lg:flex-row" key={index}>
               <div className="lg:mt-12 lg:w-1/2">
                 <Image
                   src={`https:${content.fields.image.fields.file.url}`}
@@ -654,11 +654,10 @@ export default Products;
 
 export async function getStaticProps() {
   const contentfulEntries = await fetchContentfulEntries('landingPage');
-  console.log(contentfulEntries);
 
   // Check if contentfulEntries is an array before filtering
   const filteredEntries = Array.isArray(contentfulEntries.items)
-    ? contentfulEntries.items.find(entry => {
+    ? contentfulEntries.items.find((entry) => {
         console.log(entry.fields.internalName);
         return entry.fields.internalName === 'Products';
       }).fields // Return only the .fields property
