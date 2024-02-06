@@ -165,10 +165,12 @@ const About = ({ contentfulEntries }) => {
             <h2 className="heading-1 text-center md:mb-[10px] lg:mb-6">
               Our Partner
             </h2>
-            <div className="container mx-auto flex justify-center lg:mt-10 lg:gap-6">
+            <div className="container mx-auto flex items-center justify-center lg:mt-10 lg:gap-6">
               <Swiper
                 modules={[Autoplay]}
                 spaceBetween={40}
+                centeredSlides={true}
+                loop={true}
                 autoplay={{
                   delay: 2500,
                   disableOnInteraction: false,
@@ -196,7 +198,7 @@ const About = ({ contentfulEntries }) => {
                       width={slide.width}
                       height={slide.height}
                       sizes="100vw"
-                      className="ml-0 max-h-[80px] w-full max-w-[180px] pl-0 pr-0 xl:pl-14 xl:pr-5 2xl:ml-14 2xl:pr-5"
+                      className="ml-0 max-h-[80px] w-full  pl-0 pr-0 xl:pl-14 xl:pr-5 2xl:pr-5"
                     />
                   </SwiperSlide>
                 ))}
