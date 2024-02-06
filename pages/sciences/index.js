@@ -20,8 +20,8 @@ const ProductScience = ({ contentfulEntries }) => {
     <>
       <Layout pageTitle="Product Science">
         {/* Top Banner */}
-        <section className="bg-[#F9F9F9] bg-blur bg-right bg-no-repeat pt-0">
-          <div className="container mx-auto pb-20">
+        <section className="bg-[#F9F9F9] bg-blur bg-right bg-no-repeat px-4 py-6 pt-0 md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
+          <div className="container mx-auto">
             {' '}
             <div className={styles.banner_topContent}>
               <div className={styles.banner_topContentText}>
@@ -284,7 +284,7 @@ export async function getStaticProps() {
 
   // Check if contentfulEntries is an array before filtering
   const filteredEntries = Array.isArray(contentfulEntries.items)
-    ? contentfulEntries.items.find(entry => {
+    ? contentfulEntries.items.find((entry) => {
         console.log(entry.fields.internalName);
         return entry.fields.internalName === 'Product Science';
       }).fields // Return only the .fields property
