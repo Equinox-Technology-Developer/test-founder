@@ -179,23 +179,23 @@ const testLibrary = ({ contentfulEntries }) => {
               <div className={`${styles.exercise_cards}`}>
                 <div className={`${styles.cards_tags}`}>
                   <Image
-                    src="/assets/candidates.svg"
-                    alt="icon-candidates"
+                    src="/assets/star-new-test.svg"
+                    alt="icon-star-new-test"
                     width={32}
                     height={32}
                     sizes="100vw"
                     className="flex h-auto"
                   />
-                  <p className="text-white">Popular</p>
+                  <p className="text-white">New test</p>
                 </div>
                 <div className={`${styles.cards_content}`}>
                   <div className={`${styles.cards_contentText}`}>
-                    <h3>Culture add</h3>
+                    <h3>Coding: Entry-Level Algorithms</h3>
                     <p>
-                      This culture add test assesses how a candidate’s values
-                      and behaviors align with your organization values and the
-                      behaviors that would make your ideal hire successful in a
-                      specific role, based on a customized survey you fill out.
+                      This coding test assesses candidates' ability to program a
+                      basic algorithm, in the programming language of their
+                      choice. You can configure which programming languages will
+                      be available for your candidates to choose from.
                     </p>
                   </div>
                   <div className={`${styles.cards_contentDetails}`}>
@@ -223,23 +223,23 @@ const testLibrary = ({ contentfulEntries }) => {
               <div className={`${styles.exercise_cards}`}>
                 <div className={`${styles.cards_tags}`}>
                   <Image
-                    src="/assets/candidates.svg"
-                    alt="icon-candidates"
+                    src="/assets/star-new-test.svg"
+                    alt="icon-star-new-test"
                     width={32}
                     height={32}
                     sizes="100vw"
                     className="flex h-auto"
                   />
-                  <p className="text-white">Popular</p>
+                  <p className="text-white">New test</p>
                 </div>
                 <div className={`${styles.cards_content}`}>
                   <div className={`${styles.cards_contentText}`}>
-                    <h3>Culture add</h3>
+                    <h3>Coding: Intermediate-Level Algorithms</h3>
                     <p>
-                      This culture add test assesses how a candidate’s values
-                      and behaviors align with your organization values and the
-                      behaviors that would make your ideal hire successful in a
-                      specific role, based on a customized survey you fill out.
+                      This coding test assesses candidates' intermediate-level
+                      programming skills, in the programming language of their
+                      choice. You can configure which programming languages will
+                      be available for your candidates to choose from.
                     </p>
                   </div>
                   <div className={`${styles.cards_contentDetails}`}>
@@ -267,23 +267,23 @@ const testLibrary = ({ contentfulEntries }) => {
               <div className={`${styles.exercise_cards}`}>
                 <div className={`${styles.cards_tags}`}>
                   <Image
-                    src="/assets/candidates.svg"
-                    alt="icon-candidates"
+                    src="/assets/star-new-test.svg"
+                    alt="icon-star-new-test"
                     width={32}
                     height={32}
                     sizes="100vw"
                     className="flex h-auto"
                   />
-                  <p className="text-white">Popular</p>
+                  <p className="text-white">New test</p>
                 </div>
                 <div className={`${styles.cards_content}`}>
                   <div className={`${styles.cards_contentText}`}>
-                    <h3>Culture add</h3>
+                    <h3>Data Analytics in Google Cloud Platform (GCP)</h3>
                     <p>
-                      This culture add test assesses how a candidate’s values
-                      and behaviors align with your organization values and the
-                      behaviors that would make your ideal hire successful in a
-                      specific role, based on a customized survey you fill out.
+                      This Data Analytics in Google Cloud Platform (GCP) test
+                      evaluates a candidate's ability to use, manage, and
+                      optimize data analysis procedures on GCP, helping hire
+                      experts who can drive data-driven decisions for your...
                     </p>
                   </div>
                   <div className={`${styles.cards_contentDetails}`}>
@@ -311,23 +311,24 @@ const testLibrary = ({ contentfulEntries }) => {
               <div className={`${styles.exercise_cards}`}>
                 <div className={`${styles.cards_tags}`}>
                   <Image
-                    src="/assets/candidates.svg"
-                    alt="icon-candidates"
+                    src="/assets/star-new-test.svg"
+                    alt="icon-star-new-test"
                     width={32}
                     height={32}
                     sizes="100vw"
                     className="flex h-auto"
                   />
-                  <p className="text-white">Popular</p>
+                  <p className="text-white">New test</p>
                 </div>
                 <div className={`${styles.cards_content}`}>
                   <div className={`${styles.cards_contentText}`}>
-                    <h3>Culture add</h3>
+                    <h3>Multi-Task Learning (MTL)</h3>
                     <p>
-                      This culture add test assesses how a candidate’s values
-                      and behaviors align with your organization values and the
-                      behaviors that would make your ideal hire successful in a
-                      specific role, based on a customized survey you fill out.
+                      This Multi-Task Learning (MTL) test evaluates candidates'
+                      ability to optimize models across diverse tasks, driving
+                      innovation and efficiency. This screening test will help
+                      you hire MTL experts who can give you a competitive edge
+                      in data
                     </p>
                   </div>
                   <div className={`${styles.cards_contentDetails}`}>
@@ -355,23 +356,23 @@ const testLibrary = ({ contentfulEntries }) => {
               <div className={`${styles.exercise_cards}`}>
                 <div className={`${styles.cards_tags}`}>
                   <Image
-                    src="/assets/candidates.svg"
-                    alt="icon-candidates"
+                    src="/assets/star-new-test.svg"
+                    alt="icon-start-new-test"
                     width={32}
                     height={32}
                     sizes="100vw"
                     className="flex h-auto"
                   />
-                  <p className="text-white">Popular</p>
+                  <p className="text-white">New Test</p>
                 </div>
                 <div className={`${styles.cards_content}`}>
                   <div className={`${styles.cards_contentText}`}>
-                    <h3>Culture add</h3>
+                    <h3>Computer Vision</h3>
                     <p>
-                      This culture add test assesses how a candidate’s values
-                      and behaviors align with your organization values and the
-                      behaviors that would make your ideal hire successful in a
-                      specific role, based on a customized survey you fill out.
+                      This Computer Vision test evaluates candidates' abilities
+                      to apply visual data analysis skills, helping you hire
+                      experts who can drive innovation in diverse fields from
+                      healthcare to autonomous vehicles.
                     </p>
                   </div>
                   <div className={`${styles.cards_contentDetails}`}>
@@ -399,23 +400,24 @@ const testLibrary = ({ contentfulEntries }) => {
               <div className={`${styles.exercise_cards}`}>
                 <div className={`${styles.cards_tags}`}>
                   <Image
-                    src="/assets/candidates.svg"
-                    alt="icon-candidates"
+                    src="/assets/star-new-test.svg"
+                    alt="icon-star-new-test"
                     width={32}
                     height={32}
                     sizes="100vw"
                     className="flex h-auto"
                   />
-                  <p className="text-white">Popular</p>
+                  <p className="text-white">New test</p>
                 </div>
                 <div className={`${styles.cards_content}`}>
                   <div className={`${styles.cards_contentText}`}>
-                    <h3>Culture add</h3>
+                    <h3>Microsoft Access</h3>
                     <p>
-                      This culture add test assesses how a candidate’s values
-                      and behaviors align with your organization values and the
-                      behaviors that would make your ideal hire successful in a
-                      specific role, based on a customized survey you fill out.
+                      This MS Access screening test will help you hire
+                      professionals who can design front-end software products
+                      to integrate with your Microsoft Office environment. It
+                      evaluates knowledge of front-end/back-end database
+                      development using MS
                     </p>
                   </div>
                   <div className={`${styles.cards_contentDetails}`}>
@@ -443,23 +445,24 @@ const testLibrary = ({ contentfulEntries }) => {
               <div className={`${styles.exercise_cards}`}>
                 <div className={`${styles.cards_tags}`}>
                   <Image
-                    src="/assets/candidates.svg"
-                    alt="icon-candidates"
+                    src="/assets/star-new-test.svg"
+                    alt="icon-star-new-test"
                     width={32}
                     height={32}
                     sizes="100vw"
                     className="flex h-auto"
                   />
-                  <p className="text-white">Popular</p>
+                  <p className="text-white">New test</p>
                 </div>
                 <div className={`${styles.cards_content}`}>
                   <div className={`${styles.cards_contentText}`}>
-                    <h3>Culture add</h3>
+                    <h3>Basic Math Calculations</h3>
                     <p>
-                      This culture add test assesses how a candidate’s values
-                      and behaviors align with your organization values and the
-                      behaviors that would make your ideal hire successful in a
-                      specific role, based on a customized survey you fill out.
+                      This Basic Math Calculations test evaluates candidates’
+                      ability to solve addition, subtraction, multiplication,
+                      and division problems. This test will help you identify
+                      candidates who can solve calculations that use double- and
+                      triple
                     </p>
                   </div>
                   <div className={`${styles.cards_contentDetails}`}>
@@ -487,23 +490,23 @@ const testLibrary = ({ contentfulEntries }) => {
               <div className={`${styles.exercise_cards}`}>
                 <div className={`${styles.cards_tags}`}>
                   <Image
-                    src="/assets/candidates.svg"
-                    alt="icon-candidates"
+                    src="/assets/star-new-test.svg"
+                    alt="icon-star-new-test"
                     width={32}
                     height={32}
                     sizes="100vw"
                     className="flex h-auto"
                   />
-                  <p className="text-white">Popular</p>
+                  <p className="text-white">New Test</p>
                 </div>
                 <div className={`${styles.cards_content}`}>
                   <div className={`${styles.cards_contentText}`}>
-                    <h3>Culture add</h3>
+                    <h3>Japanese (intermediate/B1)</h3>
                     <p>
-                      This culture add test assesses how a candidate’s values
-                      and behaviors align with your organization values and the
-                      behaviors that would make your ideal hire successful in a
-                      specific role, based on a customized survey you fill out.
+                      The Japanese (intermediate/B1) test evaluates a
+                      candidate’s Japanese proficiency at the B1 level of the
+                      CEFR framework. This test will help you hire employees who
+                      can communicate in Japanese on subjects commonly...
                     </p>
                   </div>
                   <div className={`${styles.cards_contentDetails}`}>
@@ -529,25 +532,18 @@ const testLibrary = ({ contentfulEntries }) => {
                 </div>
               </div>
               <div className={`${styles.exercise_cards}`}>
-                <div className={`${styles.cards_tags}`}>
-                  <Image
-                    src="/assets/candidates.svg"
-                    alt="icon-candidates"
-                    width={32}
-                    height={32}
-                    sizes="100vw"
-                    className="flex h-auto"
-                  />
-                  <p className="text-white">Popular</p>
+                <div className={`${styles.cards_line}`}>
+                  <hr className={`${styles.line}`} />
                 </div>
                 <div className={`${styles.cards_content}`}>
                   <div className={`${styles.cards_contentText}`}>
-                    <h3>Culture add</h3>
+                    <h3>Apex (Salesforce)</h3>
                     <p>
-                      This culture add test assesses how a candidate’s values
-                      and behaviors align with your organization values and the
-                      behaviors that would make your ideal hire successful in a
-                      specific role, based on a customized survey you fill out.
+                      This Apex (Salesforce) test assesses candidates'
+                      proficiency in Apex fundamentals, the Salesforce data
+                      model, SOQL/SOSL queries, and Apex design patterns. This
+                      test will help you identify candidates skilled in
+                      Lightning Platform...
                     </p>
                   </div>
                   <div className={`${styles.cards_contentDetails}`}>
@@ -573,25 +569,18 @@ const testLibrary = ({ contentfulEntries }) => {
                 </div>
               </div>
               <div className={`${styles.exercise_cards}`}>
-                <div className={`${styles.cards_tags}`}>
-                  <Image
-                    src="/assets/candidates.svg"
-                    alt="icon-candidates"
-                    width={32}
-                    height={32}
-                    sizes="100vw"
-                    className="flex h-auto"
-                  />
-                  <p className="text-white">Popular</p>
+                <div className={`${styles.cards_line}`}>
+                  <hr className={`${styles.line}`} />
                 </div>
                 <div className={`${styles.cards_content}`}>
                   <div className={`${styles.cards_contentText}`}>
-                    <h3>Culture add</h3>
+                    <h3>Design Thinking</h3>
                     <p>
-                      This culture add test assesses how a candidate’s values
-                      and behaviors align with your organization values and the
-                      behaviors that would make your ideal hire successful in a
-                      specific role, based on a customized survey you fill out.
+                      This Design Thinking test evaluates candidates' skills in
+                      user-centric problem-solving, fostering innovation that
+                      enhances business competitiveness. It helps you hire
+                      design thinking experts who drive user satisfaction
+                      through...
                     </p>
                   </div>
                   <div className={`${styles.cards_contentDetails}`}>
@@ -617,25 +606,18 @@ const testLibrary = ({ contentfulEntries }) => {
                 </div>
               </div>
               <div className={`${styles.exercise_cards}`}>
-                <div className={`${styles.cards_tags}`}>
-                  <Image
-                    src="/assets/candidates.svg"
-                    alt="icon-candidates"
-                    width={32}
-                    height={32}
-                    sizes="100vw"
-                    className="flex h-auto"
-                  />
-                  <p className="text-white">Popular</p>
+                <div className={`${styles.cards_line}`}>
+                  <hr className={`${styles.line}`} />
                 </div>
                 <div className={`${styles.cards_content}`}>
                   <div className={`${styles.cards_contentText}`}>
-                    <h3>Culture add</h3>
+                    <h3>Shift Coordination</h3>
                     <p>
-                      This culture add test assesses how a candidate’s values
-                      and behaviors align with your organization values and the
-                      behaviors that would make your ideal hire successful in a
-                      specific role, based on a customized survey you fill out.
+                      This Shift Coordination test evaluates a candidate’s
+                      ability to organize schedules, communicate effectively,
+                      and manage tasks. This screening test will help you hire
+                      adept shift management experts who can help streamline
+                      operations and boost...
                     </p>
                   </div>
                   <div className={`${styles.cards_contentDetails}`}>
