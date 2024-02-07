@@ -9,27 +9,28 @@ import { IoCheckmark } from 'react-icons/io5';
 
 import { Layout } from '@/components';
 import { images } from '@/constants';
+import { fetchContentfulEntries } from '@/lib/contentful/client';
 
 import styles from './Pricing.module.scss';
 
-const Pricing = () => {
+export default function Pricing({ contentfulEntries }) {
+  console.log(contentfulEntries);
   const [showTable, setShowTable] = useState(false);
   const [selectedOption, setSelectedOption] = useState('31-50'); // Default option
   const [showOptionsStarter, setshowOptionsStarter] = useState(false);
   const [showOptionsPro, setshowOptionsPro] = useState(false);
   const [billingOption, setBillingOption] = useState('annual'); // Default billing option
 
-
   const handleOptionChangeStarter = (option) => {
     setSelectedOption(option);
     setshowOptionsStarter(false);
-  }
+  };
 
   const handleOptionChangePro = (option) => {
     setSelectedOption(option);
     setshowOptionsPro(false);
-  }
-  
+  };
+
   const handleBillingOptionChange = (option) => {
     if (selectedOption !== '1-15') {
       setBillingOption(option);
@@ -37,56 +38,61 @@ const Pricing = () => {
   };
 
   const renderPriceDetails = () => {
-    switch(selectedOption) {
+    switch (selectedOption) {
       case '1-15':
         return {
-          price : billingOption === 'annual' ? 75 : null, // Monthly price not available for 1-15 employees
+          price: billingOption === 'annual' ? 75 : null, // Monthly price not available for 1-15 employees
           savings: '',
           upfront: billingOption === 'annual' ? '$900 upfront' : 'monthly',
-          pro_price : billingOption === 'annual' ? 115 : null, // Monthly price not available for 1-15 employees
+          pro_price: billingOption === 'annual' ? 115 : null, // Monthly price not available for 1-15 employees
           pro_savings: '',
-          pro_upfront: billingOption === 'annual' ? '$1,380 upfront' : 'monthly'
-        }
+          pro_upfront:
+            billingOption === 'annual' ? '$1,380 upfront' : 'monthly',
+        };
       case '16-30':
         return {
-          price : billingOption === 'annual' ? 138 : 120,
+          price: billingOption === 'annual' ? 138 : 120,
           savings: 'SAVE $216',
           upfront: billingOption === 'annual' ? '$1440 upfront' : 'monthly',
-          pro_price : billingOption === 'annual' ? 165 : 190, // Monthly price not available for 1-15 employees
+          pro_price: billingOption === 'annual' ? 165 : 190, // Monthly price not available for 1-15 employees
           pro_savings: 'SAVE $300',
-          pro_upfront: billingOption === 'annual' ? '$1,980 upfront' : 'monthly'
-        }
+          pro_upfront:
+            billingOption === 'annual' ? '$1,980 upfront' : 'monthly',
+        };
       case '31-50':
         return {
-          price : billingOption === 'annual' ? 240 : 208,
+          price: billingOption === 'annual' ? 240 : 208,
           savings: 'SAVE $384',
-          upfront: billingOption === 'annual' ? '$2496 upfront': 'monthly',
-          pro_price : billingOption === 'annual' ? 310 : 360, // Monthly price not available for 1-15 employees
+          upfront: billingOption === 'annual' ? '$2496 upfront' : 'monthly',
+          pro_price: billingOption === 'annual' ? 310 : 360, // Monthly price not available for 1-15 employees
           pro_savings: 'SAVE $600',
-          pro_upfront: billingOption === 'annual' ? '$3,720 upfront' : 'monthly'
-        }
+          pro_upfront:
+            billingOption === 'annual' ? '$3,720 upfront' : 'monthly',
+        };
       case '51-100':
         return {
-          price : billingOption === 'annual' ? 460 : 400,
-          savings:'SAVE $720',
+          price: billingOption === 'annual' ? 460 : 400,
+          savings: 'SAVE $720',
           upfront: billingOption === 'annual' ? '$4800 upfront' : 'monthly',
-          pro_price : billingOption === 'annual' ? 555 : 640, // Monthly price not available for 1-15 employees
+          pro_price: billingOption === 'annual' ? 555 : 640, // Monthly price not available for 1-15 employees
           pro_savings: 'SAVE $1,020',
-          pro_upfront: billingOption === 'annual' ? '$6,600 upfront' : 'monthly'
-        }
+          pro_upfront:
+            billingOption === 'annual' ? '$6,600 upfront' : 'monthly',
+        };
       default:
         return {
-          price : billingOption === 'annual' ? 700 : null,
-          savings:'SAVE $900',
+          price: billingOption === 'annual' ? 700 : null,
+          savings: 'SAVE $900',
           upfront: billingOption === 'annual' ? '$900 upfront' : 'monthly',
-          pro_price : billingOption === 'annual' ? 115 : null, // Monthly price not available for 1-15 employees
+          pro_price: billingOption === 'annual' ? 115 : null, // Monthly price not available for 1-15 employees
           pro_savings: '',
-          pro_upfront: billingOption === 'annual' ? '$900 upfront' : 'monthly'
-        }
+          pro_upfront: billingOption === 'annual' ? '$900 upfront' : 'monthly',
+        };
     }
-  }
+  };
 
-  const { price, savings, upfront, pro_price,  pro_savings, pro_upfront, } = renderPriceDetails();
+  const { price, savings, upfront, pro_price, pro_savings, pro_upfront } =
+    renderPriceDetails();
 
   const handleButtonClick = () => {
     setShowTable(!showTable);
@@ -98,7 +104,9 @@ const Pricing = () => {
         <div className={`container mx-auto ${styles.container}`}>
           <div className={` ${styles.banner_blogContainer}`}>
             <div className={styles.banner_blogContentText}>
-              <h1 className="sm:heading-1 heading-2">Hire Without Limits</h1>
+              <h1 className="sm:heading-1 heading-2">
+                {contentfulEntries.topBanner.fields.headline}
+              </h1>
 
               {/* Pricing Cards */}
               <div className={`${styles.pricingCards_wrapper}`}>
@@ -195,7 +203,12 @@ const Pricing = () => {
                   </div>
                   <div className={`${styles.pricing_cardsCheck}`}>
                     <div className={`${styles.select_employees}`}>
-                      <button type="button" onClick={() => setshowOptionsStarter(!showOptionsStarter)}>
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setshowOptionsStarter(!showOptionsStarter)
+                        }
+                      >
                         {`${selectedOption} employees`}
                         <span>
                           <MdOutlineKeyboardArrowDown />
@@ -203,27 +216,55 @@ const Pricing = () => {
                       </button>
                       {showOptionsStarter && (
                         <div className={`${styles.select_options}`}>
-                          <div onClick={() => handleOptionChangeStarter('1-15')} className={styles.option_selected}>1-15 employees</div>
-                          <div onClick={() => handleOptionChangeStarter('16-30')} className={styles.option_selected}>16-30 employees</div>
-                          <div onClick={() => handleOptionChangeStarter('31-50')} className={styles.option_selected}>31-50 employees</div>
-                          <div onClick={() => handleOptionChangeStarter('51-100')} className={styles.option_selected}>51-100 employees</div>
+                          <div
+                            onClick={() => handleOptionChangeStarter('1-15')}
+                            className={styles.option_selected}
+                          >
+                            1-15 employees
+                          </div>
+                          <div
+                            onClick={() => handleOptionChangeStarter('16-30')}
+                            className={styles.option_selected}
+                          >
+                            16-30 employees
+                          </div>
+                          <div
+                            onClick={() => handleOptionChangeStarter('31-50')}
+                            className={styles.option_selected}
+                          >
+                            31-50 employees
+                          </div>
+                          <div
+                            onClick={() => handleOptionChangeStarter('51-100')}
+                            className={styles.option_selected}
+                          >
+                            51-100 employees
+                          </div>
                         </div>
                       )}
                     </div>
                     <div className={`${styles.select_option}`}>
                       <p
-                        className={`${styles.annual} ${billingOption === 'annual' && styles.selected}`}
+                        className={`${styles.annual} ${
+                          billingOption === 'annual' && styles.selected
+                        }`}
                         onClick={() => handleBillingOptionChange('annual')}
                       >
                         Annual<span>{savings}</span>
                       </p>
                       <p
-                        className={`${styles.monthly} ${billingOption === 'monthly' && styles.selected}`}
+                        className={`${styles.monthly} ${
+                          billingOption === 'monthly' && styles.selected
+                        }`}
                         onClick={() =>
-                          selectedOption !== '1-15' && handleBillingOptionChange('monthly')
+                          selectedOption !== '1-15' &&
+                          handleBillingOptionChange('monthly')
                         }
                         style={{
-                          cursor: selectedOption === '1-15' ? 'not-allowed' : 'pointer',
+                          cursor:
+                            selectedOption === '1-15'
+                              ? 'not-allowed'
+                              : 'pointer',
                         }}
                       >
                         Monthly
@@ -263,7 +304,10 @@ const Pricing = () => {
                     className={`${styles.pricing_cardsCheck} ${styles.card_white}`}
                   >
                     <div className={`${styles.select_employees}`}>
-                      <button type="button" onClick={() => setshowOptionsPro(!showOptionsPro)}>
+                      <button
+                        type="button"
+                        onClick={() => setshowOptionsPro(!showOptionsPro)}
+                      >
                         {`${selectedOption} employees`}
                         <span>
                           <MdOutlineKeyboardArrowDown />
@@ -271,27 +315,55 @@ const Pricing = () => {
                       </button>
                       {showOptionsPro && (
                         <div className={`${styles.select_options}`}>
-                          <div onClick={() => handleOptionChangePro('1-15')} className={styles.option_selected}>1-15 employees</div>
-                          <div onClick={() => handleOptionChangePro('16-30')} className={styles.option_selected}>16-30 employees</div>
-                          <div onClick={() => handleOptionChangePro('31-50')} className={styles.option_selected}>31-50 employees</div>
-                          <div onClick={() => handleOptionChangePro('51-100')} className={styles.option_selected}>51-100 employees</div>
+                          <div
+                            onClick={() => handleOptionChangePro('1-15')}
+                            className={styles.option_selected}
+                          >
+                            1-15 employees
+                          </div>
+                          <div
+                            onClick={() => handleOptionChangePro('16-30')}
+                            className={styles.option_selected}
+                          >
+                            16-30 employees
+                          </div>
+                          <div
+                            onClick={() => handleOptionChangePro('31-50')}
+                            className={styles.option_selected}
+                          >
+                            31-50 employees
+                          </div>
+                          <div
+                            onClick={() => handleOptionChangePro('51-100')}
+                            className={styles.option_selected}
+                          >
+                            51-100 employees
+                          </div>
                         </div>
                       )}
                     </div>
                     <div className={`${styles.select_option}`}>
                       <p
-                        className={`${styles.annual} ${billingOption === 'annual' && styles.selected}`}
+                        className={`${styles.annual} ${
+                          billingOption === 'annual' && styles.selected
+                        }`}
                         onClick={() => handleBillingOptionChange('annual')}
                       >
                         Annual<span>{pro_savings}</span>
                       </p>
                       <p
-                        className={`${styles.monthly} ${billingOption === 'monthly' && styles.selected}`}
+                        className={`${styles.monthly} ${
+                          billingOption === 'monthly' && styles.selected
+                        }`}
                         onClick={() =>
-                          selectedOption !== '1-15' && handleBillingOptionChange('monthly')
+                          selectedOption !== '1-15' &&
+                          handleBillingOptionChange('monthly')
                         }
                         style={{
-                          cursor: selectedOption === '1-15' ? 'not-allowed' : 'pointer',
+                          cursor:
+                            selectedOption === '1-15'
+                              ? 'not-allowed'
+                              : 'pointer',
                         }}
                       >
                         Monthly
@@ -321,11 +393,32 @@ const Pricing = () => {
                 </div>
               </div>
               <p>
-                <b>Fair usage statement:</b>  Unlimited evaluation for internal
-                or direct recruitment only. <Link href="/">Contact us</Link> for
-                recruiting agencies or sourcing platforms pricing.
+                <b>
+                  {
+                    contentfulEntries.topBanner.fields.bodyText.content[0]
+                      .content[0].value
+                  }
+                </b>
+                {
+                  contentfulEntries.topBanner.fields.bodyText.content[0]
+                    .content[1].value
+                }
+                <Link
+                  href={
+                    contentfulEntries.topBanner.fields.bodyText.content[0]
+                      .content[2].data.uri
+                  }
+                >
+                  {
+                    contentfulEntries.topBanner.fields.bodyText.content[0]
+                      .content[2].content[0].value
+                  }
+                </Link>
+                {
+                  contentfulEntries.topBanner.fields.bodyText.content[0]
+                    .content[3].value
+                }
               </p>
-
 
               {/* Pricing Details */}
               <div className={`${styles.table_details}`}>
@@ -1103,7 +1196,7 @@ const Pricing = () => {
           <div className="relative flex flex-col items-center justify-between py-10 sm:static lg:flex-row">
             <div className="relative ml-8 flex w-full justify-center md:w-full lg:w-full lg:max-w-lg">
               <Image
-                src={images.HeroImageMiddleBanner_pricing}
+                src={`https:${contentfulEntries.topSection[0].fields.image.fields.file.url}`}
                 alt="Hero Image"
                 width={552}
                 height={457}
@@ -1118,15 +1211,22 @@ const Pricing = () => {
                 <RiDoubleQuotesL />
               </h1>
               <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center font-light lg:text-start">
-                We receive 100’s of applications each year and struggled to
-                select the best ones efficiently and without bias. With
-                TestFounder we now automate our candidate screening based on job
-                skills and fit. It saves us so much time and good candidates
-                love to showcase their talent!{' '}
+                {
+                  contentfulEntries.topSection[0].fields.bodyText.content[0]
+                    .content[0].value
+                }
               </p>
               <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center font-light lg:text-start">
-                <b>Esther Howard</b>, Head of Global Recruiting, AKG
-                International{' '}
+                <b>
+                  {
+                    contentfulEntries.topSection[0].fields.bodyText.content[1]
+                      .content[0].value
+                  }
+                </b>
+                {
+                  contentfulEntries.topSection[0].fields.bodyText.content[1]
+                    .content[1].value
+                }
               </p>
             </div>
           </div>
@@ -1137,108 +1237,41 @@ const Pricing = () => {
       <section className={`${styles.section}`}>
         <div className={`container mx-auto`}>
           <div className={`${styles.content_wrapper}`}>
-            <h2>Frequently Asked Questions</h2>
+            <h2>{contentfulEntries.pageContent[0].fields.headline}</h2>
             <div className={`${styles.topicsIcon_wrapper}`}>
-              <div className={`${styles.topic_single}`}>
-                <Image
-                  src="/assets/faq_grey.svg"
-                  width={60}
-                  height={60}
-                  alt="Icon Topics FAQ"
-                />
-                <p>How do I get started?</p>
-              </div>
-              <div className={`${styles.topic_single}`}>
-                <Image
-                  src="/assets/faq_grey.svg"
-                  width={60}
-                  height={60}
-                  alt="Icon Topics FAQ"
-                />
-                <p>What payment methods do you accept?</p>
-              </div>
-              <div className={`${styles.topic_single}`}>
-                <Image
-                  src="/assets/faq_grey.svg"
-                  width={60}
-                  height={60}
-                  alt="Icon Topics FAQ"
-                />
-                <p>How does Testfounder’s pricing work?</p>
-              </div>
-              <div className={`${styles.topic_single}`}>
-                <Image
-                  src="/assets/faq_grey.svg"
-                  width={60}
-                  height={60}
-                  alt="Icon Topics FAQ"
-                />
-                <p>
-                  What’s then difference between an assessment and last a test?
-                </p>
-              </div>
-              <div className={`${styles.topic_single}`}>
-                <Image
-                  src="/assets/faq_grey.svg"
-                  width={60}
-                  height={60}
-                  alt="Icon Topics FAQ"
-                />
-                <p>What are caniddates?</p>
-              </div>
-              <div className={`${styles.topic_single}`}>
-                <Image
-                  src="/assets/faq_grey.svg"
-                  width={60}
-                  height={60}
-                  alt="Icon Topics FAQ"
-                />
-                <p>Is TestFounder easy to use?</p>
-              </div>
-              <div className={`${styles.topic_single}`}>
-                <Image
-                  src="/assets/faq_grey.svg"
-                  width={60}
-                  height={60}
-                  alt="Icon Topics FAQ"
-                />
-                <p>
-                  Which Applicant Track System can integrate with TesFounder?
-                </p>
-              </div>
-              <div className={`${styles.topic_single}`}>
-                <Image
-                  src="/assets/faq_grey.svg"
-                  width={60}
-                  height={60}
-                  alt="Icon Topics FAQ"
-                />
-                <p>What type of support do you offer?</p>
-              </div>
-              <div className={`${styles.topic_single}`}>
-                <Image
-                  src="/assets/faq_grey.svg"
-                  width={60}
-                  height={60}
-                  alt="Icon Topics FAQ"
-                />
-                <p>How does TestFounder protect my data?</p>
-              </div>
-              <div className={`${styles.topic_single}`}>
-                <Image
-                  src="/assets/faq_grey.svg"
-                  width={60}
-                  height={60}
-                  alt="Icon Topics FAQ"
-                />
-                <p>I have more questions.</p>
-              </div>
+              {contentfulEntries.faq.map((faq, index) => (
+                <div className={`${styles.topic_single}`} key={index}>
+                  <Image
+                    src={`https:${faq.fields.icon.fields.file.url}`}
+                    width={60}
+                    height={60}
+                    alt="Icon Topics FAQ"
+                  />
+                  <p>{faq.fields.headline}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
     </Layout>
   );
-};
+}
 
-export default Pricing;
+export async function getStaticProps() {
+  const contentfulEntries = await fetchContentfulEntries('landingPage');
+
+  // Check if contentfulEntries is an array before filtering
+  const filteredEntries = Array.isArray(contentfulEntries.items)
+    ? contentfulEntries.items.find((entry) => {
+        console.log(entry.fields.internalName);
+        return entry.fields.internalName === 'Pricing';
+      }).fields // Return only the .fields property
+    : {};
+
+  return {
+    props: {
+      contentfulEntries: filteredEntries,
+    },
+  };
+}
