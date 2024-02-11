@@ -20,6 +20,7 @@ export default function Pricing({ contentfulEntries }) {
   const [showOptionsStarter, setshowOptionsStarter] = useState(false);
   const [showOptionsPro, setshowOptionsPro] = useState(false);
   const [billingOption, setBillingOption] = useState('annual'); // Default billing option
+  const [showQuestion, setShowQuestion] = useState(false);
 
   const handleOptionChangeStarter = (option) => {
     setSelectedOption(option);
@@ -1240,14 +1241,27 @@ export default function Pricing({ contentfulEntries }) {
             <h2>{contentfulEntries.pageContent[0].fields.headline}</h2>
             <div className={`${styles.topicsIcon_wrapper}`}>
               {contentfulEntries.faq.map((faq, index) => (
-                <div className={`${styles.topic_single}`} key={index}>
+                <div
+                  className={`${styles.topic_single}`}
+                  key={index}
+                  onClick={() => setShowQuestion(index)}
+                >
                   <Image
                     src={`https:${faq.fields.icon.fields.file.url}`}
                     width={60}
                     height={60}
                     alt="Icon Topics FAQ"
                   />
-                  <p>{faq.fields.headline}</p>
+                  <div className="flex flex-col">
+                    <p
+                      className={`${
+                        showQuestion === index ? 'mb-1 font-bold' : ''
+                      }`}
+                    >
+                      {faq.fields.headline}
+                    </p>
+                    {showQuestion === index && <p>{faq.fields.question}</p>}
+                  </div>
                 </div>
               ))}
             </div>
