@@ -120,7 +120,7 @@ export default function Terms({ contentfulEntries }) {
             }
           </p>
           {contentfulEntries.pageContent[0].fields.bodyText.content
-            .slice(2, 5)
+            .slice(2, 6)
             .map((data, index) => (
               <p className="md:caption-regular-2 caption-regular-3" key={index}>
                 {data.content[0].value}
@@ -293,6 +293,66 @@ export default function Terms({ contentfulEntries }) {
           </h3>
           <div className="my-6 space-y-4">
             {contentfulEntries.pageContent[13].fields.bodyText.content.map(
+              (data, index) => (
+                <p
+                  className="md:caption-regular-2 caption-regular-3"
+                  key={index}
+                >
+                  {data.content[0].value}
+                </p>
+              ),
+            )}
+          </div>
+          <h3 className="heading-3">
+            {contentfulEntries.pageContent[14].fields.headline}
+          </h3>
+          <div className="my-6 space-y-4">
+            {contentfulEntries.pageContent[14].fields.bodyText.content.map(
+              (data, index) => (
+                <p
+                  className="md:caption-regular-2 caption-regular-3"
+                  key={index}
+                >
+                  {data.content[0].value}
+                </p>
+              ),
+            )}
+          </div>
+          <h3 className="heading-3">
+            {contentfulEntries.pageContent[15].fields.headline}
+          </h3>
+          <div className="my-6 space-y-4">
+            {contentfulEntries.pageContent[15].fields.bodyText.content.map(
+              (data, index) => (
+                <p
+                  className="md:caption-regular-2 caption-regular-3"
+                  key={index}
+                >
+                  {data.content[0].value}
+                </p>
+              ),
+            )}
+          </div>
+          <h3 className="heading-3">
+            {contentfulEntries.pageContent[16].fields.headline}
+          </h3>
+          <div className="my-6 space-y-4">
+            {contentfulEntries.pageContent[16].fields.bodyText.content.map(
+              (data, index) => (
+                <p
+                  className="md:caption-regular-2 caption-regular-3"
+                  key={index}
+                >
+                  {data.content[0].value}
+                </p>
+              ),
+            )}
+          </div>
+          <h3 className="heading-3">
+            {contentfulEntries.pageContent[17].fields.headline}
+          </h3>
+          <div className="my-6 space-y-4">
+            {contentfulEntries.pageContent[17].fields.bodyText.content.map(
               (data, index) => (
                 <p
                   className="md:caption-regular-2 caption-regular-3"
