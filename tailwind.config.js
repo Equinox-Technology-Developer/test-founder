@@ -60,7 +60,7 @@ module.exports = {
         'grayscale-100': '#F9F9F9',
         'grayscale-200': '#EAEAEA',
         'grayscale-300': '#C1D1DA',
-        'star' : '#FFCA3A'
+        star: '#FFCA3A',
       },
     },
   },

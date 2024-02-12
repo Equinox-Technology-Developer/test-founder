@@ -115,7 +115,7 @@ export default function Home({ contentfulEntries }) {
                 <Image
                   src={fullImageUrl}
                   alt="Hero Image"
-                  width={559}
+                  width={700}
                   height={638}
                   sizes="100vw"
                   className=" img z-10 mt-20 flex h-auto w-[80%] md:w-[60%] lg:w-full"
