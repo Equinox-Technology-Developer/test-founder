@@ -7,7 +7,6 @@ import { IoCheckmark } from 'react-icons/io5';
 import { fetchContentfulEntries } from '@/lib/contentful/client';
 
 export default function ServiceLevelAgreement({ contentfulEntries }) {
-  console.log(contentfulEntries);
   const router = useRouter();
   return (
     <Layout pageTitle="Terms of use">

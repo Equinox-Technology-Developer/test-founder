@@ -6,7 +6,6 @@ import { useRouter } from 'next/router';
 import { fetchContentfulEntries } from '@/lib/contentful/client';
 
 export default function SecurityMeasurest({ contentfulEntries }) {
-  console.log(contentfulEntries);
   const router = useRouter();
   return (
     <Layout pageTitle="Terms of use">
