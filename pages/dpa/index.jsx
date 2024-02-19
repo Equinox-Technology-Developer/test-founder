@@ -139,8 +139,191 @@ export default function Dpa({ contentfulEntries }) {
             ),
           )}
         </div>
+        <div className="my-4 space-y-6">
+          <h3 className="heading-3">
+            {contentfulEntries.pageContent[3].fields.headline}
+          </h3>
+          {contentfulEntries.pageContent[3].fields.bodyText.content.map(
+            (data, index) => (
+              <p className="md:caption-regular-2 caption-regular-3" key={index}>
+                {data.content[0].value}
+              </p>
+            ),
+          )}
+        </div>
+        <div className="my-4 space-y-6">
+          <h3 className="heading-3">
+            {contentfulEntries.pageContent[4].fields.headline}
+          </h3>
+          {contentfulEntries.pageContent[4].fields.bodyText.content.map(
+            (data, index) => (
+              <p className="md:caption-regular-2 caption-regular-3" key={index}>
+                {data.content[0].value}
+              </p>
+            ),
+          )}
+          <ul className="list-inside list-disc">
+            {contentfulEntries.pageContent[4].fields.bodyText.content[2].content.map(
+              (data, index) => (
+                <li
+                  className="md:caption-regular-2 caption-regular-3 my-4 "
+                  key={index}
+                >
+                  {data.content[0].content[0].value}
+                </li>
+              ),
+            )}
+          </ul>
+        </div>
+        <div className="my-4 space-y-6">
+          <h3 className="heading-3">
+            {contentfulEntries.pageContent[5].fields.headline}
+          </h3>
+          {contentfulEntries.pageContent[5].fields.bodyText.content[0].content.map(
+            (data, index) => (
+              <li
+                className="md:caption-regular-2 caption-regular-3 my-4 "
+                key={index}
+              >
+                {data.content[0].content[0].value}
+              </li>
+            ),
+          )}
+        </div>
+        <div className="my-4 space-y-6">
+          <h3 className="heading-3">
+            {contentfulEntries.pageContent[6].fields.headline}
+          </h3>
+          {contentfulEntries.pageContent[6].fields.bodyText.content.map(
+            (data, index) => (
+              <p className="md:caption-regular-2 caption-regular-3" key={index}>
+                {data.content[0].value}
+              </p>
+            ),
+          )}
+        </div>
+        <div className="my-4 space-y-6">
+          <h3 className="heading-3">
+            {contentfulEntries.pageContent[7].fields.headline}
+          </h3>
+          {contentfulEntries.pageContent[7].fields.bodyText.content.map(
+            (data, index) => (
+              <p className="md:caption-regular-2 caption-regular-3" key={index}>
+                {data.content[0].value}
+              </p>
+            ),
+          )}
+        </div>
+        <div className="my-4 space-y-6">
+          <h3 className="heading-3">
+            {contentfulEntries.pageContent[8].fields.headline}
+          </h3>
+          {contentfulEntries.pageContent[8].fields.bodyText.content.map(
+            (data, index) => (
+              <p className="md:caption-regular-2 caption-regular-3" key={index}>
+                {data.content[0].value}
+              </p>
+            ),
+          )}
+          <div className="my-4 space-y-6">
+            <h3 className="heading-3">
+              {contentfulEntries.pageContent[9].fields.headline}
+            </h3>
+            {contentfulEntries.pageContent[9].fields.bodyText.content.map(
+              (data, index) => (
+                <p
+                  className="md:caption-regular-2 caption-regular-3"
+                  key={index}
+                >
+                  {data.content[0].value}
+                </p>
+              ),
+            )}
+          </div>
+          <div className="my-4 space-y-6">
+            <h3 className="heading-3">
+              {contentfulEntries.pageContent[10].fields.headline}
+            </h3>
+            {contentfulEntries.pageContent[10].fields.bodyText.content.map(
+              (data, index) => (
+                <p
+                  className="md:caption-regular-2 caption-regular-3"
+                  key={index}
+                >
+                  {data.content[0].value}
+                </p>
+              ),
+            )}
+          </div>
+          <table className="w-fit border-collapse">
+            <tbody>
+              <tr>
+                {contentfulEntries.pageContent[10].fields.bodyText.content[2].content[0].content.map(
+                  (data, index) => (
+                    <th className="border border-black" key={index}>
+                      {data.content[0].content[0].value}
+                    </th>
+                  ),
+                )}
+              </tr>
+              <tr>
+                {contentfulEntries.pageContent[10].fields.bodyText.content[2].content[1].content.map(
+                  (data, index) => (
+                    <td className="border border-black" key={index}>
+                      {data.content[0].content[0].value}
+                    </td>
+                  ),
+                )}
+              </tr>
+              <tr>
+                {contentfulEntries.pageContent[10].fields.bodyText.content[2].content[2].content.map(
+                  (data, index) => (
+                    <td className="border border-black" key={index}>
+                      {data.content[0].content[0].value}
+                    </td>
+                  ),
+                )}
+              </tr>
+              <tr>
+                {contentfulEntries.pageContent[10].fields.bodyText.content[2].content[3].content.map(
+                  (data, index) => (
+                    <td className="border border-black" key={index}>
+                      {data.content[0].content[0].value}
+                    </td>
+                  ),
+                )}
+              </tr>
+              <tr>
+                {contentfulEntries.pageContent[10].fields.bodyText.content[2].content[4].content.map(
+                  (data, index) => (
+                    <td className="border border-black" key={index}>
+                      {data.content[0].content[0].value}
+                    </td>
+                  ),
+                )}
+              </tr>
+              <tr>
+                {contentfulEntries.pageContent[10].fields.bodyText.content[2].content[5].content.map(
+                  (data, index) => (
+                    <td className="border border-black" key={index}>
+                      {data.content[0].content[0].value}
+                    </td>
+                  ),
+                )}
+              </tr>
+              <tr>
+                {contentfulEntries.pageContent[10].fields.bodyText.content[2].content[6].content.map(
+                  (data, index) => (
+                    <td className="border border-black" key={index}>
+                      {data.content[0].content[0].value}
+                    </td>
+                  ),
+                )}
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </main>
-      {/* pageContent[6].fields.bodyText.content[1].content[1].content[0].content[0].value */}
     </Layout>
   );
 }
