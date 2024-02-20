@@ -1246,7 +1246,6 @@ export default function TalentAssessment({ contentfulEntries }) {
 
 export async function getStaticProps() {
   const contentfulEntries = await fetchContentfulEntries('landingPage');
-  console.log(contentfulEntries);
 
   // Check if contentfulEntries is an array before filtering
   const filteredEntries = Array.isArray(contentfulEntries.items)

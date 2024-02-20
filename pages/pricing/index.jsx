@@ -14,7 +14,6 @@ import { fetchContentfulEntries } from '@/lib/contentful/client';
 import styles from './Pricing.module.scss';
 
 export default function Pricing({ contentfulEntries }) {
-  console.log(contentfulEntries);
   const [showTable, setShowTable] = useState(false);
   const [selectedOption, setSelectedOption] = useState('31-50'); // Default option
   const [showOptionsStarter, setshowOptionsStarter] = useState(false);

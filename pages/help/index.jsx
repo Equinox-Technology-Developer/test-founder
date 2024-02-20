@@ -6,7 +6,6 @@ import Image from 'next/image';
 import { fetchContentfulEntries } from '@/lib/contentful/client';
 
 export default function Help({ contentfulEntries }) {
-  console.log(contentfulEntries);
   return (
     <Layout pageTitle="For Candidates">
       <section className="bg-[#F9F9F9] bg-blur bg-right bg-no-repeat pt-0">
@@ -277,7 +276,6 @@ export default function Help({ contentfulEntries }) {
 
 export async function getStaticProps() {
   const contentfulEntries = await fetchContentfulEntries('landingPage');
-  console.log(contentfulEntries);
 
   // Check if contentfulEntries is an array before filtering
   const filteredEntries = Array.isArray(contentfulEntries.items)
