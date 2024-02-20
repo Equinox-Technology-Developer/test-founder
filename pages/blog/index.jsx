@@ -14,7 +14,9 @@ export default function Blog({ contentfulEntries }) {
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 6;
 
-  const categories = [...new Set(contentfulEntries.blogPost.map((post) => post.fields.category))];
+  const categories = [
+    ...new Set(contentfulEntries.blogPost.map((post) => post.fields.category)),
+  ];
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
@@ -28,8 +30,9 @@ export default function Blog({ contentfulEntries }) {
 
   const filteredPosts = contentfulEntries.blogPost.filter(
     (post) =>
-      (selectedCategory === 'All' || post.fields.category === selectedCategory) &&
-      post.fields.title.toLowerCase().includes(searchTerm.toLowerCase())
+      (selectedCategory === 'All' ||
+        post.fields.category === selectedCategory) &&
+      post.fields.title.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   const indexOfLastPost = currentPage * postsPerPage;
@@ -84,7 +87,11 @@ export default function Blog({ contentfulEntries }) {
             {['All', ...categories].map((category) => (
               <p
                 key={category}
-                className={selectedCategory === category ? 'active' : ''}
+                className={
+                  selectedCategory === category
+                    ? 'caption-semibold-2 text-primary-500'
+                    : 'caption-semibold-2'
+                }
                 onClick={() => handleCategoryClick(category)}
               >
                 {category}
@@ -144,23 +151,25 @@ export default function Blog({ contentfulEntries }) {
           </div>
 
           {/* Pagination buttons */}
-          <div className="mt-4 flex justify-center">
-            {Array.from({
-              length: Math.ceil(filteredPosts.length / postsPerPage),
-            }).map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentPage(index + 1)}
-                className={`mx-1 rounded-full px-4 py-2 ${
-                  currentPage === index + 1
-                    ? 'bg-gray-500 text-white'
-                    : 'bg-gray-200 text-gray-800'
-                }`}
-              >
-                {index + 1}
-              </button>
-            ))}
-          </div>
+          {filteredPosts.length > postsPerPage && (
+            <div className="mt-4 flex justify-center">
+              {Array.from({
+                length: Math.ceil(filteredPosts.length / postsPerPage),
+              }).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentPage(index + 1)}
+                  className={`mx-1 rounded-full px-4 py-2 ${
+                    currentPage === index + 1
+                      ? 'bg-gray-500 text-white'
+                      : 'bg-gray-200 text-gray-800'
+                  }`}
+                >
+                  {index + 1}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
@@ -216,7 +225,9 @@ export async function getStaticProps() {
 
     if (contentType === 'landingPage') {
       const { items } = await fetchContentfulEntries(contentType);
-      const specificEntry = items.find((entry) => entry.fields.internalName === landingPageInternalName);
+      const specificEntry = items.find(
+        (entry) => entry.fields.internalName === landingPageInternalName,
+      );
       fetchedEntries = specificEntry ? [specificEntry] : [];
     } else {
       const { items } = await fetchContentfulEntries(contentType);
@@ -226,7 +237,7 @@ export async function getStaticProps() {
     entries[contentType] = fetchedEntries;
   }
 
-  Object.keys(entries).forEach(contentType => {
+  Object.keys(entries).forEach((contentType) => {
     if (entries[contentType]) {
       console.log(`Found ${contentType} entries:`, entries[contentType]);
     } else {
