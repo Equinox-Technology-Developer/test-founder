@@ -190,9 +190,9 @@ const Navbar = (props) => {
                   Submit a request
                 </button>
               </Link>
-              <Link href="/signup">
+              <Link href="/login-candidate">
                 <button className="2xl:btn-normal lg:btn-medium btn-medium ml-4">
-                  Signup
+                  Sign in
                 </button>
               </Link>
             </div>
