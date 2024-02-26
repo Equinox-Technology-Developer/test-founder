@@ -137,7 +137,7 @@ const Login = ({}) => {
               <input
                 type="submit"
                 value="Login"
-                className="caption-semibold-1 h-[48px] w-full rounded-[40px] bg-primary-500 px-[20px] py-[8px] text-center text-shade-0"
+                className="caption-semibold-1 h-[48px] w-full cursor-pointer rounded-[40px] bg-primary-500 px-[20px] py-[8px] text-center text-shade-0"
               />
             </form>
             <p className="caption-regular-3">
