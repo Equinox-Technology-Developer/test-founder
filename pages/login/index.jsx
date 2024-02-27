@@ -3,12 +3,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import { images } from '../../constants';
-import { FcGoogle } from 'react-icons/fc';
+
 import { LuEye, LuEyeOff } from 'react-icons/lu';
+import { FcGoogle } from 'react-icons/fc';
 import { FiAlertTriangle } from 'react-icons/fi';
 
 import { useForm } from 'react-hook-form';
-
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
@@ -19,7 +19,7 @@ const Login = ({}) => {
 
   const schema = yup
     .object({
-      email: yup.string().required(),
+      email: yup.string().email().required(),
       password: yup.string().required(),
     })
     .required();
@@ -90,7 +90,10 @@ const Login = ({}) => {
                   <div className="mt-2 flex items-center gap-[7px]">
                     <FiAlertTriangle className="text-error-500" />
                     <span className="caption-regular-4 text-error-500">
-                      This field is required
+                      {errors.email?.message &&
+                        errors.email.message.replace(/^\w/, (c) =>
+                          c.toUpperCase(),
+                        )}
                     </span>
                   </div>
                 )}
@@ -109,7 +112,10 @@ const Login = ({}) => {
                   <div className="mt-2 flex items-center gap-[7px]">
                     <FiAlertTriangle className="text-error-500" />
                     <span className="caption-regular-4 text-error-500">
-                      This field is required
+                      {errors.password?.message &&
+                        errors.password.message.replace(/^\w/, (c) =>
+                          c.toUpperCase(),
+                        )}
                     </span>
                   </div>
                 )}
