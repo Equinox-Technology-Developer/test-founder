@@ -81,7 +81,7 @@ export default function Blog({ contentfulEntries }) {
       {/* Blog Section */}
       <div className={styles.blog_container}>
         <div
-          className={`container mx-auto md:px-[40px] md:py-8 lg:px-[64px] lg:py-[60px]`}
+          className={`container mx-auto px-4 md:px-[40px] md:py-8 lg:px-[64px] lg:py-[60px]`}
         >
           <div className={styles.blog_categoriesHeader}>
             {['All', ...categories].map((category) => (
@@ -106,25 +106,16 @@ export default function Blog({ contentfulEntries }) {
                 className="text-inherit"
                 key={index}
               >
-                <div className="group max-w-[401px] space-y-4 rounded-[20px] bg-white p-4 hover:bg-white/80 md:max-w-full lg:max-w-[401px]">
-                  <div className="group max-w-[401px] space-y-4 rounded-[20px] bg-white p-4 hover:bg-white/80 md:max-w-full lg:max-w-[401px]">
-                    <Image
-                      src={`https:${blog.fields.featuredImage.fields.file.url}`}
-                      alt="img-card-blog"
-                      width={369}
-                      height={226}
-                      sizes="100vw"
-                      className="w-full rounded-[10px] object-cover"
-                    />
-                    <p className="caption-semibold-3">{blog.fields.category}</p>
-                    <div className="space-y-1">
-                      <h3 className="caption-semibold-1 group-hover:underline">
-                        {blog.fields.title}
-                      </h3>
-                      <p className="caption-light-3 max-h-[84px] overflow-hidden">
-                        {blog.fields.excerpt}...
-                      </p>
-                    </div>
+                <div className="group min-h-[520px] max-w-[401px] space-y-4 rounded-[20px] bg-white p-4 hover:bg-white/80 md:max-w-full lg:max-w-[401px]">
+                  <Image
+                    src={`https:${blog.fields.featuredImage.fields.file.url}`}
+                    alt="img-card-blog"
+                    width={369}
+                    height={226}
+                    sizes="100vw"
+                    className="h-[226px] w-full rounded-[10px] object-cover md:object-top"
+                  />
+                  <div className="flex justify-between">
                     <div className="flex flex-shrink-0 items-center">
                       <Image
                         src={`https:${blog.fields.author.fields.image.fields.file.url}`}
@@ -144,7 +135,19 @@ export default function Blog({ contentfulEntries }) {
                         })}
                       </date>
                     </div>
+                    <p className="caption-semibold-3">{blog.fields.category}</p>
                   </div>
+                  <div className="space-y-1">
+                    <h3 className="caption-semibold-1 group-hover:underline">
+                      {blog.fields.title}
+                    </h3>
+                    <p className="caption-light-3 max-h-[84px] overflow-hidden">
+                      {blog.fields.excerpt}...
+                    </p>
+                  </div>
+                  <button className="flex max-h-[34px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 py-2 text-center text-[18px] font-semibold text-primary-500 hover:border-none hover:bg-primary-500 hover:text-white">
+                    Read More
+                  </button>
                 </div>
               </Link>
             ))}
