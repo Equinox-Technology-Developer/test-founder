@@ -27,7 +27,6 @@ const Login = ({}) => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
@@ -44,8 +43,6 @@ const Login = ({}) => {
       console.error('Error:', error);
     }
   };
-
-  // console.log(watch('email'));
 
   return (
     <>
