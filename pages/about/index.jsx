@@ -9,6 +9,14 @@ import { Autoplay } from 'swiper/modules';
 import 'swiper/css/navigation';
 import { fetchContentfulEntries } from '@/lib/contentful/client';
 
+import { FiAlertTriangle } from 'react-icons/fi';
+
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+
+import axios from 'axios';
+
 const slideData = [
   { src: '/assets/abbot.svg', alt: 'Abbot', width: 180, height: 80 },
   { src: '/assets/barila.svg', alt: 'Barila', width: 180, height: 80 },
@@ -31,6 +39,29 @@ const About = ({ contentfulEntries }) => {
   const bodyTextValue =
     contentfulEntries.topBanner.fields.bodyText.content[0].content[0].value ||
     '';
+
+  const schema = yup
+    .object({
+      email: yup.string().email().required(),
+    })
+    .required();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const onSubmit = async (data) => {
+    try {
+      const response = await axios.post('http://localhost:3000/api/auth', data);
+      console.log(response.data);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
 
   return (
     <>
@@ -303,16 +334,31 @@ const About = ({ contentfulEntries }) => {
                       .content[0].value
                   }
                 </p>
-                <div className="relative w-[90%]">
+                <form
+                  onSubmit={handleSubmit(onSubmit)}
+                  className="relative w-[90%]"
+                >
                   <input
                     type="email"
-                    className="placeholder:body-2 h-[48px] w-full rounded-[40px] bg-shade-0 py-3 pl-6 shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)] placeholder:text-[#CBCBCB]"
+                    className={`placeholder:body-2 h-[48px] w-full rounded-[40px] bg-shade-0 py-3 pl-6 shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)] placeholder:text-[#CBCBCB]`}
                     placeholder="Your e-mail"
+                    {...register('email')}
                   />
+                  {errors.email && (
+                    <div className="mt-2 flex items-center gap-[7px]">
+                      <FiAlertTriangle className="text-error-500" />
+                      <span className="caption-regular-4 text-error-500">
+                        {errors.email?.message &&
+                          errors.email.message.replace(/^\w/, (c) =>
+                            c.toUpperCase(),
+                          )}
+                      </span>
+                    </div>
+                  )}
                   <button className="absolute right-0 rounded-[40px] bg-primary-500 px-6 py-3 text-white">
                     Subscribe
                   </button>
-                </div>
+                </form>
               </div>
               <div className="mb-16 flex w-full justify-center sm:w-1/2 md:mb-0 md:text-left">
                 <Image
