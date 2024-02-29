@@ -5,7 +5,59 @@ import Link from 'next/link';
 import { Layout } from '@/components';
 import { fetchContentfulEntries } from '@/lib/contentful/client';
 
+import { FiAlertTriangle } from 'react-icons/fi';
+
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+
+import axios from 'axios';
+
 export default function BookDemo({ contentfulEntries }) {
+  const schema = yup
+    .object({
+      email: yup.string().email().required(),
+      fullName: yup.string().required('Full name is required.'),
+      jobFunction: yup.string().required('Job function is required.'),
+      companyName: yup.string().required('Company name is required.'),
+      fte: yup
+        .string()
+        .oneOf(
+          ['1-15', '16-30', '31-50', '51-100'],
+          'Please complete this required field.',
+        )
+        .required('FTE is required.'),
+      hireNextYear: yup
+        .string()
+        .oneOf(
+          ['1-15', '16-30', '31-50', '51-100'],
+          'Please complete this required field.',
+        )
+        .required('Hire next year is required.'),
+      ats: yup.string().nullable(), // You might want to specify whether this is required or not.
+    })
+    .required();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const onSubmit = async (data) => {
+    try {
+      const response = await axios.post(
+        'http://localhost:3000/api/auth/login',
+        data,
+      );
+      console.log(response.data);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+
   return (
     <>
       <Layout pageTitle="Book a Demo">
@@ -49,7 +101,10 @@ export default function BookDemo({ contentfulEntries }) {
                 </div>
               </div>
               <div className="flex h-auto w-full justify-center px-4 md:w-full lg:min-h-[403px] lg:w-full lg:min-w-[609px] lg:max-w-lg lg:px-0">
-                <form className="h-full w-full rounded-[20px] bg-shade-0 px-[42px] py-[32px] shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)] md:w-[580px] ">
+                <form
+                  className="h-full w-full rounded-[20px] bg-shade-0 px-[42px] py-[32px] shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)] md:w-[580px]"
+                  onSubmit={handleSubmit(onSubmit)}
+                >
                   <div className="flex flex-col gap-6 ">
                     <p className="caption-regular-2 flex w-full justify-end gap-2">
                       Not you? <span>Click here to reset</span>
@@ -61,7 +116,19 @@ export default function BookDemo({ contentfulEntries }) {
                       <input
                         type="email"
                         className="h-[48px] rounded-[5px] border-[0.75px] border-[#CBCBCB] bg-shade-0 px-4 py-[10px]"
+                        {...register('email')}
                       />
+                      {errors.email && (
+                        <div className="mt-2 flex items-center gap-[7px]">
+                          <FiAlertTriangle className="text-error-500" />
+                          <span className="caption-regular-4 text-error-500">
+                            {errors.email?.message &&
+                              errors.email.message.replace(/^\w/, (c) =>
+                                c.toUpperCase(),
+                              )}
+                          </span>
+                        </div>
+                      )}
                     </div>
                     <div className="flex flex-col">
                       <label className="caption-regular-4 text-[#CBCBCB]">
@@ -70,7 +137,19 @@ export default function BookDemo({ contentfulEntries }) {
                       <input
                         type="text"
                         className="h-[48px] rounded-[5px] border-[0.75px] border-[#CBCBCB] bg-shade-0 px-4 py-[10px]"
+                        {...register('fullName')}
                       />
+                      {errors.fullName && (
+                        <div className="mt-2 flex items-center gap-[7px]">
+                          <FiAlertTriangle className="text-error-500" />
+                          <span className="caption-regular-4 text-error-500">
+                            {errors.fullName?.message &&
+                              errors.fullName.message.replace(/^\w/, (c) =>
+                                c.toUpperCase(),
+                              )}
+                          </span>
+                        </div>
+                      )}
                     </div>
                     <div className="flex items-end justify-between gap-6 ">
                       <div className="flex w-1/2 flex-col md:w-full">
@@ -78,9 +157,21 @@ export default function BookDemo({ contentfulEntries }) {
                           Job function*
                         </label>
                         <input
-                          type="email"
+                          type="text"
                           className="h-[48px] w-full rounded-[5px] border-[0.75px] border-[#CBCBCB] bg-shade-0 px-4 py-[10px]"
+                          {...register('jobFunction')}
                         />
+                        {errors.jobFunction && (
+                          <div className="mt-2 flex items-center gap-[7px]">
+                            <FiAlertTriangle className="text-error-500" />
+                            <span className="caption-regular-4 text-error-500">
+                              {errors.jobFunction?.message &&
+                                errors.jobFunction.message.replace(/^\w/, (c) =>
+                                  c.toUpperCase(),
+                                )}
+                            </span>
+                          </div>
+                        )}
                       </div>
                       <div className="flex w-1/2 flex-col md:w-full">
                         <label className="caption-regular-4 text-[#CBCBCB]">
@@ -89,7 +180,19 @@ export default function BookDemo({ contentfulEntries }) {
                         <input
                           type="text"
                           className="h-[48px] w-full rounded-[5px] border-[0.75px] border-[#CBCBCB] bg-shade-0 px-4 py-[10px]"
+                          {...register('companyName')}
                         />
+                        {errors.companyName && (
+                          <div className="mt-2 flex items-center gap-[7px]">
+                            <FiAlertTriangle className="text-error-500" />
+                            <span className="caption-regular-4 text-error-500">
+                              {errors.companyName?.message &&
+                                errors.companyName.message.replace(/^\w/, (c) =>
+                                  c.toUpperCase(),
+                                )}
+                            </span>
+                          </div>
+                        )}
                       </div>
                     </div>
                     <div className="flex items-end justify-between gap-6">
@@ -98,7 +201,10 @@ export default function BookDemo({ contentfulEntries }) {
                           How many people work in your organization (Full Time
                           Equivalent)?*
                         </label>
-                        <select className="h-[48px] w-full rounded-[5px] border-[0.75px] border-[#CBCBCB] bg-shade-0 px-4 py-[10px]">
+                        <select
+                          className="h-[48px] w-full rounded-[5px] border-[0.75px] border-[#CBCBCB] bg-shade-0 px-4 py-[10px]"
+                          {...register('fte')}
+                        >
                           <option value="DEFAULT" disabled selected hidden>
                             FTE
                           </option>
@@ -107,12 +213,26 @@ export default function BookDemo({ contentfulEntries }) {
                           <option value="31-50">31-50</option>
                           <option value="51-100">51-100</option>
                         </select>
+                        {errors.fte && (
+                          <div className="mt-2 flex items-center gap-[7px]">
+                            <FiAlertTriangle className="text-error-500" />
+                            <span className="caption-regular-4 text-error-500">
+                              {errors.fte?.message &&
+                                errors.fte.message.replace(/^\w/, (c) =>
+                                  c.toUpperCase(),
+                                )}
+                            </span>
+                          </div>
+                        )}
                       </div>
                       <div className="flex w-full flex-col">
                         <label className="caption-regular-4 text-[#CBCBCB]">
                           How many people are you planning to hire next year?*
                         </label>
-                        <select className="h-[48px] w-full rounded-[5px] border-[0.75px] border-[#CBCBCB] bg-shade-0 px-4 py-[10px]">
+                        <select
+                          className="h-[48px] w-full rounded-[5px] border-[0.75px] border-[#CBCBCB] bg-shade-0 px-4 py-[10px]"
+                          {...register('hireNextYear')}
+                        >
                           <option value="DEFAULT" disabled selected hidden>
                             Please Select
                           </option>
@@ -121,13 +241,28 @@ export default function BookDemo({ contentfulEntries }) {
                           <option value="31-50">31-50</option>
                           <option value="51-100">51-100</option>
                         </select>
+                        {errors.hireNextYear && (
+                          <div className="mt-2 flex items-center gap-[7px]">
+                            <FiAlertTriangle className="text-error-500" />
+                            <span className="caption-regular-4 text-error-500">
+                              {errors.hireNextYear?.message &&
+                                errors.hireNextYear.message.replace(
+                                  /^\w/,
+                                  (c) => c.toUpperCase(),
+                                )}
+                            </span>
+                          </div>
+                        )}
                       </div>
                     </div>
                     <div className="flex flex-col">
                       <label className="caption-regular-4 text-[#CBCBCB]">
                         Do you have an Applicant Tracking System (ATS)?
                       </label>
-                      <select className="h-[48px] rounded-[5px] border-[0.75px] border-[#CBCBCB] bg-shade-0 px-4 py-[10px]">
+                      <select
+                        className="h-[48px] rounded-[5px] border-[0.75px] border-[#CBCBCB] bg-shade-0 px-4 py-[10px]"
+                        {...register('ats')}
+                      >
                         <option value="DEFAULT" disabled selected hidden>
                           Unknown
                         </option>
@@ -136,6 +271,17 @@ export default function BookDemo({ contentfulEntries }) {
                         <option value="31-50">31-50</option>
                         <option value="51-100">51-100</option>
                       </select>
+                      {errors.ats && (
+                        <div className="mt-2 flex items-center gap-[7px]">
+                          <FiAlertTriangle className="text-error-500" />
+                          <span className="caption-regular-4 text-error-500">
+                            {errors.ats?.message &&
+                              errors.ats.message.replace(/^\w/, (c) =>
+                                c.toUpperCase(),
+                              )}
+                          </span>
+                        </div>
+                      )}
                     </div>
                     <p className="caption-regular-3">
                       TestFounder needs the contact information you provide to
@@ -146,7 +292,11 @@ export default function BookDemo({ contentfulEntries }) {
                       please review our Privacy Policy.
                     </p>
                     <div className="flex w-full justify-end">
-                      <button className="btn-normal">Next</button>
+                      <input
+                        type="submit"
+                        value="Next"
+                        className="btn-normal"
+                      />
                     </div>
                   </div>
                 </form>
