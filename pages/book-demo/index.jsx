@@ -21,7 +21,6 @@ import * as yup from 'yup';
 import axios from 'axios';
 
 export default function BookDemo({ contentfulEntries }) {
-  console.log(contentfulEntries);
   const schema = yup
     .object({
       email: yup.string().email().required(),
