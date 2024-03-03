@@ -199,12 +199,12 @@ const Navbar = (props) => {
           ) : (
             <div className="mobile-hidden tab-hidden flex items-center justify-center">
               <Link href="/book-demo">
-                <button className="btn-line-normal lg:btn-line-medium btn-line-medium">
+                <button className="2xl:btn-line-normal btn-line-medium">
                   Book a Demo
                 </button>
               </Link>
               <Link href="/signup">
-                <button className="btn-normal lg:btn-medium btn-medium ml-4">
+                <button className="2xl:btn-normal btn-medium ml-4">
                   Try for free!
                 </button>
               </Link>
