@@ -155,7 +155,7 @@ const ProductScience = ({ contentfulEntries }) => {
           <div className={`container m-10 mx-auto`}>
             <h1>Read more about science-backed hiring</h1>
             <div className={`${styles.blog_wrapper}`}>
-              <div className={styles.blog_single}>
+              <div className={`${styles.blog_single} group`}>
                 <Image
                   src="/assets/Mentor-1.png"
                   alt="Blog Image Grid"
@@ -167,8 +167,11 @@ const ProductScience = ({ contentfulEntries }) => {
                   Science series materials are brought to you by TestFounder’s
                   Assessment Team: A group of IO psycho...
                 </p>
+                <button className="caption-semibold-2 mt-4 flex h-[36px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 text-primary-500 group-hover:bg-primary-500 group-hover:text-white group-hover:duration-300">
+                  Read more
+                </button>
               </div>
-              <div className={styles.blog_single}>
+              <div className={`${styles.blog_single} group`}>
                 <Image
                   src="/assets/Mentor-2.png"
                   alt="Blog Image Grid"
@@ -180,8 +183,11 @@ const ProductScience = ({ contentfulEntries }) => {
                   Science series materials are brought to you by TestFounder’s
                   Assessment Team: A group of IO psycho...
                 </p>
+                <button className="caption-semibold-2 mt-4 flex h-[36px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 text-primary-500 group-hover:bg-primary-500 group-hover:text-white group-hover:duration-300">
+                  Read more
+                </button>
               </div>
-              <div className={styles.blog_single}>
+              <div className={`${styles.blog_single} group`}>
                 <Image
                   src="/assets/Mentor-3.png"
                   alt="Blog Image Grid"
@@ -193,8 +199,11 @@ const ProductScience = ({ contentfulEntries }) => {
                   Science series materials are brought to you by TestFounder’s
                   Assessment Team: A group of IO psycho...
                 </p>
+                <button className="caption-semibold-2 mt-4 flex h-[36px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 text-primary-500 group-hover:bg-primary-500 group-hover:text-white group-hover:duration-300">
+                  Read more
+                </button>
               </div>
-              <div className={styles.blog_single}>
+              <div className={`${styles.blog_single} group`}>
                 <Image
                   src="/assets/Mentor-4.png"
                   alt="Blog Image Grid"
@@ -206,8 +215,11 @@ const ProductScience = ({ contentfulEntries }) => {
                   Science series materials are brought to you by TestFounder’s
                   Assessment Team: A group of IO psycho...
                 </p>
+                <button className="caption-semibold-2 mt-4 flex h-[36px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 text-primary-500 group-hover:bg-primary-500 group-hover:text-white group-hover:duration-300">
+                  Read more
+                </button>
               </div>
-              <div className={styles.blog_single}>
+              <div className={`${styles.blog_single} group`}>
                 <Image
                   src="/assets/Mentor-5.png"
                   alt="Blog Image Grid"
@@ -219,8 +231,11 @@ const ProductScience = ({ contentfulEntries }) => {
                   Science series materials are brought to you by TestFounder’s
                   Assessment Team: A group of IO psycho...
                 </p>
+                <button className="caption-semibold-2 mt-4 flex h-[36px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 text-primary-500 group-hover:bg-primary-500 group-hover:text-white group-hover:duration-300">
+                  Read more
+                </button>
               </div>
-              <div className={styles.blog_single}>
+              <div className={`${styles.blog_single} group`}>
                 <Image
                   src="/assets/Mentor-6.png"
                   alt="Blog Image Grid"
@@ -232,6 +247,9 @@ const ProductScience = ({ contentfulEntries }) => {
                   Science series materials are brought to you by TestFounder’s
                   Assessment Team: A group of IO psycho...
                 </p>
+                <button className="caption-semibold-2 mt-4 flex h-[36px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 text-primary-500 group-hover:bg-primary-500 group-hover:text-white group-hover:duration-300">
+                  Read more
+                </button>
               </div>
             </div>
           </div>
