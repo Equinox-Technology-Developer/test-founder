@@ -71,9 +71,9 @@ p {
 }
 
 .blog_container {
-  background-color: #eaeaea;
   display: flex;
   align-items: center;
+  background-color: #eaeaea;
 
   h1 {
     font-size: 40px;
@@ -108,7 +108,7 @@ p {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  background-color: $card-background;
+  background-color: #eaeaea;
   padding: 16px;
   border-radius: 20px;
 
@@ -123,4 +123,9 @@ p {
     border-radius: 10px;
     background-color: #4cabe6;
   }
+}
+
+.blog_single:hover {
+  background-color: white;
+  transition: 0.3s;
 }
