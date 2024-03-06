@@ -251,7 +251,7 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
             {contentfulEntries.topSection[4].fields.headline}
           </h1>
           <div className={`${styles.blog_wrapper}`}>
-            <div className={styles.blog_single}>
+            <div className={`${styles.blog_single} group`}>
               <Image
                 src="/assets/mentor-science-1.png"
                 alt="Blog Image Grid"
@@ -265,8 +265,11 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 candidates’ skills, rather than other information such as their
                 prior experience or where they were e..
               </p>
+              <button className="caption-semibold-2 mt-4 flex h-[36px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 text-primary-500 group-hover:bg-primary-500 group-hover:text-white group-hover:duration-300">
+                Read more
+              </button>
             </div>
-            <div className={styles.blog_single}>
+            <div className={`${styles.blog_single} group`}>
               <Image
                 src="/assets/mentor-science-2.png"
                 alt="Blog Image Grid"
@@ -282,8 +285,11 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 In this article, we’ll use data we collected from 3,000
                 employers and employees to discuss the...
               </p>
+              <button className="caption-semibold-2 mt-4 flex h-[36px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 text-primary-500 group-hover:bg-primary-500 group-hover:text-white group-hover:duration-300">
+                Read more
+              </button>
             </div>
-            <div className={styles.blog_single}>
+            <div className={`${styles.blog_single} group`}>
               <Image
                 src="/assets/mentor-science-3.png"
                 alt="Blog Image Grid"
@@ -299,8 +305,11 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 searching for a new job in 2023.  In the aftermath of the
                 Covid-19 pandemic and the Great R...
               </p>
+              <button className="caption-semibold-2 mt-4 flex h-[36px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 text-primary-500 group-hover:bg-primary-500 group-hover:text-white group-hover:duration-300">
+                Read more
+              </button>
             </div>
-            <div className={styles.blog_single}>
+            <div className={`${styles.blog_single} group`}>
               <Image
                 src="/assets/mentor-science-4.png"
                 alt="Blog Image Grid"
@@ -316,8 +325,11 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 hiring is for employers to ditch the typical requirement for a
                 university degree and tear the pa...
               </p>
+              <button className="caption-semibold-2 mt-4 flex h-[36px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 text-primary-500 group-hover:bg-primary-500 group-hover:text-white group-hover:duration-300">
+                Read more
+              </button>
             </div>
-            <div className={styles.blog_single}>
+            <div className={`${styles.blog_single} group`}>
               <Image
                 src="/assets/mentor-science-5.png"
                 alt="Blog Image Grid"
@@ -333,8 +345,11 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 employees when evaluating whether to stay with their current
                 employer or search elsewhere. In 2022...
               </p>
+              <button className="caption-semibold-2 mt-4 flex h-[36px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 text-primary-500 group-hover:bg-primary-500 group-hover:text-white group-hover:duration-300">
+                Read more
+              </button>
             </div>
-            <div className={styles.blog_single}>
+            <div className={`${styles.blog_single} group`}>
               <Image
                 src="/assets/mentor-science-6.png"
                 alt="Blog Image Grid"
@@ -349,6 +364,9 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 about helping Dua Lipa start a new career as a warehouse
                 supervisor. The term “STAR” actually sta...
               </p>
+              <button className="caption-semibold-2 mt-4 flex h-[36px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 text-primary-500 group-hover:bg-primary-500 group-hover:text-white group-hover:duration-300">
+                Read more
+              </button>
             </div>
           </div>
         </div>
@@ -398,7 +416,7 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
         <div className={`container m-10 mx-auto`}>
           <h1>{contentfulEntries.topSection[6].fields.headline}</h1>
           <div className={`${styles.blog_wrapper}`}>
-            <div className={styles.blog_single}>
+            <div className={`${styles.blog_single} group`}>
               <Image
                 src="/assets/learn-more-1.png"
                 alt="Blog Image Grid"
@@ -413,8 +431,11 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 over two years ago, and today we hired our 100th team member. 
                 We practice wha..
               </p>
+              <button className="caption-semibold-2 mt-4 flex h-[36px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 text-primary-500 group-hover:bg-primary-500 group-hover:text-white group-hover:duration-300">
+                Read more
+              </button>
             </div>
-            <div className={styles.blog_single}>
+            <div className={`${styles.blog_single} group`}>
               <Image
                 src="/assets/learn-more-2.png"
                 alt="Blog Image Grid"
@@ -427,8 +448,11 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 traditional recruitment practices and adopt a new mindset. But
                 as well as being a fairer way to ide..
               </p>
+              <button className="caption-semibold-2 mt-4 flex h-[36px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 text-primary-500 group-hover:bg-primary-500 group-hover:text-white group-hover:duration-300">
+                Read more
+              </button>
             </div>
-            <div className={styles.blog_single}>
+            <div className={`${styles.blog_single} group`}>
               <Image
                 src="/assets/learn-more-3.png"
                 alt="Blog Image Grid"
@@ -441,8 +465,11 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 in place. Traditional hiring methods are bogged down with direct
                 costs, like recruiter fees and the co...
               </p>
+              <button className="caption-semibold-2 mt-4 flex h-[36px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 text-primary-500 group-hover:bg-primary-500 group-hover:text-white group-hover:duration-300">
+                Read more
+              </button>
             </div>
-            <div className={styles.blog_single}>
+            <div className={`${styles.blog_single} group`}>
               <Image
                 src="/assets/learn-more-4.png"
                 alt="Blog Image Grid"
@@ -457,8 +484,11 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 part of a close-knit team, the results are far-reaching: Their
                 job performance increases by 56...
               </p>
+              <button className="caption-semibold-2 mt-4 flex h-[36px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 text-primary-500 group-hover:bg-primary-500 group-hover:text-white group-hover:duration-300">
+                Read more
+              </button>
             </div>
-            <div className={styles.blog_single}>
+            <div className={`${styles.blog_single} group`}>
               <Image
                 src="/assets/learn-more-5.png"
                 alt="Blog Image Grid"
@@ -473,8 +503,11 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 the Great Reshuffle, and the resulting skills shortage.
                 Companies are searching for a power...
               </p>
+              <button className="caption-semibold-2 mt-4 flex h-[36px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 text-primary-500 group-hover:bg-primary-500 group-hover:text-white group-hover:duration-300">
+                Read more
+              </button>
             </div>
-            <div className={styles.blog_single}>
+            <div className={`${styles.blog_single} group`}>
               <Image
                 src="/assets/learn-more-6.png"
                 alt="Blog Image Grid"
@@ -489,6 +522,9 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 time for anyone. Job seekers spend hours tweaking resumes,
                 whilst recruiters spend their days...
               </p>
+              <button className="caption-semibold-2 mt-4 flex h-[36px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 text-primary-500 group-hover:bg-primary-500 group-hover:text-white group-hover:duration-300">
+                Read more
+              </button>
             </div>
           </div>
         </div>
@@ -528,7 +564,7 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
         <div className={`container m-10 mx-auto`}>
           <h1>{contentfulEntries.topSection[8].fields.headline}</h1>
           <div className={`${styles.blog_wrapper}`}>
-            <div className={styles.blog_single}>
+            <div className={`${styles.blog_single} group`}>
               <Image
                 src="/assets/by-region-1.png"
                 alt="Blog Image Grid"
@@ -543,8 +579,11 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 surveyed only just adopted skills-based hiring in the past two
                 years. But from the United States to Sin..
               </p>
+              <button className="caption-semibold-2 mt-4 flex h-[36px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 text-primary-500 group-hover:bg-primary-500 group-hover:text-white group-hover:duration-300">
+                Read more
+              </button>
             </div>
-            <div className={styles.blog_single}>
+            <div className={`${styles.blog_single} group`}>
               <Image
                 src="/assets/by-region-2.png"
                 alt="Blog Image Grid"
@@ -559,8 +598,11 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 hiring and rewriting the rules to traditional hiring practices. 
                 Instead of evaluating can...
               </p>
+              <button className="caption-semibold-2 mt-4 flex h-[36px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 text-primary-500 group-hover:bg-primary-500 group-hover:text-white group-hover:duration-300">
+                Read more
+              </button>
             </div>
-            <div className={styles.blog_single}>
+            <div className={`${styles.blog_single} group`}>
               <Image
                 src="/assets/by-region-3.png"
                 alt="Blog Image Grid"
@@ -576,11 +618,14 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 being turned away by employers because of a lack of formal
                 education or experience on their r...
               </p>
+              <button className="caption-semibold-2 mt-4 flex h-[36px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 text-primary-500 group-hover:bg-primary-500 group-hover:text-white group-hover:duration-300">
+                Read more
+              </button>
             </div>
           </div>
           <h1>{contentfulEntries.topSection[9].fields.headline}</h1>
           <div className={`${styles.blog_wrapper}`}>
-            <div className={styles.blog_single}>
+            <div className={`${styles.blog_single} group`}>
               <Image
                 src="/assets/by-role-1.png"
                 alt="Blog Image Grid"
@@ -595,8 +640,11 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 blue-collar job openings. The Covid-19 pandemic and the Great
                 Resignation have contributed to this h...
               </p>
+              <button className="caption-semibold-2 mt-4 flex h-[36px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 text-primary-500 group-hover:bg-primary-500 group-hover:text-white group-hover:duration-300">
+                Read more
+              </button>
             </div>
-            <div className={styles.blog_single}>
+            <div className={`${styles.blog_single} group`}>
               <Image
                 src="/assets/by-role-2.png"
                 alt="Blog Image Grid"
@@ -611,8 +659,11 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 the roles and responsibilities of white-collar workers are often
                 a blend of high-level hard and soft...
               </p>
+              <button className="caption-semibold-2 mt-4 flex h-[36px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 text-primary-500 group-hover:bg-primary-500 group-hover:text-white group-hover:duration-300">
+                Read more
+              </button>
             </div>
-            <div className={styles.blog_single}>
+            <div className={`${styles.blog_single} group`}>
               <Image
                 src="/assets/by-role-3.png"
                 alt="Blog Image Grid"
@@ -627,11 +678,14 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 recruiters reporting that they are the hardest positions to hire
                 for.[1] Although many employers bl...
               </p>
+              <button className="caption-semibold-2 mt-4 flex h-[36px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 text-primary-500 group-hover:bg-primary-500 group-hover:text-white group-hover:duration-300">
+                Read more
+              </button>
             </div>
           </div>
           <h1>{contentfulEntries.topSection[10].fields.headline}</h1>
           <div className={`${styles.blog_wrapper}`}>
-            <div className={styles.blog_single}>
+            <div className={`${styles.blog_single} group`}>
               <Image
                 src="/assets/by-industry-1.png"
                 alt="Blog Image Grid"
@@ -647,8 +701,11 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 everything: 14% of startups fail due to not having the right
                 people on board.[1] And yet, it’s frau...
               </p>
+              <button className="caption-semibold-2 mt-4 flex h-[36px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 text-primary-500 group-hover:bg-primary-500 group-hover:text-white group-hover:duration-300">
+                Read more
+              </button>
             </div>
-            <div className={styles.blog_single}>
+            <div className={`${styles.blog_single} group`}>
               <Image
                 src="/assets/by-industry-2.png"
                 alt="Blog Image Grid"
@@ -663,8 +720,11 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 market size was valued at $359.2bn in 2022 and is projected to
                 reach $781.5bn by 2030.[1] This mas...
               </p>
+              <button className="caption-semibold-2 mt-4 flex h-[36px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 text-primary-500 group-hover:bg-primary-500 group-hover:text-white group-hover:duration-300">
+                Read more
+              </button>
             </div>
-            <div className={styles.blog_single}>
+            <div className={`${styles.blog_single} group`}>
               <Image
                 src="/assets/by-industry-3.png"
                 alt="Blog Image Grid"
@@ -680,6 +740,9 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 umbrella of science, technology, engineering, and math – are
                 some of the least divers...
               </p>
+              <button className="caption-semibold-2 mt-4 flex h-[36px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 text-primary-500 group-hover:bg-primary-500 group-hover:text-white group-hover:duration-300">
+                Read more
+              </button>
             </div>
           </div>
         </div>
@@ -719,7 +782,7 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
         <div className={`container m-10 mx-auto`}>
           <h1>{contentfulEntries.topSection[4].fields.headline}</h1>
           <div className={`${styles.blog_wrapper}`}>
-            <div className={styles.blog_single}>
+            <div className={`${styles.blog_single} group`}>
               <Image
                 src="/assets/read-more-skill-based-1.png"
                 alt="Blog Image Grid"
@@ -732,8 +795,11 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 candidates’ skills, rather than other information such as their
                 prior experience or where they were e..
               </p>
+              <button className="caption-semibold-2 mt-4 flex h-[36px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 text-primary-500 group-hover:bg-primary-500 group-hover:text-white group-hover:duration-300">
+                Read more
+              </button>
             </div>
-            <div className={styles.blog_single}>
+            <div className={`${styles.blog_single} group`}>
               <Image
                 src="/assets/read-more-skill-based-2.png"
                 alt="Blog Image Grid"
@@ -749,8 +815,11 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 In this article, we’ll use data we collected from 3,000
                 employers and employees to discuss the...
               </p>
+              <button className="caption-semibold-2 mt-4 flex h-[36px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 text-primary-500 group-hover:bg-primary-500 group-hover:text-white group-hover:duration-300">
+                Read more
+              </button>
             </div>
-            <div className={styles.blog_single}>
+            <div className={`${styles.blog_single} group`}>
               <Image
                 src="/assets/read-more-skill-based-3.png"
                 alt="Blog Image Grid"
@@ -766,8 +835,11 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 searching for a new job in 2023.  In the aftermath of the
                 Covid-19 pandemic and the Great R...
               </p>
+              <button className="caption-semibold-2 mt-4 flex h-[36px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 text-primary-500 group-hover:bg-primary-500 group-hover:text-white group-hover:duration-300">
+                Read more
+              </button>
             </div>
-            <div className={styles.blog_single}>
+            <div className={`${styles.blog_single} group`}>
               <Image
                 src="/assets/read-more-skill-based-4.png"
                 alt="Blog Image Grid"
@@ -783,8 +855,11 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 hiring is for employers to ditch the typical requirement for a
                 university degree and tear the pa...
               </p>
+              <button className="caption-semibold-2 mt-4 flex h-[36px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 text-primary-500 group-hover:bg-primary-500 group-hover:text-white group-hover:duration-300">
+                Read more
+              </button>
             </div>
-            <div className={styles.blog_single}>
+            <div className={`${styles.blog_single} group`}>
               <Image
                 src="/assets/read-more-skill-based-5.png"
                 alt="Blog Image Grid"
@@ -800,8 +875,11 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 employees when evaluating whether to stay with their current
                 employer or search elsewhere. In 2022...
               </p>
+              <button className="caption-semibold-2 mt-4 flex h-[36px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 text-primary-500 group-hover:bg-primary-500 group-hover:text-white group-hover:duration-300">
+                Read more
+              </button>
             </div>
-            <div className={styles.blog_single}>
+            <div className={`${styles.blog_single} group`}>
               <Image
                 src="/assets/read-more-skill-based-6.png"
                 alt="Blog Image Grid"
@@ -816,6 +894,9 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 about helping Dua Lipa start a new career as a warehouse
                 supervisor. The term “STAR” actually sta...
               </p>
+              <button className="caption-semibold-2 mt-4 flex h-[36px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 text-primary-500 group-hover:bg-primary-500 group-hover:text-white group-hover:duration-300">
+                Read more
+              </button>
             </div>
           </div>
         </div>
@@ -969,7 +1050,7 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
       <section className="bg-grayscale-200 lg:py-[60px]">
         <div className="container mx-auto">
           <div className="flex flex-wrap justify-center gap-[43px] px-4 py-6 md:px-[40px] md:py-[32px] lg:px-0 lg:py-0">
-            <div className="max-w-[401px] space-y-4 rounded-[20px] bg-white p-4">
+            <div className="group min-h-[520px] max-w-[401px] space-y-4 rounded-[20px] bg-white p-4 hover:bg-white/80 md:max-w-full lg:max-w-[401px]">
               <Image
                 src="/assets/img-card-blog-1.png"
                 alt="img-card-blog"
@@ -978,7 +1059,22 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 sizes="100vw"
                 className="rounded-[10px] object-cover"
               />
-              <p className="caption-semibold-3">Hiring & Recruiting</p>
+              <div className="flex justify-between">
+                <div className="flex flex-shrink-0 items-center">
+                  <Image
+                    src="/assets/benjamin-walker.png"
+                    alt="img-card-blog"
+                    width={24}
+                    height={24}
+                    sizes="100vw"
+                    className="rounded-full object-cover"
+                  />
+                  <date className="caption-regular-4 ml-4">
+                    Desember 8, 2023
+                  </date>
+                </div>
+                <p className="caption-semibold-3">Hiring & Recruiting</p>
+              </div>
               <div className="space-y-1">
                 <h3 className="caption-semibold-1">
                   How to hire a procurement manager
@@ -989,19 +1085,11 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                   selecting is up to the task.  Does your candidate kn...
                 </p>
               </div>
-              <div className="flex flex-shrink-0 items-center">
-                <Image
-                  src="/assets/benjamin-walker.png"
-                  alt="img-card-blog"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="rounded-full object-cover"
-                />
-                <date className="caption-regular-4 ml-4">Desember 8, 2023</date>
-              </div>
+              <button className="mt-4 flex max-h-[34px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 py-2 text-center text-[16px] font-semibold text-primary-500 hover:border-none hover:bg-primary-500 hover:text-white">
+                Read More
+              </button>
             </div>
-            <div className="max-w-[401px] space-y-4 rounded-[20px] bg-white p-4">
+            <div className="group min-h-[520px] max-w-[401px] space-y-4 rounded-[20px] bg-white p-4 hover:bg-white/80 md:max-w-full lg:max-w-[401px]">
               <Image
                 src="/assets/img-card-blog-2.png"
                 alt="img-card-blog"
@@ -1010,7 +1098,22 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 sizes="100vw"
                 className="rounded-[10px] object-cover"
               />
-              <p className="caption-semibold-3">Human Resources</p>
+              <div className="flex justify-between">
+                <div className="flex flex-shrink-0 items-center">
+                  <Image
+                    src="/assets/chase.png"
+                    alt="img-card-blog"
+                    width={24}
+                    height={24}
+                    sizes="100vw"
+                    className="rounded-full object-cover"
+                  />
+                  <date className="caption-regular-4 ml-4">
+                    Desember 8, 2023
+                  </date>
+                </div>
+                <p className="caption-semibold-3">Human Resources</p>
+              </div>
               <div className="space-y-1">
                 <h3 className="caption-semibold-1">
                   How to hire a Drupal developer
@@ -1021,19 +1124,11 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                   for building robust websites. The right Drupal...
                 </p>
               </div>
-              <div className="flex flex-shrink-0 items-center">
-                <Image
-                  src="/assets/chase.png"
-                  alt="img-card-blog"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="rounded-full object-cover"
-                />
-                <date className="caption-regular-4 ml-4">Desember 8, 2023</date>
-              </div>
+              <button className="mt-4 flex max-h-[34px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 py-2 text-center text-[16px] font-semibold text-primary-500 hover:border-none hover:bg-primary-500 hover:text-white">
+                Read More
+              </button>
             </div>
-            <div className="max-w-[401px] space-y-4 rounded-[20px] bg-white p-4">
+            <div className="group min-h-[520px] max-w-[401px] space-y-4 rounded-[20px] bg-white p-4 hover:bg-white/80 md:max-w-full lg:max-w-[401px]">
               <Image
                 src="/assets/img-card-blog-3.png"
                 alt="img-card-blog"
@@ -1042,7 +1137,22 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 sizes="100vw"
                 className="rounded-[10px] object-cover"
               />
-              <p className="caption-semibold-3">Hiring & Recruiting</p>
+              <div className="flex justify-between">
+                <div className="flex flex-shrink-0 items-center">
+                  <Image
+                    src="/assets/maxwell-redwood.png"
+                    alt="img-card-blog"
+                    width={24}
+                    height={24}
+                    sizes="100vw"
+                    className="rounded-full object-cover"
+                  />
+                  <date className="caption-regular-4 ml-4">
+                    Desember 8, 2023
+                  </date>
+                </div>
+                <p className="caption-semibold-3">Hiring & Recruiting</p>
+              </div>
               <div className="space-y-1">
                 <h3 className="caption-semibold-1">
                   How to recruit collage students
@@ -1054,19 +1164,11 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                   to best appeal to and interact with today’s...
                 </p>
               </div>
-              <div className="flex flex-shrink-0 items-center">
-                <Image
-                  src="/assets/maxwell-redwood.png"
-                  alt="img-card-blog"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="rounded-full object-cover"
-                />
-                <date className="caption-regular-4 ml-4">Desember 8, 2023</date>
-              </div>
+              <button className="mt-4 flex max-h-[34px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 py-2 text-center text-[16px] font-semibold text-primary-500 hover:border-none hover:bg-primary-500 hover:text-white">
+                Read More
+              </button>
             </div>
-            <div className="max-w-[401px] space-y-4 rounded-[20px] bg-white p-4">
+            <div className="group min-h-[520px] max-w-[401px] space-y-4 rounded-[20px] bg-white p-4 hover:bg-white/80 md:max-w-full lg:max-w-[401px]">
               <Image
                 src="/assets/img-card-blog-4.png"
                 alt="img-card-blog"
@@ -1075,7 +1177,22 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 sizes="100vw"
                 className="rounded-[10px] object-cover"
               />
-              <p className="caption-semibold-3">Science</p>
+              <div className="flex justify-between">
+                <div className="flex flex-shrink-0 items-center">
+                  <Image
+                    src="/assets/christopher-griffin.png"
+                    alt="img-card-blog"
+                    width={24}
+                    height={24}
+                    sizes="100vw"
+                    className="rounded-full object-cover"
+                  />
+                  <date className="caption-regular-4 ml-4">
+                    Desember 8, 2023
+                  </date>
+                </div>
+                <p className="caption-semibold-3">Science</p>
+              </div>
               <div className="space-y-1">
                 <h3 className="caption-semibold-1">
                   A brief introducing to classical test theory
@@ -1086,19 +1203,11 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                   psychometric experts with a deep...
                 </p>
               </div>
-              <div className="flex flex-shrink-0 items-center">
-                <Image
-                  src="/assets/christopher-griffin.png"
-                  alt="img-card-blog"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="rounded-full object-cover"
-                />
-                <date className="caption-regular-4 ml-4">Desember 8, 2023</date>
-              </div>
+              <button className="mt-4 flex max-h-[34px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 py-2 text-center text-[16px] font-semibold text-primary-500 hover:border-none hover:bg-primary-500 hover:text-white">
+                Read More
+              </button>
             </div>
-            <div className="max-w-[401px] space-y-4 rounded-[20px] bg-white p-4">
+            <div className="group min-h-[520px] max-w-[401px] space-y-4 rounded-[20px] bg-white p-4 hover:bg-white/80 md:max-w-full lg:max-w-[401px]">
               <Image
                 src="/assets/img-card-blog-5.png"
                 alt="img-card-blog"
@@ -1107,7 +1216,22 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 sizes="100vw"
                 className="rounded-[10px] object-cover"
               />
-              <p className="caption-semibold-3">Science</p>
+              <div className="flex justify-between">
+                <div className="flex flex-shrink-0 items-center">
+                  <Image
+                    src="/assets/dominic-carrington.png"
+                    alt="img-card-blog"
+                    width={24}
+                    height={24}
+                    sizes="100vw"
+                    className="rounded-full object-cover"
+                  />
+                  <date className="caption-regular-4 ml-4">
+                    Desember 8, 2023
+                  </date>
+                </div>
+                <p className="caption-semibold-3">Science</p>
+              </div>
               <div className="space-y-1">
                 <h3 className="caption-semibold-1">
                   How to hire a Bootsrap developer
@@ -1118,19 +1242,11 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                   presence with responsive and user-friendly interfaces...
                 </p>
               </div>
-              <div className="flex flex-shrink-0 items-center">
-                <Image
-                  src="/assets/dominic-carrington.png"
-                  alt="img-card-blog"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="rounded-full object-cover"
-                />
-                <date className="caption-regular-4 ml-4">Desember 8, 2023</date>
-              </div>
+              <button className="mt-4 flex max-h-[34px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 py-2 text-center text-[16px] font-semibold text-primary-500 hover:border-none hover:bg-primary-500 hover:text-white">
+                Read More
+              </button>
             </div>
-            <div className="max-w-[401px] space-y-4 rounded-[20px] bg-white p-4">
+            <div className="group min-h-[520px] max-w-[401px] space-y-4 rounded-[20px] bg-white p-4 hover:bg-white/80 md:max-w-full lg:max-w-[401px]">
               <Image
                 src="/assets/img-card-blog-6.png"
                 alt="img-card-blog"
@@ -1139,7 +1255,22 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 sizes="100vw"
                 className="rounded-[10px] object-cover"
               />
-              <p className="caption-semibold-3">Science</p>
+              <div className="flex justify-between">
+                <div className="flex flex-shrink-0 items-center">
+                  <Image
+                    src="/assets/kanzaak.png"
+                    alt="img-card-blog"
+                    width={24}
+                    height={24}
+                    sizes="100vw"
+                    className="rounded-full object-cover"
+                  />
+                  <date className="caption-regular-4 ml-4">
+                    Desember 8, 2023
+                  </date>
+                </div>
+                <p className="caption-semibold-3">Science</p>
+              </div>
               <div className="space-y-1">
                 <h3 className="caption-semibold-1">
                   How to write a Django developer job description
@@ -1149,19 +1280,11 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                   step to attracting top-tier Django developers. But there’s...
                 </p>
               </div>
-              <div className="flex flex-shrink-0 items-center">
-                <Image
-                  src="/assets/kanzaak.png"
-                  alt="img-card-blog"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="rounded-full object-cover"
-                />
-                <date className="caption-regular-4 ml-4">Desember 8, 2023</date>
-              </div>
+              <button className="mt-4 flex max-h-[34px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 py-2 text-center text-[16px] font-semibold text-primary-500 hover:border-none hover:bg-primary-500 hover:text-white">
+                Read More
+              </button>
             </div>
-            <div className="max-w-[401px] space-y-4 rounded-[20px] bg-white p-4">
+            <div className="group min-h-[520px] max-w-[401px] space-y-4 rounded-[20px] bg-white p-4 hover:bg-white/80 md:max-w-full lg:max-w-[401px]">
               <Image
                 src="/assets/img-card-blog-7.png"
                 alt="img-card-blog"
@@ -1170,7 +1293,22 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 sizes="100vw"
                 className="rounded-[10px] object-cover"
               />
-              <p className="caption-semibold-3">Talent Assessment</p>
+              <div className="flex justify-between">
+                <div className="flex flex-shrink-0 items-center">
+                  <Image
+                    src="/assets/olivia-abigail.png"
+                    alt="img-card-blog"
+                    width={24}
+                    height={24}
+                    sizes="100vw"
+                    className="rounded-full object-cover"
+                  />
+                  <date className="caption-regular-4 ml-4">
+                    Desember 8, 2023
+                  </date>
+                </div>
+                <p className="caption-semibold-3">Talent Assessment</p>
+              </div>
               <div className="space-y-1">
                 <h3 className="caption-semibold-1">
                   How to hire a top-performing IT Team
@@ -1181,19 +1319,11 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                   of size. Even a few hours off the grid can spell..
                 </p>
               </div>
-              <div className="flex flex-shrink-0 items-center">
-                <Image
-                  src="/assets/olivia-abigail.png"
-                  alt="img-card-blog"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="rounded-full object-cover"
-                />
-                <date className="caption-regular-4 ml-4">Desember 8, 2023</date>
-              </div>
+              <button className="mt-4 flex max-h-[34px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 py-2 text-center text-[16px] font-semibold text-primary-500 hover:border-none hover:bg-primary-500 hover:text-white">
+                Read More
+              </button>
             </div>
-            <div className="max-w-[401px] space-y-4 rounded-[20px] bg-white p-4">
+            <div className="group min-h-[520px] max-w-[401px] space-y-4 rounded-[20px] bg-white p-4 hover:bg-white/80 md:max-w-full lg:max-w-[401px]">
               <Image
                 src="/assets/img-card-blog-8.png"
                 alt="img-card-blog"
@@ -1202,7 +1332,22 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 sizes="100vw"
                 className="rounded-[10px] object-cover"
               />
-              <p className="caption-semibold-3">Hiring & Recruiting</p>
+              <div className="flex justify-between">
+                <div className="flex flex-shrink-0 items-center">
+                  <Image
+                    src="/assets/kylian-pandhita.png"
+                    alt="img-card-blog"
+                    width={24}
+                    height={24}
+                    sizes="100vw"
+                    className="rounded-full object-cover"
+                  />
+                  <date className="caption-regular-4 ml-4">
+                    Desember 8, 2023
+                  </date>
+                </div>
+                <p className="caption-semibold-3">Hiring & Recruiting</p>
+              </div>
               <div className="space-y-1">
                 <h3 className="caption-semibold-1">
                   How to hire a B2B salesperson
@@ -1213,19 +1358,11 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                   regulations, and maintaining financial transparency...
                 </p>
               </div>
-              <div className="flex flex-shrink-0 items-center">
-                <Image
-                  src="/assets/kylian-pandhita.png"
-                  alt="img-card-blog"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="rounded-full object-cover"
-                />
-                <date className="caption-regular-4 ml-4">Desember 8, 2023</date>
-              </div>
+              <button className="mt-4 flex max-h-[34px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 py-2 text-center text-[16px] font-semibold text-primary-500 hover:border-none hover:bg-primary-500 hover:text-white">
+                Read More
+              </button>
             </div>
-            <div className="max-w-[401px] space-y-4 rounded-[20px] bg-white p-4">
+            <div className="group min-h-[480px] max-w-[401px] space-y-4 rounded-[20px] bg-white p-4 hover:bg-white/80 md:max-w-full lg:max-w-[401px]">
               <Image
                 src="/assets/img-card-blog-9.png"
                 alt="img-card-blog"
@@ -1234,7 +1371,22 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                 sizes="100vw"
                 className="rounded-[10px] object-cover"
               />
-              <p className="caption-semibold-3">Hiring & Recruiting</p>
+              <div className="flex justify-between">
+                <div className="flex flex-shrink-0 items-center">
+                  <Image
+                    src="/assets/maxwell-redwood.png"
+                    alt="img-card-blog"
+                    width={24}
+                    height={24}
+                    sizes="100vw"
+                    className="rounded-full object-cover"
+                  />
+                  <date className="caption-regular-4 ml-4">
+                    Desember 8, 2023
+                  </date>
+                </div>
+                <p className="caption-semibold-3">Hiring & Recruiting</p>
+              </div>
               <div className="space-y-1">
                 <h3 className="caption-semibold-1">How to hire an auditor</h3>
                 <p className="caption-light-3">
@@ -1243,17 +1395,9 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
                   regulations, and maintaining financial transparency. How...
                 </p>
               </div>
-              <div className="flex flex-shrink-0 items-center">
-                <Image
-                  src="/assets/maxwell-redwood.png"
-                  alt="img-card-blog"
-                  width={24}
-                  height={24}
-                  sizes="100vw"
-                  className="rounded-full object-cover"
-                />
-                <date className="caption-regular-4 ml-4">Desember 8, 2023</date>
-              </div>
+              <button className="mt-4 flex max-h-[34px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 py-2 text-center text-[16px] font-semibold text-primary-500 hover:border-none hover:bg-primary-500 hover:text-white">
+                Read More
+              </button>
             </div>
           </div>
         </div>
