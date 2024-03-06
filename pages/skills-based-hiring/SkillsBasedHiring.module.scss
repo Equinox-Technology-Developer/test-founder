@@ -95,9 +95,9 @@
 }
 
 .blog_container {
-  background-color: #eaeaea;
   display: flex;
   align-items: center;
+  background-color: #eaeaea;
 
   h1 {
     font-size: 40px;
@@ -125,16 +125,14 @@
     padding: 20px;
     grid-template-columns: repeat(3, 1fr);
   }
-  @media screen and (min-width: 768px) and (max-width: 1023px) {
-    padding: 0 40px;
-  }
 }
 
 .blog_single {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
+  background-color: #eaeaea;
   padding: 16px;
   border-radius: 20px;
 
@@ -147,5 +145,11 @@
     width: 100%;
     height: auto;
     border-radius: 10px;
+    background-color: #4cabe6;
   }
+}
+
+.blog_single:hover {
+  background-color: white;
+  transition: 0.3s;
 }

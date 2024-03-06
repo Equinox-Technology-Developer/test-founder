@@ -145,7 +145,7 @@ export default function Blog({ contentfulEntries }) {
                       {blog.fields.excerpt}...
                     </p>
                   </div>
-                  <button className="flex max-h-[34px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 py-2 text-center text-[18px] font-semibold text-primary-500 hover:border-none hover:bg-primary-500 hover:text-white">
+                  <button className="flex max-h-[34px] w-full items-center justify-center rounded-[10px] border-[1px] border-primary-500 py-2 text-center text-[16px] font-semibold text-primary-500 hover:border-none hover:bg-primary-500 hover:text-white">
                     Read More
                   </button>
                 </div>
