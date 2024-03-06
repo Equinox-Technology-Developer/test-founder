@@ -47,7 +47,7 @@ export default function Home({ contentfulEntries }) {
         <section className="bg-[#F9F9F9] bg-blur bg-right bg-no-repeat pt-0">
           <div className="container mx-auto">
             <div className="relative flex flex-col items-center sm:static lg:flex-row">
-              <div className="mb-0 mt-20 flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:px-[40px] md:py-[32px] md:text-left lg:mt-24 lg:flex-grow lg:items-start lg:pr-24">
+              <div className="mb-0 mt-20 flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:px-[40px] md:py-[32px] md:text-left lg:mt-24 lg:flex-grow lg:items-start lg:pl-0 lg:pr-24">
                 <h1 className="sm:heading-1 heading-2 mb-6 mt-0 text-center lg:text-start">
                   {contentfulEntries.topBanner.fields.headline
                     .split(' ')
@@ -122,7 +122,7 @@ export default function Home({ contentfulEntries }) {
                 />
               </div>
             </div>
-            <div className="mt-20 pl-3 pr-3 sm:pr-16 md:mt-20 lg:mt-[19px]">
+            <div className="mt-20 w-full pl-3 pr-3 sm:pr-0 md:mt-20 lg:mt-[19px]">
               <Swiper
                 modules={[Autoplay]}
                 spaceBetween={40}
@@ -141,8 +141,12 @@ export default function Home({ contentfulEntries }) {
                     spaceBetween: 40,
                   },
                   1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 0,
+                  },
+                  1440: {
                     slidesPerView: 5,
-                    spaceBetween: 50,
+                    spaceBetween: 0,
                   },
                 }}
               >
@@ -154,7 +158,7 @@ export default function Home({ contentfulEntries }) {
                       width={slide.width}
                       height={slide.height}
                       sizes="100vw"
-                      className="ml-0 max-h-[80px] w-full  pl-0 pr-0 xl:pl-14 xl:pr-5 2xl:ml-14 2xl:pr-5"
+                      className="ml-0 max-h-[80px] w-full pl-0 pr-0"
                     />
                   </SwiperSlide>
                 ))}
