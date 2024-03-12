@@ -44,8 +44,8 @@ export default function Home({ contentfulEntries }) {
     <>
       <Layout pageTitle="Homepage">
         {/* Banner */}
-        <section className="bg-[#F9F9F9] bg-blur bg-right bg-no-repeat pt-0">
-          <div className="container mx-auto">
+        <section className="bg-[#F9F9F9] bg-blur bg-right bg-no-repeat px-4 py-6 pt-0 md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
+          <div className="container mx-auto ">
             <div className="relative flex flex-col items-center sm:static lg:flex-row">
               <div className="mb-0 mt-20 flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:px-[40px] md:py-[32px] md:text-left lg:mt-24 lg:flex-grow lg:items-start lg:pl-0 lg:pr-24">
                 <h1 className="sm:heading-1 heading-2 mb-6 mt-0 text-center lg:text-start">
@@ -118,7 +118,7 @@ export default function Home({ contentfulEntries }) {
                   width={700}
                   height={638}
                   sizes="100vw"
-                  className=" img z-10 mt-20 flex h-auto w-[80%] md:w-[60%] lg:w-full"
+                  className=" img z-10 mt-4 flex h-auto w-[80%] md:mt-4 md:w-[60%] lg:mt-20 lg:w-full"
                 />
               </div>
             </div>
@@ -169,7 +169,7 @@ export default function Home({ contentfulEntries }) {
         </section>
 
         {/* Explanation  */}
-        <section className="z-50 flex h-fit items-center bg-[#F9F9F9] px-4 py-6 sm:min-h-[520px] md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
+        <section className="z-50 flex h-fit items-center bg-[#F9F9F9] px-4 py-0 sm:min-h-[520px] md:px-[40px] md:py-[0px] lg:px-0 lg:py-0">
           <div className="container mx-auto ">
             {contentfulEntries.topSection.map((explanation, index) => (
               <div
@@ -187,7 +187,7 @@ export default function Home({ contentfulEntries }) {
                     width={616}
                     height={404}
                     className={styles.img}
-                    sizes="100vw"
+                    sizes="100vw flex justify-center w-full h-auto"
                   />
                 </div>
                 <div className="relative z-50 flex w-full flex-col items-center space-y-6 md:w-full lg:w-full lg:items-start">
