@@ -81,7 +81,7 @@ export default function Blog({ contentfulEntries }) {
       {/* Blog Section */}
       <div className={styles.blog_container}>
         <div
-          className={`container mx-auto px-4 md:px-[40px] md:py-8 lg:px-[64px] lg:py-[60px]`}
+          className={`container mx-auto px-4 md:px-[40px] md:py-8 lg:px-[0px] lg:py-[60px] 2xl:max-w-[1289px] `}
         >
           <div className={styles.blog_categoriesHeader}>
             {['All', ...categories].map((category) => (
@@ -99,7 +99,7 @@ export default function Blog({ contentfulEntries }) {
             ))}
           </div>
           {/* Display filtered blog posts */}
-          <div className="flex flex-wrap justify-center gap-[43px]">
+          <div className="grid grid-cols-1 justify-items-center gap-[43px] md:grid-cols-2 lg:grid-cols-3 ">
             {currentPosts.map((blog, index) => (
               <Link
                 href={`/blog/${blog.fields.slug}`}
