@@ -126,13 +126,14 @@ export default function Blog({ contentfulEntries }) {
                         className="rounded-full object-cover"
                       />
                       <date className="caption-regular-4 ml-4">
-                        {new Date(
-                          blog.fields.author.fields.image.sys.createdAt,
-                        ).toLocaleDateString('en-US', {
-                          year: 'numeric',
-                          month: 'long',
-                          day: 'numeric',
-                        })}
+                        {new Date(blog.sys.createdAt).toLocaleDateString(
+                          'en-US',
+                          {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric',
+                          },
+                        )}
                       </date>
                     </div>
                     <p className="caption-semibold-3">{blog.fields.category}</p>
