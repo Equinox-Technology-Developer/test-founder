@@ -16,7 +16,7 @@ export default function SkillsBasedHiring({ contentfulEntries }) {
         <div className="container mx-auto">
           <div className="relative flex flex-col items-center px-4 py-6 sm:static md:px-[40px] md:py-[32px] lg:flex-row lg:px-0 lg:py-0">
             <div className="mb-16 mt-4 flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:px-[0px] md:py-[32px] md:text-left lg:mt-24 lg:flex-grow lg:items-start lg:pr-24">
-              <h1 className="sm:heading-1 heading-2 mb-6 mt-20 ">
+              <h1 className="sm:heading-1 heading-2 mb-6 mt-0">
                 {contentfulEntries.topBanner.fields.headline}
               </h1>
               <p className="caption-regular-3 sm:caption-regular-1 mb-6 mt-0 text-center lg:text-start">

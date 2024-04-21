@@ -11,8 +11,8 @@ export default function Custom404({ contentfulEntries }) {
       <TopNavbar />
       <Navbar />
       <div className="container mx-auto">
-        <div className="flex h-screen flex-col items-center px-[10px] pt-24 md:flex-row lg:px-0">
-          <div className="flex w-full flex-col space-y-6 md:w-[50%]">
+        <div className="flex h-screen flex-col items-center px-[10px] pb-[124px] pt-0 md:flex-row lg:px-0">
+          <div className="flex h-screen w-full flex-col justify-center space-y-6 md:w-[50%]">
             <div>
               <p className="heading-2">
                 {

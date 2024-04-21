@@ -8,7 +8,7 @@ export default function EmployerGuide({ contentfulEntries }) {
   return (
     <Layout pageTitle="Employer Guide">
       <section className="bg-[#F9F9F9]">
-        <div className="container mx-auto mb-[80px] mt-[92px] px-4 py-6 md:px-10 md:py-8 lg:px-0 lg:py-0">
+        <div className="container mx-auto mb-[80px] px-4 py-6 md:px-10 md:py-8 lg:px-0 lg:py-0">
           <div className="mb-[24px] pt-[8px] md:mb-[40px] md:pt-0 lg:pt-[80px]">
             <h1 className="heading-2 md:heading-2 mb-4 md:mb-6">
               {contentfulEntries.topBanner.fields.headline}

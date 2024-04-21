@@ -47,7 +47,7 @@ const EquinoxLogin = ({}) => {
     <>
       <Layout pageTitle="Equinox Login">
         <main className="flex h-screen w-screen flex-col lg:flex-row">
-          <div className="flex min-h-screen w-full items-center justify-center bg-grayscale-100 px-[30px] py-[60px] md:px-0 md:py-0 lg:w-full">
+          <div className="flex min-h-screen w-full items-start justify-center bg-grayscale-100 px-[30px] py-[8px] md:px-0 md:py-0 lg:w-full">
             <div className="flex h-fit w-[580px] flex-col items-center justify-center space-y-6 rounded-[20px] px-[16px] py-[32px] md:px-[42px] md:py-[32px]">
               <h1 className="heading-2 md:heading-1 text-center">Login</h1>
               <form
