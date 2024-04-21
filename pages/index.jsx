@@ -47,7 +47,7 @@ export default function Home({ contentfulEntries }) {
         <section className="bg-[#F9F9F9] bg-blur bg-right bg-no-repeat px-4 py-6 pt-0 md:px-[40px] md:py-[40px] lg:px-0 lg:py-0">
           <div className="container mx-auto ">
             <div className="relative flex flex-col items-center sm:static lg:flex-row">
-              <div className="mb-0 mt-20 flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:px-[40px] md:py-[32px] md:text-left lg:mt-24 lg:flex-grow lg:items-start lg:pl-0 lg:pr-24">
+              <div className="mb-0 mt-4 flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:px-[40px] md:py-[32px] md:text-left lg:flex-grow lg:items-start lg:pl-0 lg:pr-24">
                 <h1 className="sm:heading-1 heading-2 mb-6 mt-0 text-center lg:text-start">
                   {contentfulEntries.topBanner.fields.headline
                     .split(' ')

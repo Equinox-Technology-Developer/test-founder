@@ -16,7 +16,7 @@ export default function Careers({ contentfulEntries }) {
     <Layout pageTitle="Talent Assessment">
       {/* Banner */}
       <section className="bg-grayscale-100">
-        <div className="container mx-auto px-4 py-6 md:px-[40px] md:py-[32px] lg:px-0 lg:py-[60px]">
+        <div className="container mx-auto px-4 py-6 md:px-[40px] md:py-[32px] lg:px-0 lg:pb-[60px]">
           <div className="relative flex flex-col items-center sm:static lg:flex-row">
             <div className="flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:text-left lg:w-1/2 lg:flex-grow lg:items-start ">
               <h1 className="sm:heading-1 heading-2 mb-6 mt-20 ">

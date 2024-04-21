@@ -71,7 +71,7 @@ export default function BookDemo({ contentfulEntries }) {
         <section className="bg-[#F9F9F9] bg-blur bg-right bg-no-repeat pt-0">
           <div className="container mx-auto md:pb-[32px] lg:pb-20">
             {' '}
-            <div className="flex w-full flex-col items-center justify-between lg:flex-row lg:px-0 lg:pb-[80px] lg:pt-[150px]">
+            <div className="flex w-full flex-col items-center justify-between lg:flex-row lg:px-0 lg:pb-[80px] lg:pt-[80px]">
               <div className="flex w-full max-w-[646px] flex-col items-start px-4 text-left">
                 <h1 className="sm:heading-1 heading-2 mb-6 mt-[70px] w-full text-center md:mt-[100px] lg:mt-0 lg:text-start">
                   {contentfulEntries.topBanner.fields.headline}

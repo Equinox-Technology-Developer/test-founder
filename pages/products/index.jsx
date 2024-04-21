@@ -40,7 +40,7 @@ const Products = ({ contentfulEntries }) => {
       <section className="bg-[#F9F9F9] bg-blur bg-right bg-no-repeat pt-0">
         <div className="container mx-auto ">
           <div className="relative flex flex-col items-center sm:static lg:flex-row">
-            <div className="mt-20 flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:px-[0px] md:py-[32px] md:text-left lg:mb-16 lg:mt-24 lg:flex-grow lg:items-start lg:pr-24 ">
+            <div className="mt-4 flex flex-col items-center text-center md:mb-0 md:w-full md:items-center md:px-[0px] md:py-[32px] md:text-left lg:mb-16 lg:mt-0 lg:flex-grow lg:items-start lg:pr-24 ">
               <h1 className="sm:heading-1 heading-2 mb-6 mt-0 ">
                 {contentfulEntries.topBanner.fields.headline
                   .split(' ')

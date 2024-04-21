@@ -15,7 +15,7 @@ export default function TalentAssessment({ contentfulEntries }) {
       <section className="bg-[#F9F9F9] bg-blur bg-right bg-no-repeat pb-6 pt-0 md:pb-[32px] lg:pb-[80px]">
         <div className="container mx-auto">
           <div className="relative flex flex-col items-center sm:static lg:flex-row">
-            <div className="mt-4 flex flex-col items-center px-4 py-6 text-center md:mb-0 md:w-full md:items-center md:px-[0px] md:py-[32px] md:text-left lg:mt-24 lg:flex-grow lg:items-start lg:pr-24">
+            <div className="flex flex-col items-center px-4 py-6 text-center md:mb-0 md:w-full md:items-center md:px-[0px] md:py-[32px] md:text-left lg:flex-grow lg:items-start lg:pr-24">
               <h1 className="sm:heading-1 heading-2 mb-6 mt-20 ">
                 {contentfulEntries.topBanner.fields.headline}
               </h1>

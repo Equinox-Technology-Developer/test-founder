@@ -6,7 +6,7 @@ import TermsMenus from '@/components/TermsMenus';
 export default function SecurityMeasurest({ contentfulEntries }) {
   return (
     <Layout pageTitle="Terms of use">
-      <main className="container mx-auto px-4 py-[120px] md:px-[40px] md:py-[130px] lg:px-16 lg:py-[140px]">
+      <main className="container mx-auto px-4 py-[20px] md:px-[40px] md:py-[80px] lg:px-16 lg:py-[80px]">
         <div className="px-0 lg:px-[100px]">
           <TermsMenus />
         </div>
