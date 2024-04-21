@@ -8,7 +8,13 @@ import { FaIntercom } from 'react-icons/fa';
 import styles from './Layout.module.scss';
 
 const Layout = (props) => {
-  const { children, pageTitle, showNavbarSubmit, showNavbarCandidate } = props;
+  const {
+    children,
+    pageTitle,
+    showNavbarSubmit,
+    showNavbarCandidate,
+    showNavbarRecruiter,
+  } = props;
   return (
     <>
       <Head>
@@ -20,6 +26,7 @@ const Layout = (props) => {
         <Navbar
           showNavbarSubmit={showNavbarSubmit}
           showNavbarCandidate={showNavbarCandidate}
+          showNavbarRecruiter={showNavbarRecruiter}
         />
         <Link
           href="https://wa.me/6287725800047"

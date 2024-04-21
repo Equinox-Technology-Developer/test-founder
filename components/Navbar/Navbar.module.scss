@@ -93,9 +93,6 @@
         text-decoration: none;
         font-weight: 600;
         flex-direction: column;
-        display: grid;
-        column-gap: 10px;
-        grid-template-columns: repeat(2, 1fr);
         align-items: center;
         transition:
           color 250ms ease-in-out,
@@ -119,6 +116,10 @@
       display: inline-block;
       transition: transform 0.3s ease;
       transform: rotate(180deg);
+    }
+
+    li svg {
+      display: inline-block;
     }
 
     @media screen and (max-width: 900px) {
@@ -246,6 +247,7 @@
   color: #333;
   text-decoration: none;
   transition: color 0.3s;
+  width: 100%;
 }
 
 .active {
