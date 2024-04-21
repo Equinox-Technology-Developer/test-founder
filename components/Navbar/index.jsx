@@ -8,11 +8,12 @@ import { images } from '../../constants';
 
 import { HiMenuAlt4, HiX } from 'react-icons/hi';
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
+import { CiUser } from 'react-icons/ci';
 
 import styles from './Navbar.module.scss';
 
 const Navbar = (props) => {
-  const { showNavbarSubmit, showNavbarCandidate } = props;
+  const { showNavbarSubmit, showNavbarCandidate, showNavbarRecruiter } = props;
   const router = useRouter();
   const [toogle, setToogle] = useState(false);
   const [isProductsDropdownOpen, setProductsDropdownOpen] = useState(false);
@@ -72,21 +73,55 @@ const Navbar = (props) => {
           </Link>
         </div>
         <div className={styles.nav_content}>
-          <ul
-            className={styles.app__navbarLinks}
-            onMouseLeave={handleMouseLeave}
-          >
-            {/* Products */}
-            <li
-              onMouseEnter={handleProductsHover}
-              className={isProductsDropdownOpen ? styles.dropdownActive : ''}
-            ></li>
-          </ul>
           <ul className={styles.app__navbarLinks}>
             {showNavbarSubmit ? (
               ''
             ) : showNavbarCandidate ? (
               ''
+            ) : showNavbarRecruiter ? (
+              <>
+                <li
+                  onMouseEnter={handleProductsHover}
+                  className={
+                    isProductsDropdownOpen ? styles.dropdownActive : ''
+                  }
+                >
+                  <Link
+                    href="/assessment"
+                    className={
+                      router.pathname == '/assessment'
+                        ? styles.active
+                        : styles.nonActive
+                    }
+                  >
+                    My assessment
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/candidates"
+                    className={
+                      router.pathname == '/candidates'
+                        ? styles.active
+                        : styles.nonActive
+                    }
+                  >
+                    My candidates
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/tests"
+                    className={
+                      router.pathname == '/tests'
+                        ? styles.active
+                        : styles.nonActive
+                    }
+                  >
+                    Tests
+                  </Link>
+                </li>
+              </>
             ) : (
               <>
                 {/* Products */}
@@ -97,7 +132,10 @@ const Navbar = (props) => {
                   }
                 >
                   <Link href="/products" className={styles.nonActive}>
-                    Product <MdOutlineKeyboardArrowDown />
+                    Product{' '}
+                    <span>
+                      <MdOutlineKeyboardArrowDown />
+                    </span>
                   </Link>
                   {/* Products Dropdown */}
                   {isProductsDropdownOpen && (
@@ -196,6 +234,28 @@ const Navbar = (props) => {
                 </button>
               </Link>
             </div>
+          ) : showNavbarRecruiter ? (
+            <div className="mobile-hidden tab-hidden flex items-center justify-center gap-x-4">
+              <Link href="/book-demo">
+                <button className="2xl:btn-line-normal btn-line-medium">
+                  Book a Demo
+                </button>
+              </Link>
+              <Link href="/login-recruiter">
+                <button className="2xl:btn-normal btn-medium ml-4">
+                  Upgrade
+                </button>
+              </Link>
+              <Link
+                href="/login-recruiter"
+                className="flex cursor-pointer items-center justify-center gap-x-3"
+              >
+                <CiUser className="h-[40px] w-[40px] text-black" />
+                <span>
+                  <MdOutlineKeyboardArrowDown className="text-black" />
+                </span>
+              </Link>
+            </div>
           ) : (
             <div className="mobile-hidden tab-hidden flex items-center justify-center">
               <Link href="/book-demo">
@@ -239,6 +299,46 @@ const Navbar = (props) => {
               )}
             </div>
           ) : showNavbarCandidate ? (
+            <div className={styles.navbar_menu}>
+              <HiMenuAlt4 onClick={() => setToogle(true)} />
+              {toogle && (
+                <motion.div
+                  whileInView={{ x: [300, 0, 0] }}
+                  transition={{ duration: 0.85, ease: 'easeOut' }}
+                >
+                  <HiX onClick={() => setToogle(false)} />
+                  <ul className={styles.app__navbarLinks}>
+                    <li>
+                      <Link
+                        href="/contact"
+                        className={
+                          router.pathname == '/'
+                            ? styles.active
+                            : styles.nonActive
+                        }
+                      >
+                        {' '}
+                        Submit a request
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/signup"
+                        className={
+                          router.pathname == '/'
+                            ? styles.active
+                            : styles.nonActive
+                        }
+                      >
+                        {' '}
+                        Signup
+                      </Link>
+                    </li>
+                  </ul>
+                </motion.div>
+              )}
+            </div>
+          ) : showNavbarRecruiter ? (
             <div className={styles.navbar_menu}>
               <HiMenuAlt4 onClick={() => setToogle(true)} />
               {toogle && (
