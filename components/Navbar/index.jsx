@@ -37,7 +37,7 @@ const Navbar = (props) => {
     const navbar = document.getElementById('navbar');
     if (navbar) {
       const top = window.scrollY;
-      if (top > 0) {
+      if (top > 36) {
         navbar.classList.add(styles.scrolled);
       } else {
         navbar.classList.remove(styles.scrolled);
