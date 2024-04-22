@@ -10,7 +10,8 @@ import { HiMenuAlt4, HiX } from 'react-icons/hi';
 
 import styles from './TopNavbar.module.scss';
 
-const TopNavbar = () => {
+const TopNavbar = (props) => {
+  const { showTopNavbar } = props;
   const router = useRouter();
   const [toogle, setToogle] = useState(false);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -30,63 +31,67 @@ const TopNavbar = () => {
   }, [prevScrollPos, visible]);
 
   return (
-    <nav
-      className={`${styles.navbar} ${visible ? styles.visible : styles.hidden}`}
-    >
-      <div className={styles.app__navbarLogo}>
-        {/* for image on navbar */}
-        <Link href="/">
-          <Image
-            src={'/assets/ant-design_global-outlined.svg'}
-            width={24}
-            height={24}
-            alt="logo"
-            priority
-          />
-        </Link>
-        <span>EN</span>
-      </div>
-      <div className={styles.nav_content}>
-        <ul className={styles.app__navbarLinks}>
-          {/* For Candidates */}
-          <li>
-            <Link
-              href="/candidates-guide"
-              className={
-                router.pathname == '/candidates-guide'
-                  ? styles.active
-                  : styles.nonActive
-              }
-            >
-              {' '}
-              For Candidates
-            </Link>
-          </li>
-          {/* Help */}
-          <li>
-            <Link
-              href="/help"
-              className={
-                router.pathname == '/help' ? styles.active : styles.nonActive
-              }
-            >
-              Help
-            </Link>
-          </li>
-          {/* Log in */}
-          <li>
-            <Link
-              href="/login"
-              className={
-                router.pathname == '/login' ? styles.active : styles.nonActive
-              }
-            >
-              Log in
-            </Link>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    showTopNavbar && (
+      <nav
+        className={`${styles.navbar} ${
+          visible ? styles.visible : styles.hidden
+        }`}
+      >
+        <div className={styles.app__navbarLogo}>
+          {/* for image on navbar */}
+          <Link href="/">
+            <Image
+              src={'/assets/ant-design_global-outlined.svg'}
+              width={24}
+              height={24}
+              alt="logo"
+              priority
+            />
+          </Link>
+          <span>EN</span>
+        </div>
+        <div className={styles.nav_content}>
+          <ul className={styles.app__navbarLinks}>
+            {/* For Candidates */}
+            <li>
+              <Link
+                href="/candidates-guide"
+                className={
+                  router.pathname == '/candidates-guide'
+                    ? styles.active
+                    : styles.nonActive
+                }
+              >
+                {' '}
+                For Candidates
+              </Link>
+            </li>
+            {/* Help */}
+            <li>
+              <Link
+                href="/help"
+                className={
+                  router.pathname == '/help' ? styles.active : styles.nonActive
+                }
+              >
+                Help
+              </Link>
+            </li>
+            {/* Log in */}
+            <li>
+              <Link
+                href="/login"
+                className={
+                  router.pathname == '/login' ? styles.active : styles.nonActive
+                }
+              >
+                Log in
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    )
   );
 };
 

@@ -14,6 +14,8 @@ const Layout = (props) => {
     showNavbarSubmit,
     showNavbarCandidate,
     showNavbarRecruiter,
+    showFooter = true,
+    showTopNavbar = true,
   } = props;
   return (
     <>
@@ -22,7 +24,7 @@ const Layout = (props) => {
         <link rel="icon" href="favicon.ico" sizes="any" />
       </Head>
       <div>
-        <TopNavbar />
+        <TopNavbar showTopNavbar={showTopNavbar} />
         <Navbar
           showNavbarSubmit={showNavbarSubmit}
           showNavbarCandidate={showNavbarCandidate}
@@ -39,7 +41,7 @@ const Layout = (props) => {
 
         {children}
 
-        <Footer />
+        <Footer showFooter={showFooter} />
       </div>
     </>
   );
