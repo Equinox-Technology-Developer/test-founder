@@ -87,9 +87,9 @@ const Navbar = (props) => {
                   }
                 >
                   <Link
-                    href="/assessment"
+                    href="/my-assessment"
                     className={
-                      router.pathname == '/assessment'
+                      router.pathname == '/my-assessment'
                         ? styles.active
                         : styles.nonActive
                     }
@@ -99,9 +99,9 @@ const Navbar = (props) => {
                 </li>
                 <li>
                   <Link
-                    href="/candidates"
+                    href="/my-candidates"
                     className={
-                      router.pathname == '/candidates'
+                      router.pathname == '/my-candidates'
                         ? styles.active
                         : styles.nonActive
                     }
