@@ -241,7 +241,7 @@ const Navbar = (props) => {
                   Book a Demo
                 </button>
               </Link>
-              <Link href="/login-recruiter">
+              <Link href="/pricing">
                 <button className="2xl:btn-normal btn-medium ml-4">
                   Upgrade
                 </button>
@@ -350,28 +350,67 @@ const Navbar = (props) => {
                   <ul className={styles.app__navbarLinks}>
                     <li>
                       <Link
-                        href="/contact"
+                        href="/my-assessment"
                         className={
-                          router.pathname == '/'
+                          router.pathname == '/my-assessment'
                             ? styles.active
                             : styles.nonActive
                         }
                       >
                         {' '}
-                        Submit a request
+                        My Assessment
                       </Link>
                     </li>
                     <li>
                       <Link
-                        href="/signup"
+                        href="/my-candidates"
                         className={
-                          router.pathname == '/'
+                          router.pathname == '/my-candidates'
                             ? styles.active
                             : styles.nonActive
                         }
                       >
                         {' '}
-                        Signup
+                        My Candidates
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/tests"
+                        className={
+                          router.pathname == '/tests'
+                            ? styles.active
+                            : styles.nonActive
+                        }
+                      >
+                        {' '}
+                        Tests
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/book-demo"
+                        className={
+                          router.pathname == '/book-demo'
+                            ? styles.active
+                            : styles.nonActive
+                        }
+                      >
+                        {' '}
+                        Book a Demo
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/pricing"
+                        className={
+                          router.pathname == '/pricing'
+                            ? styles.active
+                            : styles.nonActive
+                        }
+                      >
+                        {' '}
+                        Upgrade
                       </Link>
                     </li>
                   </ul>
