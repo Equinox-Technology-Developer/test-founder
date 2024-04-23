@@ -95,15 +95,15 @@ export default function MyCandidates({}) {
                               Item per page
                             </p>
                             <select className="caption-regular-3 text-neutral-100">
-                              <option value="volvo">25</option>
-                              <option value="saab">50</option>
-                              <option value="mercedes">75</option>
-                              <option value="audi">100</option>
+                              <option value="25">25</option>
+                              <option value="50">50</option>
+                              <option value="75">75</option>
+                              <option value="100i">100</option>
                             </select>
                             <p className="caption-regular-3 text-neutral-100">
                               1 - 1 of 1
                             </p>
-                            <div>
+                            <div className="w-fit">
                               <RiArrowLeftSLine className="inline-block" />
                               <RiArrowRightSLine className="inline-block" />
                             </div>
