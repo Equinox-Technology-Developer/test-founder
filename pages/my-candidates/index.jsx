@@ -89,8 +89,8 @@ export default function MyCandidates({}) {
                         </>
                       ))}
                       <tr className="text-end">
-                        <td className="space-x-[36px] px-6 py-3" colspan="4">
-                          <div className="flex justify-end">
+                        <td className="px-6 py-3" colspan="4">
+                          <div className="flex justify-end space-x-[36px]">
                             <p className="caption-regular-3 text-neutral-100">
                               Item per page
                             </p>
