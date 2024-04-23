@@ -50,8 +50,9 @@ export default function GetStarted({}) {
             </li>
           </ul>
           <div className="flex justify-end">
-            <button className="caption-semibold-1  rounded-[40px] bg-primary-500 px-[20px] py-[8px] text-white hover:bg-primary-600">
-              Get Started
+            <button className="caption-semibold-1 flex items-center rounded-[40px] bg-primary-500 px-[20px] py-[8px] text-white hover:bg-primary-600">
+              GetStarted
+              <MdOutlineKeyboardArrowRight />
             </button>
           </div>
         </div>
