@@ -11,10 +11,10 @@ export default function Custom404({ contentfulEntries }) {
       <TopNavbar />
       <Navbar />
       <div className="container mx-auto">
-        <div className="flex h-screen flex-col items-center px-[10px] pb-[124px] pt-0 md:flex-row lg:px-0">
-          <div className="flex h-screen w-full flex-col justify-center space-y-6 md:w-[50%]">
+        <div className="flex h-screen flex-col items-center px-[10px] pb-[124px] pt-0 lg:flex-row lg:px-0">
+          <div className="flex h-screen w-full flex-col justify-center space-y-6 lg:w-[50%]">
             <div>
-              <p className="heading-2">
+              <p className="md:heading-2 heading-3 text-center lg:text-start">
                 {
                   contentfulEntries.topBanner.fields.bodyText.content[0]
                     .content[0].value
@@ -26,20 +26,20 @@ export default function Custom404({ contentfulEntries }) {
                   }
                 </span>
               </p>
-              <p className="mt-0 h-fit w-fit text-[100px] font-bold">
+              <h1 className="mt-0 text-center text-[80px] font-bold md:text-[100px] lg:text-start">
                 {
                   contentfulEntries.topBanner.fields.bodyText.content[1]
                     .content[0].value
                 }
-              </p>
+              </h1>
             </div>
-            <p className="caption-semibold-1">
+            <p className="caption-semibold-1 text-center lg:text-start">
               {
                 contentfulEntries.topBanner.fields.bodyText.content[2]
                   .content[0].value
               }
             </p>
-            <ul className="list-inside list-disc">
+            <ul className="list-inside list-disc text-center lg:text-start">
               <li>
                 {
                   contentfulEntries.topBanner.fields.bodyText.content[3]
@@ -75,13 +75,16 @@ export default function Custom404({ contentfulEntries }) {
                 </a>
               </li>
             </ul>
-            <Link href={contentfulEntries.topBanner.fields.ctaUrl}>
+            <Link
+              href={contentfulEntries.topBanner.fields.ctaUrl}
+              className="flex justify-center lg:justify-start"
+            >
               <button className="btn-normal">
                 {contentfulEntries.topBanner.fields.ctaText}
               </button>
             </Link>
           </div>
-          <div className="hidden w-full justify-center md:flex md:w-[50%]">
+          <div className="hidden w-full justify-center md:flex lg:w-[50%]">
             <Image
               src={`https:${contentfulEntries.topBanner.fields.image.fields.file.url}`}
               alt="404"
