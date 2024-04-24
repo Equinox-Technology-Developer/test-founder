@@ -10,7 +10,7 @@ export default function Dpa({ contentfulEntries }) {
         <div className="px-0 lg:px-[100px]">
           <TermsMenus />
         </div>
-        <h1 className="md:heading-1 heading-2">
+        <h1 className="md:heading-1 heading-2 text-start">
           {contentfulEntries.pageContent[0].fields.headline}
         </h1>
         <div className="my-6 space-y-4">

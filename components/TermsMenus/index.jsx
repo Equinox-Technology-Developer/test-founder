@@ -6,7 +6,7 @@ export default function TermsMenus() {
   return (
     <nav className="mb-[60px]">
       <ul className="flex flex-wrap justify-center gap-[35px]">
-        <li className="lg:caption-semibold-1 caption-semibold-2">
+        <li className="md:caption-semibold-1 caption-semibold-2">
           <Link
             href="/terms"
             className={
