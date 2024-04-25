@@ -1,6 +1,6 @@
 import { IoClose } from 'react-icons/io5';
 
-export default function GetStarted() {
+export default function ConfirmInfo() {
   return (
     <>
       <div className="grid h-fit max-w-[674px] grid-cols-1 gap-x-[24px] rounded-[20px] bg-white p-[42px] shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)]">
