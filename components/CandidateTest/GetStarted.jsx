@@ -1,7 +1,7 @@
 export default function GetStarted({}) {
   return (
     <>
-      <div className="grid h-fit max-w-[981px] grid-cols-2 gap-x-[24px] rounded-[20px] bg-white p-[32px]">
+      <div className="grid h-fit max-w-[981px] grid-cols-2 gap-x-[24px] rounded-[20px] bg-white p-[32px] shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)]">
         <div className="space-y-[24px]">
           <h2 className="caption-regular-1">
             Hello <span className="heading-3">Reynaldi,</span>
