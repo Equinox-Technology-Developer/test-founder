@@ -1,10 +1,10 @@
-import ExtraTime from '@/components/CandidateTest/ExtraTime';
+import NextTest from '@/components/CandidateTest/NextTest';
 
 export default function Tests({}) {
   return (
     <>
       <div className="flex h-screen w-screen items-center justify-center bg-[#F9F9F9]">
-        <ExtraTime />
+        <NextTest />
       </div>
     </>
   );
