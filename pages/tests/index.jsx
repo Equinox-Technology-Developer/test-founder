@@ -1,10 +1,10 @@
-import FeedbackSubmitted from '@/components/CandidateTest/FeedbackSubmitted';
+import PrivateNotes from '@/components/CandidateTest/PrivateNotes';
 
 export default function Tests({}) {
   return (
     <>
       <div className="flex h-screen w-screen flex-row items-center justify-center bg-[#F9F9F9]">
-        <FeedbackSubmitted />
+        <PrivateNotes />
       </div>
     </>
   );
