@@ -1,10 +1,10 @@
-import CompleteTest from '@/components/CandidateTest/CompleteTest';
+import FeedbackSubmitted from '@/components/CandidateTest/FeedbackSubmitted';
 
 export default function Tests({}) {
   return (
     <>
       <div className="flex h-screen w-screen flex-row items-center justify-center bg-[#F9F9F9]">
-        <CompleteTest />
+        <FeedbackSubmitted />
       </div>
     </>
   );
