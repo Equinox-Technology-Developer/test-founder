@@ -1,6 +1,6 @@
 import { MdOutlineKeyboardArrowRight } from 'react-icons/md';
 
-export default function NextTest() {
+export default function CompleteTest() {
   return (
     <>
       <div className="grid h-fit max-w-[644px] grid-cols-1 gap-x-[24px] rounded-[20px] bg-white p-[42px] shadow-[0_4px_10px_0px_rgba(0,0,0,0.15)]">
